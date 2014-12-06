@@ -1,5 +1,5 @@
 <div class="universes">
-  <div class="universe">
-    The Malazan Empire
-  </div>
+  <% @universes.each do |universe| %>
+    <%= render universe %>
+  <% end %>
 </div>
