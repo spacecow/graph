@@ -11,7 +11,7 @@ describe 'universes/index.html.erb' do
   let(:locals){ {} }
   let(:rendering){ @erb.result @local_bindings }
   before do
-    filepath = File.expand_path "../../../../app/views/#{file}", __FILE__
+    filepath = "./app/views/#{file}"
     @erb = ERB.new File.read(filepath)
     erb_bindings = ErbBinding.new(locals).extend(Helper)
     erb_bindings.instance_variable_set "@universes", universes

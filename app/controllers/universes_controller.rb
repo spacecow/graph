@@ -1,5 +1,7 @@
 class UniversesController < ApplicationController
+  include UniverseRunners
+
   def index
-    @universes = [Universe.new(title:'The Malazan Empire')]
+    @universes = run(Index)
   end
 end
