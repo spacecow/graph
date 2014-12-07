@@ -11,4 +11,11 @@ describe 'Universe index' do
     end
   end
 
+  it "navigate to the new universe page" do
+    VCR.use_cassette('all_universes') do
+      visit universes_path
+      click_link 'New Universe'
+    end
+  end
+
 end

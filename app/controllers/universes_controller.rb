@@ -4,4 +4,8 @@ class UniversesController < ApplicationController
   def index
     @universes = run(Index)
   end
+
+  def new
+  end
+
 end
