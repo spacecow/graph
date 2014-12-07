@@ -16,5 +16,11 @@ module UniverseRunners
       subject{ Index.new(context).run }
       it{ is_expected.to eq [:univ1,:univ2] }
     end
+
+    describe New do
+      before{ expect(repo).to receive(:new_universe){ :univ }}
+      subject{ New.new(context).run }
+      it{ is_expected.to eq :univ }
+    end
   end
 end

@@ -6,6 +6,7 @@ class UniversesController < ApplicationController
   end
 
   def new
+    @universe = run(New) 
   end
 
 end

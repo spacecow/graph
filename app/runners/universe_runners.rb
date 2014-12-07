@@ -6,4 +6,10 @@ module UniverseRunners
       repo.all_universes
     end
   end
+
+  class New < Runner
+    def run
+      repo.new_universe
+    end
+  end
 end

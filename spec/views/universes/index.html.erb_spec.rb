@@ -1,11 +1,6 @@
 require 'view_helper'
 require 'capybara'
 
-module Helper
-  def render arr; arr end
-  def new_universe_path; "/universes/new" end
-end
-
 describe 'universes/index.html.erb' do
 
   let(:file){ 'universes/index.html.erb' }
@@ -14,8 +9,10 @@ describe 'universes/index.html.erb' do
   before do
     filepath = "./app/views/#{file}"
     @erb = ERB.new File.read(filepath)
-    erb_bindings = ErbBinding.new(locals).extend(Helper)
+    erb_bindings = ErbBinding.new(locals)
     erb_bindings.instance_variable_set "@universes", universes
+    def erb_bindings.render mdl; mdl end
+    def erb_bindings.new_universe_path; "/universes/new" end
     @local_bindings = erb_bindings.instance_eval{binding}
   end
 

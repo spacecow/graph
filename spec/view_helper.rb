@@ -1,5 +1,6 @@
 require 'rspec/its'
 require 'pry'
+require 'assert'
 
 class ErbBinding
   def initialize(hash)
