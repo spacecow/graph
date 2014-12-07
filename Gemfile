@@ -22,4 +22,6 @@ end
 group :test do
   gem 'capybara'
   gem 'rspec-its'
+  gem 'vcr'
+  gem 'webmock'
 end
