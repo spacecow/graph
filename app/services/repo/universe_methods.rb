@@ -1,7 +1,10 @@
 module Repo
   module UniverseMethods
     def all_universes
-      [Universe.new(title:'The Malazan Empire')]
+      response = Net::HTTP.get_response(URI('http://localhost:9292/universes'))
+      JSON.parse(response.body)["universes"].map do |universe|
+        Universe.new universe  
+      end
     end
   end
 end
