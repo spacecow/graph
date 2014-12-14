@@ -6,15 +6,19 @@ describe 'Universe index' do
 
   it "displays available universes" do
     VCR.use_cassette('all_universes') do
+      create :universe, title:'The Malazan Empire'
       visit universes_path
       is_expected.to have_content 'The Malazan Empire'
+      delete :universes
     end
   end
 
   it "select a universe" do
     VCR.use_cassette('all_universes_with_redirect') do
+      create :universe, title:'The Malazan Empire'
       visit universes_path
       click_link 'The Malazan Empire'
+      delete :universes
     end
   end
 

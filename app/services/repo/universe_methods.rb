@@ -2,9 +2,13 @@ module Repo
   module UniverseMethods
 
     def all_universes
-      response = Net::HTTP.get_response(URI('http://localhost:9292/universes'))
-      JSON.parse(response.body)["universes"].map do |universe|
-        Universe.new universe  
+      url = URI 'http://localhost:9292/universes'
+      response = Net::HTTP.get_response url
+      body = JSON.parse response.body
+      if body.include?('universes')
+        body['universes'].map do |universe|
+          Universe.new universe  
+        end
       end
     end
 

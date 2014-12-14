@@ -10,4 +10,9 @@ class UniversesController < ApplicationController
     @universe = run(New) 
   end
 
+  def create
+    @universe = run(New) 
+    redirect_to universes_path
+  end
+
 end
