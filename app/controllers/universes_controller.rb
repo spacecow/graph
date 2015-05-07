@@ -3,6 +3,7 @@ class UniversesController < ApplicationController
 
   def index
     @universes = run(Index)
+    current_universe params[:id]
   end
 
   def new

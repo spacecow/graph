@@ -10,5 +10,9 @@ class ApplicationController < ActionController::Base
   def repo
     @repo ||= GraphRepository.new
   end
+  
+  def current_universe id
+    @current_universe = id 
+  end
 
 end

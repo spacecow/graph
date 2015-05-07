@@ -11,6 +11,13 @@ describe 'Universe index' do
     end
   end
 
+  it "select a universe" do
+    VCR.use_cassette('all_universes_with_redirect') do
+      visit universes_path
+      click_link 'The Malazan Empire'
+    end
+  end
+
   it "navigate to the new universe page" do
     VCR.use_cassette('all_universes') do
       visit universes_path
