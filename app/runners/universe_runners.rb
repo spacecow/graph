@@ -12,4 +12,10 @@ module UniverseRunners
       repo.new_universe
     end
   end
+
+  class Create < Runner
+    def run universe_params
+      repo.new_universe universe_params
+    end
+  end
 end

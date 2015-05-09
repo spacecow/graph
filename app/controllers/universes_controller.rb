@@ -11,7 +11,7 @@ class UniversesController < ApplicationController
   end
 
   def create
-    @universe = run(New) 
+    run(Create, params[:universe]) 
     redirect_to universes_path
   end
 

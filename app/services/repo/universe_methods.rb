@@ -12,8 +12,8 @@ module Repo
       end
     end
 
-    def new_universe
-      Universe.new
+    def new_universe params={}
+      Universe.new params
     end
 
   end
