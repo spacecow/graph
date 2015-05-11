@@ -12,6 +12,7 @@ describe 'Universe create' do
         fill_in 'Title', with:'Wheel of Time'
         click_on 'Create'
         expect(current_path).to eq universes_path
+        delete :universes
       end
     end
 
@@ -20,7 +21,8 @@ describe 'Universe create' do
         visit new_universe_path 
         fill_in 'Title', with:'Wheel of Time'
         click_on 'Create'
-        #is_expected.to have_content 'Wheel of Time'
+        is_expected.to have_content 'Wheel of Time'
+        delete :universes
       end
     end
   end

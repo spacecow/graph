@@ -15,7 +15,10 @@ module UniverseRunners
 
   class Create < Runner
     def run universe_params
-      repo.new_universe universe_params
+      universe = repo.new_universe universe_params
+      if repo.save_universe universe
+        success universe 
+      end
     end
   end
 end

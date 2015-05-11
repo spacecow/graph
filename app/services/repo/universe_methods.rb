@@ -16,5 +16,12 @@ module Repo
       Universe.new params
     end
 
+    def save_universe universe
+      url = 'http://localhost:9292/universes'
+      uri = URI.parse url
+      params = universe.instance_values 
+      Net::HTTP.post_form uri, params
+    end
+
   end
 end
