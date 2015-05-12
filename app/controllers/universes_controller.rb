@@ -3,7 +3,7 @@ class UniversesController < ApplicationController
 
   def index
     @universes = run(Index)
-    current_universe params[:id]
+    @current_universe = params[:id]
   end
 
   def new
@@ -12,9 +12,11 @@ class UniversesController < ApplicationController
 
   def create
     run(Create, params[:universe]) do |on|
-      on.success do |universe|
+      on.success { |universe|
         redirect_to universes_path
-      end
+      } 
+      on.failure { |universe|
+      }
     end
   end
 

@@ -19,6 +19,6 @@ describe 'universe/new.html.erb' do
 
   subject(:form){ Capybara.string(rendering).find 'form' }
 
-  it{ p rendering }
+  it{ rendering }
 
 end
