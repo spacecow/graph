@@ -109,13 +109,14 @@ end
 
 def create mdl, params
   url = 'http://localhost:9292/universes'
-  uri = URI.parse url
-  Net::HTTP.post_form uri, params
+  uri = URI url
+  http = Net::HTTP.new uri.host, uri.port 
+  http.post uri, {universe:params}.to_query
 end
 
 def delete mdls
   url = 'http://localhost:9292/universes'
-  uri = URI.parse url
+  uri = URI url
   http = Net::HTTP.new uri.host, uri.port
   request = Net::HTTP::Delete.new uri.path
   http.request(request)

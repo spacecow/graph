@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:9292/universes
     body:
       encoding: US-ASCII
-      string: universe%5Btitle%5D=Wheel+of+Time
+      string: universe%5Btitle%5D=The+Malazan+Empire
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -29,24 +29,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b98b0f26b3761656d9b5f6f0a781262b"
+      - W/"e76a6a3d291175fbbfcc73aa4e52a811"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 62d684c2-7a99-467b-b4bf-b9757e5fb99a
+      - b1d1f886-68ed-4b3b-87f6-b8bd13532d31
       X-Runtime:
-      - '0.355659'
+      - '0.006021'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
       - Sun, 17 May 2015 06:01:32 GMT
       Content-Length:
-      - '46'
+      - '51'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":26,"title":"Wheel of Time"}}'
+      string: '{"universe":{"id":27,"title":"The Malazan Empire"}}'
     http_version: 
   recorded_at: Sun, 17 May 2015 06:01:32 GMT
 - request:
@@ -78,26 +78,75 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"defd424597c256f982d9f371187557c3"
+      - W/"e5dc5c2a31eed434ae51fece1baed11f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 54f29c93-8b0f-4caf-9a8b-e9f49ae9079c
+      - 486d5a03-ca17-411d-ba6b-ffd95dac7a5d
       X-Runtime:
-      - '0.018174'
+      - '0.003953'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
       - Sun, 17 May 2015 06:01:32 GMT
       Content-Length:
-      - '49'
+      - '54'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":26,"title":"Wheel of Time"}]}'
+      string: '{"universes":[{"id":27,"title":"The Malazan Empire"}]}'
     http_version: 
   recorded_at: Sun, 17 May 2015 06:01:32 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/universes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e5dc5c2a31eed434ae51fece1baed11f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 438e3534-e05d-4c61-82cc-7d4934153e89
+      X-Runtime:
+      - '0.012593'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Sun, 17 May 2015 06:01:33 GMT
+      Content-Length:
+      - '54'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universes":[{"id":27,"title":"The Malazan Empire"}]}'
+    http_version: 
+  recorded_at: Sun, 17 May 2015 06:01:33 GMT
 - request:
     method: delete
     uri: http://localhost:9292/universes
@@ -125,24 +174,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"defd424597c256f982d9f371187557c3"
+      - W/"e5dc5c2a31eed434ae51fece1baed11f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bf1b3a13-47ed-4bbf-8a26-09b93ccd0a0a
+      - 0c82f719-1522-4795-b25e-69067c2fd5bc
       X-Runtime:
-      - '0.005694'
+      - '0.005896'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 17 May 2015 06:01:32 GMT
+      - Sun, 17 May 2015 06:01:33 GMT
       Content-Length:
-      - '49'
+      - '54'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":26,"title":"Wheel of Time"}]}'
+      string: '{"universes":[{"id":27,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Sun, 17 May 2015 06:01:32 GMT
+  recorded_at: Sun, 17 May 2015 06:01:33 GMT
 recorded_with: VCR 2.9.3
