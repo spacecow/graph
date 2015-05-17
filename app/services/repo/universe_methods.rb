@@ -2,7 +2,7 @@ module Repo
   module UniverseMethods
 
     def all_universes
-      url = URI 'http://localhost:9292/universes'
+      url = URI 'http://localhost:9292/api/universes'
       response = Net::HTTP.get_response url
       body = JSON.parse response.body
       if body.include?('universes')
@@ -17,7 +17,7 @@ module Repo
     end
 
     def save_universe universe
-      url = 'http://localhost:9292/universes'
+      url = 'http://localhost:9292/api/universes'
       uri = URI url
       http = Net::HTTP.new uri.host, uri.port 
       params = universe.instance_values 

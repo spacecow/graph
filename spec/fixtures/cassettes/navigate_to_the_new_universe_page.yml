@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:9292/universes
+    uri: http://localhost:9292/api/universes
     body:
       encoding: US-ASCII
       string: ''
@@ -33,13 +33,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 53e5b3aa-7ebb-4f64-952c-e1a1ca2e9646
+      - bedc2349-2066-401c-aad2-9670b6abb118
       X-Runtime:
-      - '0.003465'
+      - '0.003933'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 17 May 2015 06:01:33 GMT
+      - Sun, 17 May 2015 09:58:55 GMT
       Content-Length:
       - '16'
       Connection:
@@ -48,5 +48,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"universes":[]}'
     http_version: 
-  recorded_at: Sun, 17 May 2015 06:01:33 GMT
+  recorded_at: Sun, 17 May 2015 09:58:55 GMT
 recorded_with: VCR 2.9.3

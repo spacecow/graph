@@ -108,14 +108,14 @@ RSpec.configure do |config|
 end
 
 def create mdl, params
-  url = 'http://localhost:9292/universes'
+  url = 'http://localhost:9292/api/universes'
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port 
   http.post uri, {universe:params}.to_query
 end
 
 def delete mdls
-  url = 'http://localhost:9292/universes'
+  url = 'http://localhost:9292/api/universes'
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port
   request = Net::HTTP::Delete.new uri.path
