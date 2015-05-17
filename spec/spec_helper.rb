@@ -107,17 +107,20 @@ RSpec.configure do |config|
 =end
 end
 
+def token
+  "90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395"
+end
+
 def create mdl, params
-  url = 'http://localhost:9292/api/universes'
+  url = "http://localhost:9292/api/universes?access_token=#{token}"
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port 
   http.post uri, {universe:params}.to_query
 end
 
 def delete mdls
-  url = 'http://localhost:9292/api/universes'
+  url = "http://localhost:9292/api/universes?access_token=#{token}"
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port
-  request = Net::HTTP::Delete.new uri.path
-  http.request(request)
+  http.delete uri
 end
