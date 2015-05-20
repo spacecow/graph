@@ -1,7 +1,7 @@
 require 'view_helper'
 require 'capybara'
 
-describe 'universe/new.html.erb' do
+describe 'universes/_form.html.erb' do
 
   let(:file){ 'universes/_form.html.erb' }
   let(:universe){ double :universe, label:'kuk', text_field:'fitta', submit:'balle' }
@@ -17,8 +17,6 @@ describe 'universe/new.html.erb' do
     @local_bindings = erb_bindings.instance_eval{binding}
   end
 
-  subject(:form){ Capybara.string(rendering).find 'form' }
-
-  it{ rendering }
+  it("renders the form"){ rendering }
 
 end
