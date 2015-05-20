@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'vcr_helper'
 
-describe 'Universe create' do
+describe 'Create universe' do
 
   subject{ page }
 
