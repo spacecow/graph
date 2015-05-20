@@ -4,14 +4,9 @@ describe "UniversesController" do
   let(:controller){ UniversesController.new }
 
   before do
+    require 'controller_helper'
     module UniverseRunners; end unless defined?(UniverseRunners)
-    module ActionController
-      class Base
-        def self.protect_from_forgery s; end
-      end
-    end unless defined?(ActionController)
-    require File.expand_path '../../../app/controllers/application_controller', __FILE__
-    require File.expand_path '../../../app/controllers/universes_controller', __FILE__
+    require './app/controllers/universes_controller'
     @params_defined = false
   end
 

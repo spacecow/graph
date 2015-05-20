@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
+  include ArticleRunners
 
   def new
-    @article = Article.new
+    @article = run(New)
   end
 
 end
