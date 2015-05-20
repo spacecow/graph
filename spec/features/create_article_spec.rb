@@ -7,6 +7,7 @@ describe "Create article" do
   context "creation successful" do
     it "" do
       visit new_article_path
+      fill_in 'Name', with:'Kelsier'
     end
   end
 
