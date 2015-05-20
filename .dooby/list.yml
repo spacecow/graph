@@ -1,3 +1,13 @@
 ---
 b1d194: !ruby/object:Dooby::Task
   todo: add dooby :done
+2a4c6c: !ruby/object:Dooby::Task
+  todo: implement login with credentials to api
+3d6138: !ruby/object:Dooby::Task
+  todo: spec form template for article :done
+8373c6: !ruby/object:Dooby::Task
+  todo: spec article controllers new method :done
+'230149': !ruby/object:Dooby::Task
+  todo: divide controller specs up into separate files :done
+ae1d78: !ruby/object:Dooby::Task
+  todo: test create universe with callback
