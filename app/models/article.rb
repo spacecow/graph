@@ -1,5 +1,5 @@
 class Article
   include ActiveModel::Model
 
-  attr_reader :name
+  attr_accessor :id, :name, :universe_id
 end

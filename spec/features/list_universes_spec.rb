@@ -1,7 +1,8 @@
 require 'rails_helper'
 require 'vcr_helper'
 
-describe 'Universe index' do
+describe 'List universes' do
+
   subject{ page }
 
   it "displays available universes" do

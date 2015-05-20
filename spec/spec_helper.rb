@@ -112,14 +112,16 @@ def token
 end
 
 def create mdl, params
-  url = "http://localhost:9292/api/universes?access_token=#{token}"
+  mdls = mdl.to_s.pluralize
+  url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port 
-  http.post uri, {universe:params}.to_query
+  response = http.post(uri, {mdl => params}.to_query)
+  mdl.to_s.capitalize.constantize.new JSON.parse(response.body)[mdl.to_s]
 end
 
 def delete mdls
-  url = "http://localhost:9292/api/universes?access_token=#{token}"
+  url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port
   http.delete uri
