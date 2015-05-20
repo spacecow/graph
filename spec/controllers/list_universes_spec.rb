@@ -1,44 +1,11 @@
-#require 'rails_helper'
+describe "UniversesController#index" do
 
-describe "UniversesController" do
   let(:controller){ UniversesController.new }
 
   before do
-    require 'controller_helper'
     module UniverseRunners; end unless defined?(UniverseRunners)
+    require 'controller_helper'
     require './app/controllers/universes_controller'
-    @params_defined = false
-  end
-
-  describe "#create" do
-    before do
-      module UniverseRunners
-        class Create; end
-      end unless defined?(UniverseRunners::Create)
-      on = double :on
-      expect(controller).to receive(:run).with(UniverseRunners::Create, :universe){ :universe }
-      controller.class.send(:define_method, :params) do
-      end && @params_defined = true unless controller.class.instance_methods(false).include?(:params)
-      expect(controller).to receive(:params){ {universe: :universe} }
-      controller.create
-    end
-
-    it{ subject }
-  end
-
-  describe "#new" do
-    before do
-      module UniverseRunners
-        class New; end
-      end unless defined?(UniverseRunners::New)
-      expect(controller).to receive(:run).with(UniverseRunners::New){ :universe }
-      controller.new
-    end
-
-    describe "@universe" do
-      subject{ controller.instance_variable_get(:@universe) }
-      it{ is_expected.to be :universe }
-    end
   end
 
   describe "#index" do
@@ -67,5 +34,4 @@ describe "UniversesController" do
   after do
     controller.class.send(:remove_method, :params) if @params_defined
   end
-
 end

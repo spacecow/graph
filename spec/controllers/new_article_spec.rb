@@ -1,4 +1,4 @@
-describe "ArticlesController" do
+describe "ArticlesController#new" do
 
   let(:controller){ ArticlesController.new }
 
