@@ -3,15 +3,13 @@ describe "ArticlesController#new" do
   let(:controller){ ArticlesController.new }
 
   before do
+    stub_const "ArticleRunners::New", Class.new
     require 'controller_helper'
     require './app/controllers/articles_controller'
   end
 
   describe "#new" do
     before do
-      module ArticleRunners
-        class New; end 
-      end unless defined?(ArticleRunners::New)
       expect(controller).to receive(:run).with(ArticleRunners::New){ :article } 
       controller.new
     end

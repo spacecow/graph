@@ -3,7 +3,6 @@ describe "UniversesController#index" do
   let(:controller){ UniversesController.new }
 
   before do
-    module UniverseRunners; end unless defined?(UniverseRunners)
     require 'controller_helper'
     require './app/controllers/universes_controller'
   end
@@ -20,7 +19,7 @@ describe "UniversesController#index" do
       controller.index   
     end
 
-    describe "@universe" do 
+    describe '@universes' do 
       subject{ controller.instance_variable_get(:@universes) }
       it{ is_expected.to be :universes }
     end

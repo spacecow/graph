@@ -2,11 +2,11 @@ class ArticlesController < ApplicationController
   include ArticleRunners
 
   def index
-    @articles = run(Index)
+    @articles = run(ArticleRunners::Index)
   end
 
   def new
-    @article = run(New)
+    @article = run(ArticleRunners::New)
   end
 
 end
