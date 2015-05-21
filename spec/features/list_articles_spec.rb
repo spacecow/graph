@@ -5,8 +5,8 @@ describe 'List articles' do
 
   subject{ page }
 
-  it "displays articles" do
-    VCR.use_cassette('displays_articles') do
+  it "list articles" do
+    VCR.use_cassette('list_articles') do
       universe = create(:universe, title:'The Malazan Empire')
       create :article, name:'Kelsier', universe_id:universe.id
       visit articles_path
