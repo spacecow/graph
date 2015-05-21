@@ -5,7 +5,7 @@ describe 'List universes' do
 
   subject{ page }
 
-  it "displays available universes" do
+  it 'displays available universes' do
     VCR.use_cassette('displays_available_universes') do
       create :universe, title:'The Malazan Empire'
       visit universes_path
@@ -14,7 +14,7 @@ describe 'List universes' do
     end
   end
 
-  it "select a universe" do
+  it 'select a universe' do
     VCR.use_cassette('select_a_universe') do
       create :universe, title:'The Malazan Empire'
       visit universes_path
@@ -23,10 +23,11 @@ describe 'List universes' do
     end
   end
 
-  it "navigate to the new universe page" do
+  it 'navigate to the new universe page' do
     VCR.use_cassette('navigate_to_the_new_universe_page') do
       visit universes_path
       click_link 'New Universe'
+      expect(current_path).to eq new_universe_path
     end
   end
 

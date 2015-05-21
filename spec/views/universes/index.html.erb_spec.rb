@@ -16,24 +16,24 @@ describe 'universes/index.html.erb' do
     @local_bindings = erb_bindings.instance_eval{binding}
   end
 
-  let(:universe){ "<div>The Malazan Empire</div>" }
-  let(:universe2){ "<div>The Wheel of Time</div>" }
+  let(:universe){ '<div>The Malazan Empire</div>' }
+  let(:universe2){ '<div>The Wheel of Time</div>' }
   let(:universes){ [] }
 
-  describe "actions section" do
+  describe 'actions section' do
     subject(:ul){ Capybara.string(rendering).find('ul.actions') }
-    describe "new action" do
+    describe 'new action' do
       subject{ ul.find('li.action.new a') }
-      its(:text){ is_expected.to eq "New Universe" }
-      its([:href]){ should eq "/universes/new" }
+      its(:text){ is_expected.to eq 'New Universe' }
+      its([:href]){ should eq '/universes/new' }
     end
   end
 
-  describe "universes section" do
+  describe 'universes section' do
     subject(:div){ Capybara.string(rendering).find('.universes') }
 
-    context "no universe" do
-      describe "rendered universes" do
+    context 'no universe' do
+      describe 'rendered universes' do
         subject{ div.all 'div' } 
         its(:count){ is_expected.to be 0 }
       end

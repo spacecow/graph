@@ -11,9 +11,11 @@ describe 'articles/index.html.erb' do
 
   let(:filepath){ './app/views/articles/index.html.erb' }
   let(:locals){ {} }
+  let(:articles){ [] }
 
   before do
-    def erb_bindings.render mdl; mdl end
+    def erb_bindings.render a; end
+    def erb_bindings.new_article_path; end
     erb_bindings.instance_variable_set "@articles", articles
   end
 
@@ -21,7 +23,6 @@ describe 'articles/index.html.erb' do
 
   describe 'articles secion' do
     context "no articles" do
-      let(:articles){ [] }
       before{ expect(erb_bindings).not_to receive(:render) }
       it("no article is being rendered"){ subject }
     end
@@ -41,6 +42,16 @@ describe 'articles/index.html.erb' do
         it("two articles are being rendered"){ subject }
       end
     end
-
   end
+
+  describe 'actions section' do
+    subject(:ul){ Capybara.string(rendering).find 'ul.actions' }
+    describe 'new action' do
+      before{ expect(erb_bindings).to receive(:new_article_path){ "path" }}
+      subject{ ul.find 'li.action.new a' }
+      its(:text){ is_expected.to eq 'New Article' }
+      its([:href]){ is_expected.to eq "path" }
+    end
+  end
+
 end

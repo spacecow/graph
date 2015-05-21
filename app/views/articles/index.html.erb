@@ -1,5 +1,11 @@
-<ul class="articles">
+<ul class='articles'>
   <% @articles.each do |article| %>
     <%= render article %>
   <% end %>
 </div>
+
+<ul class='actions'>
+  <li class='action new'>
+    <%= link_to 'New Article', new_article_path %>
+  </li>
+</ul>
