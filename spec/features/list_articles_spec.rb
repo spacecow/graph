@@ -11,6 +11,7 @@ describe 'List articles' do
       create :article, name:'Kelsier', universe_id:universe.id
       visit articles_path
       is_expected.to have_content 'Kelsier'    
+      delete :articles
       delete :universes
     end
   end

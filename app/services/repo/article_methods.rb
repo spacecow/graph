@@ -16,8 +16,16 @@ module Repo
       end
     end
 
-    def new_article
-      Article.new
+    def new_article params={}
+      Article.new params
+    end
+
+    def save_article article
+      url = "http://localhost:9292/api/articles?access_token=#{token}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      params = article.instance_values 
+      http.post uri, {article:params}.to_query
     end
 
   end

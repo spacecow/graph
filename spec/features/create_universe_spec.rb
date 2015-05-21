@@ -3,8 +3,6 @@ require 'vcr_helper'
 
 describe 'Create universe' do
 
-  subject{ page }
-
   context "creation successful" do
     it "" do
       VCR.use_cassette('create_universe') do
@@ -12,7 +10,7 @@ describe 'Create universe' do
         fill_in 'Title', with:'Wheel of Time'
         click_on 'Create'
         expect(current_path).to eq universes_path
-        is_expected.to have_content 'Wheel of Time'
+        expect(page).to have_content 'Wheel of Time'
         delete :universes
       end
     end

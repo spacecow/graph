@@ -9,4 +9,10 @@ class ArticlesController < ApplicationController
     @article = run(ArticleRunners::New)
   end
 
+  def create
+    article = repo.new_article params[:article]
+    repo.save_article article
+    redirect_to articles_path
+  end
+
 end
