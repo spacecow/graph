@@ -1,7 +1,7 @@
 require 'view_helper'
 require 'capybara'
 
-describe 'article/new.html.erb' do
+describe 'articles/new.html.erb' do
 
   let(:rendering){ erb.result local_bindings }
   let(:erb){ ERB.new file }
