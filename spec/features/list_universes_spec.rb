@@ -19,6 +19,7 @@ describe 'List universes' do
       create :universe, title:'The Malazan Empire'
       visit universes_path
       click_link 'The Malazan Empire'
+      expect(find('.selected .title').text).to eq 'The Malazan Empire'
       delete :universes
     end
   end

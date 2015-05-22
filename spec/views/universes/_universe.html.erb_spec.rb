@@ -4,8 +4,8 @@ require 'capybara'
 describe 'universes/_universe.html.erb' do
 
   let(:file){ 'universes/_universe.html.erb' }
-  let(:universe){ double :universe }
-  let(:locals){{ universe:universe }}
+  let(:universe){ double :universe, id:1 }
+  let(:locals){{ universe:universe, selected:true }}
   
   let(:universe_id){ 666 }
 

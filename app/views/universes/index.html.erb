@@ -1,6 +1,7 @@
 <div class='universes'>
   <% @universes.each do |universe| %>
-    <%= render universe %>
+    <%= render universe,
+      selected:@current_universe.to_i == universe.id %>
   <% end %>
 </div>
 
