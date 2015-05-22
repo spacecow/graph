@@ -5,7 +5,8 @@ describe 'universes/_universe.html.erb' do
 
   let(:file){ 'universes/_universe.html.erb' }
   let(:universe){ double :universe, id:1 }
-  let(:locals){{ universe:universe, selected:true }}
+  let(:selected){ true }
+  let(:locals){{ universe:universe, selected:selected }}
   
   let(:universe_id){ 666 }
   let(:presenter){ double :presenter }
@@ -27,6 +28,15 @@ describe 'universes/_universe.html.erb' do
   subject(:div){ Capybara.string(rendering).find '.universe' }
 
   describe "rendered universe" do
+    describe "selected universe" do
+      its([:class]){ is_expected.to include 'selected' } 
+    end
+
+    describe "non-selected universe" do
+      let(:selected){ false }
+      its([:class]){ is_expected.not_to include 'selected' } 
+    end
+
     describe "title" do
       subject(:span){ div.find '.title' }
       its(:text){ is_expected.to include 'The Malazan Empire' }
