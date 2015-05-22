@@ -9,5 +9,21 @@ b1d194: !ruby/object:Dooby::Task
   todo: spec article controllers new method :done
 '230149': !ruby/object:Dooby::Task
   todo: divide controller specs up into separate files :done
+13d6f5: !ruby/object:Dooby::Task
+  todo: be able to delete an article after creation during test
+d150ba: !ruby/object:Dooby::Task
+  todo: list articles within a universe :done
+'743026': !ruby/object:Dooby::Task
+  todo: spec listing of articles in index view :done
+0cba0f: !ruby/object:Dooby::Task
+  todo: spec single article view :done
+0f8bbb: !ruby/object:Dooby::Task
+  todo: spec actions in index view of articles :done
+e4f2fb: !ruby/object:Dooby::Task
+  todo: spec list article controller :done
+b705fa: !ruby/object:Dooby::Task
+  todo: not be able to ask for all articles, but only those in a universe
 ae1d78: !ruby/object:Dooby::Task
   todo: test create universe with callback
+9bae4a: !ruby/object:Dooby::Task
+  todo: create article functionality :doing

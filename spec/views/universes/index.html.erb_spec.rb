@@ -10,7 +10,7 @@ describe 'universes/index.html.erb' do
   let(:erb_bindings){ ErbBinding.new locals }
 
   let(:filepath){ './app/views/universes/index.html.erb' }
-  let(:locals){ {} }
+  let(:locals){ {current_universe:1} }
   let(:universe){ double :universe, id:1 } 
   let(:universe2){ double :universe, id:2 } 
   let(:universes){ [] }
@@ -44,7 +44,7 @@ describe 'universes/index.html.erb' do
     context "one universe" do
       let(:universes){ [universe] }
       describe "rendered universes" do
-        before{ expect(erb_bindings).to receive(:render).once }
+        before{ expect(erb_bindings).to receive(:render).with(universe, selected:true).once }
         it("one universe is being rendered"){ subject }
       end
     end
@@ -52,7 +52,10 @@ describe 'universes/index.html.erb' do
     context "two universes" do
       let(:universes){ [universe, universe2] }
       describe "rendered universes" do
-        before{ expect(erb_bindings).to receive(:render).twice }
+        before do
+          expect(erb_bindings).to receive(:render).with(universe,selected:true).once
+          expect(erb_bindings).to receive(:render).with(universe2,selected:false).once
+        end
         it("two universes is being rendered"){ subject }
       end
     end
