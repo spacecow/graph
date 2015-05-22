@@ -21,7 +21,6 @@ describe 'universes/index.html.erb' do
     def erb_bindings.new_universe_path; "/universes/new" end
   end
 
-
   describe 'actions section' do
     subject(:ul){ Capybara.string(rendering).find('ul.actions') }
     describe 'new action' do

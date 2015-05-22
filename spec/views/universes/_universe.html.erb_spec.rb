@@ -8,6 +8,7 @@ describe 'universes/_universe.html.erb' do
   let(:locals){{ universe:universe, selected:true }}
   
   let(:universe_id){ 666 }
+  let(:presenter){ double :presenter }
 
   before do
     filepath = "./app/views/#{file}"
@@ -17,11 +18,13 @@ describe 'universes/_universe.html.erb' do
     expect(universe).to receive(:title){ "The Malazan Empire" }
     expect(universe).to receive(:id){ universe_id }
     def erb_bindings.universes_path opt; end
+    def erb_bindings.present a; end
     expect(erb_bindings).to receive(:universes_path).with(id:universe_id){ "path" }
+    expect(erb_bindings).to receive(:present).with(universe).and_yield presenter
   end
   let(:rendering){ @erb.result @local_bindings }
 
-  subject(:div){ Capybara.string(rendering).find('.universe') }
+  subject(:div){ Capybara.string(rendering).find '.universe' }
 
   describe "rendered universe" do
     describe "title" do
