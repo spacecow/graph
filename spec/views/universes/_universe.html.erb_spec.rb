@@ -4,8 +4,8 @@ require 'capybara'
 describe 'universes/_universe.html.erb' do
 
   let(:rendering){ erb.result local_bindings }
-  let(:erb){ ERB.new file }
-  let(:file){ File.read filepath }
+  let(:erb){ ERB.new(file) }
+  let(:file){ File.read(filepath).sub(/<%= content_tag/,'<% content_tag') }
   let(:local_bindings){ erb_bindings.instance_eval{binding} }
   let(:erb_bindings){ ErbBinding.new locals }
 
@@ -19,21 +19,20 @@ describe 'universes/_universe.html.erb' do
   before do
     def erb_bindings.universes_path opt; end
     def erb_bindings.present a; end
+    def erb_bindings.content_tag a,b; end
     expect(erb_bindings).to receive(:universes_path).with(id:666){ "path" }
     expect(erb_bindings).to receive(:present).with(universe).and_yield presenter
+    expect(erb_bindings).to receive(:content_tag).
+      with(:div,class:"clazzes").and_yield
     expect(presenter).to receive(:clazz).with(selected){ "clazzes" }
   end
 
-  subject(:div){ Capybara.string(rendering).find 'div' }
+  subject(:div){ Capybara.string(rendering) }
 
   describe "rendered universe" do
-
-    describe "class" do
-      its([:class]){ is_expected.to eq "clazzes" } 
-    end
-
     describe "title" do
       subject(:span){ div.find 'span.title' }
+
       its(:text){ is_expected.to include 'The Malazan Empire' }
 
       describe "link" do
@@ -42,6 +41,6 @@ describe 'universes/_universe.html.erb' do
         its([:href]){ is_expected.to eq "path" }
       end
     end
-
   end
+
 end

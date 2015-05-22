@@ -9,8 +9,6 @@ b1d194: !ruby/object:Dooby::Task
   todo: spec article controllers new method :done
 '230149': !ruby/object:Dooby::Task
   todo: divide controller specs up into separate files :done
-13d6f5: !ruby/object:Dooby::Task
-  todo: be able to delete an article after creation during test
 d150ba: !ruby/object:Dooby::Task
   todo: list articles within a universe :done
 '743026': !ruby/object:Dooby::Task
@@ -25,10 +23,6 @@ b705fa: !ruby/object:Dooby::Task
   todo: not be able to ask for all articles, but only those in a universe
 ae1d78: !ruby/object:Dooby::Task
   todo: test create universe with callback
-92e3b2: !ruby/object:Dooby::Task
-  todo: change current_universe to current_universe_id
-6f6ae5: !ruby/object:Dooby::Task
-  todo: test current_universe_id method's functionality
 6da32c: !ruby/object:Dooby::Task
   todo: pass the universe_id with the creation of article to be able to save
 cb57e4: !ruby/object:Dooby::Task
@@ -37,9 +31,19 @@ f9d685: !ruby/object:Dooby::Task
   todo: add test of selected in individual universe view :done
 7b956d: !ruby/object:Dooby::Task
   todo: create a base presenter
-c30963: !ruby/object:Dooby::Task
-  todo: clean up _universe view spec
 7fae76: !ruby/object:Dooby::Task
   todo: test clazz in unviverse presenter :done
 00d3b0: !ruby/object:Dooby::Task
   todo: add the generation of a selected universe indication to a presenter :done
+4037d6: !ruby/object:Dooby::Task
+  todo: test current_universe_id method's functionality :done
+fd021a: !ruby/object:Dooby::Task
+  todo: change current_universe to current_universe_id :done
+eb9a99: !ruby/object:Dooby::Task
+  todo: clean up _universe view spec :done
+3e87bf: !ruby/object:Dooby::Task
+  todo: replace dummy classes with stub_const in controller specs
+df00c3: !ruby/object:Dooby::Task
+  todo: be able to delete the articles after creation during test
+'444802': !ruby/object:Dooby::Task
+  todo: see if selected class tag can be made prettier (with presenter)
