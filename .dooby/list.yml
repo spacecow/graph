@@ -31,9 +31,15 @@ ae1d78: !ruby/object:Dooby::Task
   todo: test current_universe_id method's functionality
 6da32c: !ruby/object:Dooby::Task
   todo: pass the universe_id with the creation of article to be able to save
-3c734e: !ruby/object:Dooby::Task
-  todo: add the generation of a selected universe indication to a presenter
-3a8d6a: !ruby/object:Dooby::Task
-  todo: add test of selected in individual universe view
 cb57e4: !ruby/object:Dooby::Task
   todo: check if params can be stubbed instead of defined and removed in spec
+f9d685: !ruby/object:Dooby::Task
+  todo: add test of selected in individual universe view :done
+7b956d: !ruby/object:Dooby::Task
+  todo: create a base presenter
+c30963: !ruby/object:Dooby::Task
+  todo: clean up _universe view spec
+7fae76: !ruby/object:Dooby::Task
+  todo: test clazz in unviverse presenter :done
+00d3b0: !ruby/object:Dooby::Task
+  todo: add the generation of a selected universe indication to a presenter :done

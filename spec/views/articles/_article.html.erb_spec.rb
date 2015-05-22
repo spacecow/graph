@@ -11,11 +11,8 @@ describe 'articles/_article.html.erb' do
 
   let(:filepath){ './app/views/articles/_article.html.erb' }
   let(:locals){ {article:article} }
-  let(:article){ double :article }
 
-  before do
-    expect(article).to receive(:name){ 'Kelsier' }
-  end
+  let(:article){ double :article, name:'Kelsier' }
 
   describe 'rendered article' do
     subject(:div){ Capybara.string(rendering).find 'div.article' }
