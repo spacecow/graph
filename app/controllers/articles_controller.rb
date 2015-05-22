@@ -12,7 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = repo.new_article params[:article]
+    restrict_access
+    article = repo.new_article params[:article].merge({universe_id:current_universe_id})
     repo.save_article article
     redirect_to articles_path
   end
