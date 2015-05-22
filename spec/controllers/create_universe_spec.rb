@@ -3,16 +3,13 @@ describe "UniversesController#create" do
   let(:controller){ UniversesController.new }
 
   before do
-    module UniverseRunners; end unless defined?(UniverseRunners)
+    stub_const "UniverseRunners::Create", Class.new
     require 'controller_helper'
     require './app/controllers/universes_controller'
   end
 
   describe "#create" do
     before do
-      module UniverseRunners
-        class Create; end
-      end unless defined?(UniverseRunners::Create)
       on = double :on
       expect(controller).to receive(:run).with(UniverseRunners::Create, :universe){ :universe }
       controller.class.send(:define_method, :params) do
