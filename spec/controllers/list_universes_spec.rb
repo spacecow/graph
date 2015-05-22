@@ -14,7 +14,7 @@ describe "UniversesController#index" do
       controller.class.send(:define_method, :params) do
       end && @params_defined = true unless controller.class.instance_methods(false).include?(:params)
       expect(controller).to receive(:params){ {id: :id} }
-      expect(controller).to receive(:current_universe).with(:id)
+      expect(controller).to receive(:current_universe_id).with(:id)
       controller.index   
     end
 
