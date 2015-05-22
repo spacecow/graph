@@ -7,6 +7,7 @@ describe 'universes/_universe.html.erb' do
   let(:universe){ double :universe, id:1 }
   let(:selected){ true }
   let(:locals){{ universe:universe, selected:selected }}
+  let(:clazzes){ 'universe selected' }
   
   let(:universe_id){ 666 }
   let(:presenter){ double :presenter }
@@ -22,6 +23,7 @@ describe 'universes/_universe.html.erb' do
     def erb_bindings.present a; end
     expect(erb_bindings).to receive(:universes_path).with(id:universe_id){ "path" }
     expect(erb_bindings).to receive(:present).with(universe).and_yield presenter
+    expect(presenter).to receive(:clazz){ clazzes }
   end
   let(:rendering){ @erb.result @local_bindings }
 
@@ -33,7 +35,7 @@ describe 'universes/_universe.html.erb' do
     end
 
     describe "non-selected universe" do
-      let(:selected){ false }
+      let(:clazzes){ 'universe' }
       its([:class]){ is_expected.not_to include 'selected' } 
     end
 

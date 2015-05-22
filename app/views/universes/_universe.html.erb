@@ -1,6 +1,6 @@
 <% present universe do |presenter| %>
 
-<div class="universe <%= selected ? 'selected' : ''%>">
+<div class="<%= presenter.clazz selected %>">
   <span class="title"><%= link_to universe.title, universes_path(id:universe.id) %></span>
 </div>
 
