@@ -25,5 +25,15 @@ b705fa: !ruby/object:Dooby::Task
   todo: not be able to ask for all articles, but only those in a universe
 ae1d78: !ruby/object:Dooby::Task
   todo: test create universe with callback
-9bae4a: !ruby/object:Dooby::Task
-  todo: create article functionality :doing
+92e3b2: !ruby/object:Dooby::Task
+  todo: change current_universe to current_universe_id
+6f6ae5: !ruby/object:Dooby::Task
+  todo: test current_universe_id method's functionality
+6da32c: !ruby/object:Dooby::Task
+  todo: pass the universe_id with the creation of article to be able to save
+3c734e: !ruby/object:Dooby::Task
+  todo: add the generation of a selected universe indication to a presenter
+3a8d6a: !ruby/object:Dooby::Task
+  todo: add test of selected in individual universe view
+cb57e4: !ruby/object:Dooby::Task
+  todo: check if params can be stubbed instead of defined and removed in spec

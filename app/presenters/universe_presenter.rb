@@ -4,7 +4,7 @@ class UniversePresenter
   end
 
   def clazz selected
-    "universe selected"
+    "universe#{selected ? ' selected' : ''}"
   end
 
 end
