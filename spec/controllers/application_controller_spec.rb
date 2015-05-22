@@ -8,8 +8,14 @@ describe "ApplicationController" do
   end
 
   describe "#current_universe_id" do
-    before{ controller.instance_variable_set :@current_universe_id, 666 }
-    subject{ controller.current_universe_id *current_universe_id }
+    let(:function){ controller.current_universe_id *current_universe_id }
+
+    before do
+      def controller.session; end
+      expect(controller).to receive(:session){ {current_universe_id:666} }
+    end
+
+    subject{ function }
 
     context "get the value" do
       let(:current_universe_id){ [] }

@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_universe_id id = nil
-    id.nil? ? @current_universe_id : @current_universe_id = id.to_i
+    if id.nil? 
+      session[:current_universe_id]
+    else
+      session[:current_universe_id] = id.to_i
+    end
   end
   
 end

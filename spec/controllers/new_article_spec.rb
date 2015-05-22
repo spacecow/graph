@@ -10,6 +10,7 @@ describe "ArticlesController#new" do
 
   describe "#new" do
     before do
+      expect(controller).to receive(:restrict_access)
       expect(controller).to receive(:run).with(ArticleRunners::New){ :article } 
       controller.new
     end
