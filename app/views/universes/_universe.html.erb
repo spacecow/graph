@@ -2,7 +2,7 @@
 
 <%= content_tag :div, class:presenter.clazz(selected) do %>
   <span class="title">
-    <%= link_to universe.title, universes_path(id:universe.id) %>
+    <%= link_to universe.title, universe_path(universe.id) %>
   </span>
 <% end %>
 

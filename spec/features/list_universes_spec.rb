@@ -19,10 +19,22 @@ describe 'List universes' do
       create :universe, title:'The Malazan Empire'
       visit universes_path
       click_link 'The Malazan Empire'
+      visit universes_path
       expect(find('.selected .title').text).to eq 'The Malazan Empire'
       delete :universes
     end
   end
+
+  it 'list articles within the universe' do
+    VCR.use_cassette('list_articles_within_the_universe') do
+      create :universe, title:'The Malazan Empire'
+      visit universes_path
+      click_link 'The Malazan Empire'
+      expect(current_path).to eq articles_path
+      delete :universes
+    end
+  end
+
 
   it 'navigate to the new universe page' do
     VCR.use_cassette('navigate_to_the_new_universe_page') do

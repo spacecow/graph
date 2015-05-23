@@ -1,6 +1,11 @@
 class UniversesController < ApplicationController
   include UniverseRunners
 
+  def show
+    current_universe_id params[:id]
+    redirect_to articles_path(article:{universe_id:current_universe_id})
+  end
+
   def index
     @universes = run(UniverseRunners::Index)
     current_universe_id params[:id]

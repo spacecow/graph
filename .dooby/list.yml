@@ -19,12 +19,8 @@ d150ba: !ruby/object:Dooby::Task
   todo: spec actions in index view of articles :done
 e4f2fb: !ruby/object:Dooby::Task
   todo: spec list article controller :done
-b705fa: !ruby/object:Dooby::Task
-  todo: not be able to ask for all articles, but only those in a universe
 ae1d78: !ruby/object:Dooby::Task
   todo: test create universe with callback
-6da32c: !ruby/object:Dooby::Task
-  todo: pass the universe_id with the creation of article to be able to save
 cb57e4: !ruby/object:Dooby::Task
   todo: check if params can be stubbed instead of defined and removed in spec
 f9d685: !ruby/object:Dooby::Task
@@ -41,9 +37,22 @@ fd021a: !ruby/object:Dooby::Task
   todo: change current_universe to current_universe_id :done
 eb9a99: !ruby/object:Dooby::Task
   todo: clean up _universe view spec :done
-3e87bf: !ruby/object:Dooby::Task
-  todo: replace dummy classes with stub_const in controller specs
-df00c3: !ruby/object:Dooby::Task
-  todo: be able to delete the articles after creation during test
-'444802': !ruby/object:Dooby::Task
-  todo: see if selected class tag can be made prettier (with presenter)
+54d071: !ruby/object:Dooby::Task
+  todo: make call to selected class tag prettier with presenter :done
+421b36: !ruby/object:Dooby::Task
+  todo: replace dummy classes with stub_const in controller specs :done
+d8b011: !ruby/object:Dooby::Task
+  todo: find a way to spec session
+55fd97: !ruby/object:Dooby::Task
+  todo: not be able to get to an article page unless a universe has been selected
+    :done
+4bc376: !ruby/object:Dooby::Task
+  todo: pass the universe_id with the creation of article to be able to save :done
+aca2d1: !ruby/object:Dooby::Task
+  todo: spec article_params in the articles controller :done
+160a99: !ruby/object:Dooby::Task
+  todo: create select universe helper in feature specs
+e80838: !ruby/object:Dooby::Task
+  todo: visually mark the selected universe on the index page :done
+904bca: !ruby/object:Dooby::Task
+  todo: post universe_id when getting articles :done

@@ -17,10 +17,10 @@ describe 'universes/_universe.html.erb' do
   let(:presenter){ double :presenter }
 
   before do
-    def erb_bindings.universes_path opt; end
+    def erb_bindings.universe_path a; end
     def erb_bindings.present a; end
     def erb_bindings.content_tag a,b; end
-    expect(erb_bindings).to receive(:universes_path).with(id:666){ "path" }
+    expect(erb_bindings).to receive(:universe_path).with(666){ "path" }
     expect(erb_bindings).to receive(:present).with(universe).and_yield presenter
     expect(erb_bindings).to receive(:content_tag).
       with(:div,class:"clazzes").and_yield
