@@ -21,8 +21,6 @@ e4f2fb: !ruby/object:Dooby::Task
   todo: spec list article controller :done
 ae1d78: !ruby/object:Dooby::Task
   todo: test create universe with callback
-cb57e4: !ruby/object:Dooby::Task
-  todo: check if params can be stubbed instead of defined and removed in spec
 f9d685: !ruby/object:Dooby::Task
   todo: add test of selected in individual universe view :done
 7b956d: !ruby/object:Dooby::Task
@@ -41,8 +39,6 @@ eb9a99: !ruby/object:Dooby::Task
   todo: make call to selected class tag prettier with presenter :done
 421b36: !ruby/object:Dooby::Task
   todo: replace dummy classes with stub_const in controller specs :done
-d8b011: !ruby/object:Dooby::Task
-  todo: find a way to spec session
 55fd97: !ruby/object:Dooby::Task
   todo: not be able to get to an article page unless a universe has been selected
     :done
@@ -56,3 +52,62 @@ e80838: !ruby/object:Dooby::Task
   todo: visually mark the selected universe on the index page :done
 904bca: !ruby/object:Dooby::Task
   todo: post universe_id when getting articles :done
+b0ff60: !ruby/object:Dooby::Task
+  todo: display universe title on universe show page :done
+d0bddc: !ruby/object:Dooby::Task
+  todo: unstub repo for the show universe api call :done
+15e8f8: !ruby/object:Dooby::Task
+  todo: controller spec for universe show method :done
+d79a0c: !ruby/object:Dooby::Task
+  todo: list articles on the universe's show page :done
+15ceb5: !ruby/object:Dooby::Task
+  todo: 'display universe title on article index page through associations #later'
+7cca4c: !ruby/object:Dooby::Task
+  todo: remove selection of current_universe_id in index method :done
+2a092b: !ruby/object:Dooby::Task
+  todo: stub params instead of define and remove it in spec :done
+504cc0: !ruby/object:Dooby::Task
+  todo: return to the universe's show page after creation of article :done
+bca50a: !ruby/object:Dooby::Task
+  todo: disable the articles_path route :done
+bc4b7b: !ruby/object:Dooby::Task
+  todo: add new article action on the universe show page :done
+202f5a: !ruby/object:Dooby::Task
+  todo: always be able to return to the universe list :done
+f2bd25: !ruby/object:Dooby::Task
+  todo: do not hardcode 'Character' into the article_params in the controller :done
+d3efee: !ruby/object:Dooby::Task
+  todo: do not hardcode Character into repo, let the user choose from a select box
+    in the form :done
+e7595d: !ruby/object:Dooby::Task
+  todo: dry error view generation in presenter
+ea45f6: !ruby/object:Dooby::Task
+  todo: spec article form with an error in the view spec :done
+576ad2: !ruby/object:Dooby::Task
+  todo: do not stub error in the repo :done
+7ca5b9: !ruby/object:Dooby::Task
+  todo: previously modified fields should stay as they are if a validation occurs
+    :done
+5a1618: !ruby/object:Dooby::Task
+  todo: add feature test for when creation fails due to uniqueness restriction :done
+'636605': !ruby/object:Dooby::Task
+  todo: do not be able to create a blank universe :done
+9d4136: !ruby/object:Dooby::Task
+  todo: view error for type error :done
+a5b557: !ruby/object:Dooby::Task
+  todo: use factory girl for creation of json :done
+c2b7cb: !ruby/object:Dooby::Task
+  todo: cache article types call
+bd4719: !ruby/object:Dooby::Task
+  todo: get the article types from the api :done
+291c45: !ruby/object:Dooby::Task
+  todo: add permit to article_params in the controller :done
+9d3e03: !ruby/object:Dooby::Task
+  todo: add universe_params in the controller :done
+057b86: !ruby/object:Dooby::Task
+  todo: add feature test for when creation fails due to inclusion restriction, by
+    stubbing available types
+41ca3c: !ruby/object:Dooby::Task
+  todo: list books on the new note page :done
+a6c1ea: !ruby/object:Dooby::Task
+  todo: list the book title in combination with its id on the new note page :done
