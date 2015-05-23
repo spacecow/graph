@@ -2,8 +2,8 @@ require_dependency './app/runners/runner'
 
 module ArticleRunners
   class Index < Runner
-    def run
-      repo.all_articles
+    def run universe_id
+      repo.all_articles universe_id
     end
   end
 

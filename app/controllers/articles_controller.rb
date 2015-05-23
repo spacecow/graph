@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     restrict_access
-    @articles = run(ArticleRunners::Index)
+    @articles = run(ArticleRunners::Index, current_universe_id)
   end
 
   def new

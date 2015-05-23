@@ -11,7 +11,8 @@ describe 'ArticlesController#index' do
   describe '#index' do
     before do
       expect(controller).to receive(:restrict_access)
-      expect(controller).to receive(:run).with(ArticleRunners::Index){ :articles }
+      expect(controller).to receive(:current_universe_id){ :universe_id }
+      expect(controller).to receive(:run).with(ArticleRunners::Index, :universe_id){ :articles }
       controller.index
     end
 
