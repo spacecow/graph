@@ -1,7 +1,6 @@
 while true; do
   bundle exec rspec
     spec
-    --fail-fast
     --format documentation;
   for i in {0..5}; do
     printf \"$i \";
