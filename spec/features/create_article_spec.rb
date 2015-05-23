@@ -15,7 +15,7 @@ describe "Create article" do
         expect(current_path).to eq articles_path
         expect(page).to have_content 'Kelsier' 
         delete :articles
-        delete :universe
+        delete :universes
       end
     end
   end
