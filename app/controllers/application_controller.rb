@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def repo
-    @repo ||= GraphRepository.new
+    @repo ||= Repository.new
   end
 
   def current_universe_id id = nil
