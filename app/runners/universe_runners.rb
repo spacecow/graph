@@ -1,6 +1,13 @@
 require_dependency './app/runners/runner'
 
 module UniverseRunners
+
+  class Show < Runner
+    def run id
+      repo.universe id
+    end
+  end
+
   class Index < Runner
     def run
       repo.all_universes
@@ -21,4 +28,5 @@ module UniverseRunners
       end
     end
   end
+
 end

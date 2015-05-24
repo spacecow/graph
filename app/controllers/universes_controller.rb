@@ -3,7 +3,7 @@ class UniversesController < ApplicationController
 
   def show
     current_universe_id params[:id]
-    redirect_to articles_path(article:{universe_id:current_universe_id})
+    @universe = run(UniverseRunners::Show, params[:id])
   end
 
   def index

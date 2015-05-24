@@ -6,9 +6,10 @@ describe 'articles/new.html.erb' do
   let(:rendering){ erb.result local_bindings }
   let(:erb){ ERB.new file }
   let(:file){ File.read filepath }
-  let(:filepath){ './app/views/articles/new.html.erb' }
   let(:local_bindings){ erb_bindings.instance_eval{binding} }
   let(:erb_bindings){ ErbBinding.new locals }
+
+  let(:filepath){ './app/views/articles/new.html.erb' }
   let(:locals){ {} }
 
   before do

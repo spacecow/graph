@@ -7,31 +7,40 @@ describe 'List universes' do
 
   it 'displays available universes' do
     VCR.use_cassette('displays_available_universes') do
-      create :universe, title:'The Malazan Empire'
-      visit universes_path
-      is_expected.to have_content 'The Malazan Empire'
-      delete :universes
+      begin
+        create :universe, title:'The Malazan Empire'
+        visit universes_path
+        is_expected.to have_content 'The Malazan Empire'
+      ensure
+        delete :universes
+      end
     end
   end
 
   it 'select a universe' do
     VCR.use_cassette('select_a_universe') do
-      create :universe, title:'The Malazan Empire'
-      visit universes_path
-      click_link 'The Malazan Empire'
-      visit universes_path
-      expect(find('.selected .title').text).to eq 'The Malazan Empire'
-      delete :universes
+      begin
+        create :universe, title:'The Malazan Empire'
+        visit universes_path
+        click_link 'The Malazan Empire'
+        visit universes_path
+        expect(find('.selected .title').text).to eq 'The Malazan Empire'
+      ensure
+        delete :universes
+      end
     end
   end
 
   it 'list articles within the universe' do
     VCR.use_cassette('list_articles_within_the_universe') do
-      create :universe, title:'The Malazan Empire'
-      visit universes_path
-      click_link 'The Malazan Empire'
-      expect(current_path).to eq articles_path
-      delete :universes
+      begin
+        universe = create :universe, title:'The Malazan Empire'
+        visit universes_path
+        click_link 'The Malazan Empire'
+        expect(current_path).to eq universe_path(universe.id) 
+      ensure
+        delete :universes
+      end
     end
   end
 
