@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c8a73a5d31ddc185bfe14c7fb368807b"
+      - W/"2f17ca0a7dfb01181c73d46bc131d080"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f61239ec-c2b8-4fa3-a599-20266decfb4f
+      - 756fecb7-f73a-4fe1-9926-e2364599cd3a
       X-Runtime:
-      - '0.004102'
+      - '0.009378'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sat, 23 May 2015 15:35:05 GMT
+      - Sun, 24 May 2015 07:16:43 GMT
       Content-Length:
       - '54'
       Connection:
@@ -48,15 +48,15 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":23823,"title":"The Malazan Empire"}}'
+      string: '{"universe":{"id":29022,"title":"The Malazan Empire"}}'
     http_version: 
-  recorded_at: Sat, 23 May 2015 15:35:05 GMT
+  recorded_at: Sun, 24 May 2015 07:16:43 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: article%5Bname%5D=Kelsier&article%5Buniverse_id%5D=23823
+      string: article%5Bname%5D=Kelsier&article%5Buniverse_id%5D=29022
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -80,17 +80,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"5fd49f4072d34a54655b397d23245193"
+      - W/"ec3c07d8befa68feaea7006085eb3c08"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - dc4f8644-0e09-4da6-b816-955dcd95423a
+      - 0082c932-889b-4b0d-a12e-039dde00c9ea
       X-Runtime:
-      - '0.007715'
+      - '0.013216'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sat, 23 May 2015 15:35:05 GMT
+      - Sun, 24 May 2015 07:16:43 GMT
       Content-Length:
       - '61'
       Connection:
@@ -99,9 +99,9 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"article":{"id":11558,"name":"Kelsier","universe_id":23823}}'
+      string: '{"article":{"id":14163,"name":"Kelsier","universe_id":29022}}'
     http_version: 
-  recorded_at: Sat, 23 May 2015 15:35:05 GMT
+  recorded_at: Sun, 24 May 2015 07:16:43 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -131,29 +131,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"17ca994c3d75fb4cbae62716e174b36e"
+      - W/"8aa27c6fd537dfe59fbbdf1f4e467812"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 77a437a4-262e-4235-890a-684662683c9c
+      - 539c6302-284a-4c14-9b40-a97274235dbd
       X-Runtime:
-      - '0.002277'
+      - '0.008469'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sat, 23 May 2015 15:35:05 GMT
+      - Sun, 24 May 2015 07:16:43 GMT
       Content-Length:
       - '57'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":23823,"title":"The Malazan Empire"}]}'
+      string: '{"universes":[{"id":29022,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Sat, 23 May 2015 15:35:05 GMT
+  recorded_at: Sun, 24 May 2015 07:16:43 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=23823
+    uri: http://localhost:9292/api/universes/29022?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -180,29 +180,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"80857084f4bbb6e0ce0040b69f2da44c"
+      - W/"2f17ca0a7dfb01181c73d46bc131d080"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 63449a41-2d0a-4305-92b1-9b4d6ec5ee95
+      - b3e8a446-00c2-440d-aa8e-e36a20ff53fb
       X-Runtime:
-      - '0.002784'
+      - '0.005129'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sat, 23 May 2015 15:35:05 GMT
+      - Sun, 24 May 2015 07:16:43 GMT
       Content-Length:
-      - '64'
+      - '54'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":11558,"name":"Kelsier","universe_id":23823}]}'
+      string: '{"universe":{"id":29022,"title":"The Malazan Empire"}}'
     http_version: 
-  recorded_at: Sat, 23 May 2015 15:35:05 GMT
+  recorded_at: Sun, 24 May 2015 07:16:43 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=23823
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=29022
     body:
       encoding: US-ASCII
       string: ''
@@ -229,26 +229,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"80857084f4bbb6e0ce0040b69f2da44c"
+      - W/"82cf240d7bddf55307bde63310e7ebe4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 451d75af-81a4-4504-af80-cb95c09be4da
+      - cbbd071c-5db0-4652-96d4-222c129a995c
       X-Runtime:
-      - '0.002321'
+      - '0.006211'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sat, 23 May 2015 15:35:05 GMT
+      - Sun, 24 May 2015 07:16:43 GMT
       Content-Length:
       - '64'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":11558,"name":"Kelsier","universe_id":23823}]}'
+      string: '{"articles":[{"id":14163,"name":"Kelsier","universe_id":29022}]}'
     http_version: 
-  recorded_at: Sat, 23 May 2015 15:35:05 GMT
+  recorded_at: Sun, 24 May 2015 07:16:43 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -280,17 +280,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"80857084f4bbb6e0ce0040b69f2da44c"
+      - W/"82cf240d7bddf55307bde63310e7ebe4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 02292815-42a1-4832-91fd-68ea33071e39
+      - 41382e69-be0a-4f61-9a58-57d9f6a9ce6d
       X-Runtime:
-      - '0.005732'
+      - '0.009025'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sat, 23 May 2015 15:35:05 GMT
+      - Sun, 24 May 2015 07:16:43 GMT
       Content-Length:
       - '64'
       Connection:
@@ -299,9 +299,9 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":11558,"name":"Kelsier","universe_id":23823}]}'
+      string: '{"articles":[{"id":14163,"name":"Kelsier","universe_id":29022}]}'
     http_version: 
-  recorded_at: Sat, 23 May 2015 15:35:05 GMT
+  recorded_at: Sun, 24 May 2015 07:16:43 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -333,17 +333,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"17ca994c3d75fb4cbae62716e174b36e"
+      - W/"8aa27c6fd537dfe59fbbdf1f4e467812"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 97dc38a3-3414-4ec6-9386-5ec83da309c4
+      - 647e02e8-a674-48bb-b287-30b93fd90311
       X-Runtime:
-      - '0.004798'
+      - '0.009291'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sat, 23 May 2015 15:35:05 GMT
+      - Sun, 24 May 2015 07:16:43 GMT
       Content-Length:
       - '57'
       Connection:
@@ -352,7 +352,7 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":23823,"title":"The Malazan Empire"}]}'
+      string: '{"universes":[{"id":29022,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Sat, 23 May 2015 15:35:05 GMT
+  recorded_at: Sun, 24 May 2015 07:16:43 GMT
 recorded_with: VCR 2.9.3

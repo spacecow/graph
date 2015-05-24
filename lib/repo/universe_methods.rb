@@ -6,7 +6,10 @@ module Repo
     end
 
     def universe id
-      Universe.new title:'The Final Empire'
+      url = URI "http://localhost:9292/api/universes/#{id}?access_token=#{token}"
+      response = Net::HTTP.get_response url
+      body = JSON.parse response.body
+      Universe.new body['universe']
     end
 
     def all_universes
