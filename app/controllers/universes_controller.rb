@@ -9,7 +9,6 @@ class UniversesController < ApplicationController
 
   def index
     @universes = run(UniverseRunners::Index)
-    current_universe_id params[:id]
   end
 
   def new

@@ -12,9 +12,6 @@ describe 'UniversesController#index' do
   describe '#index' do
     before do
       expect(controller).to receive(:run).with(UniverseRunners::Index){ :universes }
-      def controller.params; end
-      expect(controller).to receive(:params){ params }
-      expect(controller).to receive(:current_universe_id).with(:id)
       controller.index   
     end
 
