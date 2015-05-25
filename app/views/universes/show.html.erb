@@ -1,3 +1,9 @@
 <div class="universe">
   <h2><%= @universe.title %></h2>
+
+  <ul class='articles'>
+    <% @articles.each do |article| %>
+      <%= render article %>
+    <% end %>
+  </ul>
 </div>

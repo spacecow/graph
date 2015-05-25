@@ -2,7 +2,8 @@ class Universe
   include ActiveModel::Model
 
   attr_accessor :id, :title
-  attr_reader :articles
+
+  def articles; @articles || [] end
 
   def articles= arr
     @articles = arr.map do |params|

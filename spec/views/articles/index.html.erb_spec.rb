@@ -1,7 +1,7 @@
 require 'view_helper'
 require 'capybara'
 
-describe 'articles/index.html.erb' do
+describe "articles/index.html.erb" do
 
   let(:rendering){ erb.result local_bindings }
   let(:erb){ ERB.new file }
@@ -16,7 +16,7 @@ describe 'articles/index.html.erb' do
   before do
     def erb_bindings.render a; end
     def erb_bindings.new_article_path; end
-    erb_bindings.instance_variable_set "@articles", articles
+    erb_bindings.instance_variable_set '@articles', articles
   end
 
   subject{ rendering }
