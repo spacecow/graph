@@ -31,20 +31,19 @@ describe 'universes/index.html.erb' do
   end
 
   describe 'universes section' do
-    subject(:div){ Capybara.string(rendering).find('.universes') }
+    subject{ Capybara.string(rendering).all('ul.universes li') }
 
     context 'no universe' do
       describe 'rendered universes' do
-        before{ expect(erb_bindings).not_to receive(:render) }
-        it("no universe is being rendered"){ subject }
+        its(:count){ is_expected.to be 0 }
       end
     end
 
     context "one universe" do
       let(:universes){ [universe] }
       describe "rendered universes" do
-        before{ expect(erb_bindings).to receive(:render).with(universe, selected:true).once }
-        it("one universe is being rendered"){ subject }
+        before{ expect(erb_bindings).to receive(:render).with(universe, selected:true).once{ "<li></li>" }}
+        its(:count){ is_expected.to be 1 }
       end
     end
 
@@ -52,10 +51,10 @@ describe 'universes/index.html.erb' do
       let(:universes){ [universe, universe2] }
       describe "rendered universes" do
         before do
-          expect(erb_bindings).to receive(:render).with(universe,selected:true).once
-          expect(erb_bindings).to receive(:render).with(universe2,selected:false).once
+          expect(erb_bindings).to receive(:render).with(universe,selected:true).once{ "<li></li>" }
+          expect(erb_bindings).to receive(:render).with(universe2,selected:false).once{ "<li></li>" }
         end
-        it("two universes is being rendered"){ subject }
+        its(:count){ is_expected.to be 2 }
       end
     end
 

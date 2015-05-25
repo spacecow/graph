@@ -15,9 +15,9 @@ describe 'articles/_article.html.erb' do
   let(:article){ double :article, name:'Kelsier' }
 
   describe 'rendered article' do
-    subject(:div){ Capybara.string(rendering).find 'div.article' }
+    subject(:li){ Capybara.string(rendering).find 'li.article' }
     describe 'name' do
-      subject{ div.find '.name' }
+      subject{ li.find '.name' }
       its(:text){ is_expected.to eq 'Kelsier' } 
     end
   end

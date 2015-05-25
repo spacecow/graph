@@ -14,32 +14,31 @@ describe "articles/index.html.erb" do
   let(:articles){ [] }
 
   before do
-    def erb_bindings.render a; end
+    def erb_bindings.render a; "<li></li>" end
     def erb_bindings.new_article_path; end
     erb_bindings.instance_variable_set '@articles', articles
   end
 
-  subject{ rendering }
-
   describe 'articles secion' do
+    subject{ Capybara.string(rendering).all 'ul.articles li' }
+
     context "no articles" do
-      before{ expect(erb_bindings).not_to receive(:render) }
-      it("no article is being rendered"){ subject }
+      describe "rendered universes" do
+        its(:count){ is_expected.to be 0 }
+      end
     end
 
     context "one article" do
       let(:articles){ [:article] }
       describe "rendered universes" do
-        before{ expect(erb_bindings).to receive(:render).once }
-        it("one article is being rendered"){ subject }
+        its(:count){ is_expected.to be 1 }
       end
     end
 
     context "two articles" do
       let(:articles){ [:article1, :article2] }
       describe "rendered universes" do
-        before{ expect(erb_bindings).to receive(:render).twice }
-        it("two articles are being rendered"){ subject }
+        its(:count){ is_expected.to be 2 }
       end
     end
   end

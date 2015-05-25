@@ -23,15 +23,15 @@ describe 'universes/_universe.html.erb' do
     expect(erb_bindings).to receive(:universe_path).with(666){ "path" }
     expect(erb_bindings).to receive(:present).with(universe).and_yield presenter
     expect(erb_bindings).to receive(:content_tag).
-      with(:div,class:"clazzes").and_yield
+      with(:li,class:"clazzes").and_yield
     expect(presenter).to receive(:clazz).with(selected){ "clazzes" }
   end
 
-  subject(:div){ Capybara.string(rendering) }
+  subject(:li){ Capybara.string(rendering) }
 
   describe "rendered universe" do
     describe "title" do
-      subject(:span){ div.find 'span.title' }
+      subject(:span){ li.find 'span.title' }
 
       its(:text){ is_expected.to include 'The Malazan Empire' }
 

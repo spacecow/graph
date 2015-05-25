@@ -1,6 +1,6 @@
 <% present universe do |presenter| %>
 
-<%= content_tag :div, class:presenter.clazz(selected) do %>
+<%= content_tag :li, class:presenter.clazz(selected) do %>
   <span class="title">
     <%= link_to universe.title, universe_path(universe.id) %>
   </span>

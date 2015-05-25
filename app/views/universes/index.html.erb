@@ -1,9 +1,9 @@
-<div class='universes'>
+<ul class='universes'>
   <% @universes.each do |universe| %>
     <%= render universe,
       selected:current_universe_id == universe.id %>
   <% end %>
-</div>
+</ul>
 
 <ul class='actions'>
   <li class='action new'><%= link_to 'New Universe', new_universe_path %></li>
