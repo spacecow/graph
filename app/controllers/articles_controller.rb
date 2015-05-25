@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     restrict_access
     article = repo.new_article article_params
     repo.save_article article
-    redirect_to articles_path
+    redirect_to universe_path(current_universe_id)
   end
 
   private

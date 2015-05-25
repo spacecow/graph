@@ -12,7 +12,7 @@ describe "Create article" do
         visit new_article_path
         fill_in 'Name', with:'Kelsier'
         click_on 'Create'
-        expect(current_path).to eq articles_path
+        expect(current_path).to eq universe_path(universe.id)
         expect(page).to have_content 'Kelsier' 
         delete :articles
         delete :universes
