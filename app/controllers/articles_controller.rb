@@ -1,11 +1,6 @@
 class ArticlesController < ApplicationController
   include ArticleRunners
 
-  def index
-    restrict_access
-    @articles = run(ArticleRunners::Index, current_universe_id)
-  end
-
   def new
     restrict_access
     @article = run(ArticleRunners::New)
