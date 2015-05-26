@@ -8,7 +8,7 @@ describe 'Show universe' do
     VCR.use_cassette("display_universe_with_articles") do
       begin
         universe = create :universe, title:'The Final Empire'
-        create :article, name:'Kelsier', universe_id:universe.id
+        create :article, name:'Kelsier', type:'Character', universe_id:universe.id
         visit universe_path(universe.id)
         expect(current_path).to eq universe_path(universe.id)
         expect(page).to have_content 'The Final Empire'

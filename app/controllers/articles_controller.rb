@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).merge({universe_id:current_universe_id})
+      params.require(:article).merge({universe_id:current_universe_id, type:'Character'})
     end
 
 end
