@@ -18,15 +18,16 @@ describe 'universes/index.html.erb' do
   before do
     erb_bindings.instance_variable_set "@universes", universes
     def erb_bindings.render a, b; end
-    def erb_bindings.new_universe_path; "/universes/new" end
+    def erb_bindings.new_universe_path; end
   end
 
   describe 'actions section' do
     subject(:ul){ Capybara.string(rendering).find('ul.actions') }
+    before{ expect(erb_bindings).to receive(:new_universe_path){ "path" }}
     describe 'new action' do
       subject{ ul.find('li.action.new a') }
       its(:text){ is_expected.to eq 'New Universe' }
-      its([:href]){ should eq '/universes/new' }
+      its([:href]){ should eq 'path' }
     end
   end
 

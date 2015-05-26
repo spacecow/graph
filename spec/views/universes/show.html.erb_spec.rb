@@ -16,6 +16,7 @@ describe "universes/show.html.erb" do
 
   before do
     def erb_bindings.render a; end
+    def erb_bindings.new_article_path; end
     erb_bindings.instance_variable_set "@universe", universe
     erb_bindings.instance_variable_set "@articles", articles
   end
@@ -48,6 +49,16 @@ describe "universes/show.html.erb" do
         before{ expect(erb_bindings).to receive(:render).twice }
         it("two articles are being rendered"){ subject }
       end
+    end
+  end
+
+  describe 'actions section' do
+    subject(:ul){ div.find 'ul.actions' }
+    before{ expect(erb_bindings).to receive(:new_article_path){ "path" }}
+    describe 'new action' do
+      subject{ ul.find('li.action.new a') }
+      its(:text){ is_expected.to eq 'New Article' }
+      its([:href]){ should eq 'path' }
     end
   end
 
