@@ -15,6 +15,7 @@ describe 'articles/_form.htm.erb' do
     def erb_bindings.form_for mdl; yield mdl end
     expect(article).to receive(:label).with(:name)
     expect(article).to receive(:text_field).with(:name)
+    expect(article).to receive(:text_field).with(:type)
     expect(article).to receive(:submit).with("Create")
   end
 

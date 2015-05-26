@@ -17,7 +17,7 @@ describe "ArticlesController" do
       expect(params).to receive(:require).with(:article){ {} }
       expect(controller).to receive(:current_universe_id){ 666 }
     end
-    it{ is_expected.to eq({universe_id:666, type:'Character'}) }
+    it{ is_expected.to eq({universe_id:666}) }
   end
 
   describe "#restrict_access" do
