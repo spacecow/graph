@@ -1,5 +1,4 @@
 require 'view_helper'
-require 'capybara'
 
 describe "universes/show.html.erb" do
 

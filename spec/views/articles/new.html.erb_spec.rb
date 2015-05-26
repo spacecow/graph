@@ -1,5 +1,4 @@
 require 'view_helper'
-require 'capybara'
 
 describe 'articles/new.html.erb' do
 
