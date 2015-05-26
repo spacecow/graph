@@ -12,6 +12,7 @@ describe "Create article" do
           click_link 'The Malazan Empire'
           visit new_article_path
           fill_in 'Name', with:'Kelsier'
+          select 'Character', from:'Type'
           click_on 'Create'
           expect(current_path).to eq universe_path(universe.id)
           expect(page).to have_content 'Kelsier' 

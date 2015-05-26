@@ -1,6 +1,7 @@
 <%= form_for article do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.text_field :type %>
+  <%= f.label :type %>
+  <%= f.select :type, options_for_select(%w(Character)), include_blank:true %>
   <%= f.submit "Create" %>
 <% end %>
