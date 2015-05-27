@@ -33,12 +33,12 @@ describe 'articles/_form.htm.erb' do
   context "name error" do
     let(:errors){ double :errors, empty?:false }
     before do
-      expect(errors).to receive(:get).
-        with(:name){ ["error"] }
+      expect(errors).to receive(:get).with(:name){ ["name error"] }
+      expect(errors).to receive(:get).with(:type){ ["type error"] }
     end
     it "renders the form with errors" do
       expect(Capybara.string(rendering).find('.name .errors').text).
-        to eq 'error'
+        to eq 'name error'
     end
   end
 

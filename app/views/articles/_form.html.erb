@@ -6,7 +6,14 @@
       <span class="errors"><%= article.errors.get(:name).join %></span>
     <% end %>
   </div>
-  <%= f.label :type %>
-  <%= f.select :type, options_for_select(%w(Character),article.type), include_blank:true %>
+
+  <div class="type">
+    <%= f.label :type %>
+    <%= f.select :type, options_for_select(%w(Character),article.type), include_blank:true %>
+    <% unless article.errors.empty? %>
+      <span class="errors"><%= article.errors.get(:type).join %></span>
+    <% end %>
+  </div>
+
   <%= f.submit "Create" %>
 <% end %>
