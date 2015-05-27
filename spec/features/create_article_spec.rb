@@ -28,8 +28,8 @@ describe "Create article" do
   end
 
   context "creation failure" do
-    it "" do
-      VCR.use_cassette('create_article_with_failures') do
+    it "title cannot be blank" do
+      VCR.use_cassette('create_article_with_blank_violation') do
         begin 
           universe = create :universe, title:'The Malazan Empire'
           visit universes_path

@@ -17,11 +17,13 @@ class UniversesController < ApplicationController
 
   def create
     run(UniverseRunners::Create, params[:universe]) do |on|
-      on.success { |universe|
+      on.success do
         redirect_to universes_path
-      } 
-      on.failure { |universe|
-      }
+      end
+      on.failure do |universe|
+        @universe = universe
+        render :new
+      end
     end
   end
 

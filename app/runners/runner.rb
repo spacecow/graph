@@ -18,6 +18,10 @@ class Runner
     callback :success, *args
   end
 
+  def failure *args
+    callback :failure, *args
+  end
+
   def callback name, *args
     @callbacks.call name, *args
     args

@@ -23,8 +23,11 @@ module UniverseRunners
   class Create < Runner
     def run universe_params
       universe = repo.new_universe universe_params
-      if repo.save_universe universe
+      universe = repo.save_universe universe
+      if universe.errors.empty?
         success universe 
+      else
+        failure universe
       end
     end
   end

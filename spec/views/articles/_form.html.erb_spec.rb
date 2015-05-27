@@ -3,13 +3,14 @@ require 'view_helper'
 describe 'articles/_form.htm.erb' do
 
   let(:rendering){ erb.result local_bindings }
-  let(:erb){ ERB.new file.gsub(/<%= form/,"<% form") }
+  let(:erb){ ERB.new file.sub(/<%= form/,"<% form") }
   let(:file){ File.read filepath }
   let(:filepath){ './app/views/articles/_form.html.erb' }
   let(:local_bindings){ erb_bindings.instance_eval{binding} }
   let(:erb_bindings){ ErbBinding.new locals }
+
   let(:locals){ {article:article} }
-  let(:article){ double :article }
+  let(:article){ double :article, errors:errors }
 
   before do
     def erb_bindings.form_for mdl; yield mdl end
@@ -22,7 +23,6 @@ describe 'articles/_form.htm.erb' do
     expect(article).to receive(:type){ :type }
     expect(erb_bindings).to receive(:options_for_select).
       with(['Character'], :type){ :selection }
-    allow(article).to receive(:errors){ errors }
   end
 
   context "no errors" do

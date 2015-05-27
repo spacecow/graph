@@ -32,7 +32,17 @@ module Repo
       uri = URI url
       http = Net::HTTP.new uri.host, uri.port 
       params = universe.instance_values 
-      http.post uri, {universe:params}.to_query
+      response = http.post uri, {universe:params}.to_query
+      body = JSON.parse(response.body)['universe']
+      if response.code == "200"
+        Universe.new body
+      else
+        Universe.new(params).tap do |article|
+          body.each do |key,val|
+            article.errors.add(key, val)
+          end
+        end
+      end
     end
 
   end

@@ -2,20 +2,38 @@ require 'view_helper'
 
 describe 'universes/_form.html.erb' do
 
-  let(:file){ 'universes/_form.html.erb' }
-  let(:universe){ double :universe, label:'kuk', text_field:'fitta', submit:'balle' }
+  let(:rendering){ erb.result local_bindings }
+  let(:erb){ ERB.new file.sub(/<%= form_for/,'<% form_for') }
+  let(:file){ File.read filepath }
+  let(:filepath){ './app/views/universes/_form.html.erb' }
+  let(:local_bindings){ erb_bindings.instance_eval{binding} }
+  let(:erb_bindings){ ErbBinding.new locals }
+
   let(:locals){ {universe:universe} }
-  let(:rendering){ @erb.result @local_bindings }
+  let(:universe){ double :universe, errors:errors }
+
   before do
-    filepath = "./app/views/#{file}"
-    @erb = ERB.new File.read(filepath).sub(/<%= form_for/,'<% form_for')
-    erb_bindings = ErbBinding.new(locals)
-    def erb_bindings.form_for(mdl)
-      "<form>#{yield mdl}</form>"
-    end
-    @local_bindings = erb_bindings.instance_eval{binding}
+    def erb_bindings.form_for mdl; yield mdl end
+    expect(universe).to receive(:label).with(:title)
+    expect(universe).to receive(:text_field).with(:title)
+    expect(universe).to receive(:submit).with("Create")
   end
 
-  it("renders the form"){ rendering }
+  context "no errors" do
+    let(:errors){ [] }
+    it("renders the form"){ rendering }
+  end
+
+  context "duplication error" do
+    let(:errors){ double :errors, empty?:false }
+    before do
+      expect(errors).to receive(:get).
+        with(:title){ ["error"] }
+    end
+    it "renders the form with errors" do
+      expect(Capybara.string(rendering).find('.title .errors').text).
+        to eq 'error'
+    end
+  end
 
 end

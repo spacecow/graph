@@ -9,6 +9,7 @@ describe 'universes/index.html.erb' do
   let(:erb_bindings){ ErbBinding.new locals }
 
   let(:filepath){ './app/views/universes/index.html.erb' }
+
   let(:locals){ {current_universe_id:1} }
   let(:universe){ double :universe, id:1 } 
   let(:universe2){ double :universe, id:2 } 

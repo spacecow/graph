@@ -1,5 +1,10 @@
 <%= form_for universe do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="title">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <% unless universe.errors.empty? %>
+      <span class="errors"><%= universe.errors.get(:title).join %></span>
+    <% end %>
+  </div>
   <%= f.submit "Create" %>
 <% end %>
