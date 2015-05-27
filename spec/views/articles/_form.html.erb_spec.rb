@@ -13,14 +13,15 @@ describe 'articles/_form.htm.erb' do
 
   before do
     def erb_bindings.form_for mdl; yield mdl end
-    def erb_bindings.options_for_select a; end
+    def erb_bindings.options_for_select a, b; end
     expect(article).to receive(:label).with(:name)
     expect(article).to receive(:label).with(:type)
     expect(article).to receive(:text_field).with(:name)
     expect(article).to receive(:select).with(:type, :selection, include_blank:true)
     expect(article).to receive(:submit).with("Create")
+    expect(article).to receive(:type){ :type }
     expect(erb_bindings).to receive(:options_for_select).
-      with(['Character']){ :selection }
+      with(['Character'], :type){ :selection }
     allow(article).to receive(:errors){ errors }
   end
 

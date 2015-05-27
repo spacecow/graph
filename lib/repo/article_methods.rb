@@ -19,7 +19,7 @@ module Repo
       if response.code == "200"
         Article.new body
       else
-        Article.new.tap do |article|
+        Article.new(params).tap do |article|
           body.each do |key,val|
             article.errors.add(key, val)
           end

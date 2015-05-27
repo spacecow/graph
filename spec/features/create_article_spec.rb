@@ -41,7 +41,6 @@ describe "Create article" do
           expect(current_path).to eq articles_path
           expect(page.find(error_field).text).to eq 'cannot be blank'
         ensure
-          delete :articles
           delete :universes
         end
       end
