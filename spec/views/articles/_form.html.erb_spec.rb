@@ -21,8 +21,24 @@ describe 'articles/_form.htm.erb' do
     expect(article).to receive(:submit).with("Create")
     expect(erb_bindings).to receive(:options_for_select).
       with(['Character']){ :selection }
+    allow(article).to receive(:errors){ errors }
   end
 
-  it("renders the form"){ rendering }
+  context "no errors" do
+    let(:errors){ [] }
+    it("renders the form"){ rendering }
+  end
+
+  context "name error" do
+    let(:errors){ double :errors, empty?:false }
+    before do
+      expect(errors).to receive(:get).
+        with(:name){ ["error"] }
+    end
+    it "renders the form with errors" do
+      expect(Capybara.string(rendering).find('.name .errors').text).
+        to eq 'error'
+    end
+  end
 
 end

@@ -9,8 +9,12 @@ class ArticlesController < ApplicationController
   def create
     restrict_access
     article = repo.new_article article_params
-    repo.save_article article
-    redirect_to universe_path(current_universe_id)
+    @article = repo.save_article article
+    if @article.errors.empty?
+      redirect_to universe_path(current_universe_id)
+    else
+      render :new
+    end
   end
 
   private

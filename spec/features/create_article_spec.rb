@@ -3,6 +3,8 @@ require 'vcr_helper'
 
 describe "Create article" do
   
+  let(:error_field){ '.name .errors' }
+
   context "creation successful" do
     it "" do
       VCR.use_cassette('create_article_successfully') do
@@ -11,6 +13,7 @@ describe "Create article" do
           visit universes_path
           click_link 'The Malazan Empire'
           visit new_article_path
+          expect(page).not_to have_selector error_field 
           fill_in 'Name', with:'Kelsier'
           select 'Character', from:'Type'
           click_on 'Create'
@@ -32,11 +35,11 @@ describe "Create article" do
           visit universes_path
           click_link 'The Malazan Empire'
           visit new_article_path
-          fill_in 'Name', with:'Kelsier'
+          fill_in 'Name', with:''
           select 'Character', from:'Type'
           click_on 'Create'
-          expect(current_path).to eq universe_path(universe.id)
-          expect(page).to have_content 'Kelsier' 
+          expect(current_path).to eq articles_path
+          expect(page.find(error_field).text).to eq 'cannot be blank'
         ensure
           delete :articles
           delete :universes

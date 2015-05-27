@@ -1,6 +1,11 @@
 <%= form_for article do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <% unless article.errors.empty? %>
+      <span class="errors"><%= article.errors.get(:name).join %></span>
+    <% end %>
+  </div>
   <%= f.label :type %>
   <%= f.select :type, options_for_select(%w(Character)), include_blank:true %>
   <%= f.submit "Create" %>
