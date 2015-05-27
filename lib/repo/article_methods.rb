@@ -15,9 +15,8 @@ module Repo
       http = Net::HTTP.new uri.host, uri.port 
       params = article.instance_values 
       response = http.post uri, {article:params}.to_query
-      params = JSON.parse(response.body)['article']
       if response.code == "200"
-        Article.new params
+        Article.new JSON.parse(response.body)['article']
       else
         Article.new.tap do |article|
           article.errors.add(:name, 'cannot be blank')
