@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).merge({universe_id:current_universe_id})
+      params.require(:article).permit(:name, :type).merge({universe_id:current_universe_id})
     end
 
 end

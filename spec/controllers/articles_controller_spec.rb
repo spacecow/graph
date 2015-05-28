@@ -1,6 +1,7 @@
 describe "ArticlesController" do
 
   let(:controller){ ArticlesController.new }
+  let(:permitted_params){ %i(name type) }
 
   before do
     stub_const "ArticleRunners", Module.new
@@ -9,12 +10,15 @@ describe "ArticlesController" do
   end
 
   describe "#article_params" do
+    let(:required_params){ double :required_params }
     let(:params){ double :params }
     subject{ controller.send :article_params }
     before do
       def controller.params; end
       expect(controller).to receive(:params){ params }
-      expect(params).to receive(:require).with(:article){ {} }
+      expect(params).to receive(:require).with(:article){ required_params }
+      expect(required_params).to receive(:permit).
+        with(*permitted_params){ {} }
       expect(controller).to receive(:current_universe_id){ 666 }
     end
     it{ is_expected.to eq({universe_id:666}) }
