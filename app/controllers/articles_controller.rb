@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def new
     restrict_access
     @article = run(ArticleRunners::New)
-    @article_types = repo.article_types
+    @article_types = run(ArticleTypeRunners::Index)
   end
 
   def create
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
       end
       on.failure do |article|
         @article = article 
-        @article_types = repo.article_types
+        @article_types = run(ArticleTypeRunners::Index)
         render :new
       end
     end

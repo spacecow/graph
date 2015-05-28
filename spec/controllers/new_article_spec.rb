@@ -1,7 +1,6 @@
 describe "ArticlesController#new" do
 
   let(:controller){ ArticlesController.new }
-  let(:repo){ double :repo }
 
   before do
     stub_const "ArticleRunners::New", Class.new
@@ -13,8 +12,7 @@ describe "ArticlesController#new" do
     before do
       expect(controller).to receive(:restrict_access)
       expect(controller).to receive(:run).with(ArticleRunners::New){ :article } 
-      expect(controller).to receive(:repo){ repo }
-      expect(repo).to receive(:article_types){ :article_types }
+      expect(controller).to receive(:run).with(ArticleTypeRunners::Index){ :article_types } 
       controller.new
     end
 
