@@ -9,7 +9,7 @@
 
   <div class="type">
     <%= f.label :type %>
-    <%= f.select :type, options_for_select(%w(Character), article.type), include_blank:true %>
+    <%= f.select :type, options_for_select(article_types, article.type), include_blank:true %>
     <% unless article.errors.get(:type).empty? %>
       <span class="errors"><%= article.errors.get(:type).join %></span>
     <% end %>

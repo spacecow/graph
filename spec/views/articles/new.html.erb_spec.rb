@@ -13,8 +13,9 @@ describe 'articles/new.html.erb' do
 
   before do
     def erb_bindings.render a, b; end
-    expect(erb_bindings).to receive(:render).with('form', article: :article)
+    expect(erb_bindings).to receive(:render).with('form', article: :article, article_types: :article_types)
     erb_bindings.instance_eval '@article = :article' 
+    erb_bindings.instance_eval '@article_types = :article_types' 
   end
 
   subject(:div){ Capybara.string(rendering).find '.article.new.form' }

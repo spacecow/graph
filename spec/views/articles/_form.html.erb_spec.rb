@@ -9,7 +9,7 @@ describe 'articles/_form.htm.erb' do
   let(:local_bindings){ erb_bindings.instance_eval{binding} }
   let(:erb_bindings){ ErbBinding.new locals }
 
-  let(:locals){ {article:article} }
+  let(:locals){ {article:article, article_types:%w(Character)} }
   let(:article){ double :article, errors:errors }
   let(:errors){ double :errors }
 

@@ -4,16 +4,20 @@ class ArticlesController < ApplicationController
   def new
     restrict_access
     @article = run(ArticleRunners::New)
+    @article_types = repo.article_types
   end
 
   def create
     restrict_access
-    article = repo.new_article article_params
-    @article = repo.save_article article
-    if @article.errors.empty?
-      redirect_to universe_path(current_universe_id)
-    else
-      render :new
+    run(ArticleRunners::Create, article_params) do |on|
+      on.success do
+        redirect_to universe_path(current_universe_id)
+      end
+      on.failure do |article|
+        @article = article 
+        @article_types = repo.article_types
+        render :new
+      end
     end
   end
 
