@@ -23,7 +23,7 @@ describe 'Show universe' do
   it 'navigate to the new article page' do
     VCR.use_cassette('navigate_to_the_new_article_page') do
       begin
-        universe = create :universe, title:'The Final Empire'
+        universe = create :universe
         visit universe_path(universe.id)
         click_link 'New Article'
         expect(current_path).to eq new_article_path

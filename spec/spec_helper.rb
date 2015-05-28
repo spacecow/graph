@@ -111,7 +111,8 @@ def token
   "90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395"
 end
 
-def create mdl, params
+def create mdl, params={}
+  params = FactoryGirl.build(mdl, params).instance_values
   mdls = mdl.to_s.pluralize
   url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
   uri = URI url
