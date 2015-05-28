@@ -16,7 +16,7 @@ class UniversesController < ApplicationController
   end
 
   def create
-    run(UniverseRunners::Create, params[:universe]) do |on|
+    run(UniverseRunners::Create, universe_params) do |on|
       on.success do
         redirect_to universes_path
       end
@@ -26,5 +26,11 @@ class UniversesController < ApplicationController
       end
     end
   end
+
+  private
+
+    def universe_params
+      params.require(:universe).permit(:title)
+    end
 
 end

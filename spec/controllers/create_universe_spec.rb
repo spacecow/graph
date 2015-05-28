@@ -10,9 +10,8 @@ describe "UniversesController#create" do
 
   describe "#create" do
     before do
-      expect(controller).to receive(:run).with(UniverseRunners::Create, :universe)
-      def controller.params; end
-      expect(controller).to receive(:params){ {universe: :universe} }
+      expect(controller).to receive(:run).with(UniverseRunners::Create, :params)
+      expect(controller).to receive(:universe_params){ :params }
       controller.create
     end
 
