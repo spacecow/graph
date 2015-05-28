@@ -33,6 +33,20 @@ describe 'Create universe' do
         end
       end
     end
+
+    it "title cannot be blank" do
+      VCR.use_cassette('create_universe_with_blank_violation') do
+        begin
+          visit new_universe_path 
+          fill_in 'Title', with:''
+          click_on 'Create'
+          expect(current_path).to eq universes_path
+          expect(page.find(error_field).text).to eq 'cannot be blank'
+        ensure
+          delete :universes
+        end
+      end
+    end
   end
 
 end
