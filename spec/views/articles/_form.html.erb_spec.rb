@@ -11,6 +11,7 @@ describe 'articles/_form.htm.erb' do
 
   let(:locals){ {article:article} }
   let(:article){ double :article, errors:errors }
+  let(:errors){ double :errors }
 
   before do
     def erb_bindings.form_for mdl; yield mdl end
@@ -26,19 +27,22 @@ describe 'articles/_form.htm.erb' do
   end
 
   context "no errors" do
-    let(:errors){ [] }
+    before{ expect(errors).to receive(:get).twice{ [] } }
     it("renders the form"){ rendering }
   end
 
-  context "name error" do
-    let(:errors){ double :errors, empty?:false }
+  context "errors" do
     before do
-      expect(errors).to receive(:get).with(:name){ ["name error"] }
-      expect(errors).to receive(:get).with(:type){ ["type error"] }
+      expect(errors).to receive(:get).with(:name).twice{ ["name error"] }
+      expect(errors).to receive(:get).with(:type).twice{ ["type error"] }
     end
-    it "renders the form with errors" do
+    it "renders the form with name errors" do
       expect(Capybara.string(rendering).find('.name .errors').text).
         to eq 'name error'
+    end
+    it "renders the form with type errors" do
+      expect(Capybara.string(rendering).find('.type .errors').text).
+        to eq 'type error'
     end
   end
 

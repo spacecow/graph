@@ -2,15 +2,15 @@
   <div class="name">
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <% unless article.errors.empty? %>
+    <% unless article.errors.get(:name).empty? %>
       <span class="errors"><%= article.errors.get(:name).join %></span>
     <% end %>
   </div>
 
   <div class="type">
     <%= f.label :type %>
-    <%= f.select :type, options_for_select(%w(Character),article.type), include_blank:true %>
-    <% unless article.errors.empty? %>
+    <%= f.select :type, options_for_select(%w(Character), article.type), include_blank:true %>
+    <% unless article.errors.get(:type).empty? %>
       <span class="errors"><%= article.errors.get(:type).join %></span>
     <% end %>
   </div>
