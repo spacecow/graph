@@ -27,7 +27,7 @@ describe 'Create universe' do
           fill_in 'Title', with:'Wheel of Time'
           click_on 'Create'
           expect(current_path).to eq universes_path
-          expect(page.find(error_field).text).to eq 'must be unique'
+          expect(page.find(error_field).text).to eq 'is already taken'
         ensure
           delete :universes
         end
