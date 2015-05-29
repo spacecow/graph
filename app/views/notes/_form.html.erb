@@ -1,10 +1,5 @@
 <%= form_for note do |f| %>
-    <%= f.label :book_id %>
-    <%= f.select :book_id, options_for_select(books) %>
-<% end %>
-
-<% if false %>
-
-, options_for_select(article_types, article.type), include_blank:true %>
-
+  <%= f.label :book_id %>
+  <%= f.select :book_id, options_for_select(books), include_blank:true %>
+  <%= f.submit "Create" %>
 <% end %>

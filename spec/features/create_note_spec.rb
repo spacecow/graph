@@ -14,6 +14,7 @@ describe "Create note" do
           click_link 'The Malazan Empire'
           visit new_note_path
           select 'Cryptonomicon', from:'Book'
+          click_on 'Create'
         ensure
           delete :books
           delete :universes
