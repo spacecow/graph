@@ -50,7 +50,7 @@ describe "Create article" do
   end
 
   context "creation failure" do
-    it "title cannot be blank" do
+    it "type cannot be blank" do
       VCR.use_cassette('create_article_with_blank_type_violation') do
         begin 
           universe = create :universe, title:'The Malazan Empire'
@@ -67,6 +67,6 @@ describe "Create article" do
         end
       end
     end
-  end
 
+  end
 end
