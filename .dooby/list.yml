@@ -111,3 +111,13 @@ bd4719: !ruby/object:Dooby::Task
   todo: list books on the new note page :done
 a6c1ea: !ruby/object:Dooby::Task
   todo: list the book title in combination with its id on the new note page :done
+e71fb8: !ruby/object:Dooby::Task
+  todo: separate factory for character
+356a36: !ruby/object:Dooby::Task
+  todo: fail when creating a note :done
+49231d: !ruby/object:Dooby::Task
+  todo: list tags on note page :done
+00b072: !ruby/object:Dooby::Task
+  todo: display tag when listing notes :done
+743b40: !ruby/object:Dooby::Task
+  todo: link to tags from article show page :doing
