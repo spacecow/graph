@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
   include ArticleRunners
 
+  def show
+    @article = run(ArticleRunners::Show, params[:id])
+    @notes = @article.notes
+  end
+
   def new
     restrict_access
     @article = run(ArticleRunners::New)

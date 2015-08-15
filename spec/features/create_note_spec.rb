@@ -5,7 +5,7 @@ describe "Create note" do
 
   describe "creation successful" do
     
-    it "" do
+    xit "" do
       VCR.use_cassette("create_note_successfully") do
         begin
           universe = create :universe, title:'The Malazan Empire'

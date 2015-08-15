@@ -5,6 +5,9 @@ FactoryGirl.define do
   factory :book do
   end
 
+  factory :note do
+  end
+
   factory :universe do
     title 'factory title'
   end

@@ -4,6 +4,8 @@ class Article
   attr_accessor :id, :name, :type, :universe_id
   attr_reader :universe
 
+  def notes; @notes || [] end
+
   def universe= params
     @universe = case params
     when Hash
@@ -12,6 +14,14 @@ class Article
       end
     when Universe
       params
+    end
+  end
+
+  def notes= arr
+    @notes = arr.map do |params|
+      Note.new(params).tap do |note|
+        note.article = self
+      end
     end
   end
 
