@@ -10,10 +10,11 @@ describe 'Show article' do
         universe_id = universe.id
         article = create :article, name:'Kelsier', universe_id:universe_id, type:'Character'
         article_id = article.id
-        create :note, article_id:article_id
+        create :note, article_id:article_id, text:'a note'
         visit article_path article_id
         expect(current_path).to eq article_path(article_id)
         expect(page).to have_content 'Kelsier'
+        expect(page).to have_content 'a note'
       ensure
         delete :notes
         delete :articles
