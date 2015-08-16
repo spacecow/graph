@@ -1,5 +1,8 @@
 class NotesController < ApplicationController
 
+  def show
+  end
+
   def new
     @note = Note.new
     @books = run(BookRunners::Index, current_universe_id).

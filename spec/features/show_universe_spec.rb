@@ -19,8 +19,8 @@ describe 'Show universe' do
     end
   end
 
-  it 'navigate to the article page' do
-    VCR.use_cassette('navigate_to_the_article_page') do
+  it 'navigate to an article page' do
+    VCR.use_cassette('navigate_to_an_article_page') do
       begin
         universe = create :universe
         article = create :article, name:'Kelsier', universe_id:universe.id

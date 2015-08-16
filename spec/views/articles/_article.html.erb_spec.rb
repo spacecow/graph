@@ -2,16 +2,15 @@ require 'view_helper'
 
 describe 'articles/_article.html.erb' do
   
-  let(:rendering){ erb.result local_bindings }
-  let(:erb){ ERB.new file }
-  let(:file){ File.read filepath }
-  let(:local_bindings){ bind.instance_eval{binding} }
   let(:bind){ ErbBinding.new locals }
-
-  let(:filepath){ './app/views/articles/_article.html.erb' }
-  let(:locals){ {article:article} }
+  let(:local_bindings){ bind.instance_eval{binding} }
+  let(:file){ File.read filepath }
+  let(:erb){ ERB.new file }
+  let(:rendering){ erb.result local_bindings }
 
   let(:article){ double :article }
+  let(:filepath){ './app/views/articles/_article.html.erb' }
+  let(:locals){{ article:article }}
 
   before do
     def bind.article_path id; end
@@ -20,18 +19,16 @@ describe 'articles/_article.html.erb' do
     expect(bind).to receive(:article_path).with(666){ "path" }
   end
 
-  describe 'rendered article' do
-    subject(:li){ Capybara.string(rendering).find 'li.article' }
+  subject(:li){ Capybara.string(rendering).find 'li.article' }
 
-    describe 'name' do
-      subject(:name){ li.find '.name' }
-      its(:text){ is_expected.to include 'Kelsier' } 
+  describe 'name' do
+    subject(:name){ li.find '.name' }
+    its(:text){ is_expected.to include 'Kelsier' } 
 
-      describe "link" do
-        subject(:a){ name.find 'a' }
-        its(:text){ is_expected.to eq 'Kelsier' }
-        its([:href]){ is_expected.to eq "path" }
-      end
+    describe "link" do
+      subject{ name.find 'a' }
+      its(:text){ is_expected.to eq 'Kelsier' }
+      its([:href]){ is_expected.to eq "path" }
     end
   end
 
