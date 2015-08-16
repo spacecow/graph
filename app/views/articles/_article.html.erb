@@ -1,3 +1,5 @@
 <li class='article'>
-  <span class='name'><%= article.name %></span>
+  <span class='name'>
+    <%= link_to article.name, article_path(article.id) %>
+  </span>
 </li>

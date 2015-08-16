@@ -26,16 +26,15 @@ describe 'universes/_universe.html.erb' do
     expect(presenter).to receive(:clazz).with(selected){ "clazzes" }
   end
 
-  subject(:li){ Capybara.string(rendering) }
-
   describe "rendered universe" do
-    describe "title" do
-      subject(:span){ li.find 'span.title' }
+    subject(:li){ Capybara.string(rendering) }
 
+    describe "title" do
+      subject(:title){ li.find '.title' }
       its(:text){ is_expected.to include 'The Malazan Empire' }
 
       describe "link" do
-        subject(:a){ span.find 'a' }
+        subject(:a){ title.find 'a' }
         its(:text){ is_expected.to eq 'The Malazan Empire' }
         its([:href]){ is_expected.to eq "path" }
       end
