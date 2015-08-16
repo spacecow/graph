@@ -16,7 +16,15 @@ module Repo
       params = note.instance_values 
       response = http.post uri, {note:params}.to_query
       body = JSON.parse(response.body)['note']
-      Note.new body
+      if response.code == "200"
+        Note.new body
+      else
+        Note.new(params).tap do |note|
+          body.each do |key,val|
+            note.errors.add(key, val)
+          end
+        end
+      end
     end
 
   end

@@ -12,7 +12,11 @@ module NoteRunners
     def run note_params
       note = repo.new_note note_params
       note = repo.save_note note
-      success note
+      if note.errors.empty?
+        success note
+      else
+        failure note
+      end
     end
   end
 

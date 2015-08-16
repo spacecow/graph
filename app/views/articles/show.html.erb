@@ -9,8 +9,13 @@
 
   <%= form_for @note do |f| %>
     <%= f.hidden_field :article_id %>
-    <%= f.label :text, 'Note' %>
-    <%= f.text_field :text %>
+    <div class="text">
+      <%= f.label :text, 'Note' %>
+      <%= f.text_field :text %>
+      <% unless @note.errors.get(:text).empty? %>
+        <span class="errors"><%= @note.errors.get(:text).join %></span>
+      <% end %>
+    </div>
     <%= f.submit "Create" %>
   <% end %>
 

@@ -11,6 +11,12 @@ class NotesController < ApplicationController
       on.success do |note|
         redirect_to article_path note.article_id
       end
+      on.failure do |note|
+        @article = run(ArticleRunners::Show, note.article_id)
+        @notes = @article.notes
+        @note = note 
+        render 'articles/show' 
+      end
     end
   end
 
