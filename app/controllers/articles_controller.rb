@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   def show
     @article = run(ArticleRunners::Show, params[:id])
     @notes = @article.notes
+    @note = run(NoteRunners::New, article_id:@article.id)
   end
 
   def new

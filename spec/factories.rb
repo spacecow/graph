@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :article do
+    name 'factory name'
+    type 'Character'
   end
 
   factory :book do

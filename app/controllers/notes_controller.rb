@@ -7,7 +7,18 @@ class NotesController < ApplicationController
   end
 
   def create
-    render json:{}
+    run(NoteRunners::Create, note_params) do |on|
+      on.success do |note|
+        redirect_to article_path note.article_id
+      end
+    end
   end
+
+  private
+
+    def note_params
+      params.require(:note).permit(:article_id, :text)
+    end
+
 
 end

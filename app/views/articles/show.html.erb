@@ -7,4 +7,11 @@
     <% end %>
   </ul>
 
+  <%= form_for @note do |f| %>
+    <%= f.hidden_field :article_id %>
+    <%= f.label :text, 'Note' %>
+    <%= f.text_field :text %>
+    <%= f.submit "Create" %>
+  <% end %>
+
 </div>
