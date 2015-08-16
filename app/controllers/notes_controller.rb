@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
 
   def show
+    @mention = Mention.new
   end
 
   def new

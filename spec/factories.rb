@@ -8,6 +8,7 @@ FactoryGirl.define do
   end
 
   factory :note do
+    text 'factory text'
   end
 
   factory :universe do

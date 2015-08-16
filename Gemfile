@@ -26,4 +26,5 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'factory_girl_rails'
+  gem 'launchy'
 end
