@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def show
-    @mention = Mention.new
+    @reference = Reference.new
   end
 
   def new

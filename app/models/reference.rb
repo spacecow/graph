@@ -1,4 +1,4 @@
-class Mention
+class Reference
   include ActiveModel::Model
 
   def image_data= data

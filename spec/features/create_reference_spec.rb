@@ -1,11 +1,11 @@
 require 'rails_helper'
 require 'vcr_helper'
 
-describe "Create mention" do
+describe "Create reference" do
 
   describe "creation successful" do
     it "" do
-      VCR.use_cassette("create_mention_successfully") do
+      VCR.use_cassette("create_reference_successfully") do
         begin
           universe = create :universe
           article = create :article, universe_id:universe.id
