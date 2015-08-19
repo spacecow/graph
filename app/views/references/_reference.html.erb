@@ -1,5 +1,7 @@
+<% present reference do |presenter| %>
+
 <li class='reference'>
-  <span class='url'>
-    <%= link_to reference.url, reference_path(reference.id) %>
-  </span>
+  <span class='url'><%= presenter.url %></span>
 </li>
+
+<% end %>

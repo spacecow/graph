@@ -11,12 +11,12 @@ describe 'references/_reference.html.erb' do
   let(:reference){ double :reference }
   let(:filepath){ './app/views/references/_reference.html.erb' }
   let(:locals){{ reference:reference }}
+  let(:presenter){ double :presenter }
 
   before do
-    def bind.reference_path id; end
-    expect(reference).to receive(:id){ 666 }
-    expect(reference).to receive(:url){ 'www.example.com' }
-    expect(bind).to receive(:reference_path).with(666){ "path" }
+    def bind.present a; end
+    expect(bind).to receive(:present).with(reference).and_yield presenter
+    expect(presenter).to receive(:url){ 'www.example.com' }
   end
 
   subject(:li){ Capybara.string(rendering).find 'li.reference' }
@@ -24,12 +24,6 @@ describe 'references/_reference.html.erb' do
   describe 'url' do
     subject(:url){ li.find '.url' }
     its(:text){ is_expected.to include 'www.example.com' }
-
-    describe "link" do
-      subject{ url.find 'a' }
-      its(:text){ is_expected.to eq 'www.example.com' }
-      its([:href]){ is_expected.to eq "path" }
-    end
   end
 
 end
