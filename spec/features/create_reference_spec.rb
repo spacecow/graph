@@ -11,9 +11,10 @@ describe "Create reference" do
           article = create :article, universe_id:universe.id
           note = create :note, article_id:article.id
           visit note_path note.id
-          attach_file('Image data', Rails.root + 'spec/pear.jpeg')
+          attach_file('Image', Rails.root + 'spec/pear.jpeg')
           click_on 'Create'
         ensure
+          delete :references
           delete :notes
           delete :articles
           delete :universes

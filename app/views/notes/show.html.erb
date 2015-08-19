@@ -1,5 +1,6 @@
 <%= form_for @reference do |f| %>
-  <%= f.label :image_data %>
-  <%= f.file_field :image_data %>
+  <%= f.hidden_field :note_id %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
   <%= f.submit "Create" %>
 <% end %>

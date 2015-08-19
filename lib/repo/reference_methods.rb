@@ -13,9 +13,9 @@ module Repo
       url = "http://localhost:9292/api/references?access_token=#{token}"
       uri = URI url
       http = Net::HTTP.new uri.host, uri.port 
-      params = reference.instance_values 
+      params = Hash[*[:note_id, :image_data].map{|e| [e,reference.send(e)]}.flatten]
       response = http.post uri, {reference:params}.to_query
-      body = JSON.parse(response.body)['note']
+      body = JSON.parse(response.body)['reference']
       Reference.new body
     end
 

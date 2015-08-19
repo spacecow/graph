@@ -11,7 +11,7 @@ class ReferencesController < ApplicationController
   private
 
     def reference_params
-      params.require(:reference).permit(:image_data)
+      params.require(:reference).permit(:note_id, :image)
     end
 
 end
