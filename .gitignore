@@ -8,3 +8,5 @@ config/secrets.yml
 config/database.yml
 /vendor
 *.swp
+
+public/uploads

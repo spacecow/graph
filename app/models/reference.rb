@@ -4,7 +4,7 @@ class Reference
 
   mount_uploader :image, ReferenceUploader
 
-  attr_accessor :id, :note_id
+  attr_accessor :id, :url, :note_id
   attr_writer :image_data
 
   def image_data
