@@ -11,6 +11,9 @@ FactoryGirl.define do
     text 'factory text'
   end
 
+  factory :reference do
+  end
+
   factory :universe do
     title 'factory title'
   end

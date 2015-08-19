@@ -1,6 +1,6 @@
 require 'view_helper'
 
-describe 'articles/_article.html.erb' do
+describe 'notes/_note.html.erb' do
 
   let(:bind){ ErbBinding.new locals }
   let(:local_bindings){ bind.instance_eval{binding} }

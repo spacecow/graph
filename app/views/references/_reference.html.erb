@@ -1,3 +1,5 @@
 <li class='reference'>
-  <span class='url'><%= reference.url %></span>
+  <span class='url'>
+    <%= link_to reference.url, reference_path(reference.id) %>
+  </span>
 </li>

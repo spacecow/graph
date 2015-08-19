@@ -1,14 +1,20 @@
-<ul class='references'>
-  <% @references.each do |reference| %>
-    <%= render reference %>
-  <% end %>
-</ul>
+<div class="note">
 
-<%= form_for @reference do |f| %>
-  <%= f.hidden_field :note_id %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-  <%= f.submit "Create" %>
-<% end %>
+  <h2><%= @note.text %></h2>
+
+  <ul class='references'>
+    <% @references.each do |reference| %>
+      <%= render reference %>
+    <% end %>
+  </ul>
+
+  <%= form_for @reference do |f| %>
+    <%= f.hidden_field :note_id %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+    <%= f.submit "Create" %>
+  <% end %>
+
+</div>

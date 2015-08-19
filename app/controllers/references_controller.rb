@@ -1,5 +1,8 @@
 class ReferencesController < ApplicationController
 
+  def show
+  end
+
   def create
     run(ReferenceRunners::Create, reference_params) do |on|
       on.success do |reference|
