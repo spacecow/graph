@@ -1,7 +1,9 @@
 class NotesController < ApplicationController
 
   def show
-    @reference = run(ReferenceRunners::New, note_id:params[:id])
+    @note = run(NoteRunners::Show, params[:id])
+    @references = @note.references
+    @reference = run(ReferenceRunners::New, note_id:@note.id)
   end
 
   def new

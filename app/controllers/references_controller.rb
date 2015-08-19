@@ -3,7 +3,7 @@ class ReferencesController < ApplicationController
   def create
     run(ReferenceRunners::Create, reference_params) do |on|
       on.success do |reference|
-        redirect_to universes_path #note_path reference.note_id
+        redirect_to note_path(reference.note_id)
       end
     end
   end
@@ -11,7 +11,7 @@ class ReferencesController < ApplicationController
   private
 
     def reference_params
-      params.require(:reference).permit(:note_id, :image)
+      params.require(:reference).permit(:note_id, :image, :url)
     end
 
 end

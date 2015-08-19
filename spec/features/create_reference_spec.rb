@@ -12,7 +12,10 @@ describe "Create reference" do
           note = create :note, article_id:article.id
           visit note_path note.id
           attach_file('Image', Rails.root + 'spec/pear.jpeg')
+          fill_in 'Url', with:'www.example.com'
           click_on 'Create'
+          expect(current_path).to eq note_path(note.id)
+          expect(page).to have_content 'www.example.com' 
         ensure
           delete :references
           delete :notes

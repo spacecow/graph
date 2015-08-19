@@ -1,6 +1,7 @@
 require_dependency './app/runners/runner'
 
 module ArticleRunners
+
   class Show < Runner
     def run id
       repo.article id
@@ -24,4 +25,5 @@ module ArticleRunners
       end
     end
   end
+
 end

@@ -2,6 +2,12 @@ require_dependency './app/runners/runner'
 
 module NoteRunners
 
+  class Show < Runner
+    def run id
+      repo.note id
+    end
+  end
+
   class New < Runner
     def run params
       repo.new_note params

@@ -4,8 +4,18 @@ class Note
   attr_accessor :id, :article_id, :text
   attr_reader :article
 
-  def article= params
-    @article = params
+  def article= article
+    @article = article
+  end
+
+  def references; @references || [] end
+
+  def references= arr
+    @references = arr.map do |params|
+      Reference.new(params).tap do |reference|
+        reference.note = self
+      end
+    end
   end
 
 end

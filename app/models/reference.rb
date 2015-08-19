@@ -7,6 +7,10 @@ class Reference
   attr_accessor :id, :url, :note_id
   attr_writer :image_data
 
+  def note= note 
+    @note = note
+  end
+
   def image_data
     Base64.encode64 image.read
   end
