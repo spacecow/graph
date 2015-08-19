@@ -1,6 +1,7 @@
 class ReferencesController < ApplicationController
 
   def show
+    @reference = run(ReferenceRunners::Show, params[:id])
   end
 
   def create

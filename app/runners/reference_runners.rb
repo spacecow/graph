@@ -2,6 +2,12 @@ require_dependency './app/runners/runner'
 
 module ReferenceRunners
 
+  class Show < Runner
+    def run id
+      repo.reference id
+    end
+  end
+
   class New < Runner
     def run params
       repo.new_reference params

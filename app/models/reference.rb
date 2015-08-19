@@ -12,6 +12,6 @@ class Reference
   end
 
   def image_data
-    Base64.encode64 image.read
+    @image_data || Base64.encode64(image.read || "")
   end
 end
