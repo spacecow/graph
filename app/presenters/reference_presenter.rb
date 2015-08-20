@@ -5,6 +5,10 @@ class ReferencePresenter
     @template = template
   end
 
+  def comment
+    @object.comment
+  end
+
   def url
     url = @object.url
     h.link_to (url.blank? ? 'no url' : url), h.reference_path(@object.id)

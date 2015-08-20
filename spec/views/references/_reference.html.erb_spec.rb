@@ -16,13 +16,19 @@ describe 'references/_reference.html.erb' do
   before do
     def bind.present a; end
     expect(bind).to receive(:present).with(reference).and_yield presenter
+    expect(presenter).to receive(:comment){ 'smart' }
     expect(presenter).to receive(:url){ 'www.example.com' }
   end
 
   subject(:li){ Capybara.string(rendering).find 'li.reference' }
 
+  describe 'comment' do
+    subject{ li.find '.comment' }
+    its(:text){ is_expected.to include 'smart' }
+  end
+
   describe 'url' do
-    subject(:url){ li.find '.url' }
+    subject{ li.find '.url' }
     its(:text){ is_expected.to include 'www.example.com' }
   end
 
