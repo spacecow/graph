@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :universes, only:[:show, :index, :new, :create]
   resources :articles, only:[:show, :new, :create]
   resources :notes, only:[:show, :new, :create]
-  resources :references, only:[:show, :create]
+  resources :references, only:[:show, :create, :edit, :update]
 end

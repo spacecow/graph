@@ -26,6 +26,16 @@ module Repo
       Reference.new body
     end
 
+    def update_reference reference
+      url = "http://localhost:9292/api/references/#{reference.id}?access_token=#{token}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      params = Hash[*[:note_id, :image_data, :url, :comment].map{|e| [e,reference.send(e)]}.flatten]
+      response = http.put uri, {reference:params}.to_query
+      body = JSON.parse(response.body)['reference']
+      Reference.new body
+    end
+
   end
 end
 

@@ -22,4 +22,12 @@ module ReferenceRunners
     end
   end
 
+  class Update < Runner
+    def run id, params 
+      reference = repo.new_reference params.merge({id:id})
+      reference = repo.update_reference reference
+      success reference
+    end
+  end
+
 end
