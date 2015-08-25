@@ -18,4 +18,7 @@ class Note
     end
   end
 
+  def tags= arr
+  end
+
 end

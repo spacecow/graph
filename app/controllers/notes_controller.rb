@@ -4,6 +4,7 @@ class NotesController < ApplicationController
     @note = run(NoteRunners::Show, params[:id])
     @references = @note.references
     @reference = run(ReferenceRunners::New, note_id:@note.id)
+    @tag = run(TagRunners::New, tagable_id:@note.id, tagable_type:"Note")
   end
 
   def new

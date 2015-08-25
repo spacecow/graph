@@ -4,5 +4,6 @@ class Repository
   include Repo::BookMethods
   include Repo::ReferenceMethods
   include Repo::NoteMethods
+  include Repo::TagMethods
   include Repo::UniverseMethods
 end

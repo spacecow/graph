@@ -16,7 +16,16 @@
     <%= f.text_field :comment %>
     <%= f.label :url %>
     <%= f.text_field :url %>
-    <%= f.submit "Create" %>
+    <%= f.submit "Create Reference" %>
   <% end %>
+
+  <%= form_for @tag do |f| %>
+    <%= f.hidden_field :tagable_id %>
+    <%= f.hidden_field :tagable_type %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.submit "Create Tag" %>
+  <% end %>
+
 
 </div>
