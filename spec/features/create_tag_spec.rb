@@ -14,7 +14,7 @@ describe "Create note" do
           fill_in 'Title', with:'TDP'
           click_on 'Create Tag'
           expect(current_path).to eq note_path(note.id)
-          #TODO check tag is listed 
+          expect(page).to have_content 'TDP' 
         ensure
           delete :tags
           delete :notes

@@ -2,6 +2,12 @@
 
   <h2><%= @note.text %></h2>
 
+  <ul class='tags'>
+    <% @tags.each do |tag| %>
+      <%= render tag %>
+    <% end %>
+  </ul>
+
   <ul class='references'>
     <% @references.each do |reference| %>
       <%= render reference %>

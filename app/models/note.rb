@@ -18,7 +18,14 @@ class Note
     end
   end
 
+  def tags; @tags || [] end
+
   def tags= arr
+    @tags = arr.map do |params|
+      Tag.new(params).tap do |tag|
+        tag.tagable = self
+      end
+    end
   end
 
 end

@@ -14,6 +14,10 @@ FactoryGirl.define do
   factory :reference do
   end
 
+  factory :tag do
+    title 'factory title'
+  end
+
   factory :universe do
     title 'factory title'
   end

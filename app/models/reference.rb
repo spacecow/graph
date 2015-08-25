@@ -7,8 +7,9 @@ class Reference
   attr_accessor :id, :url, :note_id, :comment
   attr_writer :image_data
 
+  #TODO replace with writer?
   def note= note 
-    @note = note
+  #  @note = note
   end
 
   def image_data
