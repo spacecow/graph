@@ -7,19 +7,13 @@ describe "Create note" do
     it "" do
       VCR.use_cassette("create_tag_successfully") do
         begin
-          universe = create :universe
-          article = create :article, universe_id:universe.id
-          note = create :note, article_id:article.id
-          visit note_path note.id
+          visit new_tag_path
           fill_in 'Title', with:'TDP'
-          click_on 'Create Tag'
-          expect(current_path).to eq note_path(note.id)
+          click_on 'Create'
+          expect(current_path).to eq tags_path
           expect(page).to have_content 'TDP' 
         ensure
           delete :tags
-          delete :notes
-          delete :articles
-          delete :universes
         end
       end
     end

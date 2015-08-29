@@ -1,9 +1,17 @@
 class TagsController < ApplicationController
 
+  def index
+    @tags = run(TagRunners::Index)
+  end
+
+  def new
+    @tag = run(TagRunners::New)
+  end
+
   def create
     run(TagRunners::Create, tag_params) do |on|
-      on.success do |tag|
-        redirect_to note_path(tag.tagable_id)
+      on.success do
+        redirect_to tags_path
       end
     end
   end

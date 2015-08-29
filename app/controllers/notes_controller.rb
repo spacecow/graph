@@ -5,7 +5,7 @@ class NotesController < ApplicationController
     @references = @note.references
     @tags = @note.tags
     @reference = run(ReferenceRunners::New, note_id:@note.id)
-    @tag = run(TagRunners::New, tagable_id:@note.id, tagable_type:"Note")
+    #@tag = run(TagRunners::New, tagable_id:@note.id, tagable_type:"Note")
   end
 
   def new
