@@ -3,7 +3,7 @@
   <h2><%= @note.text %></h2>
 
   <ul class='tags'>
-    <% @tags.each do |tag| %>
+    <% @note_tags.each do |tag| %>
       <%= render tag %>
     <% end %>
   </ul>
@@ -23,6 +23,14 @@
     <%= f.label :url %>
     <%= f.text_field :url %>
     <%= f.submit "Create Reference" %>
+  <% end %>
+
+  <%= form_for @tagging do |f| %>
+    <%= f.hidden_field :tagable_id %>
+    <%= f.hidden_field :tagable_type %>
+    <%= f.label :tag_id, 'Tags' %>
+    <%= f.collection_select :tag_id, @tags, :id, :title %>
+    <%= f.submit "Create Tagging" %>
   <% end %>
 
 <% if false %>

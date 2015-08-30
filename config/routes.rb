@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :notes, only:[:show, :new, :create]
   resources :references, only:[:show, :create, :edit, :update]
   resources :tags, only:[:index, :new, :create]
+  resources :taggings, only:[:create]
 end
