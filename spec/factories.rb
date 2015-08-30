@@ -18,6 +18,9 @@ FactoryGirl.define do
     title 'factory title'
   end
 
+  factory :tagging do
+  end
+
   factory :universe do
     title 'factory title'
   end

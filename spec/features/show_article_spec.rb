@@ -8,12 +8,17 @@ describe 'Show article' do
       begin
         universe = create :universe, title:'The Final Empire'
         article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
-        create :note, article_id:article.id, text:'a note'
+        note = create :note, article_id:article.id, text:'a note'
+        tag = create :tag, title:'hero'
+        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
         expect(page).to have_content 'Kelsier'
         expect(page).to have_content 'a note'
+        expect(page).to have_content 'hero'
       ensure
+        delete :taggings
+        delete :tags
         delete :notes
         delete :articles
         delete :universes

@@ -14,7 +14,7 @@ describe 'references/_reference.html.erb' do
   let(:presenter){ double :presenter }
 
   before do
-    def bind.present a; end
+    def bind.present mdl; end
     expect(bind).to receive(:present).with(reference).and_yield presenter
     expect(presenter).to receive(:comment){ 'smart' }
     expect(presenter).to receive(:url){ 'www.example.com' }

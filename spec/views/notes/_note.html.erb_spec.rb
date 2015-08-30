@@ -11,12 +11,16 @@ describe 'notes/_note.html.erb' do
   let(:note){ double :note }
   let(:filepath){ './app/views/notes/_note.html.erb' }
   let(:locals){{ note:note }}
+  let(:presenter){ double :presenter }
 
   before do
     def bind.note_path id; end
+    def bind.present mdl; end
+    expect(bind).to receive(:present).with(note).and_yield presenter
     expect(note).to receive(:text){ 'a note' }
     expect(note).to receive(:id){ 666 }
     expect(bind).to receive(:note_path).with(666){ "path" }
+    expect(presenter).to receive(:tags){ 'TDP' }
   end
 
   subject(:li){ Capybara.string(rendering).find 'li.note' }
@@ -30,6 +34,11 @@ describe 'notes/_note.html.erb' do
       its(:text){ is_expected.to eq 'a note' }
       its([:href]){ is_expected.to eq "path" }
     end
+  end
+
+  describe 'tags' do
+    subject{ li.find '.tags' }
+    its(:text){ is_expected.to include 'TDP' }
   end
 
 end

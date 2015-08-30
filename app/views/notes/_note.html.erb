@@ -1,3 +1,8 @@
+<% present note do |presenter| %>
+
 <li class='note'>
   <span class='text'><%= link_to note.text, note_path(note.id) %></span>
+  <span class='tags'><%= presenter.tags %></span>
 </li>
+
+<% end %>
