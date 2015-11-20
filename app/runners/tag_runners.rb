@@ -2,6 +2,12 @@ require_dependency './app/runners/runner'
 
 module TagRunners
 
+  class Show < Runner
+    def run id
+      repo.tag id
+    end
+  end
+
   class Index < Runner
     def run
       repo.tags

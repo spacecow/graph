@@ -1,6 +1,7 @@
 class TagsController < ApplicationController
 
   def show
+    @tag = run(TagRunners::Show, params[:id])
   end
 
   def index
