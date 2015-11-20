@@ -1,26 +1,30 @@
+require 'active_support/core_ext/string/output_safety'
 require './app/presenters/note_presenter'
 
 describe NotePresenter do
 
   let(:note){ double :note }
-  let(:template){ double :template }
-  let(:presenter){ NotePresenter.new note, template }
+  let(:view){ double :view }
+  let(:presenter){ NotePresenter.new note, view }
 
-  let(:tag){ double :tag, title:'TDP' }
-  let(:tag2){ double :tag, title:'bandwidth' }
+  subject{ presenter.send function }
 
   describe "#tags" do
-    subject{ presenter.tags }
+    let(:function){ :tags }
+    let(:tag){ double :tag }
+    let(:tag2){ double :tag }
+    
     before{ expect(note).to receive(:tags){ tags }}
 
-    context "one tag" do
+    context "tag exists" do
       let(:tags){ [tag] }
+      before do
+        expect(view).to receive(:link_to).with(:title, :path){ "TDP" }
+        expect(view).to receive(:tag_path).with(:id){ :path }
+        expect(tag).to receive(:title).with(no_args){ :title }
+        expect(tag).to receive(:id).with(no_args){ :id }
+      end
       it{ is_expected.to eq 'TDP' }
-    end
-
-    context "two tags" do
-      let(:tags){ [tag, tag2] }
-      it{ is_expected.to eq 'TDP, bandwidth' }
     end
 
     context "no tags" do

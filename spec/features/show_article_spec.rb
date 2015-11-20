@@ -3,7 +3,7 @@ require 'vcr_helper'
 
 describe 'Show article' do
 
-  it "displays the article with its notes" do
+  it "displays the article with its notes & tags" do
     VCR.use_cassette("display_article_with_notes") do
       begin
         universe = create :universe, title:'The Final Empire'
@@ -16,6 +16,28 @@ describe 'Show article' do
         expect(page).to have_content 'Kelsier'
         expect(page).to have_content 'a note'
         expect(page).to have_content 'hero'
+      ensure
+        delete :taggings
+        delete :tags
+        delete :notes
+        delete :articles
+        delete :universes
+      end
+    end
+  end
+
+  it "navigate to a tag page" do
+    VCR.use_cassette('navigate_to_a_tag_page') do
+      begin
+        universe = create :universe
+        article = create :article, universe_id:universe.id
+        note = create :note, article_id:article.id
+        tag = create :tag, title:'hero'
+        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
+        visit article_path article.id
+        expect(page).to have_content 'hero'
+        click_link 'hero'
+        expect(current_path).to eq tag_path(tag.id)
       ensure
         delete :taggings
         delete :tags

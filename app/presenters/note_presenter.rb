@@ -6,7 +6,14 @@ class NotePresenter
   end
 
   def tags
-    @object.tags.map(&:title).join(', ')
+    @object.tags.map do |tag|
+      h.link_to tag.title, h.tag_path(tag.id)
+    end.join(', ').html_safe
   end
+
+  #TODO add base presenter
+  private
+
+    def h; @template end
 
 end

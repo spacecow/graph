@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :articles, only:[:show, :new, :create]
   resources :notes, only:[:show, :new, :create]
   resources :references, only:[:show, :create, :edit, :update]
-  resources :tags, only:[:index, :new, :create]
+  resources :tags, only:[:show, :index, :new, :create]
   resources :taggings, only:[:create]
 end
