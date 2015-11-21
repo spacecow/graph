@@ -2,6 +2,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = run(TagRunners::Show, params[:id])
+    @notes = @tag.notes
   end
 
   def index

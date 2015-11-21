@@ -18,19 +18,26 @@ end
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/tags/show.html.erb" }
-  let(:locals){{ tag:tag }}
+  let(:locals){{ tag:tag, notes: :notes }}
 
   let(:tag){ double :tag }
 
   subject(:page){ Capybara.string(rendering).find '.tag' }
 
   before do
-    expect(tag).to receive(:title).with(no_args){ "TDP" }
+    def bind.render obj; end
+    expect(bind).to receive(:render).with(:notes){ "list" }
+    expect(tag).to receive(:title).with(no_args){ "header" }
   end
 
   describe "Tag header" do
     subject{ page.find 'h1' }
-    its(:text){ should eq "TDP" }
+    its(:text){ should eq "header" }
+  end
+
+  describe "Listed notes" do
+    subject{ page.find 'ul' }
+    its(:text){ should include "list" }
   end
 
 end

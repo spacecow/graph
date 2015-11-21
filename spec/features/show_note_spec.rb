@@ -10,7 +10,8 @@ describe 'Show note' do
         article = create :article, universe_id:universe.id
         note = create :note, article_id:article.id, text:'a note'
         create :reference, note_id:note.id, url:'www.example.com'
-        create :tag, tagable_id:note.id, tagable_type:'Note', title:'TDP'
+        tag = create :tag, title:'TDP'
+        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
         visit note_path note.id
         expect(current_path).to eq note_path(note.id)
         expect(page).to have_content 'TDP'
@@ -18,6 +19,8 @@ describe 'Show note' do
         expect(page).to have_content 'www.example.com'
       ensure
         delete :references
+        delete :taggings
+        delete :tags
         delete :notes
         delete :articles
         delete :universes
