@@ -7,6 +7,10 @@ FactoryGirl.define do
   factory :book do
   end
 
+  factory :event do
+    title 'factory title'
+  end
+
   factory :note do
     text 'factory text'
   end

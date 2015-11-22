@@ -1,5 +1,5 @@
-require 'capybara'
 require 'rspec/its'
+require 'capybara'
 
 class ErbBinding2
   def initialize hash
@@ -9,7 +9,7 @@ class ErbBinding2
   end
 end
 
-describe "tags/show.html.erb" do
+describe "events/show.html.erb" do
 
   let(:bind){ ErbBinding2.new locals }
   let(:local_bindings){ bind.instance_eval{binding} }
@@ -17,27 +17,20 @@ describe "tags/show.html.erb" do
   let(:erb){ ERB.new file }
   let(:rendering){ erb.result local_bindings }
 
-  let(:filepath){ "./app/views/tags/show.html.erb" }
-  let(:locals){{ tag:tag, notes: :notes }}
-
-  let(:tag){ double :tag }
-
-  subject(:page){ Capybara.string(rendering).find '.tag' }
+  let(:filepath){ "./app/views/events/show.html.erb" }
+  let(:locals){{ event:event }}
+  let(:event){ double :event }
 
   before do
-    def bind.render obj; end
-    expect(bind).to receive(:render).with(:notes){ "list" }
-    expect(tag).to receive(:title).with(no_args){ "header" }
+    expect(event).to receive(:title).with(no_args){ "header" }
   end
+
+  subject(:page){ Capybara.string(rendering).find '.event' }
 
   describe "Tag header" do
     subject{ page.find 'h1' }
     its(:text){ should eq "header" }
   end
 
-  describe "Listed notes" do
-    subject{ page.find 'ul' }
-    its(:text){ should include "list" }
-  end
-
 end
+
