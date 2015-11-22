@@ -12,5 +12,17 @@ module Repo
       Event.new body['event']
     end
 
+    def new_event params={}; Event.new params end
+
+    def save_event event
+      url = "http://localhost:9292/api/events?access_token=#{token}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      params = event.instance_values 
+      response = http.post uri, {event:params}.to_query
+      body = JSON.parse(response.body)['event']
+      Event.new body
+    end
+
   end
 end

@@ -3,11 +3,12 @@ describe "EventsController" do
   let(:controller){ EventsController.new }
 
   before do
-    stub_const "EventRunners::Show", Class.new
-    stub_const "ApplicationController", Class.new unless defined?(Rails)
+    class ApplicationController
+      def run clazz, hash={}; raise NotImplementedError end
+      def params; raise NotImplementedError end
+    end unless defined?(Rails)
     require './app/controllers/events_controller'
-    def controller.run clazz, hash; end
-    def controller.params; end
+
     allow(controller).to receive(:params){ params }
   end
 
@@ -17,9 +18,55 @@ describe "EventsController" do
     let(:function){ :show }
     let(:params){{ id: :id }}
     before do
-      expect(controller).to receive(:run).with(EventRunners::Show,:id)
+      stub_const "EventRunners::Show", Class.new
+      expect(controller).to receive(:run).with(EventRunners::Show,:id){ :event }
     end
     it{ subject }
+  end
+
+  describe "#new" do
+    let(:function){ :new }
+    before do
+      stub_const "EventRunners::New", Class.new
+      expect(controller).to receive(:run).with(EventRunners::New){ :event }
+    end
+    it{ subject }
+  end
+
+  describe "#create" do
+    let(:function){ :create }
+
+    before do
+      def controller.current_universe_id; raise NotImplementedError end
+      def controller.redirect_to id; raise NotImplementedError end
+      expect(controller).to receive(:current_universe_id).with(no_args){ universe_id }
+      expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+    end
+
+    context "Universe is not set" do
+      let(:universe_id){ nil }
+      before do
+        def controller.universes_path; raise NotImplementedError end
+        expect(controller).to receive(:universes_path).with(no_args){ :path }
+      end
+      it{ should be :redirect }
+    end
+
+    context "Universe is set" do
+      let(:universe_id){ :universe_id }
+      let(:runner){ double :runner }
+      let(:event){ double :event }
+      before do
+        stub_const "EventRunners::Create", Class.new
+        def controller.event_path id; raise NotImplementedError end
+        expect(controller).to receive(:event_params).with(no_args){ :params }
+        expect(controller).to receive(:run).with(EventRunners::Create, :params).and_yield(runner)
+        expect(controller).to receive(:event_path).with(:id){ :path }
+        expect(runner).to receive(:success).with(no_args).and_yield(event)
+        expect(event).to receive(:id).with(no_args){ :id }
+      end
+      it{ should eq :redirect }
+    end
   end
 
 end

@@ -1,7 +1,7 @@
 class Event
   include ActiveModel::Model
 
-  attr_accessor :id, :title
-  attr_writer :universe_id, :parent_id
+  attr_accessor :id, :title, :universe_id
+  attr_writer :parent_id
 
 end

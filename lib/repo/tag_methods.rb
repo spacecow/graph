@@ -19,9 +19,7 @@ module Repo
       body['tags'].map{|tag| Tag.new tag}
     end
 
-    def new_tag params
-      Tag.new params
-    end
+    def new_tag params; Tag.new params end
 
     def save_tag tag
       url = "http://localhost:9292/api/tags?access_token=#{token}"

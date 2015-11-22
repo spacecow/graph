@@ -8,4 +8,20 @@ module EventRunners
     end
   end
 
+  class New < Runner
+    def run
+      repo.new_event
+    end
+  end
+
+  class Create < Runner
+    def run params 
+      event = repo.new_event params
+      event = repo.save_event event
+      success event
+    end
+  end
+
+
+
 end
