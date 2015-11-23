@@ -18,7 +18,7 @@ describe "events/new.html.erb" do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/events/new.html.erb" }
-  let(:locals){{ event: :event }}
+  let(:locals){{ event: :event, events: :events }}
   let(:builder){ double :builder }
 
   before do
@@ -26,6 +26,9 @@ describe "events/new.html.erb" do
     expect(bind).to receive(:form_for).with(:event).and_yield builder
     expect(builder).to receive(:label).with(:title){ "label_title" }
     expect(builder).to receive(:text_field).with(:title){ "text_field_title" }
+    expect(builder).to receive(:label).with(:parent_id){ "label_parent" }
+    expect(builder).to receive(:collection_select).
+      with(:parent_id, :events, :id, :title){ "select_parent" }
     expect(builder).to receive(:submit).with(no_args){ "submit" }
   end
 
@@ -39,6 +42,11 @@ describe "events/new.html.erb" do
   describe "Form title" do
     subject{ page.find 'div.title' }
     its(:text){ should match /label_title\s*text_field_title/m }
+  end
+
+  describe "Form parent" do
+    subject{ page.find 'div.parent' }
+    its(:text){ should match /label_parent\s*select_parent/m }
   end
 
 end

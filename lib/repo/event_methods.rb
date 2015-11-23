@@ -14,6 +14,13 @@ module Repo
 
     def new_event params={}; Event.new params end
 
+    def events 
+      url = URI "http://localhost:9292/api/events?access_token=#{token}"
+      response = Net::HTTP.get_response url
+      body = JSON.parse response.body
+      body['events'].map{|event| Event.new event}
+    end
+
     def save_event event
       url = "http://localhost:9292/api/events?access_token=#{token}"
       uri = URI url

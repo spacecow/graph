@@ -7,6 +7,7 @@ class ErbBinding2
       instance_variable_set '@' + key.to_s, value
     end 
   end
+  def present obj; raise NotImplementedError end
 end
 
 describe "events/show.html.erb" do
@@ -20,8 +21,11 @@ describe "events/show.html.erb" do
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event }}
   let(:event){ double :event }
+  let(:presenter){ double :presenter }
 
   before do
+    expect(bind).to receive(:present).with(event).and_yield(presenter)
+    expect(presenter).to receive(:parent).with(no_args){ "parent" }
     expect(event).to receive(:title).with(no_args){ "header" }
   end
 
@@ -30,6 +34,11 @@ describe "events/show.html.erb" do
   describe "Tag header" do
     subject{ page.find 'h1' }
     its(:text){ should eq "header" }
+  end
+
+  describe "Parent section" do
+    subject{ page.find '.parent' }
+    its(:text){ should eq "parent" }
   end
 
 end

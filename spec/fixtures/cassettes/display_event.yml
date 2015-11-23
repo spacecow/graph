@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"37e67ebb318cdcffbcd014433a78065f"
+      - W/"6cd605d4d58f8bd21103742d3a2155de"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 89694b54-6661-4ba8-a690-d78b5883af77
+      - af59a136-e91f-492e-a037-751432734c5b
       X-Runtime:
-      - '0.004276'
+      - '0.003874'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 22 Nov 2015 01:13:28 GMT
+      - Mon, 23 Nov 2015 03:03:47 GMT
       Content-Length:
       - '48'
       Connection:
@@ -48,15 +48,15 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":2410,"title":"factory title"}}'
+      string: '{"universe":{"id":4084,"title":"factory title"}}'
     http_version: 
-  recorded_at: Sun, 22 Nov 2015 01:13:28 GMT
+  recorded_at: Mon, 23 Nov 2015 03:03:47 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: event%5Btitle%5D=Red+wedding&event%5Buniverse_id%5D=2410
+      string: event%5Btitle%5D=Green+wedding&event%5Buniverse_id%5D=4084
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -80,17 +80,68 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b7a2f0a2bcafe70a26ab7bbdb6774c02"
+      - W/"7e29fafef0f45a9d0753c9fc1c96a6a3"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3d9d7511-6387-4f3a-8745-05a76079d36f
+      - b1f1b394-e36f-45ce-a514-88b0f13208ab
       X-Runtime:
-      - '0.006388'
+      - '0.005081'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 22 Nov 2015 01:13:28 GMT
+      - Mon, 23 Nov 2015 03:03:47 GMT
+      Content-Length:
+      - '62'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2668,"parent_id":null,"title":"Green wedding"}}'
+    http_version: 
+  recorded_at: Mon, 23 Nov 2015 03:03:47 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: event%5Bparent_id%5D=2668&event%5Btitle%5D=Red+wedding&event%5Buniverse_id%5D=4084
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b2a4dc2d127d1050bcb3d0e751079ab5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - aa118498-b62d-4655-b2c0-cd61308d32f4
+      X-Runtime:
+      - '0.005609'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Mon, 23 Nov 2015 03:03:47 GMT
       Content-Length:
       - '60'
       Connection:
@@ -99,12 +150,12 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":1013,"parent_id":null,"title":"Red wedding"}}'
+      string: '{"event":{"id":2669,"parent_id":2668,"title":"Red wedding"}}'
     http_version: 
-  recorded_at: Sun, 22 Nov 2015 01:13:28 GMT
+  recorded_at: Mon, 23 Nov 2015 03:03:47 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events/1013?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/events/2669?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -131,26 +182,27 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d55188558c5b24a3977691a927bbe783"
+      - W/"25da1a621050a5f3eb2f6667f653cfce"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ef52b3d1-a318-426c-98b8-047d7159fbec
+      - 3905a05b-49a6-48a6-a595-c41695445225
       X-Runtime:
-      - '0.003408'
+      - '0.003005'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 22 Nov 2015 01:13:28 GMT
+      - Mon, 23 Nov 2015 03:03:47 GMT
       Content-Length:
-      - '43'
+      - '88'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"event":{"id":1013,"title":"Red wedding"}}'
+      string: '{"event":{"id":2669,"title":"Red wedding","parent":{"id":2668,"title":"Green
+        wedding"}}}'
     http_version: 
-  recorded_at: Sun, 22 Nov 2015 01:13:28 GMT
+  recorded_at: Mon, 23 Nov 2015 03:03:47 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -182,29 +234,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"eb0e15010f0184961eeda461a05272a7"
+      - W/"f3e70a9b68b912a399a8a52154fe8a8a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b1c847ff-edc0-4322-a764-e5bd70de9975
+      - 5558ec10-0913-41a1-b536-46f4fd7373f2
       X-Runtime:
-      - '0.005282'
+      - '0.002418'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 22 Nov 2015 01:13:28 GMT
+      - Mon, 23 Nov 2015 03:03:47 GMT
       Content-Length:
-      - '162'
+      - '12'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"events":[{"id":1013,"universe_id":2410,"parent_id":null,"title":"Red
-        wedding","created_at":"2015-11-22T01:13:28.709Z","updated_at":"2015-11-22T01:13:28.709Z"}]}'
+      string: '{"events":2}'
     http_version: 
-  recorded_at: Sun, 22 Nov 2015 01:13:28 GMT
+  recorded_at: Mon, 23 Nov 2015 03:03:47 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -236,17 +287,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"376a0536b32c1bf1c34b78280e19aee8"
+      - W/"f6e0fb12806a6f9d6e36d163a7f45e1b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 50512db7-3316-4590-9de7-f6a5525a12ba
+      - 332676b8-8232-4149-8381-89e556e76d81
       X-Runtime:
-      - '0.004955'
+      - '0.003641'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 22 Nov 2015 01:13:28 GMT
+      - Mon, 23 Nov 2015 03:03:47 GMT
       Content-Length:
       - '51'
       Connection:
@@ -255,7 +306,7 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":2410,"title":"factory title"}]}'
+      string: '{"universes":[{"id":4084,"title":"factory title"}]}'
     http_version: 
-  recorded_at: Sun, 22 Nov 2015 01:13:28 GMT
+  recorded_at: Mon, 23 Nov 2015 03:03:47 GMT
 recorded_with: VCR 2.9.3

@@ -1,3 +1,9 @@
+<% present @event do |presenter| %>
+
 <div class="event">
   <h1><%= @event.title %></h1>
+
+  <span class="parent"><%= presenter.parent %></span>
 </div>
+
+<% end %>

@@ -8,6 +8,12 @@ module EventRunners
     end
   end
 
+  class Index < Runner
+    def run
+      repo.events
+    end
+  end
+
   class New < Runner
     def run
       repo.new_event

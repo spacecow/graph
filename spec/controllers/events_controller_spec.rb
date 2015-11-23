@@ -28,7 +28,9 @@ describe "EventsController" do
     let(:function){ :new }
     before do
       stub_const "EventRunners::New", Class.new
+      stub_const "EventRunners::Index", Class.new
       expect(controller).to receive(:run).with(EventRunners::New){ :event }
+      expect(controller).to receive(:run).with(EventRunners::Index){ :events }
     end
     it{ subject }
   end

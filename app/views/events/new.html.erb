@@ -7,6 +7,10 @@
       <%= f.label :title %>
       <%= f.text_field :title %>
     </div>
+    <div class="parent">
+      <%= f.label :parent_id %>
+      <%= f.collection_select :parent_id, @events, :id, :title %>
+    </div>
     <%= f.submit %>
   <% end %>
 
