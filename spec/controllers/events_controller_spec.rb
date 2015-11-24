@@ -4,7 +4,7 @@ describe "EventsController" do
 
   before do
     class ApplicationController
-      def run clazz, hash={}; raise NotImplementedError end
+      def run clazz, *opts; raise NotImplementedError end
       def params; raise NotImplementedError end
     end unless defined?(Rails)
     require './app/controllers/events_controller'
@@ -17,22 +17,16 @@ describe "EventsController" do
   describe "#show" do
     let(:function){ :show }
     let(:params){{ id: :id }}
-    let(:event){ double :event, id: :event_id }
-    let(:participant){ double :participant, id: :article_id }
-    let(:article){ double :article, id: :article_id }
+    let(:runner){ double :runner }
     before do
       stub_const "EventRunners::Show", Class.new
-      stub_const "ArticleRunners::Index", Class.new
-      stub_const "ParticipationRunners::New", Class.new
       def controller.current_universe_id; end
-      expect(controller).to receive(:run).with(EventRunners::Show,:id){ event }
       expect(controller).to receive(:run).
-        with(ArticleRunners::Index, universe_id: :universe_id){ [article] }
-      expect(controller).to receive(:run).
-        with(ParticipationRunners::New, event_id: :event_id){ :participation }
+        with(EventRunners::Show, :id, universe_id: :universe_id).and_yield(runner)
+      expect(runner).to receive(:success).
+        with(no_args).and_yield(:event,:articles,:participation)
       expect(controller).to receive(:current_universe_id).
         with(no_args).at_least(1){ :universe_id }
-      expect(event).to receive(:participants).with(no_args){ [participant] }
     end
     it{ subject }
   end

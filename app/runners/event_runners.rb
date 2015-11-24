@@ -3,8 +3,12 @@ require_dependency './app/runners/runner'
 module EventRunners
 
   class Show < Runner
-    def run id
-      repo.event id
+    def run id, universe_id:
+      event = repo.event id
+      articles = repo.articles(universe_id:universe_id).
+        reject{|e| event.participant_ids.include? e.id}
+      participation = repo.new_participation event_id:event.id 
+      success event, articles, participation
     end
   end
 

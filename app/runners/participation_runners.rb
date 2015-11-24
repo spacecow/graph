@@ -2,12 +2,6 @@ require_dependency './app/runners/runner'
 
 module ParticipationRunners
 
-  class New < Runner
-    def run params
-      repo.new_participation params
-    end
-  end
-
   class Create < Runner
     def run params
       participation = repo.new_participation params

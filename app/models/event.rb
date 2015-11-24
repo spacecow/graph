@@ -14,4 +14,6 @@ class Event
     end
   end
 
+  def participant_ids; participants.map(&:id) end
+
 end
