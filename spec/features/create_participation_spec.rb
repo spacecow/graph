@@ -16,7 +16,7 @@ describe "Create participation" do
           select "Ethenielle", from:"Participant"
           click_button "Add"
           expect(current_path).to eq event_path(event.id) 
-          #TODO check that the participant shows up
+          expect(page).to have_content 'Ethenielle'
         ensure
           delete :participations
           delete :articles

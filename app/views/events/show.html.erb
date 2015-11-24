@@ -5,7 +5,10 @@
 
   <span class="parent"><%= presenter.parent %></span>
 
-  <ul class="participations"><%= render @event.participants %></ul>
+  <div class="participant list">
+    <h2>Participants</h2>
+    <ul class="participant"><%= render @event.participants %></ul>
+  </div>
 </div>
 
 <div class="participation new form">

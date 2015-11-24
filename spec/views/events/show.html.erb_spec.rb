@@ -26,26 +26,42 @@ describe "events/show.html.erb" do
 
   before do
     expect(bind).to receive(:present).with(event).and_yield(presenter)
-    expect(bind).to receive(:render).with(:participants){ :participations }
+    expect(bind).to receive(:render).with(:participants){ :render_participants }
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).
-      and_return(:participations)
+      and_return(:participation_form)
     expect(presenter).to receive(:parent).with(no_args){ "parent" }
     expect(event).to receive(:title).with(no_args){ "header" }
     expect(event).to receive(:participants).with(no_args){ :participants }
   end
 
-  subject(:page){ Capybara.string(rendering).find '.event' }
+  subject(:page){ Capybara.string(rendering) }
 
   describe "Tag header" do
-    subject{ page.find 'h1' }
+    subject{ page.find '.event h1' }
     its(:text){ should eq "header" }
   end
 
   describe "Parent section" do
-    subject{ page.find '.parent' }
+    subject{ page.find '.event .parent' }
     its(:text){ should eq "parent" }
   end
 
-end
+  describe "Participant section" do
+    subject(:div){ page.find '.event .participant.list' }
+    describe "Participant header" do
+      subject{ div.find 'h2' }
+      its(:text){ should eq "Participants" }
+    end
+    describe "Participant list" do
+      subject{ div.find 'ul.participant' }
+      its(:text){ should eq "render_participants" }
+    end
+  end
 
+  describe "Participation form" do
+    subject{ page.find '.participation.new.form' }
+    its(:text){ should include "participation_form" }
+  end
+
+end
