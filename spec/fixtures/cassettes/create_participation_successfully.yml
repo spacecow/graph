@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: universe%5Btitle%5D=Game+of+Thrones
+      string: universe%5Btitle%5D=The+Path+of+Daggers
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -29,28 +29,124 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9ee9bbc1a3920c6eb5e4662e9dbe5519"
+      - W/"5029b3e2f33874c049a0fe8a92c64177"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 493892df-4fc2-4acd-941e-f72748a5d64d
+      - 4c125d3f-cafa-41dd-a21f-605420bcb90e
       X-Runtime:
-      - '0.137746'
+      - '0.075908'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '50'
+      - '51'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":5699,"title":"Game of Thrones"}}'
+      string: '{"universe":{"id":5,"title":"The Path of Daggers"}}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: event%5Btitle%5D=factory+title&event%5Buniverse_id%5D=5
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"83697964b5bde5089c2ae32a9d2f3768"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4210caa7-c06c-4baa-9204-1949f15b09cd
+      X-Runtime:
+      - '0.018372'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 24 Nov 2015 16:52:43 GMT
+      Content-Length:
+      - '59'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":3,"parent_id":null,"title":"factory title"}}'
+    http_version: 
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: article%5Bname%5D=Ethenielle&article%5Btype%5D=Character&article%5Buniverse_id%5D=5
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4efc6403cdc2393f0d334ea1cc76b07c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 232b4424-eb27-456b-ab53-862b648dd861
+      X-Runtime:
+      - '0.012074'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 24 Nov 2015 16:52:43 GMT
+      Content-Length:
+      - '76'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":13,"name":"Ethenielle","universe_id":5,"type":"Character"}}'
+    http_version: 
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -80,29 +176,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"af802a1bcf31dcef2b6fe5a834a0063e"
+      - W/"0735889d524a751b83704e51cb5025e4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - afcbb04e-dc46-4778-9dfc-d0511c52c1ac
+      - c60a0378-6a49-4935-accf-d3e8154d65f8
       X-Runtime:
-      - '0.006065'
+      - '0.005871'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '53'
+      - '128'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":5699,"title":"Game of Thrones"}]}'
+      string: '{"universes":[{"id":3,"title":"Computer Hardware"},{"id":4,"title":"The
+        Wheel of Time"},{"id":5,"title":"The Path of Daggers"}]}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/5699?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/5?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -129,32 +226,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"dc639b9ab72f87f7dfa55f8ecd6ba152"
+      - W/"edd7378624ccbcf48cacaa6d3b3cd506"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1de8dfe9-5fd7-46c1-aabd-53ced7915ea5
+      - 9468a952-7f12-4d7d-8f62-13b065f8349f
       X-Runtime:
-      - '0.015669'
+      - '0.006782'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '64'
+      - '113'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":5699,"title":"Game of Thrones","articles":[]}}'
+      string: '{"universe":{"id":5,"title":"The Path of Daggers","articles":[{"id":13,"name":"Ethenielle","type":"Character"}]}}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
-    method: post
-    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    method: get
+    uri: http://localhost:9292/api/events/3?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: event%5Btitle%5D=Green+wedding&event%5Buniverse_id%5D=5699
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -178,34 +275,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"0bf6281c82181d4d808500e02e4d7f2a"
+      - W/"9af7c6ae10ffb2b25f5db7b579998f0c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5cfad447-a10a-47c0-bc39-19456508844f
+      - 83350a27-b3c2-40fc-b881-b44d068450c7
       X-Runtime:
-      - '0.044037'
+      - '0.007951'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '62'
+      - '56'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":3240,"parent_id":null,"title":"Green wedding"}}'
+      string: '{"event":{"id":3,"title":"factory title","articles":[]}}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
-    method: post
-    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    method: get
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=5
     body:
       encoding: US-ASCII
-      string: event%5Bparent_id%5D=3240&event%5Btitle%5D=Red+wedding&event%5Buniverse_id%5D=5699
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -229,85 +324,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"25bbc596632b693ac24daee6e46a4832"
+      - W/"1dd10f6250857c30489239cd6662be90"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 73349603-1777-4508-a4c5-3d03e71fbd28
+      - 42c8a59e-2fec-48c9-ab19-5c0f2b8d3109
       X-Runtime:
-      - '0.006126'
+      - '0.006127'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '60'
+      - '63'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":3241,"parent_id":3240,"title":"Red wedding"}}'
+      string: '{"articles":[{"id":13,"name":"Ethenielle","type":"Character"}]}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
-- request:
-    method: post
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
-    body:
-      encoding: US-ASCII
-      string: article%5Bname%5D=John+Snow&article%5Btype%5D=Character&article%5Buniverse_id%5D=5699
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - localhost:9292
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"f88c4ad2e9b982dd27c8f120b6112382"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 1e2ac120-ab35-4c5b-916e-c33c63bc2cce
-      X-Runtime:
-      - '0.019570'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
-      Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
-      Content-Length:
-      - '80'
-      Connection:
-      - Keep-Alive
-      Set-Cookie:
-      - request_method=POST; path=/
-    body:
-      encoding: UTF-8
-      string: '{"article":{"id":2164,"name":"John Snow","universe_id":5699,"type":"Character"}}'
-    http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/participations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: participation%5Barticle_id%5D=2164&participation%5Bevent_id%5D=3241
+      string: participation%5Barticle_id%5D=13&participation%5Bevent_id%5D=3
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -331,31 +373,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3b4721803ef1d131105ae340c42ce063"
+      - W/"611a794ea55c17778d4c9ab343c9c7e5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e74ec8fa-66fa-4248-b07c-d5406f705911
+      - 9d907e8d-44c4-42fe-8d91-4d40301f23cd
       X-Runtime:
-      - '0.017397'
+      - '0.007650'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '62'
+      - '55'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"participation":{"id":976,"event_id":3241,"article_id":2164}}'
+      string: '{"participation":{"id":3,"event_id":3,"article_id":13}}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events/3241?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/events/3?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -382,30 +422,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"08c6b78072f03205ee08d7ed5f43d189"
+      - W/"fb41275b1a5595263cc759fa33d202bc"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 17188dc6-e829-4d50-9101-283fceca3248
+      - 538d9de9-053d-4843-b22f-7b48a24079b8
       X-Runtime:
-      - '0.019713'
+      - '0.006583'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '132'
+      - '85'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"event":{"id":3241,"title":"Red wedding","parent":{"id":3240,"title":"Green
-        wedding"},"articles":[{"id":2164,"name":"John Snow"}]}}'
+      string: '{"event":{"id":3,"title":"factory title","articles":[{"id":13,"name":"Ethenielle"}]}}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=5699
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=5
     body:
       encoding: US-ASCII
       string: ''
@@ -432,26 +471,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f0d8e136745f9a32519728dfe1c6e017"
+      - W/"1dd10f6250857c30489239cd6662be90"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c221ae9c-c467-4b91-96a0-c9a4b8124180
+      - c1051429-bc4a-4015-81fe-80584d19d71d
       X-Runtime:
-      - '0.003017'
+      - '0.006222'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '64'
+      - '63'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":2164,"name":"John Snow","type":"Character"}]}'
+      string: '{"articles":[{"id":13,"name":"Ethenielle","type":"Character"}]}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/participations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -483,28 +522,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9e6be664a9b09f9e807029d2cfa5e731"
+      - W/"37faabff4710864f45d1f523b4f90f83"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ea229976-e4e7-4e5e-93ab-2405e2799c99
+      - 77e37037-206a-4106-9847-d38a79ee11a3
       X-Runtime:
-      - '0.004282'
+      - '0.009489'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '65'
+      - '134'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"participations":[{"id":976,"event_id":3241,"article_id":2164}]}'
+      string: '{"participations":[{"id":1,"event_id":1,"article_id":11},{"id":2,"event_id":1,"article_id":12},{"id":3,"event_id":3,"article_id":13}]}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -524,8 +561,8 @@ http_interactions:
       - localhost:9292
   response:
     status:
-      code: 200
-      message: 'OK '
+      code: 400
+      message: 'Bad Request '
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -535,29 +572,25 @@ http_interactions:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - W/"8b71dd4f0b95fd9cc8eb02bc17140e87"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 432e9260-e0fa-41a7-8503-f8af25d848fb
+      - f0304bb9-90dc-4c82-9774-84659de439db
       X-Runtime:
-      - '0.005314'
+      - '0.055257'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '83'
+      - '14'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":2164,"name":"John Snow","universe_id":5699,"type":"Character"}]}'
+      string: '{"":{"":null}}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -589,28 +622,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f3e70a9b68b912a399a8a52154fe8a8a"
+      - W/"3075d879a4f8df3afca3d1238b5a0876"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ea305bab-cdb6-46c5-96f2-00564de22419
+      - 57021b92-4a22-4927-b663-741bead8467d
       X-Runtime:
-      - '0.003236'
+      - '0.007958'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
       - '12'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"events":2}'
+      string: '{"events":3}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -630,8 +661,8 @@ http_interactions:
       - localhost:9292
   response:
     status:
-      code: 200
-      message: 'OK '
+      code: 400
+      message: 'Bad Request '
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -641,27 +672,23 @@ http_interactions:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - W/"af802a1bcf31dcef2b6fe5a834a0063e"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 3cd484b8-3afd-48db-af46-4ecf69fa4005
+      - 2897b2f0-4ea5-4932-b461-50793e91ab79
       X-Runtime:
-      - '0.004910'
+      - '0.008953'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 24 Nov 2015 18:17:37 GMT
+      - Tue, 24 Nov 2015 16:52:43 GMT
       Content-Length:
-      - '53'
+      - '14'
       Connection:
       - Keep-Alive
-      Set-Cookie:
-      - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":5699,"title":"Game of Thrones"}]}'
+      string: '{"":{"":null}}'
     http_version: 
-  recorded_at: Tue, 24 Nov 2015 18:17:37 GMT
+  recorded_at: Tue, 24 Nov 2015 16:52:43 GMT
 recorded_with: VCR 2.9.3

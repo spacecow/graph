@@ -8,6 +8,7 @@ class ErbBinding2
     end 
   end
   def present obj; raise NotImplementedError end
+  def render obj, locals={}; raise NotImplementedError end
 end
 
 describe "events/show.html.erb" do
@@ -19,14 +20,19 @@ describe "events/show.html.erb" do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/events/show.html.erb" }
-  let(:locals){{ event:event }}
+  let(:locals){{ event:event, participation: :participation, articles: :articles }}
   let(:event){ double :event }
   let(:presenter){ double :presenter }
 
   before do
     expect(bind).to receive(:present).with(event).and_yield(presenter)
+    expect(bind).to receive(:render).with(:articles){ :participations }
+    expect(bind).to receive(:render).
+      with("participations/form", participation: :participation, articles: :articles).
+      and_return(:participations)
     expect(presenter).to receive(:parent).with(no_args){ "parent" }
     expect(event).to receive(:title).with(no_args){ "header" }
+    expect(event).to receive(:articles).with(no_args){ :articles }
   end
 
   subject(:page){ Capybara.string(rendering).find '.event' }

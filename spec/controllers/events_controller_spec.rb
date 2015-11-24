@@ -17,9 +17,22 @@ describe "EventsController" do
   describe "#show" do
     let(:function){ :show }
     let(:params){{ id: :id }}
+    let(:event){ double :event, id: :event_id }
+    let(:event_article){ double :event_article, id: :article_id }
+    let(:article){ double :article, id: :article_id }
     before do
       stub_const "EventRunners::Show", Class.new
-      expect(controller).to receive(:run).with(EventRunners::Show,:id){ :event }
+      stub_const "ArticleRunners::Index", Class.new
+      stub_const "ParticipationRunners::New", Class.new
+      def controller.current_universe_id; end
+      expect(controller).to receive(:run).with(EventRunners::Show,:id){ event }
+      expect(controller).to receive(:run).
+        with(ArticleRunners::Index, universe_id: :universe_id){ [article] }
+      expect(controller).to receive(:run).
+        with(ParticipationRunners::New, event_id: :event_id){ :participation }
+      expect(controller).to receive(:current_universe_id).
+        with(no_args).at_least(1){ :universe_id }
+      expect(event).to receive(:articles).with(no_args){ [event_article] }
     end
     it{ subject }
   end

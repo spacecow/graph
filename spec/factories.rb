@@ -15,6 +15,9 @@ FactoryGirl.define do
     text 'factory text'
   end
 
+  factory :participation do
+  end
+
   factory :reference do
   end
 

@@ -18,17 +18,17 @@ describe "Create event" do
     it "" do
       VCR.use_cassette("create_event_successfully") do
         begin
-          universe = create :universe, title:'Game of Thrones'
+          universe = create :universe, title:"Game of Thrones"
           visit universes_path
-          click_link 'Game of Thrones'
+          click_link "Game of Thrones"
           create :event, title:"Green wedding", universe_id:universe.id
           visit new_event_path
-          fill_in 'Title', with:'Red wedding'
+          fill_in "Title", with:"Red wedding"
           select "Green wedding", from:"Parent"
-          click_on 'Create'
+          click_on "Create"
           expect(current_path).to match /events\/\d*/ 
-          expect(page).to have_content 'Green wedding' 
-          expect(page).to have_content 'Red wedding' 
+          expect(page).to have_content "Green wedding" 
+          expect(page).to have_content "Red wedding" 
         ensure
           delete :events
           delete :universes
