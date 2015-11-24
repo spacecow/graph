@@ -26,13 +26,13 @@ describe "events/show.html.erb" do
 
   before do
     expect(bind).to receive(:present).with(event).and_yield(presenter)
-    expect(bind).to receive(:render).with(:articles){ :participations }
+    expect(bind).to receive(:render).with(:participants){ :participations }
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).
       and_return(:participations)
     expect(presenter).to receive(:parent).with(no_args){ "parent" }
     expect(event).to receive(:title).with(no_args){ "header" }
-    expect(event).to receive(:articles).with(no_args){ :articles }
+    expect(event).to receive(:participants).with(no_args){ :participants }
   end
 
   subject(:page){ Capybara.string(rendering).find '.event' }

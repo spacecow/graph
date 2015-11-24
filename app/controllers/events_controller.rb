@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     return redirect_to universes_path if current_universe_id.nil?
     @event = run(EventRunners::Show, params[:id])
     @articles = run(ArticleRunners::Index, universe_id:current_universe_id).
-      reject{|e| @event.articles.map(&:id).include? e.id}
+      reject{|e| @event.participants.map(&:id).include? e.id}
     @participation = run(ParticipationRunners::New, event_id:@event.id)
   end
 

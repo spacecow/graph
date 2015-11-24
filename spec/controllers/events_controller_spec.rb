@@ -18,7 +18,7 @@ describe "EventsController" do
     let(:function){ :show }
     let(:params){{ id: :id }}
     let(:event){ double :event, id: :event_id }
-    let(:event_article){ double :event_article, id: :article_id }
+    let(:participant){ double :participant, id: :article_id }
     let(:article){ double :article, id: :article_id }
     before do
       stub_const "EventRunners::Show", Class.new
@@ -32,7 +32,7 @@ describe "EventsController" do
         with(ParticipationRunners::New, event_id: :event_id){ :participation }
       expect(controller).to receive(:current_universe_id).
         with(no_args).at_least(1){ :universe_id }
-      expect(event).to receive(:articles).with(no_args){ [event_article] }
+      expect(event).to receive(:participants).with(no_args){ [participant] }
     end
     it{ subject }
   end
