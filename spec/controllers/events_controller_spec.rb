@@ -39,11 +39,12 @@ describe "EventsController" do
 
   describe "#new" do
     let(:function){ :new }
+    let(:runner){ double :runner }
     before do
       stub_const "EventRunners::New", Class.new
-      stub_const "EventRunners::Index", Class.new
-      expect(controller).to receive(:run).with(EventRunners::New){ :event }
-      expect(controller).to receive(:run).with(EventRunners::Index){ :events }
+      expect(controller).to receive(:run).
+        with(EventRunners::New).and_yield(runner)
+      expect(runner).to receive(:success).with(no_args).and_yield(:event,:events)
     end
     it{ subject }
   end

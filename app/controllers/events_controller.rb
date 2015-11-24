@@ -9,8 +9,12 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = run(EventRunners::New)
-    @events = run(EventRunners::Index)
+    run(EventRunners::New) do |on|
+      on.success do |event, events|
+        @event = event
+        @events = events 
+      end
+    end
   end
 
   def create

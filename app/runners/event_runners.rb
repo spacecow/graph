@@ -16,7 +16,9 @@ module EventRunners
 
   class New < Runner
     def run
-      repo.new_event
+      event = repo.new_event
+      events = repo.events
+      success event, events
     end
   end
 
