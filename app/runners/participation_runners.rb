@@ -6,7 +6,7 @@ module ParticipationRunners
     def run params
       participation = repo.new_participation params
       participation = repo.save_participation participation
-      #success event
+      success participation
     end
   end
 

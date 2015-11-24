@@ -1,9 +1,12 @@
 class ParticipationsController < ApplicationController
   
   def create
-    participation = run(ParticipationRunners::Create, participation_params)
-    #TODO if success
-    redirect_to event_path(participation.event_id)
+    run(ParticipationRunners::Create, participation_params) do |on|
+      on.success do |participation|
+        redirect_to event_path(participation.event_id)
+      end
+    end
+    #TODO if failure
   end
 
   private
