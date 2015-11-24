@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles, only:[:show, :new, :create]
   resources :events, only:[:show, :new, :create]
   resources :notes, only:[:show, :new, :create]
+  resources :participations, only:[:create]
   resources :references, only:[:show, :create, :edit, :update]
   resources :tags, only:[:show, :index, :new, :create]
   resources :taggings, only:[:create]

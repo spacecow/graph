@@ -5,5 +5,17 @@
 
   <span class="parent"><%= presenter.parent %></span>
 </div>
+<!-- show participants -->
+
+<div class="participation new form">
+<!-- TODO remove already attached articles -->
+  <%= form_for @participation do |f| %>
+    <!-- TODO insert article_id in div? -->
+    <%= f.hidden_field :event_id %>
+    <%= f.label :article_id, "Participant" %>
+    <%= f.collection_select :article_id, @articles, :id, :name %>
+    <%= f.submit "Add" %>
+  <% end %>
+</div>
 
 <% end %>
