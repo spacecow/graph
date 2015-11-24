@@ -27,7 +27,8 @@ describe "participations/_form.html.erb" do
     expect(builder).to receive(:label).
       with(:article_id, "Participant"){ "label_article_id" }
     expect(builder).to receive(:collection_select).
-      with(:article_id, :articles, :id, :name){ "select_article_id" }
+      with(:article_id, :articles, :id, :name, include_blank:true).
+      and_return("select_article_id")
     expect(builder).to receive(:submit).with("Add"){ "submit_add" }
   end
 
