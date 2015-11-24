@@ -1,3 +1,4 @@
+require './app/presenters/base_presenter'
 require './app/presenters/universe_presenter'
 
 describe UniversePresenter do

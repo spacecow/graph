@@ -1,19 +1,10 @@
-class NotePresenter
-
-  def initialize object, template
-    @object = object
-    @template = template
-  end
+class NotePresenter < BasePresenter
+  presents :note
 
   def tags
-    @object.tags.map do |tag|
+    note.tags.map do |tag|
       h.link_to tag.title, h.tag_path(tag.id)
     end.join(', ').html_safe
   end
-
-  #TODO add base presenter
-  private
-
-    def h; @template end
 
 end

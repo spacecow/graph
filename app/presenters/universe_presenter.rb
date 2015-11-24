@@ -1,8 +1,5 @@
-class UniversePresenter
+class UniversePresenter < BasePresenter
   
-  def initialize object, template
-  end
-
   def clazz selected
     "universe#{selected ? ' selected' : ''}"
   end

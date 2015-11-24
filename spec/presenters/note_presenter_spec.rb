@@ -1,4 +1,5 @@
 require 'active_support/core_ext/string/output_safety'
+require './app/presenters/base_presenter'
 require './app/presenters/note_presenter'
 
 describe NotePresenter do

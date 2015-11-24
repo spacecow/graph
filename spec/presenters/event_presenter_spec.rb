@@ -1,4 +1,5 @@
 require 'active_support/core_ext/object/try'
+require './app/presenters/base_presenter'
 require './app/presenters/event_presenter'
 
 describe EventPresenter do

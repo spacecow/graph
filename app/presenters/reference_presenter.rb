@@ -1,21 +1,11 @@
-class ReferencePresenter
+class ReferencePresenter < BasePresenter
+  presents :reference
 
-  def initialize object, template
-    @object = object
-    @template = template
-  end
-
-  def comment
-    @object.comment
-  end
+  def comment; reference.comment end
 
   def url
-    url = @object.url
-    h.link_to (url.blank? ? 'no url' : url), h.reference_path(@object.id)
+    url = reference.url
+    h.link_to (url.blank? ? 'no url' : url), h.reference_path(reference.id)
   end
-
-  private
-
-    def h; @template end
 
 end

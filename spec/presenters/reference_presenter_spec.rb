@@ -1,5 +1,6 @@
+require 'active_support/core_ext/object/blank'
+require './app/presenters/base_presenter'
 require './app/presenters/reference_presenter'
-require 'active_support/all'
 
 describe ReferencePresenter do
 

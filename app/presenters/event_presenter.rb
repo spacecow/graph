@@ -1,13 +1,8 @@
-class EventPresenter
-
-  #TODO base presenter
-  def initialize object, template
-    @object = object
-    @template = template
-  end
+class EventPresenter < BasePresenter
+  presents :event
 
   def parent
-    @object.parent.try(:title)
+    event.parent.try(:title)
   end
 
 end
