@@ -11,9 +11,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def index
+    @events = run(EventRunners::Index, universe_id:current_universe_id)
+  end
+
   def new
     #TODO change events to parents
-    run(EventRunners::New) do |on|
+    return redirect_to universes_path if current_universe_id.nil?
+    run(EventRunners::New, universe_id:current_universe_id) do |on|
       on.success do |event, events|
         @event = event
         @events = events 

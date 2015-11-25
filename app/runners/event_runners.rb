@@ -13,15 +13,15 @@ module EventRunners
   end
 
   class Index < Runner
-    def run
-      repo.events
+    def run universe_id:
+      repo.events universe_id:universe_id
     end
   end
 
   class New < Runner
-    def run
+    def run universe_id:
       event = repo.new_event
-      events = repo.events
+      events = repo.events universe_id:universe_id
       success event, events
     end
   end

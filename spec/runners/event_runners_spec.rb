@@ -15,9 +15,9 @@ module EventRunners
     describe New do
       before do
         expect(repo).to receive(:new_event).with(no_args){ :event }
-        expect(repo).to receive(:events).with(no_args){ :events }
+        expect(repo).to receive(:events).with(universe_id: :universe_id){ :events }
       end
-      subject{ New.new(context).run }
+      subject{ New.new(context).run universe_id: :universe_id }
       it{ subject }
     end
 

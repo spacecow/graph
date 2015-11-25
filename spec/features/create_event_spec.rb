@@ -7,8 +7,6 @@ describe "Create event" do
     it "Does a redirect" do
       VCR.use_cassette("try_to_create_event_but_not_allowed_access") do
         visit new_event_path
-        fill_in "Title", with:"Red wedding"
-        click_on 'Create'
         expect(current_path).to eq universes_path 
       end
     end

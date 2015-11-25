@@ -1,7 +1,7 @@
 module BookRunners
   class Index < Runner
-    def run universe_id
-      repo.books universe_id
+    def run universe_id:
+      repo.books universe_id:universe_id
     end
   end
 end

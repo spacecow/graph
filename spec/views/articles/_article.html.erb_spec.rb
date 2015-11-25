@@ -8,9 +8,9 @@ describe 'articles/_article.html.erb' do
   let(:erb){ ERB.new file }
   let(:rendering){ erb.result local_bindings }
 
-  let(:article){ double :article }
   let(:filepath){ './app/views/articles/_article.html.erb' }
   let(:locals){{ article:article }}
+  let(:article){ double :article }
 
   before do
     def bind.article_path id; end

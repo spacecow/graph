@@ -1,16 +1,14 @@
 require 'rails_helper'
 require 'vcr_helper'
 
-describe 'List universes' do
+describe "List universes" do
 
-  subject{ page }
-
-  it 'displays available universes' do
+  it "Displays available universes" do
     VCR.use_cassette('displays_available_universes') do
       begin
         create :universe, title:'The Malazan Empire'
         visit universes_path
-        is_expected.to have_content 'The Malazan Empire'
+        expect(page).to have_content 'The Malazan Empire'
       ensure
         delete :universes
       end

@@ -1,14 +1,6 @@
 require 'rspec/its'
 require 'capybara'
 
-class ErbBinding2
-  def initialize hash
-    hash.each_pair do |key, value|
-      instance_variable_set '@' + key.to_s, value
-    end 
-  end
-end
-
 describe "events/new.html.erb" do
 
   let(:bind){ ErbBinding2.new locals }
@@ -22,6 +14,13 @@ describe "events/new.html.erb" do
   let(:builder){ double :builder }
 
   before do
+    class ErbBinding2
+      def initialize hash
+        hash.each_pair do |key, value|
+          instance_variable_set '@' + key.to_s, value
+        end 
+      end
+    end
     def bind.form_for obj; end
     expect(bind).to receive(:form_for).with(:event).and_yield builder
     expect(builder).to receive(:label).with(:title){ "label_title" }

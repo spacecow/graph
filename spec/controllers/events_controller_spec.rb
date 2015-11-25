@@ -31,13 +31,29 @@ describe "EventsController" do
     it{ subject }
   end
 
+  describe "#index" do
+    let(:function){ :index }
+    before do
+      stub_const "EventRunners::Index", Class.new
+      def controller.current_universe_id; end
+      expect(controller).to receive(:run).
+        with(EventRunners::Index, universe_id: :universe_id){ :events }
+      expect(controller).to receive(:current_universe_id).
+        with(no_args){ :universe_id }
+    end
+    it{ subject }
+  end
+
   describe "#new" do
     let(:function){ :new }
     let(:runner){ double :runner }
     before do
       stub_const "EventRunners::New", Class.new
+      def controller.current_universe_id; end
+      expect(controller).to receive(:current_universe_id).
+        with(no_args).at_least(1){ :universe_id }
       expect(controller).to receive(:run).
-        with(EventRunners::New).and_yield(runner)
+        with(EventRunners::New, universe_id: :universe_id).and_yield(runner)
       expect(runner).to receive(:success).with(no_args).and_yield(:event,:events)
     end
     it{ subject }
