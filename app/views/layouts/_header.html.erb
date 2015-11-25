@@ -1,6 +1,7 @@
 <div id="header">
   <%= link_to "Universes", universes_path %>
   <%= link_to "Articles", universe_path(current_universe_id) if current_universe_id %>
+  <%= link_to "Events", events_path if current_universe_id %>
   <%= link_to "Notes", article_path(@note.article_id) if @note %>
   <%= link_to "References", note_path(@reference.note_id) if @reference %>
 </div>
