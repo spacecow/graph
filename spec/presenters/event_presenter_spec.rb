@@ -10,20 +10,4 @@ describe EventPresenter do
 
   subject{ presenter.send function }
 
-  describe "#parent" do
-    let(:function){ :parent }
-    before{ expect(event).to receive(:parent).with(no_args){ parent }}
-
-    context "parent exists" do
-      let(:parent){ double :parent }
-      before{ expect(parent).to receive(:title).with(no_args){ :title }}
-      it{ should be :title }
-    end
-
-    context "parent does not exist" do
-      let(:parent){ nil }
-      it{ should be nil }
-    end
-  end
-
 end

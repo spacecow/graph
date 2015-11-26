@@ -25,12 +25,15 @@ describe "events/show.html.erb" do
       def render obj, locals={}; raise NotImplementedError end
     end
     expect(bind).to receive(:present).with(event).and_yield(presenter)
+    expect(bind).to receive(:render).with(:parents){ "render_parents" }
+    expect(bind).to receive(:render).with(:children){ "render_children" }
     expect(bind).to receive(:render).with(:participants){ :render_participants }
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).
       and_return(:participation_form)
-    expect(presenter).to receive(:parent).with(no_args){ "parent" }
     expect(event).to receive(:title).with(no_args){ "header" }
+    expect(event).to receive(:parents).with(no_args){ :parents }
+    expect(event).to receive(:children).with(no_args){ :children }
     expect(event).to receive(:participants).with(no_args){ :participants }
   end
 
@@ -41,19 +44,38 @@ describe "events/show.html.erb" do
     its(:text){ should eq "header" }
   end
 
-  describe "Parent section" do
-    subject{ page.find '.event .parent' }
-    its(:text){ should eq "parent" }
+  describe "Parents section" do
+    subject(:div){ page.find '.event .parents.list' }
+    describe "Parentes header" do
+      subject{ div.find 'h2' }
+      its(:text){ should eq "Parents" }
+    end
+    describe "Parents list" do
+      subject{ div.find 'ul.parents' }
+      its(:text){ should eq "render_parents" }
+    end
+  end
+
+  describe "Children section" do
+    subject(:div){ page.find '.event .children.list' }
+    describe "Parentes header" do
+      subject{ div.find 'h2' }
+      its(:text){ should eq "Children" }
+    end
+    describe "Parents list" do
+      subject{ div.find 'ul.children' }
+      its(:text){ should eq "render_children" }
+    end
   end
 
   describe "Participant section" do
-    subject(:div){ page.find '.event .participant.list' }
+    subject(:div){ page.find '.event .participants.list' }
     describe "Participant header" do
       subject{ div.find 'h2' }
       its(:text){ should eq "Participants" }
     end
     describe "Participant list" do
-      subject{ div.find 'ul.participant' }
+      subject{ div.find 'ul.participants' }
       its(:text){ should eq "render_participants" }
     end
   end

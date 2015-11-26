@@ -38,7 +38,7 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:title, :parent_id).
+      params.require(:event).permit(:title, :parent_tokens, :child_tokens).
         merge({universe_id:current_universe_id})
     end
 

@@ -10,8 +10,8 @@ describe "Show event" do
         visit universes_path
         click_link "Game of Thrones"
         parent = create :event, universe_id:universe.id, title:"Green wedding"
-        event = create :event, universe_id:universe.id, title:"Red wedding",
-          parent_id:parent.id
+        event = create :event, universe_id:universe.id, title:"Red wedding"
+        create :step, parent_id:parent.id, child_id:event.id
         article = create :article, universe_id:universe.id, name:"John Snow"
         create :participation, article_id:article.id, event_id:event.id
         #TODO event and article should be in the same universe!
@@ -20,6 +20,7 @@ describe "Show event" do
         expect(page).to have_content "Red wedding"
         expect(page).to have_content "John Snow"
       ensure
+        delete :steps
         delete :participations
         delete :articles
         delete :events

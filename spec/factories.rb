@@ -21,6 +21,9 @@ FactoryGirl.define do
   factory :reference do
   end
 
+  factory :step do
+  end
+
   factory :tag do
     title 'factory title'
   end
