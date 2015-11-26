@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"1e4cc0a6f0fedf61bca978c0032ff76c"
+      - W/"eb4c016b964981571f99b1c8d9b66f4f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7225ee49-6ab7-49c7-a47a-b628f5523464
+      - ae70835a-ef6c-4a96-a09b-89765d51cc84
       X-Runtime:
-      - '0.004404'
+      - '0.004171'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '53'
       Connection:
@@ -48,9 +48,9 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":4292,"title":"The Malazan Empire"}}'
+      string: '{"universe":{"id":5053,"title":"The Malazan Empire"}}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -80,29 +80,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f3c8c27e70fff1626dc94f23b36c4d41"
+      - W/"835509173c5b7458fb648ea777c0b692"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9f16661d-7f8b-4c2b-8df3-a2cb2771e387
+      - db0f1240-2708-43c6-8c54-2125a586e8e6
       X-Runtime:
-      - '0.002702'
+      - '0.003825'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '56'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":4292,"title":"The Malazan Empire"}]}'
+      string: '{"universes":[{"id":5053,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/4292?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/5053?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -129,32 +129,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d53962b8169d5d012c533826c7714d89"
+      - W/"5ffd0fd80c96a48e5b0054b056fe1986"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c42c783d-40d2-414a-8da8-fdf395360308
+      - 473e1b63-9685-4c03-8c48-e069eeb6a522
       X-Runtime:
-      - '0.002728'
+      - '0.002859'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '67'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":4292,"title":"The Malazan Empire","articles":[]}}'
+      string: '{"universe":{"id":5053,"title":"The Malazan Empire","articles":[]}}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: event%5Btitle%5D=The+Mage+War&event%5Buniverse_id%5D=4292
+      string: event%5Btitle%5D=The+Mage+War&event%5Buniverse_id%5D=5053
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -178,17 +178,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"bf78d237578f5ff8864f95ddbad12f7d"
+      - W/"01634310045c5bb49f11d39cdcb286b0"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6b6753df-97ee-4dc5-8fd6-7c52a739002b
+      - a6875387-dd2a-472e-a4c8-7670a290a213
       X-Runtime:
-      - '0.006155'
+      - '0.006170'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '44'
       Connection:
@@ -197,12 +197,12 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":1705,"title":"The Mage War"}}'
+      string: '{"event":{"id":2924,"title":"The Mage War"}}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=4292
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=5053
     body:
       encoding: US-ASCII
       string: ''
@@ -229,29 +229,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"8d619276bff2c221bb5fbfe197415070"
+      - W/"838e8e68b27ed031f665e2e7ae859d50"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 346dffe6-ebfc-4421-b83e-85350a437fc6
+      - cb18a103-155c-4e0e-8284-4033ce523b32
       X-Runtime:
-      - '0.003042'
+      - '0.003875'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '47'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"events":[{"id":1705,"title":"The Mage War"}]}'
+      string: '{"events":[{"id":2924,"title":"The Mage War"}]}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events/1705?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/events/2924?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -278,29 +278,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"aa1196d879ba72f83b44d561858c64d9"
+      - W/"0393f2142f68b17865080e9e77549954"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7e77481e-b516-47f6-b79f-69a9c09b73c0
+      - 4e6f08cd-7f5c-4ecb-b01e-63ffc3c672d9
       X-Runtime:
-      - '0.005851'
+      - '0.007028'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '89'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"event":{"id":1705,"title":"The Mage War","parents":[],"children":[],"participants":[]}}'
+      string: '{"event":{"id":2924,"title":"The Mage War","parents":[],"children":[],"participants":[]}}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=4292
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=5053
     body:
       encoding: US-ASCII
       string: ''
@@ -331,13 +331,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a5a2b1d1-479b-442d-80a7-5a06627294f7
+      - fef60ff0-a2fb-4ddb-a748-3d9144237e91
       X-Runtime:
-      - '0.002352'
+      - '0.002747'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '15'
       Connection:
@@ -346,7 +346,56 @@ http_interactions:
       encoding: UTF-8
       string: '{"articles":[]}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=5053
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"838e8e68b27ed031f665e2e7ae859d50"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d93a00d4-0cb2-469c-9430-bb12fb079d86
+      X-Runtime:
+      - '0.003480'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 26 Nov 2015 19:57:27 GMT
+      Content-Length:
+      - '47'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"events":[{"id":2924,"title":"The Mage War"}]}'
+    http_version: 
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -382,13 +431,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c8b40fea-30a0-4925-9c14-897c11e16eeb
+      - 9ed85a64-0c7c-41b7-94fe-7f07ade65e74
       X-Runtime:
-      - '0.002747'
+      - '0.002584'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '12'
       Connection:
@@ -399,7 +448,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"events":1}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -431,17 +480,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f3c8c27e70fff1626dc94f23b36c4d41"
+      - W/"835509173c5b7458fb648ea777c0b692"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e2a8d2f5-ee3c-4eea-baa7-31602f1ecda0
+      - eebce053-c053-4da3-9574-8e7d8239598e
       X-Runtime:
-      - '0.004072'
+      - '0.003879'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 26 Nov 2015 16:39:29 GMT
+      - Thu, 26 Nov 2015 19:57:27 GMT
       Content-Length:
       - '56'
       Connection:
@@ -450,7 +499,7 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":4292,"title":"The Malazan Empire"}]}'
+      string: '{"universes":[{"id":5053,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Thu, 26 Nov 2015 16:39:29 GMT
+  recorded_at: Thu, 26 Nov 2015 19:57:27 GMT
 recorded_with: VCR 2.9.3

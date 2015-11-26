@@ -19,6 +19,10 @@
   </div>
 </div>
 
+<div class="parent step new form">
+  <%= render "steps/form", step:@parent_step, parents:@parents %>
+</div>
+
 <div class="participation new form">
   <%= render "participations/form", participation:@participation, articles:@articles %>
 </div>

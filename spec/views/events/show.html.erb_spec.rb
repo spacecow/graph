@@ -10,7 +10,8 @@ describe "events/show.html.erb" do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/events/show.html.erb" }
-  let(:locals){{ event:event, participation: :participation, articles: :articles }}
+  let(:locals){{ event:event, participation: :participation, articles: :articles,
+    parent_step: :parent_step, parents: :parents }}
   let(:event){ double :event }
   let(:presenter){ double :presenter }
 
@@ -28,6 +29,8 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:render).with(:parents){ "render_parents" }
     expect(bind).to receive(:render).with(:children){ "render_children" }
     expect(bind).to receive(:render).with(:participants){ :render_participants }
+    expect(bind).to receive(:render).
+      with("steps/form", step: :parent_step, parents: :parents)
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).
       and_return(:participation_form)

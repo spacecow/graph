@@ -24,13 +24,20 @@ module EventRunners
     describe Show do
       let(:event){ double :event, id: :event_id }
       let(:article){ double :article, id: :article_id }
+      let(:parent_event){ double :parent_event, id: :parent_event_id }
       before do
         expect(repo).to receive(:event).with(:id){ event }
         expect(repo).to receive(:articles).
           with(universe_id: :universe_id){ [article] }
-        expect(event).to receive(:participant_ids).with(no_args){ [:id] }
+        expect(event).to receive(:participant_ids).
+          with(no_args){ [:participant_id] }
+        expect(event).to receive(:parent_ids).with(no_args){ [:parent_id] }
         expect(repo).to receive(:new_participation).
           with(event_id: :event_id){ :participation }
+        expect(repo).to receive(:new_step).
+          with(child_id: :event_id){ :parent_step }
+        expect(repo).to receive(:events).
+          with(universe_id: :universe_id){ [parent_event] }
       end
       subject{ Show.new(context).run :id, universe_id: :universe_id }
       it{ subject }

@@ -17,7 +17,5 @@ module Repo
       Participation.new body
     end
 
-
-
   end
 end

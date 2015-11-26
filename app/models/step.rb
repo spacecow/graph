@@ -1,6 +1,7 @@
 class Step
   include ActiveModel::Model
 
-  attr_writer :id, :parent_id, :child_id
+  attr_accessor :parent_id, :child_id
+  attr_writer :id
 
 end

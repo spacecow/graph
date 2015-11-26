@@ -1,0 +1,8 @@
+<%= form_for step do |f| %>
+  <%= f.hidden_field :child_id %>
+  <div class="parent">
+    <%= f.label :parent_id, "Parent" %>
+    <%= f.collection_select :parent_id, parents, :id, :title, include_blank:true %>
+  </div>
+  <%= f.submit "Add" %>
+<% end %>

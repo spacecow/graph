@@ -10,6 +10,8 @@ class Event
     end
   end
 
+  def parent_ids; parents.map(&:id) end
+
   def children= arr
     @children = arr.map do |params|
       Event.new(params)
