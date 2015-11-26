@@ -21,14 +21,19 @@ describe 'events/_event.html.erb' do
         end
       end
     end
-    expect(event).to receive(:title).with(no_args){ "event_title" }
+    def bind.event_path id; raise NotImplementedError end
+    def bind.link_to s, path; raise NotImplementedError end
+    expect(event).to receive(:title).with(no_args){ :title }
+    expect(event).to receive(:id).with(no_args){ :id }
+    expect(bind).to receive(:event_path).with(:id){ :path }
+    expect(bind).to receive(:link_to).with(:title, :path){ "event_link" }
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.event' }
 
   describe "Event title" do
     subject{ page.find '.title' }
-    its(:text){ should eq "event_title" }
+    its(:text){ should eq "event_link" }
   end
 
 end

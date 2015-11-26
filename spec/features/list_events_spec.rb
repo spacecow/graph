@@ -22,4 +22,21 @@ describe "List events" do
     end
   end
 
+  it "navigate to an event" do
+    VCR.use_cassette("navigate_to_an_event") do
+      begin
+        universe = create :universe, title:"The Malazan Empire"
+        visit universes_path
+        click_link "The Malazan Empire"
+        event = create :event, universe_id:universe.id, title:"The Mage War"
+        visit events_path
+        click_link "The Mage War"
+        expect(current_path).to eq event_path(event.id) 
+      ensure
+        delete :events
+        delete :universes
+      end
+    end
+  end
+
 end
