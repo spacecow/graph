@@ -21,9 +21,12 @@ class NotesController < ApplicationController
         redirect_to article_path note.article_id
       end
       on.failure do |note|
-        @article = run(ArticleRunners::Show, note.article_id)
+        #TODO make prettier 
+        @article = repo.article note.article_id
         @notes = @article.notes
         @note = note 
+        @relation = Relation.new
+        @targets = repo.articles(universe_id:current_universe_id)
         render 'articles/show' 
       end
     end

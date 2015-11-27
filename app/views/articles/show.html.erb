@@ -2,6 +2,10 @@
   <!-- TODO use h1 -->
   <h2><%= @article.name %></h2>
 
+  <div class="relation new form">
+    <%= render "relations/form", relation:@relation, targets:@targets %>
+  </div>
+
   <ul class='notes'>
     <% @notes.each do |note| %>
       <%= render note %>

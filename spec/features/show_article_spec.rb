@@ -3,10 +3,12 @@ require 'vcr_helper'
 
 describe 'Show article' do
 
-  it "displays the article with its notes & tags" do
+  it "displays the article with its notes & tags", focus:true do
     VCR.use_cassette("display_article_with_notes") do
       begin
         universe = create :universe, title:'The Final Empire'
+        visit universes_path
+        click_link "The Final Empire"
         article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
         note = create :note, article_id:article.id, text:'a note'
         tag = create :tag, title:'hero'
@@ -29,7 +31,9 @@ describe 'Show article' do
   it "navigate to a tag page" do
     VCR.use_cassette('navigate_to_a_tag_page') do
       begin
-        universe = create :universe
+        universe = create :universe, title:'The Final Empire'
+        visit universes_path
+        click_link "The Final Empire"
         article = create :article, universe_id:universe.id
         note = create :note, article_id:article.id
         tag = create :tag, title:'hero'
@@ -51,7 +55,9 @@ describe 'Show article' do
   it "navigate to a note page" do
     VCR.use_cassette('navigate_to_a_note_page') do
       begin
-        universe = create :universe
+        universe = create :universe, title:'The Final Empire'
+        visit universes_path
+        click_link "The Final Empire"
         article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
         note = create :note, article_id:article.id, text:'a note'
         visit article_path article.id

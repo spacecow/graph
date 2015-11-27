@@ -3,14 +3,21 @@ require_dependency './app/runners/runner'
 module ArticleRunners
 
   class Show < Runner
-    def run id
-      repo.article id
+    def run id, universe_id:
+      article = repo.article id
+      note = repo.new_note article_id:article.id 
+      notes = article.notes
+      relation = repo.new_relation origin_id:article.id
+      targets = repo.articles(universe_id:universe_id)
+      success article, note, notes, relation, targets
     end
   end
 
   class New < Runner
     def run
-      repo.new_article
+      article = repo.new_article
+      article_types = repo.article_types
+      success article, article_types
     end
   end
 
@@ -21,7 +28,8 @@ module ArticleRunners
       if article.errors.empty?
         success
       else
-        failure article
+        article_types = repo.article_types
+        failure article, article_types
       end
     end
   end

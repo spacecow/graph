@@ -24,5 +24,7 @@ class Article
       end
     end
   end
+  
+  def target_ids; targets.map(&:id) end
 
 end

@@ -1,0 +1,15 @@
+<%= form_for relation do |f| %>
+  <%= f.hidden_field :origin_id %>
+  <div class="type">
+<!-- relation type call -->
+    <%= f.label :type, "Relation" %>
+    <%= f.select :type, ["Owner"], include_blank:true %>
+  </div>
+
+<!-- target/origin class, not only target -->
+  <div class="target">
+    <%= f.label :target_id, "Relative" %>
+    <%= f.collection_select :target_id, targets, :id, :name, include_blank:true %>
+  </div>
+  <%= f.submit "Add" %>
+<% end %>
