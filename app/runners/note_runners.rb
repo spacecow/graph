@@ -4,13 +4,20 @@ module NoteRunners
 
   class Show < Runner
     def run id
-      repo.note id
+      note = repo.note id
+      references = note.references
+      note_tags = note.tags
+      reference = repo.new_reference note_id:note.id 
+      tagging = repo.new_tagging tagable_id:note.id, tagable_type:"Note"
+      tags = repo.tags
+      success note, references, note_tags, reference, tagging, tags
     end
   end
 
   class New < Runner
-    def run params
-      repo.new_note params
+    def run params={}
+      note = repo.new_note params
+      success note
     end
   end
 

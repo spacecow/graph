@@ -2,7 +2,7 @@ class Note
   include ActiveModel::Model
 
   attr_accessor :id, :article_id, :text
-  attr_reader :article
+  attr_reader :article, :book_id
 
   def article= article
     @article = article
