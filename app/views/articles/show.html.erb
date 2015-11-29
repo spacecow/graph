@@ -1,27 +1,25 @@
+<% present @article do |presenter| %>
+
 <div class="article">
-  <!-- TODO use h1 -->
-  <h2><%= @article.name %></h2>
+  <h1><%= @article.name %></h1>
+
+  <ul class='notes'>
+    <%= render @notes %>
+  </ul>
+
+  <div class="relations">
+    <%= render partial:"relations/group",
+               collection:presenter.relation_groups, as: :group %>
+  </div>
 
   <div class="relation new form">
     <%= render "relations/form", relation:@relation, targets:@targets %>
   </div>
 
-  <ul class='notes'>
-    <% @notes.each do |note| %>
-      <%= render note %>
-    <% end %>
-  </ul>
-
-  <%= form_for @note do |f| %>
-    <%= f.hidden_field :article_id %>
-    <div class="text">
-      <%= f.label :text, 'Note' %>
-      <%= f.text_field :text %>
-      <% unless @note.errors.get(:text).empty? %>
-        <span class="errors"><%= @note.errors.get(:text).join %></span>
-      <% end %>
-    </div>
-    <%= f.submit "Create" %>
-  <% end %>
+  <div class="note new form">
+    <%= render "notes/form", note:@note %>
+  </div>
 
 </div>
+
+<% end %>

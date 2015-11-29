@@ -9,6 +9,7 @@ module Repo
       url = URI "http://localhost:9292/api/books?access_token=#{token}&universe_id=#{universe_id}"
       response = Net::HTTP.get_response url
       JSON.parse(response.body)['books']
+      #TODO remove?
       #['Cryptonomicon']
     end
   end

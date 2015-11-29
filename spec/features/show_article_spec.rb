@@ -9,7 +9,11 @@ describe 'Show article' do
         universe = create :universe, title:'The Final Empire'
         visit universes_path
         click_link "The Final Empire"
+        pistol = create :article, name:"Pistol", universe_id:universe.id
+        sword = create :article, name:"Sword", universe_id:universe.id
         article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
+        create :relation, origin_id:sword.id, target_id:article.id, type:"Owner"
+        create :relation, origin_id:pistol.id, target_id:article.id, type:"Owner"
         note = create :note, article_id:article.id, text:'a note'
         tag = create :tag, title:'hero'
         create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
@@ -18,7 +22,10 @@ describe 'Show article' do
         expect(page).to have_content 'Kelsier'
         expect(page).to have_content 'a note'
         expect(page).to have_content 'hero'
+        expect(page.find('.relations')).to have_content 'Owns'
+        expect(page.find('.relations')).to have_content 'Sword'
       ensure
+        delete :relations
         delete :taggings
         delete :tags
         delete :notes

@@ -21,6 +21,9 @@ FactoryGirl.define do
   factory :reference do
   end
 
+  factory :relation do
+  end
+
   factory :step do
   end
 

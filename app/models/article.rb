@@ -6,6 +6,24 @@ class Article
 
   def notes; @notes || [] end
 
+  def notes= arr
+    @notes = arr.map do |params|
+      Note.new(params).tap do |note|
+        note.article = self
+      end
+    end
+  end
+  
+  def target_ids; targets.map(&:id) end
+
+  def relations; @relations || [] end
+
+  def relatives= arr
+    @relations = arr.map do |params|
+      Relation.new params
+    end
+  end
+
   def universe= params
     @universe = case params
     when Hash
@@ -16,15 +34,5 @@ class Article
       params
     end
   end
-
-  def notes= arr
-    @notes = arr.map do |params|
-      Note.new(params).tap do |note|
-        note.article = self
-      end
-    end
-  end
-  
-  def target_ids; targets.map(&:id) end
 
 end

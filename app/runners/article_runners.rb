@@ -8,7 +8,8 @@ module ArticleRunners
       note = repo.new_note article_id:article.id 
       notes = article.notes
       relation = repo.new_relation origin_id:article.id
-      targets = repo.articles(universe_id:universe_id)
+      targets = repo.articles(universe_id:universe_id).
+        reject{|e| e.id==article.id}
       success article, note, notes, relation, targets
     end
   end

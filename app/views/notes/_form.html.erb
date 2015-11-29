@@ -1,5 +1,11 @@
 <%= form_for note do |f| %>
-  <%= f.label :book_id %>
-  <%= f.select :book_id, options_for_select(books), include_blank:true %>
+  <%= f.hidden_field :article_id %>
+  <div class="text">
+    <%= f.label :text, 'Note' %>
+    <%= f.text_field :text %>
+    <% unless note.errors.get(:text).empty? %>
+      <span class="errors"><%= note.errors.get(:text).join %></span>
+    <% end %>
+  </div>
   <%= f.submit "Create" %>
 <% end %>

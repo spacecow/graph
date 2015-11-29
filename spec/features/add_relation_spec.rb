@@ -10,7 +10,8 @@ describe "Add relation" do
           universe = create :universe, title:"The Wheel of Time"
           visit universes_path
           click_link "The Wheel of Time"
-          article = create :article, universe_id:universe.id, name:"Swordmaster"
+          create :article, universe_id:universe.id, name:"Swordmaster"
+          article = create :article, universe_id:universe.id, name:"Sword"
           visit article_path(article.id)
           expect(all(".type option").map(&:text)).to eq ["","Owner"] 
           expect(all(".target option").map(&:text)).to eq ["","Swordmaster"] 
@@ -19,8 +20,8 @@ describe "Add relation" do
           click_button "Add"
           expect(current_path).to eq article_path(article.id) 
           #TODO show relations
-          #expect(page.find "div.relations").to have_content 'Owner'
-          #expect(page.find "ul.relations").to have_content 'Swordmaster'
+          expect(page.find "div.relations").to have_content 'Owner'
+          expect(page.find ".relations .relatives").to have_content 'Swordmaster'
           #expect(all(".type option").map(&:text)).to eq ["","Owner"] 
           #expect(all(".target option").map(&:text)).to eq [""] 
         ensure
