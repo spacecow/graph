@@ -1,3 +1,6 @@
 <li class="event">
   <span class="title"><%= link_to event.title, event_path(event.id) %></span>
+  <span class="actions">
+    <span class="delete"><%= link_to "Delete", event_path(event.id), method: :delete, data:{confirm:"Are you sure?"} %></span>
+  </span>
 </li>

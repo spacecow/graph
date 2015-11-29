@@ -12,15 +12,6 @@ module EventRunners
     let(:context){ double :context, repo:repo }
     let(:repo){ double :repo }
 
-    describe New do
-      before do
-        expect(repo).to receive(:new_event).with(no_args){ :event }
-        expect(repo).to receive(:events).with(universe_id: :universe_id){ :events }
-      end
-      subject{ New.new(context).run universe_id: :universe_id }
-      it{ subject }
-    end
-
     describe Show do
       let(:event){ double :event, id: :event_id }
       let(:article){ double :article, id: :article_id }
@@ -42,6 +33,25 @@ module EventRunners
       subject{ Show.new(context).run :id, universe_id: :universe_id }
       it{ subject }
     end
-  end
 
+    describe New do
+      before do
+        expect(repo).to receive(:new_event).with(no_args){ :event }
+        expect(repo).to receive(:events).with(universe_id: :universe_id){ :events }
+      end
+      subject{ New.new(context).run universe_id: :universe_id }
+      it{ subject }
+    end
+
+    describe Destroy do
+      before do
+      end
+      subject{ Destroy.new(context).run :id }
+      before do
+        expect(repo).to receive(:delete_event).with(:id){ :event }
+      end
+      it{ subject }
+    end
+
+  end
 end

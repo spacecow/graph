@@ -37,6 +37,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    run(EventRunners::Destroy, params[:id]) do |on|
+      on.success do
+        redirect_to events_path
+      end
+    end
+  end
+
   private
 
     def event_params

@@ -38,6 +38,16 @@ module EventRunners
     end
   end
 
+  class Destroy < Runner
+    def run id
+      repo.delete_event id
+      success
+    end
+  end
+
+
+
+
 
 
 end

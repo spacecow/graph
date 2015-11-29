@@ -31,5 +31,12 @@ module Repo
       Event.new body
     end
 
+    def delete_event id
+      url = "http://localhost:9292/api/events/#{id}?access_token=#{token}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port
+      http.delete uri
+    end
+
   end
 end

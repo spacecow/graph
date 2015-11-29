@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'universes#index'
 
   resources :articles, only:[:show, :new, :create]
-  resources :events, only:[:show, :index, :new, :create]
+  resources :events, only:[:show, :index, :new, :create, :destroy]
   resources :notes, only:[:show, :new, :create]
   resources :participations, only:[:create]
   resources :references, only:[:show, :create, :edit, :update]

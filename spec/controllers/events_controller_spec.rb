@@ -95,4 +95,21 @@ describe "EventsController" do
     end
   end
 
+  describe "#destroy" do
+    let(:function){ :destroy }
+    let(:params){{ id: :id }}
+    let(:runner){ double :runner }
+    before do
+      stub_const "EventRunners::Destroy", Class.new
+      def controller.events_path; raise NotImplementedError end
+      def controller.redirect_to path; raise NotImplementedError end
+      expect(controller).to receive(:run).
+        with(EventRunners::Destroy,:id).and_yield(runner)
+      expect(runner).to receive(:success).with(no_args).and_yield
+      expect(controller).to receive(:events_path).with(no_args){ :path }
+      expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+    end
+    it{ should be :redirect }
+  end
+
 end
