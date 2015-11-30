@@ -4,6 +4,14 @@ class Article
   attr_accessor :id, :name, :type, :universe_id
   attr_reader :universe
 
+  def events; @events || [] end
+
+  def events= arr
+    @events = arr.map do |params|
+      Event.new(params)
+    end
+  end
+
   def notes; @notes || [] end
 
   def notes= arr

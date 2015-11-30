@@ -16,19 +16,24 @@ describe 'Show article' do
         create :relation, origin_id:pistol.id, target_id:article.id, type:"Owner"
         note = create :note, article_id:article.id, text:'a note'
         tag = create :tag, title:'hero'
+        event = create :event, universe_id:universe.id, title:"The Standoff"
+        create :participation, event_id:event.id, article_id:article.id
         create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
-        expect(page).to have_content 'Kelsier'
-        expect(page).to have_content 'a note'
-        expect(page).to have_content 'hero'
-        expect(page.find('.relations')).to have_content 'Owns'
-        expect(page.find('.relations')).to have_content 'Sword'
+        expect(page).to have_content "Kelsier"
+        expect(page).to have_content "a note"
+        expect(page).to have_content "hero"
+        expect(page.find('.relations')).to have_content "Owns"
+        expect(page.find('.relations')).to have_content "Sword"
+        expect(page.find('.events.list')).to have_content "The Standoff"
       ensure
+        delete :participations
         delete :relations
         delete :taggings
         delete :tags
         delete :notes
+        delete :events
         delete :articles
         delete :universes
       end

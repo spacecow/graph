@@ -31,11 +31,12 @@ class NotesController < ApplicationController
       on.failure do |note|
         @note = note
         run(ArticleRunners::Show, note.article_id, universe_id:current_universe_id) do |on|
-          on.success do |article, _, notes, relation, targets|
-            @article = article
-            @notes = notes
+          on.success do |article, _, notes, relation, targets, events|
+            @article  = article
+            @notes    = notes
             @relation = relation
-            @targets = targets
+            @targets  = targets
+            @events   = events
           end
         end
         render 'articles/show' 

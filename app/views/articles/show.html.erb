@@ -7,6 +7,13 @@
     <%= render @notes %>
   </ul>
 
+  <% unless @events.empty? %>
+    <div class="events list">
+      <h2>Events</h2>
+      <ul class="events"><%= render @events %></ul>
+    </div>
+  <% end %>
+
   <div class="relations">
     <%= render partial:"relations/group",
                collection:presenter.relation_groups, as: :group %>

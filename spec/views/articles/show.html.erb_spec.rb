@@ -19,9 +19,10 @@ describe "articles/show.html.erb" do
 
   let(:filepath){ "./app/views/articles/show.html.erb" }
   let(:locals){{ article:article, relation: :relation, targets: :targets,
-                 notes: :notes, note: :note }}
+                 notes: :notes, note: :note, events:events }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
+  let(:events){ :events }
 
   before do
     def bind.render template, *opts; end
@@ -36,6 +37,7 @@ describe "articles/show.html.erb" do
       with("relations/form", relation: :relation, targets: :targets).
       and_return("render_relation_form")
     expect(bind).to receive(:render).with(:notes){ "render_notes" }
+    expect(bind).to receive(:render).with(:events){ "render_events" } unless events.empty?
     expect(bind).to receive(:render).
       with("notes/form", note: :note).and_return("render_note_form")
   end
@@ -45,6 +47,27 @@ describe "articles/show.html.erb" do
   describe "Tag header" do
     subject{ page.find 'h1' }
     its(:text){ should eq "article_name" }
+  end
+
+  #TODO note list header
+  describe "Note list" do
+    subject{ page.find '.notes' }
+    its(:text){ should include "render_notes" }
+  end
+
+  describe "Events section" do
+    context "no events exist" do
+      let(:events){ [] }
+      it{ should_not have_selector '.events.list'  }
+    end
+    describe "Events header" do
+      subject{ page.find '.events.list h2' }
+      its(:text){ should eq "Events" }
+    end
+    describe "Events list" do
+      subject{ page.find '.events.list ul.events' }
+      its(:text){ should eq "render_events" }
+    end
   end
 
   #TODO relations header 
@@ -57,12 +80,6 @@ describe "articles/show.html.erb" do
   describe "Relation form" do
     subject{ page.find '.relation.new.form' }
     its(:text){ should include "render_relation_form" }
-  end
-
-  #TODO note header
-  describe "Notes list" do
-    subject{ page.find '.notes' }
-    its(:text){ should include "render_notes" }
   end
 
   #TODO note form header
