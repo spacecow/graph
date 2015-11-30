@@ -7,6 +7,7 @@ class Repository
   include Repo::NoteMethods
   include Repo::ParticipationMethods
   include Repo::RelationMethods
+  include Repo::RelationTypeMethods
   include Repo::StepMethods
   include Repo::TagMethods
   include Repo::TaggingMethods

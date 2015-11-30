@@ -10,7 +10,8 @@ describe 'relations/_form.html.erb' do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ './app/views/relations/_form.html.erb' }
-  let(:locals){{ relation: :relation, targets: :targets }}
+  let(:locals){{ relation: :relation, targets: :targets,
+                 relation_types: :relation_types }}
   let(:builder){ double :builder }
 
   before do
@@ -27,7 +28,7 @@ describe 'relations/_form.html.erb' do
     expect(builder).to receive(:label).
       with(:type,"Relation"){ "label_type" }
     expect(builder).to receive(:select).
-      with(:type,["Owner"],include_blank:true){ "select_type" }
+      with(:type,:relation_types,include_blank:true){ "select_type" }
     expect(builder).to receive(:label).
       with(:target_id,"Relative"){ "label_target" }
     expect(builder).to receive(:collection_select).

@@ -23,6 +23,7 @@ class Article
   end
   
   def target_ids; targets.map(&:id) end
+  def targets; relations.map(&:target) end
 
   def relations; @relations || [] end
 

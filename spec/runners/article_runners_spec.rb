@@ -16,13 +16,15 @@ module ArticleRunners
       let(:article){ double :article, id: :article_id }
       let(:target){ double :target, id: :target_id }
       before do
+        expect(repo).to receive(:relation_types).with(no_args){ :relation_types }
         expect(repo).to receive(:article).with(:id){ article }
         expect(repo).to receive(:new_note).with(article_id: :article_id){ :note }
-        expect(article).to receive(:notes).with(no_args){ :notes }
         expect(repo).to receive(:new_relation).
           with(origin_id: :article_id){ :relation }
         expect(repo).to receive(:articles).
           with(universe_id: :universe_id){ [target] }
+        expect(article).to receive(:target_ids).with(no_args){ [:target_id] }
+        expect(article).to receive(:notes).with(no_args){ :notes }
         expect(article).to receive(:events).with(no_args){ :events }
       end
       subject{ Show.new(context).run :id, universe_id: :universe_id }

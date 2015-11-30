@@ -19,7 +19,8 @@ describe "articles/show.html.erb" do
 
   let(:filepath){ "./app/views/articles/show.html.erb" }
   let(:locals){{ article:article, relation: :relation, targets: :targets,
-                 notes: :notes, note: :note, events:events }}
+                 notes: :notes, note: :note, events:events,
+                 relation_types: :relation_types }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
   let(:events){ :events }
@@ -34,8 +35,8 @@ describe "articles/show.html.erb" do
       with(partial:"relations/group", collection: :relation_groups, as: :group).
       and_return("render_relation_groups")
     expect(bind).to receive(:render).
-      with("relations/form", relation: :relation, targets: :targets).
-      and_return("render_relation_form")
+      with("relations/form", relation: :relation, targets: :targets,
+            relation_types: :relation_types).and_return("render_relation_form")
     expect(bind).to receive(:render).with(:notes){ "render_notes" }
     expect(bind).to receive(:render).with(:events){ "render_events" } unless events.empty?
     expect(bind).to receive(:render).

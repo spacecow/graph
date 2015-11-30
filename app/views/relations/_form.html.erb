@@ -3,7 +3,7 @@
   <div class="type">
 <!-- relation type call -->
     <%= f.label :type, "Relation" %>
-    <%= f.select :type, ["Owner"], include_blank:true %>
+    <%= f.select :type, relation_types, include_blank:true %>
   </div>
 
 <!-- target/origin class, not only target -->

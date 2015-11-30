@@ -9,9 +9,11 @@ module ArticleRunners
       notes = article.notes
       relation = repo.new_relation origin_id:article.id
       targets = repo.articles(universe_id:universe_id).
-        reject{|e| e.id==article.id}
+        reject{|e| e.id==article.id}.
+        reject{|e| article.target_ids.include?(e.id)}
       events = article.events
-      success article, note, notes, relation, targets, events
+      relation_types = repo.relation_types
+      success article, note, notes, relation, targets, events, relation_types
     end
   end
 
