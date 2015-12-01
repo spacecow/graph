@@ -34,5 +34,14 @@ module Repo
       end
     end
 
+    def update_note note, params
+      url = "http://localhost:9292/api/notes/#{note.id}?access_token=#{token}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      response = http.put uri, {note:params}.to_query
+      body = JSON.parse(response.body)['note']
+      Note.new body
+    end
+
   end
 end

@@ -2,6 +2,9 @@
 
 <li class='note'>
   <span class='text'><%= link_to note.text, note_path(note.id) %></span>
+  <span class="actions">
+    <span class="edit"><%= presenter.edit_link %></span>
+  </span>
   <span class='tags'><%= presenter.tags %></span>
 </li>
 <!-- be able to delete notes -->

@@ -1,0 +1,7 @@
+<%= form_for @note, url:note_path(@note.id), method: :put do |f| %>
+  <div class="text">
+    <%= f.label :text, 'Note' %>
+    <%= f.text_area :text %>
+  </div>
+  <%= f.submit "Update" %>
+<% end %>

@@ -3,7 +3,7 @@ require 'vcr_helper'
 
 describe "Edit reference" do
 
-  describe "successfully" do
+  describe "Successfully" do
     it "" do
       VCR.use_cassette("update_reference_successfully") do
         begin

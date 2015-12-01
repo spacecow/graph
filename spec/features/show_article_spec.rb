@@ -83,4 +83,23 @@ describe 'Show article' do
     end
   end
 
+  it "navigate to an edit note page" do
+    VCR.use_cassette('navigate_to_an_edit_note_page') do
+      begin
+        universe = create :universe, title:'The Final Empire'
+        visit universes_path
+        click_link "The Final Empire"
+        article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
+        note = create :note, article_id:article.id, text:'a note'
+        visit article_path article.id
+        within('li.note'){ click_link "Edit" }
+        expect(current_path).to eq edit_note_path(note.id)
+      ensure
+        delete :notes
+        delete :articles
+        delete :universes
+      end
+    end
+  end
+
 end

@@ -17,10 +17,11 @@ describe 'notes/_note.html.erb' do
     def bind.note_path id; end
     def bind.present mdl; end
     expect(bind).to receive(:present).with(note).and_yield presenter
-    expect(note).to receive(:text){ 'a note' }
-    expect(note).to receive(:id){ 666 }
+    expect(note).to receive(:text).with(no_args){ 'a note' }
+    expect(note).to receive(:id).with(no_args){ 666 }
     expect(bind).to receive(:note_path).with(666){ "path" }
-    expect(presenter).to receive(:tags){ 'TDP' }
+    expect(presenter).to receive(:tags).with(no_args){ "TDP" }
+    expect(presenter).to receive(:edit_link).with(no_args){ "edit_note_link" }
   end
 
   subject(:li){ Capybara.string(rendering).find 'li.note' }
@@ -28,11 +29,18 @@ describe 'notes/_note.html.erb' do
   describe 'text' do
     subject(:text){ li.find '.text' }
     its(:text){ is_expected.to include 'a note' } 
-
     describe "link" do
       subject{ text.find 'a' }
       its(:text){ is_expected.to eq 'a note' }
       its([:href]){ is_expected.to eq "path" }
+    end
+  end
+
+  describe 'actions' do
+    subject(:actions){ li.find '.actions' }
+    describe 'edit' do
+      subject{ actions.find '.edit' }
+      its(:text){ is_expected.to eq "edit_note_link" }
     end
   end
 

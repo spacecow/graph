@@ -45,6 +45,22 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+    run(NoteRunners::Edit, params[:id]) do |on|
+      on.success do |note|
+        @note = note
+      end
+    end
+  end
+
+  def update
+    run(NoteRunners::Update, params[:id], note_params) do |on|
+      on.success do |note|
+        redirect_to article_path(note.article_id)
+      end
+    end
+  end
+
   private
 
     def note_params

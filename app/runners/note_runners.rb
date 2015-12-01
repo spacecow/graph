@@ -33,4 +33,20 @@ module NoteRunners
     end
   end
 
+  #TODO do note runner spec on edit and update etc.
+  class Edit < Runner
+    def run id
+      note = repo.note id 
+      success note
+    end
+  end
+
+  class Update < Runner
+    def run id, params
+      note = repo.note id 
+      note = repo.update_note note, params 
+      success note
+    end
+  end
+
 end
