@@ -43,5 +43,14 @@ module Repo
       Note.new body
     end
 
+    def delete_note id
+      url = "http://localhost:9292/api/notes/#{id}?access_token=#{token}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port
+      response = http.delete uri
+      body = JSON.parse(response.body)['note']
+      Note.new body
+    end
+
   end
 end

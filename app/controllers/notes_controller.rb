@@ -61,6 +61,14 @@ class NotesController < ApplicationController
     end
   end
 
+  def destroy
+    run(NoteRunners::Destroy, params[:id]) do |on|
+      on.success do |note|
+        redirect_to article_path(note.article_id)
+      end
+    end
+  end
+
   private
 
     def note_params

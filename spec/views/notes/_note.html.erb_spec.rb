@@ -22,6 +22,7 @@ describe 'notes/_note.html.erb' do
     expect(bind).to receive(:note_path).with(666){ "path" }
     expect(presenter).to receive(:tags).with(no_args){ "TDP" }
     expect(presenter).to receive(:edit_link).with(no_args){ "edit_note_link" }
+    expect(presenter).to receive(:delete_link).with(no_args){ "delete_note_link" }
   end
 
   subject(:li){ Capybara.string(rendering).find 'li.note' }
@@ -41,6 +42,10 @@ describe 'notes/_note.html.erb' do
     describe 'edit' do
       subject{ actions.find '.edit' }
       its(:text){ is_expected.to eq "edit_note_link" }
+    end
+    describe 'edit' do
+      subject{ actions.find '.delete' }
+      its(:text){ is_expected.to eq "delete_note_link" }
     end
   end
 

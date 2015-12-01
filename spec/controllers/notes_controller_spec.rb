@@ -93,4 +93,21 @@ describe "NotesController" do
     it{ should be :redirect }
   end
 
+  describe "#destroy" do
+    let(:function){ :destroy }
+    let(:params){{ id: :id }}
+    let(:runner){ double :runner }
+    let(:note){ double :note }
+    before do
+      stub_const "NoteRunners::Destroy", Class.new
+      expect(controller).to receive(:run).with(NoteRunners::Destroy,:id).
+        and_yield(runner)
+      expect(controller).to receive(:article_path).with(:article_id){ :path }
+      expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+      expect(runner).to receive(:success).with(no_args).and_yield(note)
+      expect(note).to receive(:article_id).with(no_args){ :article_id }
+    end
+    it{ should be :redirect }
+  end
+
 end

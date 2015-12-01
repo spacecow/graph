@@ -45,9 +45,4 @@ module EventRunners
     end
   end
 
-
-
-
-
-
 end
