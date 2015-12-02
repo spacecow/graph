@@ -67,7 +67,7 @@ describe 'layouts/_layouts.html.erb' do
   end
 
   describe "References link" do
-    let(:reference){ double :reference, note_id: :note_id }
+    let(:reference){ double :reference, referenceable_id: :note_id }
     before do
       expect(bind).to receive(:note_path).with(:note_id){ "references_path" }
     end

@@ -7,7 +7,7 @@ class ReferencesController < ApplicationController
   def create
     run(ReferenceRunners::Create, reference_params) do |on|
       on.success do |reference|
-        redirect_to note_path(reference.note_id)
+        redirect_to note_path(reference.referenceable_id)
       end
     end
   end
@@ -27,7 +27,9 @@ class ReferencesController < ApplicationController
   private
 
     def reference_params
-      params.require(:reference).permit(:note_id, :image, :url, :comment)
+      params.require(:reference).
+        permit(:referenceable_id, :image, :url, :comment, :referenceable_type)
+#TODO merge referenceable_id/type instead of hidden fields in form
     end
 
 end

@@ -9,7 +9,8 @@ describe 'Show note' do
         universe = create :universe
         article = create :article, universe_id:universe.id
         note = create :note, article_id:article.id, text:'a note'
-        create :reference, note_id:note.id, url:'www.example.com'
+        create :reference, referenceable_id:note.id, url:'www.example.com',
+          referenceable_type:"Note"
         tag = create :tag, title:'TDP'
         create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
         visit note_path note.id
@@ -36,7 +37,8 @@ describe 'Show note' do
         universe = create :universe
         article = create :article, universe_id:universe.id
         note = create :note, article_id:article.id, text:'a note'
-        reference = create :reference, note_id:note.id, url:'www.example.com'
+        reference = create :reference, referenceable_id:note.id,
+          url:'www.example.com', referenceable_type:"Note"
         visit note_path note.id
         click_link 'www.example.com'
         expect(current_path).to eq reference_path(reference.id)

@@ -9,7 +9,8 @@ describe "Show reference" do
         universe = create :universe
         article = create :article, universe_id:universe.id
         note = create :note, article_id:article.id
-        reference = create :reference, note_id:note.id
+        reference = create :reference, referenceable_id:note.id,
+          referenceable_type:"Note"
         visit reference_path reference.id
       ensure
         delete :references

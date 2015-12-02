@@ -1,5 +1,6 @@
 <%= form_for @reference, url:reference_path(@reference.id), method: :put do |f| %>
-  <%= f.hidden_field :note_id %>
+  <%= f.hidden_field :referenceable_id %>
+  <%= f.hidden_field :referenceable_type %>
   <%= f.label :image %>
   <%= f.file_field :image %>
   <%= f.label :comment %>

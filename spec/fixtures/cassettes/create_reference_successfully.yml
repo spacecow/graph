@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"017c68131c40cac1f5f1850a9688c359"
+      - W/"8b6e68f556fb44fe28cff9032158bd66"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fedd476e-2129-454a-8243-6056c73c73b0
+      - 16ea6482-76e7-47f0-87a7-d80c91c0d4c3
       X-Runtime:
-      - '0.023721'
+      - '0.004200'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '48'
       Connection:
@@ -48,15 +48,15 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":1925,"title":"factory title"}}'
+      string: '{"universe":{"id":1690,"title":"factory title"}}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: article%5Bname%5D=factory+name&article%5Btype%5D=Character&article%5Buniverse_id%5D=1925
+      string: article%5Bname%5D=factory+name&article%5Btype%5D=Character&article%5Buniverse_id%5D=1690
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -80,17 +80,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f81392dc2bf218ef15b3571a30a9f5bb"
+      - W/"2764658b417dbc5f85be1ed51e55835a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - eb72dca1-350f-491c-9145-d48cba1f51b5
+      - b91a0589-1b6b-453c-a4c8-3f24ecd985ee
       X-Runtime:
-      - '0.007123'
+      - '0.007397'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '83'
       Connection:
@@ -99,15 +99,15 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"article":{"id":1267,"name":"factory name","universe_id":1925,"type":"Character"}}'
+      string: '{"article":{"id":1520,"name":"factory name","universe_id":1690,"type":"Character"}}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/notes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: note%5Barticle_id%5D=1267&note%5Btext%5D=factory+text
+      string: note%5Barticle_id%5D=1520&note%5Btext%5D=factory+text
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -131,17 +131,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"23bc01ab986a8faa0e9823f3c5e1dd58"
+      - W/"fee07c4446791e58183ff5362ee6253d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0d14e02c-64a6-4414-996b-0d4f3dbfd223
+      - 05ee860e-652d-4d99-aceb-f0fe0b20b743
       X-Runtime:
-      - '0.005792'
+      - '0.005668'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '59'
       Connection:
@@ -150,12 +150,12 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"note":{"id":959,"article_id":1267,"text":"factory text"}}'
+      string: '{"note":{"id":729,"article_id":1520,"text":"factory text"}}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/notes/959?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/notes/729?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -182,26 +182,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b64d550bbbbfd2fbeb42f132399a6c77"
+      - W/"0a86b510c1aeca49abe49fc7ff92c5ef"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ee5aade7-0c5a-4b28-a39d-d860cbfe7500
+      - 132004f1-8ca8-4371-882a-eb02e619bd34
       X-Runtime:
-      - '0.005767'
+      - '0.004515'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '85'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"note":{"id":959,"article_id":1267,"text":"factory text","tags":[],"references":[]}}'
+      string: '{"note":{"id":729,"article_id":1520,"text":"factory text","tags":[],"references":[]}}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -231,32 +231,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"90192dfa389ce4668b7d2b40eb4dd855"
+      - W/"b5a1a4d42bbd4d7cfe1a670d8134d026"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c043fc93-ae8a-40fd-90d3-c5871be871dc
+      - 601b2510-dd9a-4c7b-8365-b339948ad03f
       X-Runtime:
-      - '0.002719'
+      - '0.002356'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
-      - '35'
+      - '11'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"tags":[{"id":402,"title":"TDP"}]}'
+      string: '{"tags":[]}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/references?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: reference%5Bcomment%5D=smart&reference%5Bimage_data%5D=%2F9j%2F4AAQSkZJRgABAQAAAQABAAD%2F2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwM%0ADRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys%2FRD84QzQ5OjcB%0ACgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3%0ANzc3Nzc3Nzc3Nzc3Nzc3Nzc3N%2F%2FAABEIAFAAUAMBIgACEQEDEQH%2FxAAaAAEB%0AAQADAQAAAAAAAAAAAAAABgUDBAcC%2F8QANBAAAQMCBQEGAgoDAAAAAAAAAQAC%0AAwQRBQYSIUExIlFhgZGhMnETFCMzYpKy0eHwByRC%2F8QAGgEAAgMBAQAAAAAA%0AAAAAAAAAAAIBAwUEBv%2FEACERAAIBBAICAwAAAAAAAAAAAAABAgMEETESEyFB%0AFFFx%2F9oADAMBAAIRAxEAPwD3FERABERAErieNV9FnbDcNLoRh9XFcXZ2i4XB%0AF%2FyeqqlG50Ifi2Xqqlb9NNTVlnhg1aYzYuJ7vhCro54pfu3td8iqYTXOUcjy%0AxxWDkREVwgREQAREQAUHnjMMjK8YTSuLWsaHVBb1JO4b8rWJ77hXi8Tx2qFT%0AmGvmvfXO4A24BsPYLkvJuNPC9kNZLHBKkOY1rzpBWjVSupXtlhk7TTfbopjB%0AZezYbjr8wqEEOivcWtuAbrEhUeHH2Toq6aZtRAyZnwvaCuVYuW5v9eSmda8b%0AtTR%2BE%2Fzf1W0vQUKnZTUgCIiuAIiIA6WMVrcOwuqrHEfYxlwvyeB5mwXh1MC%2B%0AS7rkX55V7%2FlTFSyOmwqI%2FefbTb8DZo9bnyCiqMCzbDZZV7PMsfQyN%2FCmTX1A%0AC1jv0VRTUznRsc47HvN7LJwdgja3UdrclbdJbTpdbnfhZ1BRlLyEj4glOH17%0AZb3Z0cOhIP8AQqqKRksbZIyHMcLgjlS1axobpHaPBHiVzZZrXtnfRS%2FCQXM8%0ADyF32tbqq9T0xCmREWuSEREAeOZ91zZsrSSTp0MaO4aRt63KzqJpbov0vyVT%0AZ8ovo8xPlI7NRG14PiOyf0hYkcZaRtte5WDctqckyeRsUMxDQ2%2FUbLSbUO56%0AdVhwyWIF9%2FZd2OU7XO17rPaafgWUjRlmLm%2BA4uvvB5rYvS26l5HsQuiZNjts%0Ad13MrQmbGmkbshBe4%2Bw9yrreLlWj%2BiZLxEReoLAiIgCfzhgzsVw9rqa31unJ%0AdECfiHLfPbzAXnkbm6iHAte07tcCCDzsvWa2CSaO0btJ7wpevypLWSmV7wXn%0A%2FvlZ91bdrytkOOSVFtVx0XICb2sStk5Mqwdqg%2BYC%2B48o1rTf6x7Li%2BFUEcGZ%0AbWPf2IgXvOwAG5VxlvCxhlEQ8g1Ep1Skcdw8v3WRTZcrIXahPY82CoMPpZad%0AoEr9R71221sqT5PY0YY2d9ERaAx%2F%2F9k%3D%0A&reference%5Bnote_id%5D=959&reference%5Burl%5D=www.example.com
+      string: reference%5Bcomment%5D=smart&reference%5Bimage_data%5D=%2F9j%2F4AAQSkZJRgABAQAAAQABAAD%2F2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwM%0ADRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys%2FRD84QzQ5OjcB%0ACgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3%0ANzc3Nzc3Nzc3Nzc3Nzc3Nzc3N%2F%2FAABEIAFAAUAMBIgACEQEDEQH%2FxAAaAAEB%0AAQADAQAAAAAAAAAAAAAABgUDBAcC%2F8QANBAAAQMCBQEGAgoDAAAAAAAAAQAC%0AAwQRBQYSIUExIlFhgZGhMnETFCMzYpKy0eHwByRC%2F8QAGgEAAgMBAQAAAAAA%0AAAAAAAAAAAIBAwUEBv%2FEACERAAIBBAICAwAAAAAAAAAAAAABAgMEETESEyFB%0AFFFx%2F9oADAMBAAIRAxEAPwD3FERABERAErieNV9FnbDcNLoRh9XFcXZ2i4XB%0AF%2FyeqqlG50Ifi2Xqqlb9NNTVlnhg1aYzYuJ7vhCro54pfu3td8iqYTXOUcjy%0AxxWDkREVwgREQAREQAUHnjMMjK8YTSuLWsaHVBb1JO4b8rWJ77hXi8Tx2qFT%0AmGvmvfXO4A24BsPYLkvJuNPC9kNZLHBKkOY1rzpBWjVSupXtlhk7TTfbopjB%0AZezYbjr8wqEEOivcWtuAbrEhUeHH2Toq6aZtRAyZnwvaCuVYuW5v9eSmda8b%0AtTR%2BE%2Fzf1W0vQUKnZTUgCIiuAIiIA6WMVrcOwuqrHEfYxlwvyeB5mwXh1MC%2B%0AS7rkX55V7%2FlTFSyOmwqI%2FefbTb8DZo9bnyCiqMCzbDZZV7PMsfQyN%2FCmTX1A%0AC1jv0VRTUznRsc47HvN7LJwdgja3UdrclbdJbTpdbnfhZ1BRlLyEj4glOH17%0AZb3Z0cOhIP8AQqqKRksbZIyHMcLgjlS1axobpHaPBHiVzZZrXtnfRS%2FCQXM8%0ADyF32tbqq9T0xCmREWuSEREAeOZ91zZsrSSTp0MaO4aRt63KzqJpbov0vyVT%0AZ8ovo8xPlI7NRG14PiOyf0hYkcZaRtte5WDctqckyeRsUMxDQ2%2FUbLSbUO56%0AdVhwyWIF9%2FZd2OU7XO17rPaafgWUjRlmLm%2BA4uvvB5rYvS26l5HsQuiZNjts%0Ad13MrQmbGmkbshBe4%2Bw9yrreLlWj%2BiZLxEReoLAiIgCfzhgzsVw9rqa31unJ%0AdECfiHLfPbzAXnkbm6iHAte07tcCCDzsvWa2CSaO0btJ7wpevypLWSmV7wXn%0A%2FvlZ91bdrytkOOSVFtVx0XICb2sStk5Mqwdqg%2BYC%2B48o1rTf6x7Li%2BFUEcGZ%0AbWPf2IgXvOwAG5VxlvCxhlEQ8g1Ep1Skcdw8v3WRTZcrIXahPY82CoMPpZad%0AoEr9R71221sqT5PY0YY2d9ERaAx%2F%2F9k%3D%0A&reference%5Breferenceable_id%5D=729&reference%5Breferenceable_type%5D=Note&reference%5Burl%5D=www.example.com
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -280,31 +280,31 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"994799d9036ce2a994c83f79ca349d6c"
+      - W/"44f34a2ec992139e1129f225edebbdd0"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6e3f057d-e622-4808-a763-fa3684205edb
+      - ef3950a9-ae72-4daa-8fa0-a38279b33cd8
       X-Runtime:
-      - '0.008743'
+      - '0.008420'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
-      - '1556'
+      - '1593'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"reference":{"id":176,"note_id":959,"url":"www.example.com","comment":"smart","image_data":"/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwM\nDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcB\nCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3\nNzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFAAUAMBIgACEQEDEQH/xAAaAAEB\nAQADAQAAAAAAAAAAAAAABgUDBAcC/8QANBAAAQMCBQEGAgoDAAAAAAAAAQAC\nAwQRBQYSIUExIlFhgZGhMnETFCMzYpKy0eHwByRC/8QAGgEAAgMBAQAAAAAA\nAAAAAAAAAAIBAwUEBv/EACERAAIBBAICAwAAAAAAAAAAAAABAgMEETESEyFB\nFFFx/9oADAMBAAIRAxEAPwD3FERABERAErieNV9FnbDcNLoRh9XFcXZ2i4XB\nF/yeqqlG50Ifi2Xqqlb9NNTVlnhg1aYzYuJ7vhCro54pfu3td8iqYTXOUcjy\nxxWDkREVwgREQAREQAUHnjMMjK8YTSuLWsaHVBb1JO4b8rWJ77hXi8Tx2qFT\nmGvmvfXO4A24BsPYLkvJuNPC9kNZLHBKkOY1rzpBWjVSupXtlhk7TTfbopjB\nZezYbjr8wqEEOivcWtuAbrEhUeHH2Toq6aZtRAyZnwvaCuVYuW5v9eSmda8b\ntTR+E/zf1W0vQUKnZTUgCIiuAIiIA6WMVrcOwuqrHEfYxlwvyeB5mwXh1MC+\nS7rkX55V7/lTFSyOmwqI/efbTb8DZo9bnyCiqMCzbDZZV7PMsfQyN/CmTX1A\nC1jv0VRTUznRsc47HvN7LJwdgja3UdrclbdJbTpdbnfhZ1BRlLyEj4glOH17\nZb3Z0cOhIP8AQqqKRksbZIyHMcLgjlS1axobpHaPBHiVzZZrXtnfRS/CQXM8\nDyF32tbqq9T0xCmREWuSEREAeOZ91zZsrSSTp0MaO4aRt63KzqJpbov0vyVT\nZ8ovo8xPlI7NRG14PiOyf0hYkcZaRtte5WDctqckyeRsUMxDQ2/UbLSbUO56\ndVhwyWIF9/Zd2OU7XO17rPaafgWUjRlmLm+A4uvvB5rYvS26l5HsQuiZNjts\nd13MrQmbGmkbshBe4+w9yrreLlWj+iZLxEReoLAiIgCfzhgzsVw9rqa31unJ\ndECfiHLfPbzAXnkbm6iHAte07tcCCDzsvWa2CSaO0btJ7wpevypLWSmV7wXn\n/vlZ91bdrytkOOSVFtVx0XICb2sStk5Mqwdqg+YC+48o1rTf6x7Li+FUEcGZ\nbWPf2IgXvOwAG5VxlvCxhlEQ8g1Ep1Skcdw8v3WRTZcrIXahPY82CoMPpZad\noEr9R71221sqT5PY0YY2d9ERaAx//9k=\n"}}'
+      string: '{"reference":{"id":756,"referenceable_id":729,"url":"www.example.com","comment":"smart","referenceable_type":"Note","image_data":"/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwM\nDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcB\nCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3\nNzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFAAUAMBIgACEQEDEQH/xAAaAAEB\nAQADAQAAAAAAAAAAAAAABgUDBAcC/8QANBAAAQMCBQEGAgoDAAAAAAAAAQAC\nAwQRBQYSIUExIlFhgZGhMnETFCMzYpKy0eHwByRC/8QAGgEAAgMBAQAAAAAA\nAAAAAAAAAAIBAwUEBv/EACERAAIBBAICAwAAAAAAAAAAAAABAgMEETESEyFB\nFFFx/9oADAMBAAIRAxEAPwD3FERABERAErieNV9FnbDcNLoRh9XFcXZ2i4XB\nF/yeqqlG50Ifi2Xqqlb9NNTVlnhg1aYzYuJ7vhCro54pfu3td8iqYTXOUcjy\nxxWDkREVwgREQAREQAUHnjMMjK8YTSuLWsaHVBb1JO4b8rWJ77hXi8Tx2qFT\nmGvmvfXO4A24BsPYLkvJuNPC9kNZLHBKkOY1rzpBWjVSupXtlhk7TTfbopjB\nZezYbjr8wqEEOivcWtuAbrEhUeHH2Toq6aZtRAyZnwvaCuVYuW5v9eSmda8b\ntTR+E/zf1W0vQUKnZTUgCIiuAIiIA6WMVrcOwuqrHEfYxlwvyeB5mwXh1MC+\nS7rkX55V7/lTFSyOmwqI/efbTb8DZo9bnyCiqMCzbDZZV7PMsfQyN/CmTX1A\nC1jv0VRTUznRsc47HvN7LJwdgja3UdrclbdJbTpdbnfhZ1BRlLyEj4glOH17\nZb3Z0cOhIP8AQqqKRksbZIyHMcLgjlS1axobpHaPBHiVzZZrXtnfRS/CQXM8\nDyF32tbqq9T0xCmREWuSEREAeOZ91zZsrSSTp0MaO4aRt63KzqJpbov0vyVT\nZ8ovo8xPlI7NRG14PiOyf0hYkcZaRtte5WDctqckyeRsUMxDQ2/UbLSbUO56\ndVhwyWIF9/Zd2OU7XO17rPaafgWUjRlmLm+A4uvvB5rYvS26l5HsQuiZNjts\nd13MrQmbGmkbshBe4+w9yrreLlWj+iZLxEReoLAiIgCfzhgzsVw9rqa31unJ\ndECfiHLfPbzAXnkbm6iHAte07tcCCDzsvWa2CSaO0btJ7wpevypLWSmV7wXn\n/vlZ91bdrytkOOSVFtVx0XICb2sStk5Mqwdqg+YC+48o1rTf6x7Li+FUEcGZ\nbWPf2IgXvOwAG5VxlvCxhlEQ8g1Ep1Skcdw8v3WRTZcrIXahPY82CoMPpZad\noEr9R71221sqT5PY0YY2d9ERaAx//9k=\n"}}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/notes/959?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/notes/729?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -331,26 +331,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c94d2b0959c741ff3f8cc37c800ba614"
+      - W/"5353be50e576326ea06d0fa64585b2b3"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 427f6859-0126-40e8-a36f-0ed399d4317f
+      - 37c82b6c-8152-4bd1-b795-b945cffb6edd
       X-Runtime:
-      - '0.004946'
+      - '0.004649'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '137'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"note":{"id":959,"article_id":1267,"text":"factory text","tags":[],"references":[{"id":176,"url":"www.example.com","comment":"smart"}]}}'
+      string: '{"note":{"id":729,"article_id":1520,"text":"factory text","tags":[],"references":[{"id":756,"url":"www.example.com","comment":"smart"}]}}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -380,26 +380,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"90192dfa389ce4668b7d2b40eb4dd855"
+      - W/"b5a1a4d42bbd4d7cfe1a670d8134d026"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c1f0c589-a835-4703-84c5-14cbe6055780
+      - 6f08bee0-c52a-45f0-b471-eb154e3df286
       X-Runtime:
-      - '0.002929'
+      - '0.002406'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
-      - '35'
+      - '11'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"tags":[{"id":402,"title":"TDP"}]}'
+      string: '{"tags":[]}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/references?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -431,28 +431,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"90214e38236d308d59acf32b965b38d5"
+      - W/"a1b31bead4983a98a138f90e62b4d80e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 56f12aa3-cfe2-44c4-8365-b8635d46c9ae
+      - 191cb1ec-798b-4056-bbf7-e29f80f40947
       X-Runtime:
-      - '0.005082'
+      - '0.005611'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
-      - '1559'
+      - '1596'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"references":[{"id":176,"note_id":959,"url":"www.example.com","comment":"smart","image_data":"/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwM\nDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcB\nCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3\nNzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFAAUAMBIgACEQEDEQH/xAAaAAEB\nAQADAQAAAAAAAAAAAAAABgUDBAcC/8QANBAAAQMCBQEGAgoDAAAAAAAAAQAC\nAwQRBQYSIUExIlFhgZGhMnETFCMzYpKy0eHwByRC/8QAGgEAAgMBAQAAAAAA\nAAAAAAAAAAIBAwUEBv/EACERAAIBBAICAwAAAAAAAAAAAAABAgMEETESEyFB\nFFFx/9oADAMBAAIRAxEAPwD3FERABERAErieNV9FnbDcNLoRh9XFcXZ2i4XB\nF/yeqqlG50Ifi2Xqqlb9NNTVlnhg1aYzYuJ7vhCro54pfu3td8iqYTXOUcjy\nxxWDkREVwgREQAREQAUHnjMMjK8YTSuLWsaHVBb1JO4b8rWJ77hXi8Tx2qFT\nmGvmvfXO4A24BsPYLkvJuNPC9kNZLHBKkOY1rzpBWjVSupXtlhk7TTfbopjB\nZezYbjr8wqEEOivcWtuAbrEhUeHH2Toq6aZtRAyZnwvaCuVYuW5v9eSmda8b\ntTR+E/zf1W0vQUKnZTUgCIiuAIiIA6WMVrcOwuqrHEfYxlwvyeB5mwXh1MC+\nS7rkX55V7/lTFSyOmwqI/efbTb8DZo9bnyCiqMCzbDZZV7PMsfQyN/CmTX1A\nC1jv0VRTUznRsc47HvN7LJwdgja3UdrclbdJbTpdbnfhZ1BRlLyEj4glOH17\nZb3Z0cOhIP8AQqqKRksbZIyHMcLgjlS1axobpHaPBHiVzZZrXtnfRS/CQXM8\nDyF32tbqq9T0xCmREWuSEREAeOZ91zZsrSSTp0MaO4aRt63KzqJpbov0vyVT\nZ8ovo8xPlI7NRG14PiOyf0hYkcZaRtte5WDctqckyeRsUMxDQ2/UbLSbUO56\ndVhwyWIF9/Zd2OU7XO17rPaafgWUjRlmLm+A4uvvB5rYvS26l5HsQuiZNjts\nd13MrQmbGmkbshBe4+w9yrreLlWj+iZLxEReoLAiIgCfzhgzsVw9rqa31unJ\ndECfiHLfPbzAXnkbm6iHAte07tcCCDzsvWa2CSaO0btJ7wpevypLWSmV7wXn\n/vlZ91bdrytkOOSVFtVx0XICb2sStk5Mqwdqg+YC+48o1rTf6x7Li+FUEcGZ\nbWPf2IgXvOwAG5VxlvCxhlEQ8g1Ep1Skcdw8v3WRTZcrIXahPY82CoMPpZad\noEr9R71221sqT5PY0YY2d9ERaAx//9k=\n"}]}'
+      string: '{"references":[{"id":756,"referenceable_id":729,"url":"www.example.com","comment":"smart","referenceable_type":"Note","image_data":"/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwM\nDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcB\nCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3\nNzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFAAUAMBIgACEQEDEQH/xAAaAAEB\nAQADAQAAAAAAAAAAAAAABgUDBAcC/8QANBAAAQMCBQEGAgoDAAAAAAAAAQAC\nAwQRBQYSIUExIlFhgZGhMnETFCMzYpKy0eHwByRC/8QAGgEAAgMBAQAAAAAA\nAAAAAAAAAAIBAwUEBv/EACERAAIBBAICAwAAAAAAAAAAAAABAgMEETESEyFB\nFFFx/9oADAMBAAIRAxEAPwD3FERABERAErieNV9FnbDcNLoRh9XFcXZ2i4XB\nF/yeqqlG50Ifi2Xqqlb9NNTVlnhg1aYzYuJ7vhCro54pfu3td8iqYTXOUcjy\nxxWDkREVwgREQAREQAUHnjMMjK8YTSuLWsaHVBb1JO4b8rWJ77hXi8Tx2qFT\nmGvmvfXO4A24BsPYLkvJuNPC9kNZLHBKkOY1rzpBWjVSupXtlhk7TTfbopjB\nZezYbjr8wqEEOivcWtuAbrEhUeHH2Toq6aZtRAyZnwvaCuVYuW5v9eSmda8b\ntTR+E/zf1W0vQUKnZTUgCIiuAIiIA6WMVrcOwuqrHEfYxlwvyeB5mwXh1MC+\nS7rkX55V7/lTFSyOmwqI/efbTb8DZo9bnyCiqMCzbDZZV7PMsfQyN/CmTX1A\nC1jv0VRTUznRsc47HvN7LJwdgja3UdrclbdJbTpdbnfhZ1BRlLyEj4glOH17\nZb3Z0cOhIP8AQqqKRksbZIyHMcLgjlS1axobpHaPBHiVzZZrXtnfRS/CQXM8\nDyF32tbqq9T0xCmREWuSEREAeOZ91zZsrSSTp0MaO4aRt63KzqJpbov0vyVT\nZ8ovo8xPlI7NRG14PiOyf0hYkcZaRtte5WDctqckyeRsUMxDQ2/UbLSbUO56\ndVhwyWIF9/Zd2OU7XO17rPaafgWUjRlmLm+A4uvvB5rYvS26l5HsQuiZNjts\nd13MrQmbGmkbshBe4+w9yrreLlWj+iZLxEReoLAiIgCfzhgzsVw9rqa31unJ\ndECfiHLfPbzAXnkbm6iHAte07tcCCDzsvWa2CSaO0btJ7wpevypLWSmV7wXn\n/vlZ91bdrytkOOSVFtVx0XICb2sStk5Mqwdqg+YC+48o1rTf6x7Li+FUEcGZ\nbWPf2IgXvOwAG5VxlvCxhlEQ8g1Ep1Skcdw8v3WRTZcrIXahPY82CoMPpZad\noEr9R71221sqT5PY0YY2d9ERaAx//9k=\n"}]}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/notes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -484,17 +484,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7b8423399de7929fcfe1c39c3b91efed"
+      - W/"a00fa257d15e1f063e43b12b51485651"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fa9ee0cf-a760-4967-9192-d339db38ce31
+      - 300d18fc-7985-420b-a95a-dd2de676dfdc
       X-Runtime:
-      - '0.003972'
+      - '0.003924'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '62'
       Connection:
@@ -503,9 +503,9 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"notes":[{"id":959,"article_id":1267,"text":"factory text"}]}'
+      string: '{"notes":[{"id":729,"article_id":1520,"text":"factory text"}]}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -537,17 +537,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"80eb8b7fccfad2ca9ea6bd67b94f3809"
+      - W/"13ee79c824a5a9fcca6f70f77231f1b9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b1dcecb8-df1d-4294-9e36-cd5976c1c996
+      - 1e9a8182-f15f-4c68-9b35-6b4e11195908
       X-Runtime:
-      - '0.004032'
+      - '0.004459'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '86'
       Connection:
@@ -556,9 +556,9 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":1267,"name":"factory name","universe_id":1925,"type":"Character"}]}'
+      string: '{"articles":[{"id":1520,"name":"factory name","universe_id":1690,"type":"Character"}]}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -590,17 +590,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"a57935d910d61661f28bbe7a602bd802"
+      - W/"08120eeac71796d7dcc1e7026709c46b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0c623474-f8c3-438d-a81b-7947688c230f
+      - ae17442d-161c-4cbd-b41a-68df94b57d22
       X-Runtime:
-      - '0.004245'
+      - '0.004133'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 30 Aug 2015 00:17:15 GMT
+      - Wed, 02 Dec 2015 20:39:59 GMT
       Content-Length:
       - '51'
       Connection:
@@ -609,7 +609,7 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":1925,"title":"factory title"}]}'
+      string: '{"universes":[{"id":1690,"title":"factory title"}]}'
     http_version: 
-  recorded_at: Sun, 30 Aug 2015 00:17:15 GMT
+  recorded_at: Wed, 02 Dec 2015 20:39:59 GMT
 recorded_with: VCR 2.9.3

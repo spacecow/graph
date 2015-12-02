@@ -4,7 +4,7 @@ class Reference
 
   mount_uploader :image, ReferenceUploader
 
-  attr_accessor :id, :url, :note_id, :comment
+  attr_accessor :id, :url, :referenceable_id, :comment, :referenceable_type
   attr_writer :image_data
 
   #TODO replace with writer?
