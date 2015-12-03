@@ -3,7 +3,7 @@ require 'vcr_helper'
 
 describe 'Show article' do
 
-  it "displays the article with its notes & tags", focus:true do
+  it "displays the article with its notes & tags" do
     VCR.use_cassette("display_article_with_notes") do
       begin
         universe = create :universe, title:'The Final Empire'
@@ -39,6 +39,26 @@ describe 'Show article' do
         delete :tags
         delete :notes
         delete :events
+        delete :articles
+        delete :universes
+      end
+    end
+  end
+
+  it "navigate to a relative page" do
+    VCR.use_cassette('navigate_to_a_relative_page') do
+      begin
+        universe = create :universe, title:'The Final Empire'
+        visit universes_path
+        click_link "The Final Empire"
+        article = create :article, universe_id:universe.id
+        sword = create :article, universe_id:universe.id, name:"Sword"
+        relation = create :relation, origin_id:sword.id, target_id:article.id
+        visit article_path article.id
+        click_link "Sword"
+        expect(current_path).to eq article_path(sword.id)
+      ensure
+        delete :relations
         delete :articles
         delete :universes
       end

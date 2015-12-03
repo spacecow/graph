@@ -26,7 +26,7 @@ describe 'relations/_relation.html.erb' do
     expect(bind).to receive(:present).with(relation).and_yield(presenter)
     expect(presenter).to receive(:type).with(no_args){ "type" }
     expect(presenter).to receive(:references_comments).with(no_args){ "comments" }
-    expect(relation).to receive(:target_name).with(no_args){ "target_name" }
+    expect(presenter).to receive(:target).with(no_args){ "target" }
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.relation' }
@@ -37,8 +37,8 @@ describe 'relations/_relation.html.erb' do
   end
 
   describe "Target name" do
-    subject{ page.find '.target.name' }
-    its(:text){ should eq "target_name" }
+    subject{ page.find '.target' }
+    its(:text){ should eq "target" }
   end
 
   describe "References comments" do

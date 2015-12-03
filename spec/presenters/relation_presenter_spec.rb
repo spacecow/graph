@@ -10,6 +10,17 @@ describe RelationPresenter do
 
   subject{ presenter.send function }
 
+  describe "#target" do
+    let(:function){ :target }
+    before do
+      expect(view).to receive(:article_path).with(:target_id){ :path }
+      expect(view).to receive(:link_to).with(:target_name,:path){ :link }
+      expect(relation).to receive(:target_name).with(no_args){ :target_name }
+      expect(relation).to receive(:target_id).with(no_args){ :target_id }
+    end
+    it{ subject }
+  end
+
   describe "#title" do
     let(:function){ :title }
     before{ expect(relation).to receive(:type).with(no_args){ "RightHand" }}

@@ -2,10 +2,12 @@ class Relation
   include ActiveModel::Model
 
   attr_reader :target
-  attr_accessor :origin_id, :target_id, :type, :id
+  attr_writer :target_id
+  attr_accessor :origin_id, :type, :id
 
   def target= params; @target = Article.new(params) end
 
+  def target_id; target.try(:id) end
   def target_name; target.name end
 
   def references; @references || [] end

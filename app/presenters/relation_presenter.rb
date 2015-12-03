@@ -1,6 +1,8 @@
 class RelationPresenter < BasePresenter
   presents :relation
 
+  def target; h.link_to relation.target_name, h.article_path(relation.target_id) end
+
   def title; relation.type.underscore.capitalize.gsub(/_/,' ') end
 
   def type; h.link_to title, h.relation_path(relation.id) end
