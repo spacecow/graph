@@ -16,7 +16,7 @@ module ArticleRunners
       let(:article){ double :article, id: :article_id }
       let(:target){ double :target, id: :target_id }
       before do
-        expect(repo).to receive(:relation_types).with(no_args){ :relation_types }
+        expect(repo).to receive(:relation_types).with(no_args){ ["Owner"] }
         expect(repo).to receive(:article).with(:id){ article }
         expect(repo).to receive(:new_note).with(article_id: :article_id){ :note }
         expect(repo).to receive(:new_relation).

@@ -12,6 +12,7 @@ describe 'notes/edit.html.erb' do
   let(:locals){{ relation:relation, references: :references,
     reference: :reference }}
   let(:relation){ double :relation }
+  let(:presenter){ double :presenter }
 
   before do
     class ErbBinding2
@@ -21,8 +22,10 @@ describe 'notes/edit.html.erb' do
         end
       end
     end
+    def bind.present obj; raise NotImplementedError end
     def bind.render obj, *opts; raise NotImplementedError end
-    expect(relation).to receive(:type).with(no_args){ "Owner" }
+    expect(bind).to receive(:present).with(relation).and_yield(presenter)
+    expect(presenter).to receive(:title).with(no_args){ "Owner" }
     expect(bind).to receive(:render).with(:references){ "references" }
     expect(bind).to receive(:render).
       with("references/form", reference: :reference){ "reference_form" }

@@ -1,3 +1,4 @@
+require 'active_support/core_ext/string/inflections'
 require './app/presenters/base_presenter'
 require './app/presenters/relation_presenter'
 
@@ -9,13 +10,19 @@ describe RelationPresenter do
 
   subject{ presenter.send function }
 
+  describe "#title" do
+    let(:function){ :title }
+    before{ expect(relation).to receive(:type).with(no_args){ "RightHand" }}
+    it{ should eq "Right hand" }
+  end
+
   describe "#type" do
     let(:function){ :type }
     before do
       expect(view).to receive(:relation_path).with(:id){ :path }
-      expect(view).to receive(:link_to).with(:type,:path){ :link }
-      expect(relation).to receive(:type).with(no_args){ :type }
+      expect(view).to receive(:link_to).with(:title,:path){ :link }
       expect(relation).to receive(:id).with(no_args){ :id }
+      expect(presenter).to receive(:title).with(no_args){ :title }
     end
     it{ should be :link }
   end

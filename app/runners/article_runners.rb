@@ -12,7 +12,8 @@ module ArticleRunners
         reject{|e| e.id==article.id}.
         reject{|e| article.target_ids.include?(e.id)}
       events = article.events
-      relation_types = repo.relation_types
+      types = repo.relation_types
+      relation_types = types.map{|e| e.sub(/_/,' ')}.zip(types)
       relations = article.relations
       success article, note, notes, relation, targets, events, relation_types, relations
     end

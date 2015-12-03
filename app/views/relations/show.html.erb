@@ -1,5 +1,7 @@
+<% present @relation do |presenter| %>
+
 <div class="relation">
-  <h1><%= @relation.type %></h1>
+  <h1><%= presenter.title %></h1>
 
   <%= render @references %>
 
@@ -8,3 +10,5 @@
     <%= render "references/form", reference:@reference %>
   </div>
 </div>
+
+<% end %>
