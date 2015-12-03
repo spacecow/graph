@@ -40,7 +40,25 @@ describe 'Show article' do
     end
   end
 
-  pending "navigate to a relation page"
+  it "navigate to a relation page" do
+    VCR.use_cassette('navigate_to_a_relation_page') do
+      begin
+        universe = create :universe, title:'The Final Empire'
+        visit universes_path
+        click_link "The Final Empire"
+        article = create :article, universe_id:universe.id
+        sword = create :article, universe_id:universe.id
+        relation = create :relation, origin_id:sword.id, target_id:article.id, type:"Owner"
+        visit article_path article.id
+        click_link 'Owns'
+        expect(current_path).to eq relation_path(relation.id)
+      ensure
+        delete :relations
+        delete :articles
+        delete :universes
+      end
+    end
+  end
 
   it "navigate to a tag page" do
     VCR.use_cassette('navigate_to_a_tag_page') do

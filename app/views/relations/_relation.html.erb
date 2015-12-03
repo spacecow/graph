@@ -1,4 +1,8 @@
+<% present relation do |presenter| %>
+
 <li class="relation">
   <span class="target name"><%= relation.target_name %></span>
-  <span class="type"><%= relation.type %></span>
+  <span class="type"><%= presenter.type %></span>
 </li>
+
+<% end %>

@@ -39,7 +39,7 @@ describe 'notes/edit.html.erb' do
     subject(:div){ page.find '.reference.new.form' }
     describe "Header" do
       subject{ div.find 'h2' }
-      its(:text){ should eq "Add Relation" }
+      its(:text){ should eq "Add Reference" }
     end
     its(:text){ should include "reference_form" }
   end

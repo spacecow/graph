@@ -12,6 +12,7 @@ describe 'relations/_relation.html.erb' do
   let(:filepath){ './app/views/relations/_relation.html.erb' }
   let(:locals){{ relation:relation }}
   let(:relation){ double :relation }
+  let(:presenter){ double :presenter }
 
   before do
     class ErbBinding
@@ -21,7 +22,9 @@ describe 'relations/_relation.html.erb' do
         end
       end
     end
-    expect(relation).to receive(:type).with(no_args){ "type" }
+    def bind.present obj; raise NotImplementedError end
+    expect(bind).to receive(:present).with(relation).and_yield(presenter)
+    expect(presenter).to receive(:type).with(no_args){ "type" }
     expect(relation).to receive(:target_name).with(no_args){ "target_name" }
   end
 
