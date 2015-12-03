@@ -22,6 +22,7 @@ FactoryGirl.define do
   end
 
   factory :relation do
+    type 'Owner'
   end
 
   factory :step do

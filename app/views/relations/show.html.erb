@@ -1,0 +1,10 @@
+<div class="relation">
+  <h1><%= @relation.type %></h1>
+
+  <%= render @references %>
+
+  <div class="reference new form">
+    <h2>Add Relation</h2>
+    <%= render "references/form", reference:@reference %>
+  </div>
+</div>

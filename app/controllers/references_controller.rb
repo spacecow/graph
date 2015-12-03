@@ -5,9 +5,14 @@ class ReferencesController < ApplicationController
   end
 
   def create
+#TODO merge referenceable_id/type instead of hidden fields in form
     run(ReferenceRunners::Create, reference_params) do |on|
       on.success do |reference|
-        redirect_to note_path(reference.referenceable_id)
+        if reference.referenceable_type == "Note"
+          redirect_to note_path(reference.referenceable_id)
+        elsif reference.referenceable_type == "Relation"
+          redirect_to relation_path(reference.referenceable_id)
+        end
       end
     end
   end

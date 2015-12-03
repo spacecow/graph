@@ -40,6 +40,8 @@ describe 'Show article' do
     end
   end
 
+  pending "navigate to a relation page"
+
   it "navigate to a tag page" do
     VCR.use_cassette('navigate_to_a_tag_page') do
       begin

@@ -9,6 +9,10 @@ describe "RelationsController" do
 
   subject{ controller.send function }
 
+  describe "#show" do
+    let(:function){ :show }
+  end
+
   describe "#create" do
     let(:function){ :create }
     let(:runner){ double :runner }

@@ -1,5 +1,15 @@
 class RelationsController < ApplicationController
 
+  def show
+    run(RelationRunners::Show, params[:id]) do |on|
+      on.success do |relation, reference, references|
+        @relation = relation
+        @reference = reference
+        @references = references
+      end
+    end
+  end
+
   def create
     run(RelationRunners::Create, relation_params) do |on|
       on.success do |relation|

@@ -1,5 +1,6 @@
 require 'capybara'
 require 'rspec/its'
+require 'active_support/core_ext/object/try'
 
 describe 'layouts/_layouts.html.erb' do
 
@@ -67,7 +68,7 @@ describe 'layouts/_layouts.html.erb' do
   end
 
   describe "References link" do
-    let(:reference){ double :reference, referenceable_id: :note_id }
+    let(:reference){ double :reference, id: :id, referenceable_id: :note_id }
     before do
       expect(bind).to receive(:note_path).with(:note_id){ "references_path" }
     end
