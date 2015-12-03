@@ -4,9 +4,9 @@ class Relation
   attr_reader :target
   attr_accessor :origin_id, :target_id, :type, :id
 
-  def target= params
-    @target = Article.new(params)
-  end
+  def target= params; @target = Article.new(params) end
+
+  def target_name; target.name end
 
   def references; @references || [] end
   def references= arr

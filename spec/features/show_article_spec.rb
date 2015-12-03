@@ -24,8 +24,8 @@ describe 'Show article' do
         expect(page).to have_content "Kelsier"
         expect(page).to have_content "a note"
         expect(page).to have_content "hero"
-        expect(page.find('.relations')).to have_content "Owns"
-        expect(page.find('.relations')).to have_content "Sword"
+        expect(page.find('.relations.list')).to have_content "Owns"
+        expect(page.find('.relations.list')).to have_content "Sword"
         expect(page.find('.events.list')).to have_content "The Standoff"
       ensure
         delete :participations

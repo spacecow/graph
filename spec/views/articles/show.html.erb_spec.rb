@@ -20,7 +20,7 @@ describe "articles/show.html.erb" do
   let(:filepath){ "./app/views/articles/show.html.erb" }
   let(:locals){{ article:article, relation: :relation, targets: :targets,
                  notes: :notes, note: :note, events:events,
-                 relation_types: :relation_types }}
+                 relation_types: :relation_types, relations: :relations }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
   let(:events){ :events }
@@ -30,10 +30,7 @@ describe "articles/show.html.erb" do
     def bind.present obj; end
     expect(bind).to receive(:present).with(article).and_yield(presenter)
     expect(article).to receive(:name).with(no_args){ "article_name" }
-    expect(presenter).to receive(:relation_groups).with(no_args){ :relation_groups }
-    expect(bind).to receive(:render).
-      with(partial:"relations/group", collection: :relation_groups, as: :group).
-      and_return("render_relation_groups")
+    expect(bind).to receive(:render).with(:relations){ "render_relations" }
     expect(bind).to receive(:render).
       with("relations/form", relation: :relation, targets: :targets,
             relation_types: :relation_types).and_return("render_relation_form")
@@ -72,9 +69,17 @@ describe "articles/show.html.erb" do
   end
 
   #TODO relations header 
-  describe "Relations list" do
-    subject{ page.find '.relations' }
-    its(:text){ should include "render_relation_groups" }
+  describe "Relation list" do
+    subject(:div){ page.find '.relations.list' }
+    describe "Header" do
+      subject{ div.find 'h2' }
+      its(:text){ should eq "Relations" }
+    end
+    describe "List" do
+      subject{ page.find 'ul.relations' }
+      its(:text){ should include "render_relations" }
+    end
+
   end
 
   #TODO relation form header

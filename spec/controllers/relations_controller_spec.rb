@@ -3,7 +3,7 @@ describe "RelationsController" do
   let(:controller){ RelationsController.new }
 
   before do
-    class ApplicationController; end
+    class ApplicationController; end unless defined?(Rails)
     require './app/controllers/relations_controller'
   end
 

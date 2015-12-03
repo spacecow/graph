@@ -26,6 +26,7 @@ module ArticleRunners
         expect(article).to receive(:target_ids).with(no_args){ [:target_id] }
         expect(article).to receive(:notes).with(no_args){ :notes }
         expect(article).to receive(:events).with(no_args){ :events }
+        expect(article).to receive(:relations).with(no_args){ :relations }
       end
       subject{ Show.new(context).run :id, universe_id: :universe_id }
       it{ subject }

@@ -22,7 +22,7 @@ describe "Add relation" do
           expect(current_path).to eq article_path(article.id) 
           #TODO show relations
           expect(page.find "div.relations").to have_content 'Owner'
-          expect(page.find ".relations .relatives").to have_content 'Swordmaster'
+          expect(page.find "ul.relations").to have_content 'Swordmaster'
           expect(all(".type option").map(&:text)).
             to eq ["","Counselor","Husband","Owner"] 
           expect(all(".target option").map(&:text)).to eq [""] 

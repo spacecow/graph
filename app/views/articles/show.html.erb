@@ -14,9 +14,11 @@
     </div>
   <% end %>
 
-  <div class="relations">
-    <%= render partial:"relations/group",
-               collection:presenter.relation_groups, as: :group %>
+  <div class="relations list">
+    <h2>Relations</h2>
+    <ul class="relations">
+      <%= render @relations %>
+    </ul>
   </div>
 
   <div class="relation new form">
