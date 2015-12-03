@@ -25,6 +25,7 @@ describe 'relations/_relation.html.erb' do
     def bind.present obj; raise NotImplementedError end
     expect(bind).to receive(:present).with(relation).and_yield(presenter)
     expect(presenter).to receive(:type).with(no_args){ "type" }
+    expect(presenter).to receive(:references_comments).with(no_args){ "comments" }
     expect(relation).to receive(:target_name).with(no_args){ "target_name" }
   end
 
@@ -39,5 +40,11 @@ describe 'relations/_relation.html.erb' do
     subject{ page.find '.target.name' }
     its(:text){ should eq "target_name" }
   end
+
+  describe "References comments" do
+    subject{ page.find '.references.comments' }
+    its(:text){ should eq "comments" }
+  end
+
 
 end

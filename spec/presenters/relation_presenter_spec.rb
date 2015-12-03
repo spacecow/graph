@@ -20,4 +20,14 @@ describe RelationPresenter do
     it{ should be :link }
   end
 
+  describe "#references_comments" do
+    let(:function){ :references_comments }
+    let(:reference){ double :reference }
+    before do
+      expect(relation).to receive(:references).with(no_args){ [reference] }
+      expect(reference).to receive(:comment).with(no_args){ "comment" }
+    end
+    it{ should eq "comment" }
+  end
+
 end

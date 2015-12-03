@@ -11,9 +11,13 @@ describe 'Show article' do
         click_link "The Final Empire"
         pistol = create :article, name:"Pistol", universe_id:universe.id
         sword = create :article, name:"Sword", universe_id:universe.id
-        article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
-        create :relation, origin_id:sword.id, target_id:article.id, type:"Owner"
+        article = create :article, name:'Kelsier',
+          universe_id:universe.id, type:'Character'
+        relation = create :relation, origin_id:sword.id,
+          target_id:article.id, type:"Owner"
         create :relation, origin_id:pistol.id, target_id:article.id, type:"Owner"
+        create :reference, referenceable_id:relation.id,
+          referenceable_type:"Relation", comment:"very sharp"
         note = create :note, article_id:article.id, text:'a note'
         tag = create :tag, title:'hero'
         event = create :event, universe_id:universe.id, title:"The Standoff"
@@ -26,6 +30,7 @@ describe 'Show article' do
         expect(page).to have_content "hero"
         expect(page.find('.relations.list')).to have_content "Owns"
         expect(page.find('.relations.list')).to have_content "Sword"
+        expect(page.find('.relations.list')).to have_content "very sharp"
         expect(page.find('.events.list')).to have_content "The Standoff"
       ensure
         delete :participations
