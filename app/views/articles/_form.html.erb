@@ -1,4 +1,6 @@
-<%= form_for article do |f| %>
+<%= form_for article,
+  url: article.id ? article_path(article.id) : articles_path,
+  method: article.id ? :put : :post do |f| %>
   <div class="name">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -15,5 +17,10 @@
     <% end %>
   </div>
 
-  <%= f.submit "Create" %>
+  <div class="gender">
+    <%= f.label :gender %>
+    <%= f.select :gender, options_for_select([["Neutral","n"],["Male","m"],["Female","f"]], article.gender) %>
+  </div>
+
+  <%= f.submit article.id ? "Update" : "Create" %>
 <% end %>

@@ -40,4 +40,20 @@ module ArticleRunners
     end
   end
 
+  class Edit < Runner
+    def run id
+      article = repo.article id
+      article_types = repo.article_types
+      success article, article_types
+    end
+  end
+
+  class Update < Runner
+    def run id, params
+      article = repo.article id 
+      repo.update_article article, params 
+      success article
+    end
+  end
+
 end

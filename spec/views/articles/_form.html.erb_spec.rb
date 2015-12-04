@@ -10,20 +10,25 @@ describe 'articles/_form.htm.erb' do
   let(:erb_bindings){ ErbBinding.new locals }
 
   let(:locals){ {article:article, article_types:%w(Character)} }
-  let(:article){ double :article, errors:errors }
+  let(:article){ double :article, id: :id, errors:errors, gender: :gender }
   let(:errors){ double :errors }
 
   before do
-    def erb_bindings.form_for mdl; yield mdl end
+    def erb_bindings.form_for mdl, *opts; yield mdl end
     def erb_bindings.options_for_select a, b; end
+    def erb_bindings.article_path id; end
     expect(article).to receive(:label).with(:name)
     expect(article).to receive(:label).with(:type)
+    expect(article).to receive(:label).with(:gender)
     expect(article).to receive(:text_field).with(:name)
     expect(article).to receive(:select).with(:type, :selection, include_blank:true)
-    expect(article).to receive(:submit).with("Create")
+    expect(article).to receive(:select).with(:gender, :selection)
+    expect(article).to receive(:submit).with("Update")
     expect(article).to receive(:type){ :type }
     expect(erb_bindings).to receive(:options_for_select).
       with(['Character'], :type){ :selection }
+    expect(erb_bindings).to receive(:options_for_select).
+      with([["Neutral", "n"], ["Male", "m"], ["Female", "f"]], :gender){ :selection }
   end
 
   context "no errors" do

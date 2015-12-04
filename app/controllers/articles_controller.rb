@@ -41,13 +41,29 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    current_universe_id
+    redirect_to universes_path and return if current_universe_id.nil?
+    run(ArticleRunners::Edit, params[:id]) do |on|
+      on.success do |article, article_types|
+        @article = article
+        @article_types = article_types
+      end
+    end
+  end
+
+  def update
+    redirect_to universes_path and return if current_universe_id.nil?
+    run(ArticleRunners::Update, params[:id], article_params) do |on|
+      on.success do |article|
+        redirect_to article_path(article.id)
+      end
+    end
   end
 
   private
 
     def article_params
-      params.require(:article).permit(:name, :type).merge({universe_id:current_universe_id})
+      params.require(:article).permit(:name, :type, :gender).
+        merge({universe_id:current_universe_id})
     end
 
 end

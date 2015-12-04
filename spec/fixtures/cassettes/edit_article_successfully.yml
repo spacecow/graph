@@ -1,0 +1,654 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: universe%5Btitle%5D=The+Wheel+of+Time
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c982cf37aac978e88d6bcaeb044d1f2d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bfad8400-be1d-497a-b355-6a01aff269d2
+      X-Runtime:
+      - '0.004810'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '52'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"universe":{"id":6304,"title":"The Wheel of Time"}}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"798c12554da5fad1893a0bdeb46ead84"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - be2012f7-75ed-4a1f-9f02-3417ee51d9e7
+      X-Runtime:
+      - '0.002533'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '55'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universes":[{"id":6304,"title":"The Wheel of Time"}]}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/universes/6304?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"668c57f0dabfe96b0756399bcc57f6a7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 999926cf-af35-4a8a-bbb3-12cb88598f61
+      X-Runtime:
+      - '0.003349'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '66'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universe":{"id":6304,"title":"The Wheel of Time","articles":[]}}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: article%5Bgender%5D=n&article%5Bname%5D=old+name&article%5Btype%5D=Character&article%5Buniverse_id%5D=6304
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d983ff9fe78715dafe348fa3ad765d68"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0e20a322-de03-40e7-80c4-2aa9a335760a
+      X-Runtime:
+      - '0.012446'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '115'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":4410,"name":"old name","universe_id":6304,"type":"Character","gender":"n","notes":[],"events":[]}}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles/4410?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d983ff9fe78715dafe348fa3ad765d68"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c7005142-581f-4099-8fc7-354078ec3395
+      X-Runtime:
+      - '0.006295'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '115'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":4410,"name":"old name","universe_id":6304,"type":"Character","gender":"n","notes":[],"events":[]}}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/article_types?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"71a2d52f1527e99219cb61efce8a07d1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b0b3da0a-c76a-4eef-8d5a-4ef552fcc15d
+      X-Runtime:
+      - '0.002074'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '46'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"article_types":["Character","Item","Place"]}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles/4410?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d983ff9fe78715dafe348fa3ad765d68"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 555f5d6d-88f1-4da7-85bd-7d68e0d4cf10
+      X-Runtime:
+      - '0.006181'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '115'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":4410,"name":"old name","universe_id":6304,"type":"Character","gender":"n","notes":[],"events":[]}}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: put
+    uri: http://localhost:9292/api/articles/4410?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: article%5Bname%5D=updated+name&article%5Btype%5D=Character&article%5Buniverse_id%5D=6304
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0652e1f8f3710e8fae4255467698c707"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2f8402af-789d-48d0-b97a-060669db5e3e
+      X-Runtime:
+      - '0.007982'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '119'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=PUT; path=/
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":4410,"name":"updated name","universe_id":6304,"type":"Character","gender":"n","notes":[],"events":[]}}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles/4410?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0652e1f8f3710e8fae4255467698c707"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7a993af1-a63b-4f87-a63c-a22b1cda2482
+      X-Runtime:
+      - '0.005448'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '119'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":4410,"name":"updated name","universe_id":6304,"type":"Character","gender":"n","notes":[],"events":[]}}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=6304
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a286a942ba051fa7c3268ed9993998fb"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4f7935ad-fa2e-4c3b-8459-d9e82335e8a5
+      X-Runtime:
+      - '0.002941'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '80'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"articles":[{"id":4410,"name":"updated name","type":"Character","gender":"n"}]}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/relation_types?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d8c7fceb61c490a6944d6356420228be"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5dc1fc30-abad-4d21-8205-ab9cd5ab02b1
+      X-Runtime:
+      - '0.001932'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '63'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"relation_types":["Counselor","Husband","Owner","Right_hand"]}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Depth:
+      - Infinity
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6cf6fcba62e257cb7a460f583cd3e1f7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 96c0b1e7-7c81-4a73-9b35-fdaa6f48b026
+      X-Runtime:
+      - '0.004284'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:36 GMT
+      Content-Length:
+      - '86'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"articles":[{"id":4410,"name":"updated name","universe_id":6304,"type":"Character"}]}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:36 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Depth:
+      - Infinity
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"798c12554da5fad1893a0bdeb46ead84"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 26da9d73-3fa8-4485-9536-61f409b3d4e7
+      X-Runtime:
+      - '0.004004'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Fri, 04 Dec 2015 10:22:37 GMT
+      Content-Length:
+      - '55'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"universes":[{"id":6304,"title":"The Wheel of Time"}]}'
+    http_version: 
+  recorded_at: Fri, 04 Dec 2015 10:22:37 GMT
+recorded_with: VCR 2.9.3

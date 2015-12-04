@@ -7,7 +7,11 @@ describe "ArticlesController" do
     require 'action_controller'
     require './app/controllers/articles_controller'
     def controller.current_universe_id; raise NotImplementedError end
+    def controller.params; raise NotImplementedError end
+    def controller.run runner, *opts; raise NotImplementedError end
+    def controller.redirect_to path; raise NotImplementedError end
     expect(controller).to receive(:current_universe_id).at_least(1){ :universe_id }
+    allow(controller).to receive(:params).with(no_args){ params } 
   end
 
   subject{ controller.send function }
@@ -18,8 +22,6 @@ describe "ArticlesController" do
     let(:runner){ double :runner }
     before do
       stub_const "ArticleRunners::Show", Class.new
-      def controller.params; raise NotImplementedError end
-      def controller.run runner, id, params; raise NotImplementedError end
       expect(controller).to receive(:params).with(no_args){ params }
       expect(controller).to receive(:run).
         with(ArticleRunners::Show,:id,universe_id: :universe_id).and_yield(runner)
@@ -35,7 +37,6 @@ describe "ArticlesController" do
     let(:runner){ double :runner }
     before do
       stub_const "ArticleRunners::New", Class.new
-      def controller.run runner; raise NotImplementedError end
       expect(controller).to receive(:run).
         with(ArticleRunners::New).and_yield(runner)
       expect(runner).to receive(:success).with(no_args).
@@ -49,9 +50,7 @@ describe "ArticlesController" do
     let(:runner){ double :runner }
     before do
       stub_const "ArticleRunners::Create", Class.new
-      def controller.run runner, params; raise NotImplementedError end
       def controller.universe_path id; raise NotImplementedError end
-      def controller.redirect_to path; raise NotImplementedError end
       def controller.render page; raise NotImplementedError end
       expect(controller).to receive(:article_params).with(no_args){ :params }
       expect(controller).to receive(:run).
@@ -68,6 +67,34 @@ describe "ArticlesController" do
 
   describe "#edit" do
     let(:function){ :edit }
+    let(:params){{ id: :id }}
+    let(:runner){ double :runner }
+    before do
+      stub_const "ArticleRunners::Edit", Class.new
+      expect(controller).to receive(:run).
+        with(ArticleRunners::Edit,:id).and_yield(runner)
+      expect(runner).to receive(:success).with(no_args).
+        and_yield(:article, :article_types)
+    end
+    it{ subject }
+  end
+
+  describe "#update" do
+    let(:function){ :update }
+    let(:params){{ id: :id }}
+    let(:runner){ double :runner }
+    let(:article){ double :article }
+    before do
+      stub_const "ArticleRunners::Update", Class.new
+      def controller.article_path id; raise NotImplementedError end
+      expect(controller).to receive(:article_params).with(no_args){ :params }
+      expect(controller).to receive(:run).
+        with(ArticleRunners::Update,:id,:params).and_yield(runner)
+      expect(runner).to receive(:success).with(no_args).and_yield(article)
+      expect(article).to receive(:id).with(no_args){ :id }
+      expect(controller).to receive(:article_path).with(:id){ :path }
+      expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+    end
     it{ subject }
   end
 
@@ -75,10 +102,6 @@ describe "ArticlesController" do
     let(:function){ :article_params }
     let(:params){
       ActionController::Parameters.new(article:{name: :name, type: :type, id: :id}) }
-    before do
-      def controller.params; raise NotImplementedError end
-      expect(controller).to receive(:params).with(no_args){ params } 
-    end
     it{ should eq({"name" => :name, "type" => :type, "universe_id" => :universe_id}) }
   end
 

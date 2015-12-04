@@ -32,5 +32,23 @@ module ArticleRunners
       it{ subject }
     end
 
+    describe Edit do
+      subject{ Edit.new(context).run :id }
+      before do
+        expect(repo).to receive(:article).with(:id){ :article }
+        expect(repo).to receive(:article_types).with(no_args){ :article_types }
+      end
+      it{ subject }
+    end
+
+    describe Update do
+      subject{ Update.new(context).run :id, :params }
+      before do
+        expect(repo).to receive(:article).with(:id){ :article }
+        expect(repo).to receive(:update_article).with(:article,:params)
+      end
+      it{ subject }
+    end
+
   end
 end

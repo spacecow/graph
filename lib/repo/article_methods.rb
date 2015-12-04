@@ -41,5 +41,14 @@ module Repo
       end
     end
 
+    def update_article article, params
+      url = "http://localhost:9292/api/articles/#{article.id}?access_token=#{token}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      response = http.put uri, {article:params}.to_query
+      body = JSON.parse(response.body)['article']
+      Article.new body
+    end
+
   end
 end
