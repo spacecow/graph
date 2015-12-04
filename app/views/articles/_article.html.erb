@@ -1,5 +1,9 @@
-<li class='article'>
+<% present article do |presenter| %>
+
+<%= content_tag :li, class:["article", presenter.gender].join(" ") do %>
   <span class='name'>
-    <%= link_to article.name, article_path(article.id) %>
+    <%= presenter.name %>
   </span>
-</li>
+<% end %>
+
+<% end %>

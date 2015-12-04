@@ -3,7 +3,7 @@ describe "StepsController" do
   let(:controller){ StepsController.new }
 
   before do
-    class ApplicationController; end 
+    class ApplicationController; end unless defined?(Rails)
     require './app/controllers/steps_controller' 
   end
 

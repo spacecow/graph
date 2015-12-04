@@ -1,7 +1,7 @@
 class Article
   include ActiveModel::Model
 
-  attr_accessor :id, :name, :type, :universe_id
+  attr_accessor :id, :name, :type, :universe_id, :gender
   attr_reader :universe
 
   def events; @events || [] end

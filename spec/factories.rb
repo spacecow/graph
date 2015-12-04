@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :article do
     name 'factory name'
     type 'Character'
+    gender 'n'
   end
 
   factory :book do

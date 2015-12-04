@@ -29,31 +29,31 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b09aa5181a50432e8eb31714e223856a"
+      - W/"0a1b134262ebe4811828f11aa0a6b53d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 78a90658-80dc-4a91-a117-346af571d1d0
+      - 6f8f0678-3a78-48ac-b033-f5230b026e46
       X-Runtime:
-      - '0.012719'
+      - '0.003869'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 28 May 2015 05:45:56 GMT
+      - Fri, 04 Dec 2015 05:43:38 GMT
       Content-Length:
-      - '49'
+      - '48'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":11971,"title":"factory title"}}'
+      string: '{"universe":{"id":3465,"title":"factory title"}}'
     http_version: 
-  recorded_at: Thu, 28 May 2015 05:45:56 GMT
+  recorded_at: Fri, 04 Dec 2015 05:43:38 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/11971?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/3465?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -80,26 +80,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"17cc06f5415586684a604dbd55a9daa8"
+      - W/"77d624910669415b32c9ece6ebeed60e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 233e504f-31c4-4aed-9666-ec2f30d70887
+      - 86f5da11-01bd-43be-aea4-e3dc078429ac
       X-Runtime:
-      - '0.005426'
+      - '0.002723'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 28 May 2015 05:45:56 GMT
+      - Fri, 04 Dec 2015 05:43:38 GMT
       Content-Length:
-      - '63'
+      - '62'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":11971,"title":"factory title","articles":[]}}'
+      string: '{"universe":{"id":3465,"title":"factory title","articles":[]}}'
     http_version: 
-  recorded_at: Thu, 28 May 2015 05:45:56 GMT
+  recorded_at: Fri, 04 Dec 2015 05:43:38 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/article_types?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -129,26 +129,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"ff5114990c8589b4be1483af78cbcd5e"
+      - W/"71a2d52f1527e99219cb61efce8a07d1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - def28def-4fdb-4ba1-9ea4-ce4c56ee3482
+      - aa281d3c-29ea-4d77-b912-97258f7a0489
       X-Runtime:
-      - '0.002195'
+      - '0.007450'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 28 May 2015 05:45:56 GMT
+      - Fri, 04 Dec 2015 05:43:38 GMT
       Content-Length:
-      - '31'
+      - '46'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"article_types":["Character"]}'
+      string: '{"article_types":["Character","Item","Place"]}'
     http_version: 
-  recorded_at: Thu, 28 May 2015 05:45:56 GMT
+  recorded_at: Fri, 04 Dec 2015 05:43:38 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -180,26 +180,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"2868d181842146c36e7f09a02d496ef7"
+      - W/"e39511f089b97960639a14663c268a84"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8792ce37-b776-4ef4-ae76-09988c536c46
+      - 79625710-bb50-492c-8b01-34375e89d456
       X-Runtime:
-      - '0.004684'
+      - '0.004259'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 28 May 2015 05:45:56 GMT
+      - Fri, 04 Dec 2015 05:43:38 GMT
       Content-Length:
-      - '52'
+      - '51'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":11971,"title":"factory title"}]}'
+      string: '{"universes":[{"id":3465,"title":"factory title"}]}'
     http_version: 
-  recorded_at: Thu, 28 May 2015 05:45:56 GMT
+  recorded_at: Fri, 04 Dec 2015 05:43:38 GMT
 recorded_with: VCR 2.9.3
