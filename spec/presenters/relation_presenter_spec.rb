@@ -10,6 +10,12 @@ describe RelationPresenter do
 
   subject{ presenter.send function }
 
+  describe "#gender" do
+    let(:function){ :gender }
+    before{ expect(relation).to receive(:target_gender).with(no_args){ 'n' }}
+    it{ should eq "neutral" }
+  end
+
   describe "#target" do
     let(:function){ :target }
     before do

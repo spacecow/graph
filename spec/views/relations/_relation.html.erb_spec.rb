@@ -6,7 +6,7 @@ describe 'relations/_relation.html.erb' do
   let(:bind){ ErbBinding.new locals }
   let(:local_bindings){ bind.instance_eval{binding} }
   let(:file){ File.read filepath }
-  let(:erb){ ERB.new file }
+  let(:erb){ ERB.new file.sub(/<%= content/,'<% content') }
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ './app/views/relations/_relation.html.erb' }
@@ -23,22 +23,20 @@ describe 'relations/_relation.html.erb' do
       end
     end
     def bind.present obj; raise NotImplementedError end
+    def bind.content_tag tag, *opts; raise NotImplementedError end
     expect(bind).to receive(:present).with(relation).and_yield(presenter)
+    expect(bind).to receive(:content_tag).
+      with(:span, class:%w(target male).join(" ")).and_yield
     expect(presenter).to receive(:type).with(no_args){ "type" }
     expect(presenter).to receive(:references_comments).with(no_args){ "comments" }
     expect(presenter).to receive(:target).with(no_args){ "target" }
+    expect(presenter).to receive(:gender).with(no_args){ "male" }
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.relation' }
 
-  describe "Relation type" do
-    subject{ page.find '.type' }
-    its(:text){ should eq "type" }
-  end
-
   describe "Target name" do
-    subject{ page.find '.target' }
-    its(:text){ should eq "target" }
+    its(:text){ should include "target" }
   end
 
   describe "References comments" do
@@ -46,5 +44,9 @@ describe 'relations/_relation.html.erb' do
     its(:text){ should eq "comments" }
   end
 
+  describe "Relation type" do
+    subject{ page.find '.type' }
+    its(:text){ should eq "type" }
+  end
 
 end

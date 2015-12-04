@@ -12,13 +12,14 @@ describe "Show event" do
         parent = create :event, universe_id:universe.id, title:"Green wedding"
         event = create :event, universe_id:universe.id, title:"Red wedding"
         create :step, parent_id:parent.id, child_id:event.id
-        article = create :article, universe_id:universe.id, name:"John Snow"
+        article = create :article, universe_id:universe.id, name:"John Snow",
+          gender:'m'
         create :participation, article_id:article.id, event_id:event.id
         #TODO event and article should be in the same universe!
         visit event_path event.id
         expect(page).to have_content "Green wedding"
         expect(page).to have_content "Red wedding"
-        expect(page).to have_content "John Snow"
+        expect(page.find '.participants .male').to have_content "John Snow"
       ensure
         delete :steps
         delete :participations

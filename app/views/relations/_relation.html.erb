@@ -1,7 +1,9 @@
 <% present relation do |presenter| %>
 
 <li class="relation">
-  <span class="target"><%= presenter.target %></span>
+  <%= content_tag :span, class:["target", presenter.gender].join(" ") do %>
+    <%= presenter.target %>
+  <% end %>
   <span class="references comments"><%= presenter.references_comments %></span>
   <span class="type"><%= presenter.type %></span>
 </li>

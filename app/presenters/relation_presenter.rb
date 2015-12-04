@@ -11,5 +11,11 @@ class RelationPresenter < BasePresenter
     relation.references.map(&:comment).join(', ')
   end
 
+  def gender
+  { 'm' => "male",
+    'f' => "female",
+    'n' => "neutral"}[relation.target_gender]
+  end
+
 end
 

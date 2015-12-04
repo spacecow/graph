@@ -1,6 +1,5 @@
 <% present article do |presenter| %>
 
-<%# content_tag :li, class:["article", presenter.gender].join(" ") do %>
 <li class="article">
   <%= content_tag :span, class:["name", presenter.gender].join(" ") do %>
     <%= presenter.name %>

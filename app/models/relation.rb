@@ -9,6 +9,7 @@ class Relation
 
   def target_id; target.try(:id) end
   def target_name; target.name end
+  def target_gender; target.gender end
 
   def references; @references || [] end
   def references= arr
