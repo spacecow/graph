@@ -24,10 +24,25 @@ describe 'Show universe' do
     VCR.use_cassette('navigate_to_an_article_page') do
       begin
         universe = create :universe
-        article = create :article, name:'Kelsier', universe_id:universe.id
+        article = create :article, name:"Kelsier", universe_id:universe.id
         visit universe_path universe.id
-        click_link 'Kelsier'
+        within('li.article'){ click_link "Kelsier" }
         expect(current_path).to eq article_path(article.id)
+      ensure
+        delete :articles
+        delete :universes
+      end
+    end
+  end
+
+  it 'navigate to an article edit page' do
+    VCR.use_cassette('navigate_to_an_article_edit_page') do
+      begin
+        universe = create :universe
+        article = create :article, name:"Kelsier", universe_id:universe.id
+        visit universe_path universe.id
+        within('li.article'){ click_link "Edit" }
+        expect(current_path).to eq edit_article_path(article.id)
       ensure
         delete :articles
         delete :universes

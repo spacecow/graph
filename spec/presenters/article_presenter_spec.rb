@@ -9,6 +9,16 @@ describe ArticlePresenter do
 
   subject{ presenter.send function }
 
+  describe "#edit_link" do
+    let(:function){ :edit_link }
+    before do
+      expect(article).to receive(:id).with(no_args){ :id }
+      expect(view).to receive(:edit_article_path).with(:id){ :path }
+      expect(view).to receive(:link_to).with("Edit",:path){ :link }
+    end
+    it{ subject }
+  end
+
   describe "#name" do
     let(:function){ :name }
     before do

@@ -40,6 +40,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    current_universe_id
+  end
+
   private
 
     def article_params

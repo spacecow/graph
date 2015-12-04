@@ -23,22 +23,23 @@ describe 'articles/_article.html.erb' do
     end
     def bind.present obj; raise NotImplementedError end
     def bind.content_tag tag, *opts; raise NotImplementedError end
-    #def bind.article_path id; end
-    #expect(article).to receive(:id){ 666 }
-    #expect(article).to receive(:name){ 'Kelsier' }
-    #expect(bind).to receive(:article_path).with(666){ "path" }
     expect(bind).to receive(:present).with(:article).and_yield(presenter)
     expect(bind).to receive(:content_tag).
-      with(:li, class:%w(article male).join(" ")).and_yield
+      with(:span, class:%w(name male).join(" ")).and_yield
     expect(presenter).to receive(:gender).with(no_args){ "male" }
     expect(presenter).to receive(:name).with(no_args){ "name" }
+    expect(presenter).to receive(:edit_link).with(no_args){ "edit_link" }
   end
 
-  subject(:page){ Capybara.string rendering }
+  subject(:page){ Capybara.string(rendering).find 'li.article' }
 
-  describe 'name' do
-    subject(:name){ page.find '.name' }
+  describe "Name" do
     its(:text){ is_expected.to include "name" } 
+  end
+
+  describe "Edit link" do
+    subject{ page.find '.actions .edit' }
+    its(:text){ is_expected.to eq "edit_link" } 
   end
 
 end
