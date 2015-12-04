@@ -12,15 +12,16 @@ describe 'UniversesController#show' do
 
   describe '#show' do
 
+    let(:article){ double :article, id: :id }
+
     before do
       def controller.params; end
       expect(controller).to receive(:run).with(UniverseRunners::Show, :id){ universe }
       expect(controller).to receive(:params).at_least(1){ params }
       expect(controller).to receive(:current_universe_id).with(:id)
-      expect(universe).to receive(:articles){ :articles }
+      expect(universe).to receive(:articles){ [article] }
       controller.show
     end
-
 
     describe '@universe' do
       subject{ controller.instance_variable_get(:@universe) }
@@ -29,7 +30,7 @@ describe 'UniversesController#show' do
 
     describe '@articles' do
       subject{ controller.instance_variable_get(:@articles) }
-      it{ is_expected.to be :articles }
+      it{ is_expected.to eq [article] }
     end
 
   end

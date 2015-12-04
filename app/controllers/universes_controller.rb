@@ -4,7 +4,7 @@ class UniversesController < ApplicationController
   def show
     current_universe_id params[:id]
     @universe = run(UniverseRunners::Show, params[:id])
-    @articles = @universe.articles 
+    @articles = @universe.articles.sort_by(&:id)
   end
 
   def index
