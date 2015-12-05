@@ -14,7 +14,9 @@ describe "Add relation" do
           article = create :article, universe_id:universe.id, name:"Sword"
           visit article_path(article.id)
           expect(all(".type option").map(&:text)).
-            to eq ["","Counselor","Husband", "Owner", "Right hand"] 
+            to eq ["","Acquaintance", "Advisor", "Aunt", "Brother", "Counselor",
+                   "Follower", "Husband", "King", "Owner", "Queen", "Right hand",
+                   "Sister", "Uncle"] 
           expect(all(".target option").map(&:text)).to eq ["","Swordmaster"] 
           select "Owner", from:"Relation"
           select "Swordmaster", from:"Relative"
@@ -24,7 +26,9 @@ describe "Add relation" do
           expect(page.find "div.relations").to have_content 'Owner'
           expect(page.find "ul.relations").to have_content 'Swordmaster'
           expect(all(".type option").map(&:text)).
-            to eq ["","Counselor","Husband", "Owner", "Right hand"] 
+            to eq ["","Acquaintance", "Advisor", "Aunt", "Brother", "Counselor",
+                   "Follower", "Husband", "King", "Owner", "Queen", "Right hand",
+                   "Sister", "Uncle"] 
           expect(all(".target option").map(&:text)).to eq [""] 
         ensure
           delete :relations
