@@ -10,23 +10,6 @@ describe RelationPresenter do
 
   subject{ presenter.send function }
 
-  describe "#gender" do
-    let(:function){ :gender }
-    before{ expect(relation).to receive(:target_gender).with(no_args){ 'n' }}
-    it{ should eq "neutral" }
-  end
-
-  describe "#target" do
-    let(:function){ :target }
-    before do
-      expect(view).to receive(:article_path).with(:target_id){ :path }
-      expect(view).to receive(:link_to).with(:target_name,:path){ :link }
-      expect(relation).to receive(:target_name).with(no_args){ :target_name }
-      expect(relation).to receive(:target_id).with(no_args){ :target_id }
-    end
-    it{ subject }
-  end
-
   describe "#title" do
     let(:function){ :title }
     before{ expect(relation).to receive(:type).with(no_args){ "RightHand" }}
@@ -52,6 +35,40 @@ describe RelationPresenter do
       expect(reference).to receive(:comment).with(no_args){ "comment" }
     end
     it{ should eq "comment" }
+  end
+
+  describe "#origin" do
+    let(:function){ :origin }
+    before do
+      expect(view).to receive(:article_path).with(:origin_id){ :path }
+      expect(view).to receive(:link_to).with(:origin_name,:path){ :link }
+      expect(relation).to receive(:origin_name).with(no_args){ :origin_name }
+      expect(relation).to receive(:origin_id).with(no_args){ :origin_id }
+    end
+    it{ should be :link }
+  end
+
+  describe "#origin_gender" do
+    let(:function){ :origin_gender }
+    before{ expect(relation).to receive(:origin_gender).with(no_args){ 'n' }}
+    it{ should eq "neutral" }
+  end
+
+  describe "#target" do
+    let(:function){ :target }
+    before do
+      expect(view).to receive(:article_path).with(:target_id){ :path }
+      expect(view).to receive(:link_to).with(:target_name,:path){ :link }
+      expect(relation).to receive(:target_name).with(no_args){ :target_name }
+      expect(relation).to receive(:target_id).with(no_args){ :target_id }
+    end
+    it{ subject }
+  end
+
+  describe "#target_gender" do
+    let(:function){ :target_gender }
+    before{ expect(relation).to receive(:target_gender).with(no_args){ 'n' }}
+    it{ should eq "neutral" }
   end
 
 end

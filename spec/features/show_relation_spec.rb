@@ -25,4 +25,48 @@ describe "Show relation" do
     end
   end
 
+  it "navigate to the origin article", focus:true do
+    VCR.use_cassette("navigate_to_origin_article") do
+      begin
+        universe = create :universe, title:"The Wheel of Time"
+        visit universes_path
+        click_link "The Wheel of Time"
+        origin = create :article, universe_id:universe.id, name:"The Wife",
+          gender:'f'
+        target = create :article, universe_id:universe.id
+        relation = create :relation, origin_id:origin.id, target_id:target.id,
+          type:"Husband"
+        visit relation_path relation.id
+        within('.origin.female'){ click_link "The Wife" }
+        expect(current_path).to eq article_path(origin.id)
+      ensure
+        delete :relations
+        delete :articles
+        delete :universes
+      end
+    end
+  end
+
+  it "navigate to the target article", focus:true do
+    VCR.use_cassette("navigate_to_target_article") do
+      begin
+        universe = create :universe, title:"The Wheel of Time"
+        visit universes_path
+        click_link "The Wheel of Time"
+        origin = create :article, universe_id:universe.id
+        target = create :article, universe_id:universe.id, name:"The Husband",
+          gender:'m'
+        relation = create :relation, origin_id:origin.id, target_id:target.id,
+          type:"Husband"
+        visit relation_path relation.id
+        within('.target.male' ){ click_link "The Husband" }
+        expect(current_path).to eq article_path(target.id)
+      ensure
+        delete :relations
+        delete :articles
+        delete :universes
+      end
+    end
+  end
+
 end

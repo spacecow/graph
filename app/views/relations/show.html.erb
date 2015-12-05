@@ -2,6 +2,15 @@
 
 <div class="relation">
   <h1><%= presenter.title %></h1>
+  &larr;
+  <%= content_tag :span, class:["origin", presenter.origin_gender].join(" ") do %>
+    <%= presenter.origin %>
+  <% end %>
+  |
+  <%= content_tag :span, class:["target", presenter.target_gender].join(" ") do %>
+    <%= presenter.target %>
+  <% end %>
+  &rarr;
 
   <%= render @references %>
 

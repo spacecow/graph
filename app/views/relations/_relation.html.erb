@@ -1,11 +1,12 @@
 <% present relation do |presenter| %>
 
 <li class="relation">
-  <%= content_tag :span, class:["target", presenter.gender].join(" ") do %>
+  <%= content_tag :span, class:["target", presenter.target_gender].join(" ") do %>
     <%= presenter.target %>
   <% end %>
-  <span class="references comments"><%= presenter.references_comments %></span>
   <span class="type"><%= presenter.type %></span>
+  -
+  <span class="references comments"><%= presenter.references_comments %></span>
 </li>
 
 <% end %>

@@ -30,7 +30,7 @@ describe 'relations/_relation.html.erb' do
     expect(presenter).to receive(:type).with(no_args){ "type" }
     expect(presenter).to receive(:references_comments).with(no_args){ "comments" }
     expect(presenter).to receive(:target).with(no_args){ "target" }
-    expect(presenter).to receive(:gender).with(no_args){ "male" }
+    expect(presenter).to receive(:target_gender).with(no_args){ "male" }
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.relation' }
