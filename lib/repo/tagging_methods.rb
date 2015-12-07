@@ -15,7 +15,6 @@ module Repo
       http = Net::HTTP.new uri.host, uri.port 
       params = tagging.instance_values 
       response = http.post uri, {tagging:params}.to_query
-      p response.body
       body = JSON.parse(response.body)['tagging']
       Tagging.new body
     end

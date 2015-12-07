@@ -23,6 +23,7 @@ module EventRunners
         expect(event).to receive(:participant_ids).
           with(no_args){ [:participant_id] }
         expect(event).to receive(:parent_ids).with(no_args){ [:parent_id] }
+        expect(event).to receive(:remarks).with(no_args){ :remarks }
         expect(repo).to receive(:new_participation).
           with(event_id: :event_id){ :participation }
         expect(repo).to receive(:new_step).

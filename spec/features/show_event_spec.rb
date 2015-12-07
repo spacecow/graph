@@ -10,7 +10,10 @@ describe "Show event" do
         visit universes_path
         click_link "Game of Thrones"
         parent = create :event, universe_id:universe.id, title:"Green wedding"
-        event = create :event, universe_id:universe.id, title:"Red wedding"
+        remarkable = tcreate :remarkable
+        remark = tcreate :remark, remarkable_id:remarkable.id, content:"a remark"
+        event = tcreate :event, universe_id:universe.id, title:"Red wedding",
+          remarkable_id:remarkable.id
         create :step, parent_id:parent.id, child_id:event.id
         article = create :article, universe_id:universe.id, name:"John Snow",
           gender:'m'
@@ -19,12 +22,15 @@ describe "Show event" do
         visit event_path event.id
         expect(page).to have_content "Green wedding"
         expect(page).to have_content "Red wedding"
+        expect(page).to have_content "a remark"
         expect(page.find '.participants .male').to have_content "John Snow"
       ensure
+        delete :remarks
         delete :steps
         delete :participations
         delete :articles
         delete :events
+        delete :remarkables
         delete :universes
       end
     end

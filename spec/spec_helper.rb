@@ -121,6 +121,22 @@ def create mdl, params={}
   mdl.to_s.capitalize.constantize.new JSON.parse(response.body)[mdl.to_s]
 end
 
+def tcreate mdl, params={}
+  #params = FactoryGirl.build(mdl, params).instance_values
+  mdls = mdl.to_s.pluralize
+  url = "http://localhost:9292/api/#{mdls}"
+  uri = URI url
+  http = Net::HTTP.new uri.host, uri.port 
+#https.use_ssl = true
+  req = Net::HTTP::Post.new(
+    uri.path, initheader = {'Content-Type' =>'application/json'})
+  req['Accept'] = 'application/vnd.example.t1'
+  req.body = {mdl => params}.to_json
+  #TODO include access_token=#{token}"
+  response = http.request(req)
+  mdl.to_s.capitalize.constantize.new JSON.parse(response.body)[mdl.to_s]
+end
+
 def delete mdls
   url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
   uri = URI url

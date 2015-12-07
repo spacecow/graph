@@ -12,7 +12,8 @@ module EventRunners
       parents     = repo.events(universe_id:universe_id).
         reject{|e| e.id==event.id}.
         reject{|e| event.parent_ids.include?(e.id)}
-      success event, articles, participation, parent_step, parents
+      remarks = event.remarks
+      success event, articles, participation, parent_step, parents, remarks
     end
   end
 

@@ -26,6 +26,12 @@ FactoryGirl.define do
     type 'Owner'
   end
 
+  factory :remark do
+  end
+
+  factory :remarkable do
+  end
+
   factory :step do
   end
 
