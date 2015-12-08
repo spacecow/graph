@@ -1,0 +1,8 @@
+<%= form_for remark do |f| %>
+  <%= hidden_field_tag :event_id, event_id %>
+  <div class="content">
+    <%= f.label :content, "Remark" %>
+    <%= f.text_field :content %>
+  </div>
+  <%= f.submit "Add" %>
+<% end %>

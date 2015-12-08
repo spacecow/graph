@@ -10,7 +10,10 @@ describe "Create remark" do
         visit universes_path
         click_link event.universe_title 
         visit event_path event.id
-        expect(current_path).to eq event_path(event.id) 
+        fill_in "Remark", with:"a remark"
+        within('.remark.form'){ click_button "Add" }
+        expect(current_path).to eq event_path(event.id)
+        expect(page).to have_content "a remark"
       ensure
         tdelete :events
         tdelete :universes

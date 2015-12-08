@@ -18,6 +18,7 @@ module EventRunners
       let(:parent_event){ double :parent_event, id: :parent_event_id }
       before do
         expect(repo).to receive(:event).with(:id){ event }
+        expect(repo).to receive(:new_remark).with(no_args){ :remark }
         expect(repo).to receive(:articles).
           with(universe_id: :universe_id){ [article] }
         expect(event).to receive(:participant_ids).

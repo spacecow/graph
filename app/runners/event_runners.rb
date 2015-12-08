@@ -13,7 +13,8 @@ module EventRunners
         reject{|e| e.id==event.id}.
         reject{|e| event.parent_ids.include?(e.id)}
       remarks = event.remarks
-      success event, articles, participation, parent_step, parents, remarks
+      remark = repo.new_remark
+      success event, articles, participation, parent_step, parents, remarks, remark
     end
   end
 
