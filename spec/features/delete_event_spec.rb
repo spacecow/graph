@@ -17,8 +17,8 @@ describe "Delete event" do
         expect(current_path).to eq events_path
         expect(page).not_to have_content "Red wedding"
       ensure
-        delete :events
-        delete :universes
+        tdelete :events
+        tdelete :universes
       end
     end
   end

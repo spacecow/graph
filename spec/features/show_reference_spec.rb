@@ -16,7 +16,7 @@ describe "Show reference" do
         delete :references
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end

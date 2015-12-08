@@ -19,7 +19,7 @@ describe "Create reference" do
       ensure
         delete :relations
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -42,7 +42,7 @@ describe "Create reference" do
         delete :references
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end

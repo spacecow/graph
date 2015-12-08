@@ -19,7 +19,7 @@ describe "Edit note" do
         expect(page).to have_content 'updated name' 
       ensure
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end

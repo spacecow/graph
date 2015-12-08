@@ -23,8 +23,8 @@ describe "Add participation" do
         ensure
           delete :participations
           delete :articles
-          delete :events
-          delete :universes
+          tdelete :events
+          tdelete :universes
         end
       end
     end

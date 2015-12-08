@@ -32,8 +32,8 @@ describe "Create event" do
           expect(page).to have_content "Yellow wedding" 
         ensure
           delete :steps
-          delete :events
-          delete :universes
+          tdelete :events
+          tdelete :universes
         end
       end
     end

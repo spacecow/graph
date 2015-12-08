@@ -143,3 +143,14 @@ def delete mdls
   http = Net::HTTP.new uri.host, uri.port
   http.delete uri
 end
+
+def tdelete mdls
+  url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
+  uri = URI url
+  http = Net::HTTP.new uri.host, uri.port
+  req = Net::HTTP::Delete.new(
+    uri.path, initheader = {'Content-Type' =>'application/json'})
+  req['Accept'] = 'application/vnd.example.t1'
+  #TODO include access_token=#{token}"
+  http.request(req)
+end

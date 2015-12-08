@@ -24,7 +24,7 @@ describe 'Show note' do
         delete :tags
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -46,7 +46,7 @@ describe 'Show note' do
         delete :references
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end

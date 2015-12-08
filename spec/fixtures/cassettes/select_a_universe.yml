@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3e80a00e2a7f1e53af9e9463bab0c2dc"
+      - W/"28d81301f9de92a16b6de8d16d4bba92"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 874e8044-5e95-494c-8012-d295c9401f60
+      - 9582da70-4177-4003-9b0b-369ff94a0c0c
       X-Runtime:
-      - '0.017264'
+      - '0.004740'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 24 May 2015 07:16:03 GMT
+      - Tue, 08 Dec 2015 03:41:44 GMT
       Content-Length:
       - '54'
       Connection:
@@ -48,9 +48,9 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":29019,"title":"The Malazan Empire"}}'
+      string: '{"universe":{"id":10201,"title":"The Malazan Empire"}}'
     http_version: 
-  recorded_at: Sun, 24 May 2015 07:16:03 GMT
+  recorded_at: Tue, 08 Dec 2015 03:41:44 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -80,29 +80,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"45cd5678833ebcb76cfd96271d91a9ad"
+      - W/"43813b262a993163bce006e9a380c4a7"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3e04f9f9-da4e-41c8-9246-6b4b13e25293
+      - 7297fcae-bd21-423e-8164-a18ffcd9499c
       X-Runtime:
-      - '0.005303'
+      - '0.002338'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 24 May 2015 07:16:03 GMT
+      - Tue, 08 Dec 2015 03:41:44 GMT
       Content-Length:
       - '57'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":29019,"title":"The Malazan Empire"}]}'
+      string: '{"universes":[{"id":10201,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Sun, 24 May 2015 07:16:03 GMT
+  recorded_at: Tue, 08 Dec 2015 03:41:44 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/29019?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/10201?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -129,26 +129,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3e80a00e2a7f1e53af9e9463bab0c2dc"
+      - W/"c90d424804c7479fea5ac62a541efbce"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 713e7da9-2175-49dd-9404-16796c25550d
+      - 3f8e7750-19ca-472a-a062-62a43e46127d
       X-Runtime:
-      - '0.009679'
+      - '0.003317'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 24 May 2015 07:16:03 GMT
+      - Tue, 08 Dec 2015 03:41:44 GMT
       Content-Length:
-      - '54'
+      - '68'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":29019,"title":"The Malazan Empire"}}'
+      string: '{"universe":{"id":10201,"title":"The Malazan Empire","articles":[]}}'
     http_version: 
-  recorded_at: Sun, 24 May 2015 07:16:03 GMT
+  recorded_at: Tue, 08 Dec 2015 03:41:44 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -178,43 +178,41 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"45cd5678833ebcb76cfd96271d91a9ad"
+      - W/"43813b262a993163bce006e9a380c4a7"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e71a6d81-3b0e-4821-86d6-0f5d94850042
+      - 7394e15e-1206-48f1-9104-1787dd884ee3
       X-Runtime:
-      - '0.004820'
+      - '0.003389'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 24 May 2015 07:16:03 GMT
+      - Tue, 08 Dec 2015 03:41:44 GMT
       Content-Length:
       - '57'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":29019,"title":"The Malazan Empire"}]}'
+      string: '{"universes":[{"id":10201,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Sun, 24 May 2015 07:16:03 GMT
+  recorded_at: Tue, 08 Dec 2015 03:41:44 GMT
 - request:
     method: delete
-    uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Depth:
-      - Infinity
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/vnd.example.t1
       User-Agent:
       - Ruby
-      Host:
-      - localhost:9292
   response:
     status:
       code: 200
@@ -229,17 +227,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"45cd5678833ebcb76cfd96271d91a9ad"
+      - W/"43813b262a993163bce006e9a380c4a7"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1220aa4e-8df9-4a0d-9407-ae953cab4492
+      - c6d9b3af-8a21-4d8a-9edc-e138a1ac6f36
       X-Runtime:
-      - '0.008818'
+      - '0.003783'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Sun, 24 May 2015 07:16:03 GMT
+      - Tue, 08 Dec 2015 03:41:44 GMT
       Content-Length:
       - '57'
       Connection:
@@ -248,7 +246,7 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":29019,"title":"The Malazan Empire"}]}'
+      string: '{"universes":[{"id":10201,"title":"The Malazan Empire"}]}'
     http_version: 
-  recorded_at: Sun, 24 May 2015 07:16:03 GMT
+  recorded_at: Tue, 08 Dec 2015 03:41:44 GMT
 recorded_with: VCR 2.9.3

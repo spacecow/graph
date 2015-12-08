@@ -16,8 +16,8 @@ describe "List events" do
         expect(page).to have_content 'The horse ride'
         expect(page).not_to have_content 'Red wedding'
       ensure
-        delete :events
-        delete :universes
+        tdelete :events
+        tdelete :universes
       end
     end
   end
@@ -33,8 +33,8 @@ describe "List events" do
         click_link "The Mage War"
         expect(current_path).to eq event_path(event.id) 
       ensure
-        delete :events
-        delete :universes
+        tdelete :events
+        tdelete :universes
       end
     end
   end

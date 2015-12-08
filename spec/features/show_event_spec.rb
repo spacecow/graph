@@ -29,9 +29,9 @@ describe "Show event" do
         delete :steps
         delete :participations
         delete :articles
-        delete :events
+        tdelete :events
         delete :remarkables
-        delete :universes
+        tdelete :universes
       end
     end
   end

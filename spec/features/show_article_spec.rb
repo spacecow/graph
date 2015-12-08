@@ -38,9 +38,9 @@ describe 'Show article' do
         delete :taggings
         delete :tags
         delete :notes
-        delete :events
+        tdelete :events
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -60,7 +60,7 @@ describe 'Show article' do
       ensure
         delete :relations
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -80,7 +80,7 @@ describe 'Show article' do
       ensure
         delete :relations
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -104,7 +104,7 @@ describe 'Show article' do
         delete :tags
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -123,7 +123,7 @@ describe 'Show article' do
       ensure
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -142,7 +142,7 @@ describe 'Show article' do
       ensure
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end

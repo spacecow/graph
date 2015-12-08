@@ -19,7 +19,7 @@ describe "Create note" do
         ensure
           delete :notes
           delete :articles
-          delete :universes
+          tdelete :universes
         end
       end
     end
@@ -41,7 +41,7 @@ describe "Create note" do
         ensure
           delete :notes
           delete :articles
-          delete :universes
+          tdelete :universes
         end
       end
     end

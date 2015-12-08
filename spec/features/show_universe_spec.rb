@@ -15,7 +15,7 @@ describe 'Show universe' do
         expect(page.find '.male').to have_content 'Kelsier'
       ensure
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -30,7 +30,7 @@ describe 'Show universe' do
         expect(current_path).to eq article_path(article.id)
       ensure
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -45,7 +45,7 @@ describe 'Show universe' do
         expect(current_path).to eq edit_article_path(article.id)
       ensure
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -58,7 +58,7 @@ describe 'Show universe' do
         click_link 'New Article'
         expect(current_path).to eq new_article_path
       ensure
-        delete :universes
+        tdelete :universes
       end
     end
   end

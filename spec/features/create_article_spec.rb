@@ -25,7 +25,7 @@ describe "Create article" do
           expect(page).to have_content 'Kelsier' 
         ensure
           delete :articles
-          delete :universes
+          tdelete :universes
         end
       end
     end
@@ -46,7 +46,7 @@ describe "Create article" do
           expect(page.find(name_error_field).text).to eq 'cannot be blank'
           expect(all(".type select option").map(&:text)).to eq ["", "Character", "Item", "Place"]
         ensure
-          delete :universes
+          tdelete :universes
         end
       end
     end
@@ -66,7 +66,7 @@ describe "Create article" do
           expect(current_path).to eq articles_path
           expect(page.find(type_error_field).text).to eq 'cannot be blank'
         ensure
-          delete :universes
+          tdelete :universes
         end
       end
     end

@@ -20,7 +20,7 @@ describe "Show relation" do
         delete :references
         delete :relations
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -42,7 +42,7 @@ describe "Show relation" do
       ensure
         delete :relations
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -64,7 +64,7 @@ describe "Show relation" do
       ensure
         delete :relations
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end

@@ -10,7 +10,7 @@ describe "List universes" do
         visit universes_path
         expect(page).to have_content 'The Malazan Empire'
       ensure
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -24,7 +24,7 @@ describe "List universes" do
         visit universes_path
         expect(find('.selected .title').text).to eq 'The Malazan Empire'
       ensure
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -37,7 +37,7 @@ describe "List universes" do
         click_link 'The Malazan Empire'
         expect(current_path).to eq universe_path(universe.id) 
       ensure
-        delete :universes
+        tdelete :universes
       end
     end
   end

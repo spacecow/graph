@@ -22,8 +22,8 @@ describe "Add parent" do
           expect(all(".parent option").map(&:text)).not_to include "The Beginning"
         ensure
           delete :steps
-          delete :events
-          delete :universes
+          tdelete :events
+          tdelete :universes
         end
       end
     end

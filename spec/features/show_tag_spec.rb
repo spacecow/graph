@@ -19,7 +19,7 @@ describe "Show tag" do
         delete :tags
         delete :notes
         delete :articles
-        delete :universes
+        tdelete :universes
       end
     end
   end

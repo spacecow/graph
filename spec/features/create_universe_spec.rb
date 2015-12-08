@@ -13,7 +13,7 @@ describe 'Create universe' do
         click_on 'Create'
         expect(current_path).to eq universes_path
         expect(page).to have_content 'Wheel of Time'
-        delete :universes
+        tdelete :universes
       end
     end
   end
@@ -29,7 +29,7 @@ describe 'Create universe' do
           expect(current_path).to eq universes_path
           expect(page.find(error_field).text).to eq 'is already taken'
         ensure
-          delete :universes
+          tdelete :universes
         end
       end
     end
@@ -43,7 +43,7 @@ describe 'Create universe' do
           expect(current_path).to eq universes_path
           expect(page.find(error_field).text).to eq 'cannot be blank'
         ensure
-          delete :universes
+          tdelete :universes
         end
       end
     end
