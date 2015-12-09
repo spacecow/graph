@@ -24,12 +24,22 @@ describe 'remarks/_remark.html.erb' do
     def bind.present obj; raise NotImplementedError end
     expect(bind).to receive(:present).with(:remark).and_yield(presenter)
     expect(presenter).to receive(:content).with(no_args){ "content" }
+    expect(presenter).to receive(:edit_link).with(no_args){ "edit_remark_link" }
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.remark' }
 
   describe "Remark content" do
-    its(:text){ should include "content" }
+    subject{ page.find '.content' }
+    its(:text){ should eq "content" }
+  end
+
+  describe 'actions' do
+    subject(:actions){ page.find '.actions' }
+    describe 'edit' do
+      subject{ actions.find '.edit' }
+      its(:text){ is_expected.to eq "edit_remark_link" }
+    end
   end
 
 end

@@ -9,6 +9,9 @@ class RemarksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   private
 
     def remark_params

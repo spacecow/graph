@@ -36,4 +36,24 @@ describe "Show event" do
     end
   end
 
+  it "navigate to an edit remark page" do
+    VCR.use_cassette('navigate_to_an_edit_remark_page') do
+      begin
+        remarkable = tcreate :remarkable
+        event = tcreate :event, remarkable_id:remarkable.id
+        remark = tcreate :remark, remarkable_id:remarkable.id
+        visit universes_path
+        click_link event.universe_title 
+        visit event_path event.id
+        within('li.remark'){ click_link "Edit" }
+        expect(current_path).to eq edit_remark_path(remark.id)
+      ensure
+        tdelete :remark
+        tdelete :events
+        tdelete :remarkables
+        tdelete :universes
+      end
+    end
+  end
+
 end

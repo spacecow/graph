@@ -30,4 +30,8 @@ describe "RemarksController" do
     it{ subject }
   end
 
+  describe "#edit" do
+    let(:function){ :edit }
+    it{ subject }
+  end
 end

@@ -43,7 +43,7 @@ describe 'notes/_note.html.erb' do
       subject{ actions.find '.edit' }
       its(:text){ is_expected.to eq "edit_note_link" }
     end
-    describe 'edit' do
+    describe 'delete' do
       subject{ actions.find '.delete' }
       its(:text){ is_expected.to eq "delete_note_link" }
     end
