@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :participations, only:[:create]
   resources :references, only:[:show, :create, :edit, :update]
   resources :relations, only:[:show, :create]
-  resources :remarks, only:[:create,:edit]
+  resources :remarks, only:[:create,:edit,:update]
   resources :steps, only:[:create]
   resources :tags, only:[:show, :index, :new, :create]
   resources :taggings, only:[:create]

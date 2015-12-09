@@ -15,7 +15,7 @@
 
   <div class="remarks list">
     <h2>Remarks</h2>
-    <ul class="remarks"><%= render @remarks %></ul>
+    <ul class="remarks"><%= render @remarks, event_id:@event.id %></ul>
   </div>
 
   <div class="participants list">

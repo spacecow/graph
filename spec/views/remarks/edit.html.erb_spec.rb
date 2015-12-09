@@ -10,7 +10,8 @@ describe 'notes/edit.html.erb' do
   let(:bind){ ErbBinding2.new locals }
 
   let(:filepath){ './app/views/remarks/edit.html.erb' }
-  let(:locals){{ remark: :remark }}
+  let(:locals){{ remark:remark }}
+  let(:remark){ double :remark }
 
   before do
     class ErbBinding2
@@ -20,12 +21,18 @@ describe 'notes/edit.html.erb' do
         end 
       end
     end
+    def bind.render obj,*opts; raise NotImplementedError end
+    expect(remark).to receive(:remarkable_id).with(no_args){ :remarkable_id }
+    expect(bind).to receive(:render).
+      with("remarks/form",remark:remark, event_id: :remarkable_id).
+      and_return("remark_form")
   end
 
   subject(:page){ Capybara.string rendering }
 
-  #describe "Form text" do
-  #  subject{ page.find 'div.text' }
-    its(:text){ should include "remark" }
-  #end
+  describe "Remark form" do
+    subject{ page.find '.remark.edit.form' }
+    its(:text){ should include "remark_form" }
+  end
+
 end

@@ -1,9 +1,9 @@
 require 'rails_helper'
 require 'vcr_helper'
 
-describe "Edit note" do
+describe "Update note" do
 
-  it "Updated" do
+  it "Successfully" do
     VCR.use_cassette('edit_note_successfully') do
       begin
         universe = create :universe, title:"The Wheel of Time"

@@ -13,7 +13,7 @@ describe "events/show.html.erb" do
   let(:locals){{ event:event, participation: :participation, articles: :articles,
     parent_step: :parent_step, parents: :parents, remarks: :remarks,
     remark: :remark }}
-  let(:event){ double :event }
+  let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
   before do
@@ -28,7 +28,8 @@ describe "events/show.html.erb" do
     end
     expect(bind).to receive(:present).with(event).and_yield(presenter)
     expect(bind).to receive(:render).with(:parents){ "render_parents" }
-    expect(bind).to receive(:render).with(:remarks){ "render_remarks" }
+    expect(bind).to receive(:render).
+      with(:remarks, event_id: :event_id){ "render_remarks" }
     expect(bind).to receive(:render).with(:children){ "render_children" }
     expect(bind).to receive(:render).with(:participants){ :render_participants }
     expect(bind).to receive(:render).
@@ -41,7 +42,6 @@ describe "events/show.html.erb" do
       with("participations/form", participation: :participation, articles: :articles).
       and_return("participation_form")
     expect(event).to receive(:title).with(no_args){ "header" }
-    expect(event).to receive(:id).with(no_args){ :event_id }
     expect(event).to receive(:parents).with(no_args){ :parents }
     expect(event).to receive(:children).with(no_args){ :children }
     expect(event).to receive(:participants).with(no_args){ :participants }

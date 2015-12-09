@@ -10,6 +10,21 @@ class RemarksController < ApplicationController
   end
 
   def edit
+    event_id = params[:event_id]
+    run(RemarkRunners::Edit, params[:id], event_id) do |on|
+      on.success do |remark|
+        @remark = remark
+      end
+    end
+  end
+
+  def update
+    event_id = params[:event_id]
+    run(RemarkRunners::Update, params[:id], remark_params) do |on|
+      on.success do
+        redirect_to event_path(event_id)
+      end
+    end
   end
 
   private

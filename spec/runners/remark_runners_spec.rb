@@ -20,6 +20,14 @@ module RemarkRunners
       it{ subject }
     end
 
-  end
+    describe Edit do
+      subject{ Edit.new(context).run :id, :event_id }
+      before do
+        expect(repo).to receive(:remark).with(:id, remarkable_id: :event_id).
+          and_return(:remark)
+      end
+      it{ subject }
+    end
 
+  end
 end

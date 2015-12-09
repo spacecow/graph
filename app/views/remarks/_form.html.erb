@@ -1,8 +1,10 @@
-<%= form_for remark do |f| %>
+<%= form_for remark,
+  url: remark.id ? remark_path(remark.id) : remarks_path,
+  method: remark.id ? :put : :post do |f| %>
   <%= hidden_field_tag :event_id, event_id %>
   <div class="content">
     <%= f.label :content, "Remark" %>
     <%= f.text_field :content %>
   </div>
-  <%= f.submit "Add" %>
+  <%= f.submit remark.id ? "Update" : "Add" %>
 <% end %>

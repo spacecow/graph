@@ -10,7 +10,7 @@ describe 'remarks/_remark.html.erb' do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ './app/views/remarks/_remark.html.erb' }
-  let(:locals){{ remark: :remark }}
+  let(:locals){{ remark: :remark, event_id: :event_id }}
   let(:presenter){ double :presenter }
 
   before do
@@ -24,7 +24,8 @@ describe 'remarks/_remark.html.erb' do
     def bind.present obj; raise NotImplementedError end
     expect(bind).to receive(:present).with(:remark).and_yield(presenter)
     expect(presenter).to receive(:content).with(no_args){ "content" }
-    expect(presenter).to receive(:edit_link).with(no_args){ "edit_remark_link" }
+    expect(presenter).to receive(:edit_link).with(event_id: :event_id).
+      and_return("edit_remark_link")
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.remark' }
