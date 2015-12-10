@@ -7,8 +7,9 @@ describe NotePresenter do
   let(:note){ double :note }
   let(:view){ double :view }
   let(:presenter){ NotePresenter.new note, view }
+  let(:params){ [] }
 
-  subject{ presenter.send function }
+  subject{ presenter.send function, *params }
 
   describe "#edit_link" do
     let(:function){ :edit_link }
@@ -22,11 +23,13 @@ describe NotePresenter do
 
   describe "#delete_link" do
     let(:function){ :delete_link }
+    let(:params){[{ article_id: :article_id, tag_id: :tag_id }]}
     before do
       expect(view).to receive(:link_to).
         with("Delete",:path,method: :delete, data:{confirm:"Are you sure?"}).
         and_return(:link)
-      expect(view).to receive(:note_path).with(:id){ :path }
+      expect(view).to receive(:note_path).
+        with(:id, article_id: :article_id, tag_id: :tag_id){ :path }
       expect(note).to receive(:id).with(no_args){ :id }
     end
     it{ should be :link }

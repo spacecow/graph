@@ -2,7 +2,7 @@
   <h1><%= @tag.title %></h1>
 
   <ul class='notes'>
-    <%= render @notes %>
+    <%= render @notes, article_id:nil, tag_id:@tag.id %>
   </ul>
 
 </div>

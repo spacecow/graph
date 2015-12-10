@@ -8,6 +8,7 @@ describe "NotesController" do
     def controller.run runner, *params; raise NotImplementedError end
     def controller.params; raise NotImplementedError end
     def controller.article_path id; raise NotImplementedError end
+    def controller.tag_path id; raise NotImplementedError end
     def controller.redirect_to path; raise NotImplementedError end
     allow(controller).to receive(:params).with(no_args){ params }
   end
@@ -96,19 +97,24 @@ describe "NotesController" do
 
   describe "#destroy" do
     let(:function){ :destroy }
-    let(:params){{ id: :id }}
     let(:runner){ double :runner }
-    let(:note){ double :note }
     before do
       stub_const "NoteRunners::Destroy", Class.new
       expect(controller).to receive(:run).with(NoteRunners::Destroy,:id).
         and_yield(runner)
-      expect(controller).to receive(:article_path).with(:article_id){ :path }
       expect(controller).to receive(:redirect_to).with(:path){ :redirect }
-      expect(runner).to receive(:success).with(no_args).and_yield(note)
-      expect(note).to receive(:article_id).with(no_args){ :article_id }
+      expect(runner).to receive(:success).with(no_args).and_yield
     end
-    it{ should be :redirect }
+    context "Return to article" do
+      let(:params){{ id: :id, article_id: :article_id }}
+      before{ expect(controller).to receive(:article_path).with(:article_id){ :path }}
+      it{ should be :redirect }
+    end
+    context "Return to tag" do
+      let(:params){{ id: :id, tag_id: :tag_id }}
+      before{ expect(controller).to receive(:tag_path).with(:tag_id){ :path }}
+      it{ should be :redirect }
+    end
   end
 
 end

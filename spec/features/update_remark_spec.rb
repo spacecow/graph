@@ -18,9 +18,9 @@ describe "Update remark" do
         expect(page).to have_content "updated remark" 
       ensure
         delete :remarks
-        delete :events
+        tdelete :events
         delete :remarkables
-        delete :universes
+        tdelete :universes
       end
     end
   end

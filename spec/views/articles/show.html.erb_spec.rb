@@ -30,11 +30,13 @@ describe "articles/show.html.erb" do
     def bind.present obj; end
     expect(bind).to receive(:present).with(article).and_yield(presenter)
     expect(article).to receive(:name).with(no_args){ "article_name" }
+    expect(article).to receive(:id).with(no_args){ :article_id }
     expect(bind).to receive(:render).with(:relations){ "render_relations" }
     expect(bind).to receive(:render).
       with("relations/form", relation: :relation, targets: :targets,
             relation_types: :relation_types).and_return("render_relation_form")
-    expect(bind).to receive(:render).with(:notes){ "render_notes" }
+    expect(bind).to receive(:render).
+      with(:notes,article_id: :article_id, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:events){ "render_events" } unless events.empty?
     expect(bind).to receive(:render).
       with("notes/form", note: :note).and_return("render_note_form")

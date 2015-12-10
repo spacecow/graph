@@ -4,7 +4,7 @@
   <span class='text'><%= link_to note.text, note_path(note.id) %></span>
   <span class="actions">
     <span class="edit"><%= presenter.edit_link %></span>
-    <span class="delete"><%= presenter.delete_link %></span>
+    <span class="delete"><%= presenter.delete_link article_id:article_id, tag_id:tag_id %></span>
   </span>
   <span class='tags'><%= presenter.tags %></span>
 </li>

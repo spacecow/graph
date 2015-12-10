@@ -4,7 +4,7 @@
   <h1><%= @article.name %></h1>
 
   <ul class='notes'>
-    <%= render @notes %>
+    <%= render @notes, article_id:@article.id, tag_id:nil %>
   </ul>
 
   <% unless @events.empty? %>

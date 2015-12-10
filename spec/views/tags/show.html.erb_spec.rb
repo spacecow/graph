@@ -25,9 +25,11 @@ describe "tags/show.html.erb" do
   subject(:page){ Capybara.string(rendering).find '.tag' }
 
   before do
-    def bind.render obj; end
-    expect(bind).to receive(:render).with(:notes){ "list" }
+    def bind.render obj, *opts; end
+    expect(bind).to receive(:render).
+      with(:notes, article_id:nil, tag_id: :tag_id){ "list" }
     expect(tag).to receive(:title).with(no_args){ "header" }
+    expect(tag).to receive(:id).with(no_args){ :tag_id }
   end
 
   describe "Tag header" do
