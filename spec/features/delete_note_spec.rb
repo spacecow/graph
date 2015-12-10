@@ -3,8 +3,8 @@ require 'rails_helper'
 
 describe "Delete note" do
 
-  it "successfully" do
-    VCR.use_cassette("successfully_delete_note") do
+  it "Successfully" do
+    VCR.use_cassette("delete_note_successfully") do
       begin
         universe = create :universe, title:"The Wheel of Time"
         visit universes_path

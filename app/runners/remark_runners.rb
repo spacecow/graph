@@ -24,4 +24,11 @@ module RemarkRunners
     end
   end
 
+  class Destroy < Runner
+    def run id
+      repo.delete_remark id
+      success
+    end
+  end
+
 end

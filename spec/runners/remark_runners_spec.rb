@@ -29,5 +29,19 @@ module RemarkRunners
       it{ subject }
     end
 
+    describe Update do
+      subject{ Update.new(context).run :id, :params }
+      before do
+        expect(repo).to receive(:update_remark).with(:id,:params)
+      end
+      it{ subject }
+    end
+
+    describe Destroy do
+      subject{ Destroy.new(context).run :id }
+      before{ expect(repo).to receive(:delete_remark).with(:id) }
+      it{ subject }
+    end
+
   end
 end

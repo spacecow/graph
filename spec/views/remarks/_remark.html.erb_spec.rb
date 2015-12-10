@@ -26,6 +26,8 @@ describe 'remarks/_remark.html.erb' do
     expect(presenter).to receive(:content).with(no_args){ "content" }
     expect(presenter).to receive(:edit_link).with(event_id: :event_id).
       and_return("edit_remark_link")
+    expect(presenter).to receive(:delete_link).with(event_id: :event_id).
+      and_return("delete_remark_link")
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.remark' }
@@ -37,9 +39,13 @@ describe 'remarks/_remark.html.erb' do
 
   describe 'actions' do
     subject(:actions){ page.find '.actions' }
-    describe 'edit' do
+    describe 'Edit' do
       subject{ actions.find '.edit' }
       its(:text){ is_expected.to eq "edit_remark_link" }
+    end
+    describe 'Delete' do
+      subject{ actions.find '.delete' }
+      its(:text){ is_expected.to eq "delete_remark_link" }
     end
   end
 

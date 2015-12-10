@@ -28,4 +28,18 @@ describe RemarkPresenter do
     it{ should be :link }
   end
 
+  describe "#delete_link" do
+    let(:function){ :delete_link }
+    let(:params){[{ event_id: :event_id }]}
+    before do
+      expect(view).to receive(:link_to).
+        with("Delete",:path, method: :delete, data:{confirm:"Are you sure?"}).
+        and_return(:link)
+      expect(view).to receive(:remark_path).with(:id,event_id: :event_id).
+        and_return(:path)
+      expect(remark).to receive(:id).with(no_args){ :id }
+    end
+    it{ should be :link }
+  end
+
 end

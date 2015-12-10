@@ -1,6 +1,7 @@
 describe "RemarksController" do
 
   let(:controller){ RemarksController.new }
+  let(:runner){ double :runner }
 
   before do
     class ApplicationController; end unless defined?(Rails)
@@ -17,7 +18,6 @@ describe "RemarksController" do
   describe "#create" do
     let(:function){ :create }
     let(:params){{ event_id: :event_id }}
-    let(:runner){ double :runner }
     before do
       stub_const "RemarkRunners::Create", Class.new
       expect(controller).to receive(:remark_params).with(no_args){ :params }
@@ -33,7 +33,6 @@ describe "RemarksController" do
   describe "#edit" do
     let(:function){ :edit }
     let(:params){{ id: :id, event_id: :event_id }}
-    let(:runner){ double :runner }
     before do
       stub_const "RemarkRunners::Edit", Class.new
       expect(controller).to receive(:run).
@@ -46,7 +45,6 @@ describe "RemarksController" do
   describe "#update" do
     let(:function){ :update }
     let(:params){{ id: :id, event_id: :event_id }}
-    let(:runner){ double :runner }
     before do
       stub_const "RemarkRunners::Update", Class.new
       expect(controller).to receive(:redirect_to).with(:path){ :redirect }
@@ -57,6 +55,20 @@ describe "RemarksController" do
       expect(runner).to receive(:success).with(no_args).and_yield
     end
     it{ subject }
+  end
+
+  describe "#destroy" do
+    let(:function){ :destroy }
+    let(:params){{ id: :id, event_id: :event_id }}
+    before do
+      stub_const "RemarkRunners::Destroy", Class.new
+      expect(controller).to receive(:event_path).with(:event_id){ :path }
+      expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+      expect(controller).to receive(:run).
+        with(RemarkRunners::Destroy,:id).and_yield(runner)
+      expect(runner).to receive(:success).with(no_args).and_yield
+    end
+    it{ should be :redirect }
   end
 
 end

@@ -27,6 +27,15 @@ class RemarksController < ApplicationController
     end
   end
 
+  def destroy
+    event_id = params[:event_id]
+    run(RemarkRunners::Destroy, params[:id]) do |on|
+      on.success do
+        redirect_to event_path(event_id)
+      end
+    end
+  end
+
   private
 
     def remark_params

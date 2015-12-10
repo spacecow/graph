@@ -3,8 +3,8 @@ require 'vcr_helper'
 
 describe "Delete event" do
 
-  it "successfully" do
-    VCR.use_cassette("successfully_delete_event") do
+  it "Successfully" do
+    VCR.use_cassette("delete_event_successfully") do
       begin
         universe = create :universe, title:"Game of Thrones"
         visit universes_path
