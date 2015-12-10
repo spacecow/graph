@@ -23,4 +23,6 @@ describe "Delete event" do
     end
   end
 
+  pending "Failure, when participants etc. are connected"
+
 end

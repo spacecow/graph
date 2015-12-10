@@ -1,3 +1,8 @@
+div.clear
+  clear: both
+  height: 0
+  overflow: hidden
+
 body
   font-family: "Lucida Grande",arial,helvetica,sans-serif
 
@@ -16,3 +21,18 @@ a
 .female
   a
     color: pink
+
+ul.parents
+  float: left
+  list-style-type: none
+  padding: 0
+  margin-right: 20px
+  li:before
+    content: "\2190"
+
+ul.children
+  float: left
+  list-style-type: none
+  padding: 0
+  li:before
+    content: "\2192"

@@ -54,28 +54,14 @@ describe "events/show.html.erb" do
     its(:text){ should eq "header" }
   end
 
-  describe "Parents section" do
-    subject(:div){ page.find '.event .parents.list' }
-    describe "Parentes header" do
-      subject{ div.find 'h2' }
-      its(:text){ should eq "Parents" }
-    end
-    describe "Parents list" do
-      subject{ div.find 'ul.parents' }
-      its(:text){ should eq "render_parents" }
-    end
+  describe "Parents list" do
+    subject{ page.find 'ul.parents' }
+    its(:text){ should eq "render_parents" }
   end
 
-  describe "Children section" do
-    subject(:div){ page.find '.event .children.list' }
-    describe "Parentes header" do
-      subject{ div.find 'h2' }
-      its(:text){ should eq "Children" }
-    end
-    describe "Parents list" do
-      subject{ div.find 'ul.children' }
-      its(:text){ should eq "render_children" }
-    end
+  describe "Children list" do
+    subject{ page.find 'ul.children' }
+    its(:text){ should eq "render_children" }
   end
 
   describe "Participant section" do

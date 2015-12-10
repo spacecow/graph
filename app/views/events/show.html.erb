@@ -3,15 +3,9 @@
 <div class="event">
   <h1><%= @event.title %></h1>
 
-  <div class="parents list">
-    <h2>Parents</h2>
-    <ul class="parents"><%= render @event.parents %></ul>
-  </div>
-
-  <div class="children list">
-    <h2>Children</h2>
-    <ul class="children"><%= render @event.children %></ul>
-  </div>
+  <ul class="parents"><%= render @event.parents %></ul>
+  <ul class="children"><%= render @event.children %></ul>
+  <div class="clear"></div>
 
   <div class="remarks list">
     <h2>Remarks</h2>
