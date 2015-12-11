@@ -118,7 +118,7 @@ def create mdl, params={}
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port 
   response = http.post(uri, {mdl => params}.to_query)
-  mdl.to_s.capitalize.constantize.new JSON.parse(response.body)[mdl.to_s]
+  mdl.to_s.camelize.constantize.new JSON.parse(response.body)[mdl.to_s]
 end
 
 def tcreate mdl, params={}
@@ -134,14 +134,14 @@ def tcreate mdl, params={}
   req.body = {mdl => params}.to_json
   #TODO include access_token=#{token}"
   response = http.request(req)
-  mdl.to_s.capitalize.constantize.new JSON.parse(response.body)[mdl.to_s]
+  mdl.to_s.camelize.constantize.new JSON.parse(response.body)[mdl.to_s]
 end
 
 def delete mdls
   url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port
-  http.delete uri
+  http.delete(uri).body
 end
 
 def tdelete mdls

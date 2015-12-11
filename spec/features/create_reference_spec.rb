@@ -30,6 +30,7 @@ describe "Create reference" do
         universe = create :universe
         article = create :article, universe_id:universe.id
         note = create :note, article_id:article.id
+        tcreate :article_note, article_id:article.id, note_id:note.id
         visit note_path note.id
         attach_file('Image', Rails.root + 'spec/pear.jpeg')
         fill_in 'Comment', with:'smart'
@@ -39,6 +40,7 @@ describe "Create reference" do
         expect(page).to have_content 'smart' 
         expect(page).to have_content 'www.example.com' 
       ensure
+        tdelete :article_notes
         delete :references
         delete :notes
         delete :articles

@@ -10,6 +10,12 @@ class Note
 
   def references; @references || [] end
 
+  def articles= arr
+    @articles = arr.map do |params|
+      Article.new(params)
+    end
+  end
+
   def references= arr
     @references = arr.map do |params|
       Reference.new(params).tap do |reference|

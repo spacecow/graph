@@ -5,6 +5,9 @@ FactoryGirl.define do
     gender 'n'
   end
 
+  factory :article_note do
+  end
+
   factory :book do
   end
 
