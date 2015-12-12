@@ -1,20 +1,20 @@
 class Note
   include ActiveModel::Model
 
-  attr_accessor :id, :article_id, :text
+  attr_accessor :id, :text
   attr_reader :article, :book_id
+  attr_writer :article_id
 
-  def article= article
-    @article = article
-  end
+  def article= params; @article = Article.new params end
+  def article_id; @article_id || @article.id end
 
   def references; @references || [] end
 
-  def articles= arr
-    @articles = arr.map do |params|
-      Article.new(params)
-    end
-  end
+  #def articles= arr
+  #  @articles = arr.map do |params|
+  #    Article.new(params)
+  #  end
+  #end
 
   def references= arr
     @references = arr.map do |params|

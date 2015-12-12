@@ -17,6 +17,7 @@ describe "Create note" do
           expect(current_path).to eq article_path(article.id)
           expect(page).to have_content 'a note' 
         ensure
+          tdelete :article_notes
           delete :notes
           delete :articles
           tdelete :universes

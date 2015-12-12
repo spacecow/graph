@@ -25,7 +25,7 @@ describe "Show relation" do
     end
   end
 
-  it "navigate to the origin article", focus:true do
+  it "navigate to the origin article" do
     VCR.use_cassette("navigate_to_origin_article") do
       begin
         universe = create :universe, title:"The Wheel of Time"
@@ -47,7 +47,7 @@ describe "Show relation" do
     end
   end
 
-  it "navigate to the target article", focus:true do
+  it "navigate to the target article" do
     VCR.use_cassette("navigate_to_target_article") do
       begin
         universe = create :universe, title:"The Wheel of Time"

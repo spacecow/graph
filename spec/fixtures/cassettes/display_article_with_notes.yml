@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"dbc3e8847a33c7b801ef5d259cc730a9"
+      - W/"30b1d27d9e66848f2935c6e7540534b4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 502a7208-e6df-434d-b63b-8e956c805840
+      - dd75388c-8aea-4502-bdad-a57f522f174c
       X-Runtime:
-      - '0.004233'
+      - '0.005305'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
       - '52'
       Connection:
@@ -48,9 +48,9 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":10191,"title":"The Final Empire"}}'
+      string: '{"universe":{"id":18664,"title":"The Final Empire"}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -80,29 +80,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"70c7877551b31d096e8495b5cdc8f223"
+      - W/"7f3df7a5e3ecb06b0cf0d5b1a9b4b8df"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7c65a2b2-2a89-4e04-916a-e5034eb79af3
+      - a729d873-219c-4d35-8520-c8ada91fdeb5
       X-Runtime:
-      - '0.002488'
+      - '0.003021'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
       - '55'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":10191,"title":"The Final Empire"}]}'
+      string: '{"universes":[{"id":18664,"title":"The Final Empire"}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/10191?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/18664?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -129,32 +129,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7c38f2c5620d8fd5a7333e676d01fa3d"
+      - W/"eb1fac47b358572a0172c107a10f3bba"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8f70476a-5973-4123-8782-6245c9c6b1ec
+      - da80a2c8-4f2b-4453-952c-611bbf5996de
       X-Runtime:
-      - '0.003959'
+      - '0.003393'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
       - '66'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":10191,"title":"The Final Empire","articles":[]}}'
+      string: '{"universe":{"id":18664,"title":"The Final Empire","articles":[]}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: article%5Bgender%5D=n&article%5Bname%5D=Pistol&article%5Btype%5D=Character&article%5Buniverse_id%5D=10191
+      string: article%5Bgender%5D=n&article%5Bname%5D=Pistol&article%5Btype%5D=Character&article%5Buniverse_id%5D=18664
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -178,119 +178,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"4b9f5052b0a764605f3e32ae4cf4db92"
+      - W/"8a7f2b7120b3736b8a1567e4bd1d30cb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 59726dc4-2e87-4452-9adb-21b0eb51d952
+      - f3e3909e-7f3b-4c39-84f6-2fa91d816a0c
       X-Runtime:
-      - '0.011250'
+      - '0.010087'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
-      Content-Length:
-      - '114'
-      Connection:
-      - Keep-Alive
-      Set-Cookie:
-      - request_method=POST; path=/
-    body:
-      encoding: UTF-8
-      string: '{"article":{"id":4102,"name":"Pistol","universe_id":10191,"type":"Character","gender":"n","notes":[],"events":[]}}'
-    http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
-- request:
-    method: post
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
-    body:
-      encoding: US-ASCII
-      string: article%5Bgender%5D=n&article%5Bname%5D=Sword&article%5Btype%5D=Character&article%5Buniverse_id%5D=10191
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - localhost:9292
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"56777214596ddbae602dee8b806df542"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 3fc4c0b5-315f-4846-96f5-fe04faa8d80c
-      X-Runtime:
-      - '0.010555'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
-      Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
-      Content-Length:
-      - '113'
-      Connection:
-      - Keep-Alive
-      Set-Cookie:
-      - request_method=POST; path=/
-    body:
-      encoding: UTF-8
-      string: '{"article":{"id":4103,"name":"Sword","universe_id":10191,"type":"Character","gender":"n","notes":[],"events":[]}}'
-    http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
-- request:
-    method: post
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
-    body:
-      encoding: US-ASCII
-      string: article%5Bgender%5D=n&article%5Bname%5D=Kelsier&article%5Btype%5D=Character&article%5Buniverse_id%5D=10191
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - localhost:9292
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"844617244f775bf9c25f4e5de01cdc45"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 0a3d6ecb-4226-40c9-8dda-dd589b3d42ef
-      X-Runtime:
-      - '0.009957'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
-      Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
       - '115'
       Connection:
@@ -299,15 +197,15 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"article":{"id":4104,"name":"Kelsier","universe_id":10191,"type":"Character","gender":"n","notes":[],"events":[]}}'
+      string: '{"article":{"id":10652,"name":"Pistol","universe_id":18664,"type":"Character","gender":"n","notes":[],"events":[]}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
-    uri: http://localhost:9292/api/relations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: relation%5Borigin_id%5D=4103&relation%5Btarget_id%5D=4104&relation%5Btype%5D=Owner
+      string: article%5Bgender%5D=n&article%5Bname%5D=Sword&article%5Btype%5D=Character&article%5Buniverse_id%5D=18664
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -331,34 +229,34 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"ddbc158192b94933bd2aef5551a7de4e"
+      - W/"9e203d990b3e7452ef1b21ad3844c4cf"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b7162f97-b908-4b23-a81e-f72308072d54
+      - 1e394f54-e5be-4c6d-83a3-8d711b632da4
       X-Runtime:
-      - '0.008294'
+      - '0.009322'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '154'
+      - '114'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"relation":{"id":776,"type":"Owner","references":[],"origin":{"id":4103,"name":"Sword","gender":"n"},"target":{"id":4104,"name":"Kelsier","gender":"n"}}}'
+      string: '{"article":{"id":10653,"name":"Sword","universe_id":18664,"type":"Character","gender":"n","notes":[],"events":[]}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
-    uri: http://localhost:9292/api/relations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: relation%5Borigin_id%5D=4102&relation%5Btarget_id%5D=4104&relation%5Btype%5D=Owner
+      string: article%5Bgender%5D=n&article%5Bname%5D=Kelsier&article%5Btype%5D=Character&article%5Buniverse_id%5D=18664
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -382,34 +280,136 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"4697402c7c53f336a59f753c5a1fd0a2"
+      - W/"db394a31c6ab7d9125820eac78cfef6e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 080d57d1-cd41-4752-9c8e-de41ab8a7d01
+      - 09232792-7f09-45ec-8650-020f78e38478
       X-Runtime:
-      - '0.007051'
+      - '0.009702'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '155'
+      - '116'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"relation":{"id":777,"type":"Owner","references":[],"origin":{"id":4102,"name":"Pistol","gender":"n"},"target":{"id":4104,"name":"Kelsier","gender":"n"}}}'
+      string: '{"article":{"id":10654,"name":"Kelsier","universe_id":18664,"type":"Character","gender":"n","notes":[],"events":[]}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/relations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: relation%5Borigin_id%5D=10653&relation%5Btarget_id%5D=10654&relation%5Btype%5D=Owner
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"26d79d58587e5def8769d2add56cd8da"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 68cef1b1-af21-4a43-9913-6970ce2d6b21
+      X-Runtime:
+      - '0.008734'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Sat, 12 Dec 2015 04:04:29 GMT
+      Content-Length:
+      - '157'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"relation":{"id":5160,"type":"Owner","references":[],"origin":{"id":10653,"name":"Sword","gender":"n"},"target":{"id":10654,"name":"Kelsier","gender":"n"}}}'
+    http_version: 
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/relations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: relation%5Borigin_id%5D=10652&relation%5Btarget_id%5D=10654&relation%5Btype%5D=Owner
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8cc145d783edd2148997d512cf945d77"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d4c80b68-b12d-42d0-96c8-89773b49f2e8
+      X-Runtime:
+      - '0.008550'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Sat, 12 Dec 2015 04:04:29 GMT
+      Content-Length:
+      - '158'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"relation":{"id":5161,"type":"Owner","references":[],"origin":{"id":10652,"name":"Pistol","gender":"n"},"target":{"id":10654,"name":"Kelsier","gender":"n"}}}'
+    http_version: 
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/references?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: reference%5Bcomment%5D=very+sharp&reference%5Breferenceable_id%5D=776&reference%5Breferenceable_type%5D=Relation
+      string: reference%5Bcomment%5D=very+sharp&reference%5Breferenceable_id%5D=5160&reference%5Breferenceable_type%5D=Relation
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -433,44 +433,44 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"4cc6e1d3319b8e2069fda86ed8829b3c"
+      - W/"551a0bb692570ba39aa267c5caf0bd6b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 97299282-22e6-4cb0-8659-d18f0b075ce2
+      - df72ed0c-121f-408a-8df3-fe6def6cfc1b
       X-Runtime:
-      - '0.004697'
+      - '0.004861'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '113'
+      - '115'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"reference":{"id":298,"referenceable_id":776,"url":null,"comment":"very
+      string: '{"reference":{"id":2403,"referenceable_id":5160,"url":null,"comment":"very
         sharp","referenceable_type":"Relation"}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
-    uri: http://localhost:9292/api/notes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/notes
     body:
-      encoding: US-ASCII
-      string: note%5Barticle_id%5D=4104&note%5Btext%5D=a+note
+      encoding: UTF-8
+      string: '{"note":{"article_id":10654,"text":"a note"}}'
     headers:
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/vnd.example.t1
       User-Agent:
       - Ruby
-      Host:
-      - localhost:9292
   response:
     status:
       code: 200
@@ -485,28 +485,79 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"fe84ce1fb0d18cd08631887c0d9ac320"
+      - W/"abeb85ea792b27c131a854382ed419b6"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 701face5-ab30-4031-a9c7-534b451fd6fe
+      - 7d67f876-81b9-4b06-a3dd-66afbfbbf1d8
       X-Runtime:
-      - '0.006594'
+      - '0.004677'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '54'
+      - '36'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"note":{"id":1030,"article_id":4104,"text":"a note"}}'
+      string: '{"note":{"id":4106,"text":"a note"}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/article_notes
+    body:
+      encoding: UTF-8
+      string: '{"article_note":{"article_id":10654,"note_id":4106}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f579fee8888712abb5749e66938b00f1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 73598c14-47c6-478d-b500-6d320f8f5a7a
+      X-Runtime:
+      - '0.004896'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Sat, 12 Dec 2015 04:04:29 GMT
+      Content-Length:
+      - '61'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"article_note":{"id":148,"article_id":10654,"note_id":4106}}'
+    http_version: 
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -536,34 +587,34 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"1715443637d6cbd7837d2c5d9cb1b3cc"
+      - W/"544ddc73b33ceaa462c16ba7cb796783"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 634d4a6d-ac28-444d-9b5f-bc9924ad9300
+      - 09da63bd-d464-4031-93cf-5abd00d0472a
       X-Runtime:
-      - '0.004433'
+      - '0.004264'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '33'
+      - '34'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"tag":{"id":622,"title":"hero"}}'
+      string: '{"tag":{"id":3316,"title":"hero"}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: event%5Btitle%5D=The+Standoff&event%5Buniverse_id%5D=10191
+      string: event%5Btitle%5D=The+Standoff&event%5Buniverse_id%5D=18664
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -587,17 +638,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9db4767b7e8689c55603d668ab8f4420"
+      - W/"e878946f0a5d97c5720f085639519007"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - df42588f-0e15-4697-afea-ed379be7b860
+      - aff30a2c-8da9-4ff8-bc78-7eed46db9f1c
       X-Runtime:
-      - '0.005903'
+      - '0.006202'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
       - '44'
       Connection:
@@ -606,15 +657,15 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":5898,"title":"The Standoff"}}'
+      string: '{"event":{"id":5011,"title":"The Standoff"}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/participations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: participation%5Barticle_id%5D=4104&participation%5Bevent_id%5D=5898
+      string: participation%5Barticle_id%5D=10654&participation%5Bevent_id%5D=5011
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -638,34 +689,34 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"6a94d93326d8bd8b113a337dd185d7c6"
+      - W/"f3abdb470ce8097814e706566684ab91"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6b71cdfa-60fe-4137-808a-a0dee32d116e
+      - 530778eb-da58-4eaf-bbd5-cde988b56c5a
       X-Runtime:
-      - '0.004573'
+      - '0.005305'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '63'
+      - '64'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"participation":{"id":1547,"event_id":5898,"article_id":4104}}'
+      string: '{"participation":{"id":2852,"event_id":5011,"article_id":10654}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/taggings?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: tagging%5Btag_id%5D=622&tagging%5Btagable_id%5D=1030&tagging%5Btagable_type%5D=Note
+      string: tagging%5Btag_id%5D=3316&tagging%5Btagable_id%5D=4106&tagging%5Btagable_type%5D=Note
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -689,31 +740,31 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d4b85744605386805316feb07be144f6"
+      - W/"2ee9e9178ffac86fc70fe1730b1249b7"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4d8d93b0-87ec-44de-91f5-2276428843a6
+      - cc9b54ad-d7ce-480e-a974-2f03d25d2989
       X-Runtime:
-      - '0.005886'
+      - '0.005488'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '75'
+      - '77'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"tagging":{"id":512,"tag_id":622,"tagable_id":1030,"tagable_type":"Note"}}'
+      string: '{"tagging":{"id":1515,"tag_id":3316,"tagable_id":4106,"tagable_type":"Note"}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles/4104?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/articles/10654?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -740,32 +791,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"14e8208ebd27d09ea61d519b5d75daa6"
+      - W/"49bc453f7a74a5a24bb5f1ae51174705"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 79c49b03-0a9c-4569-9bb9-befd24853aa0
+      - 765b3186-2eba-464d-a3a7-1a33878da609
       X-Runtime:
-      - '0.011107'
+      - '0.012972'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '439'
+      - '446'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"article":{"id":4104,"name":"Kelsier","universe_id":10191,"type":"Character","gender":"n","notes":[{"id":1030,"text":"a
-        note","tags":[{"id":622,"title":"hero"}]}],"events":[{"id":5898,"title":"The
-        Standoff"}],"relatives":[{"id":776,"type":"Owns","references":[{"id":298,"comment":"very
-        sharp"}],"target":{"id":4103,"name":"Sword","gender":"n"}},{"id":777,"type":"Owns","references":[],"target":{"id":4102,"name":"Pistol","gender":"n"}}]}}'
+      string: '{"article":{"id":10654,"name":"Kelsier","universe_id":18664,"type":"Character","gender":"n","notes":[{"id":4106,"text":"a
+        note","tags":[{"id":3316,"title":"hero"}]}],"events":[{"id":5011,"title":"The
+        Standoff"}],"relatives":[{"id":5160,"type":"Owns","references":[{"id":2403,"comment":"very
+        sharp"}],"target":{"id":10653,"name":"Sword","gender":"n"}},{"id":5161,"type":"Owns","references":[],"target":{"id":10652,"name":"Pistol","gender":"n"}}]}}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=10191
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=18664
     body:
       encoding: US-ASCII
       string: ''
@@ -792,26 +843,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"668d821cd20b2d5c33779c6b641b23a4"
+      - W/"4d9e7901573ad619cce57ceb52a4823c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2a6c3b2c-9e5a-48fa-a6a0-5b8c9bae1607
+      - 0a36b1c8-308a-4324-a928-57876984ffaa
       X-Runtime:
-      - '0.003295'
+      - '0.003022'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '194'
+      - '197'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":4102,"name":"Pistol","type":"Character","gender":"n"},{"id":4103,"name":"Sword","type":"Character","gender":"n"},{"id":4104,"name":"Kelsier","type":"Character","gender":"n"}]}'
+      string: '{"articles":[{"id":10652,"name":"Pistol","type":"Character","gender":"n"},{"id":10653,"name":"Sword","type":"Character","gender":"n"},{"id":10654,"name":"Kelsier","type":"Character","gender":"n"}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/relation_types?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -841,26 +892,77 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"57d3655f242f690f1fae6bf98fc8036b"
+      - W/"ccf06a19063f3602122e87662871cb41"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bcb777c1-812d-4f08-b882-23934ffee0ee
+      - 13cb8133-0014-48e4-956e-c48c4c983be4
       X-Runtime:
-      - '0.002026'
+      - '0.001974'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '148'
+      - '175'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"relation_types":["Acquaintance","Advisor","Aunt","Brother","Counselor","Follower","Husband","King","Owner","Queen","Right_hand","Sister","Uncle"]}'
+      string: '{"relation_types":["Acquaintance","Advisor","Aunt","Brother","Counselor","Courter","Follower","Guide","Husband","King","Owner","Queen","Right_hand","Sister","Uncle","Warder"]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/article_notes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d5d1369b6fafbf0f9b7e7625b3d77435"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4cb70f28-4ded-48dc-9ab3-5a23baa21f6d
+      X-Runtime:
+      - '0.004418'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Sat, 12 Dec 2015 04:04:29 GMT
+      Content-Length:
+      - '64'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"article_notes":[{"id":148,"article_id":10654,"note_id":4106}]}'
+    http_version: 
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/participations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -892,28 +994,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"79318367f48e066ba5fdd2510e75540e"
+      - W/"11b3c078582dcffc1d067ec671e69b6d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 59c63a32-3565-41cf-b3c6-2c095f0f1430
+      - cd8c0e4e-aeac-41d9-bf02-8aefa35cf790
       X-Runtime:
-      - '0.003958'
+      - '0.004265'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '66'
+      - '67'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"participations":[{"id":1547,"event_id":5898,"article_id":4104}]}'
+      string: '{"participations":[{"id":2852,"event_id":5011,"article_id":10654}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/relations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -945,29 +1047,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f8574f00caf7bd82b95c58fd32defe90"
+      - W/"36165066b044215da8dfa7fd42981cf7"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d853291f-015b-44ac-b94d-205119f8ad00
+      - 17c8129f-51dc-4366-9988-457f0085ccc7
       X-Runtime:
-      - '0.009455'
+      - '0.010318'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '333'
+      - '340'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"relations":[{"id":776,"type":"Owner","references":[{"id":298,"comment":"very
-        sharp"}],"origin":{"id":4103,"name":"Sword","gender":"n"},"target":{"id":4104,"name":"Kelsier","gender":"n"}},{"id":777,"type":"Owner","references":[],"origin":{"id":4102,"name":"Pistol","gender":"n"},"target":{"id":4104,"name":"Kelsier","gender":"n"}}]}'
+      string: '{"relations":[{"id":5160,"type":"Owner","references":[{"id":2403,"comment":"very
+        sharp"}],"origin":{"id":10653,"name":"Sword","gender":"n"},"target":{"id":10654,"name":"Kelsier","gender":"n"}},{"id":5161,"type":"Owner","references":[],"origin":{"id":10652,"name":"Pistol","gender":"n"},"target":{"id":10654,"name":"Kelsier","gender":"n"}}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/taggings?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -999,28 +1101,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c2bfd369efa244dc8a43a26e49af3dd5"
+      - W/"e84939c91ee8db9e0f240da509dac646"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 401a63b1-7731-4b02-821e-fe697c327de8
+      - 2e756a4f-c4cd-4567-a6fa-0bba1c0cc637
       X-Runtime:
-      - '0.003961'
+      - '0.004399'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '78'
+      - '80'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"taggings":[{"id":512,"tag_id":622,"tagable_id":1030,"tagable_type":"Note"}]}'
+      string: '{"taggings":[{"id":1515,"tag_id":3316,"tagable_id":4106,"tagable_type":"Note"}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -1052,28 +1154,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3ee81024401bc0d8b4a6eba8ec561ad3"
+      - W/"e1753edae5e685fd6d4a54faef65d345"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 761fd680-1097-4290-a041-ac826a996963
+      - f2041066-9201-42ce-9d6d-76f8565239df
       X-Runtime:
-      - '0.003993'
+      - '0.004130'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '36'
+      - '37'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"tags":[{"id":622,"title":"hero"}]}'
+      string: '{"tags":[{"id":3316,"title":"hero"}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/notes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -1105,28 +1207,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c1c1e6573b186ed1e0643ca25c1a7cc8"
+      - W/"65dfd7f9b83021c04ffd29f7b50836f5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 614922b1-1cfc-4073-b769-9cf93917844f
+      - 0d90c1f9-be31-4971-9fa6-e2a0f4722a68
       X-Runtime:
-      - '0.003842'
+      - '0.004272'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '57'
+      - '58'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"notes":[{"id":1030,"article_id":4104,"text":"a note"}]}'
+      string: '{"notes":[{"id":4106,"article_id":10654,"text":"a note"}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/events
@@ -1160,13 +1262,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f43ecc59-173c-45fa-aadd-4424b9a63a3e
+      - 398494a1-e1e2-43d7-afa3-53edead5428f
       X-Runtime:
-      - '0.002886'
+      - '0.002995'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
       - '12'
       Connection:
@@ -1177,7 +1279,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"events":1}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -1209,28 +1311,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"5804991074ad13f9c701cac22801a92d"
+      - W/"a729d1d4d070d02dcdfb8ba833975c99"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c86ecdad-fa7a-4021-b974-e754f5b4d216
+      - 0324398e-8359-4dba-bfa9-b887947f5b82
       X-Runtime:
-      - '0.006868'
+      - '0.007977'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
-      - '215'
+      - '218'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":4102,"name":"Pistol","universe_id":10191,"type":"Character"},{"id":4103,"name":"Sword","universe_id":10191,"type":"Character"},{"id":4104,"name":"Kelsier","universe_id":10191,"type":"Character"}]}'
+      string: '{"articles":[{"id":10652,"name":"Pistol","universe_id":18664,"type":"Character"},{"id":10653,"name":"Sword","universe_id":18664,"type":"Character"},{"id":10654,"name":"Kelsier","universe_id":18664,"type":"Character"}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes
@@ -1260,17 +1362,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"70c7877551b31d096e8495b5cdc8f223"
+      - W/"7f3df7a5e3ecb06b0cf0d5b1a9b4b8df"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c24912dd-c56e-4784-98e5-a020aa52525b
+      - 7a142cd2-e474-4d0d-b47b-268663aed0c6
       X-Runtime:
-      - '0.004447'
+      - '0.004317'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Tue, 08 Dec 2015 03:41:42 GMT
+      - Sat, 12 Dec 2015 04:04:29 GMT
       Content-Length:
       - '55'
       Connection:
@@ -1279,7 +1381,7 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":10191,"title":"The Final Empire"}]}'
+      string: '{"universes":[{"id":18664,"title":"The Final Empire"}]}'
     http_version: 
-  recorded_at: Tue, 08 Dec 2015 03:41:42 GMT
+  recorded_at: Sat, 12 Dec 2015 04:04:29 GMT
 recorded_with: VCR 2.9.3

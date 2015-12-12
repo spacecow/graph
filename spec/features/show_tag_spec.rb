@@ -8,7 +8,7 @@ describe "Show tag" do
       begin
         universe = create :universe
         article = create :article, universe_id:universe.id
-        note = create :note, article_id:article.id, text:"90 W"
+        note = tcreate :note, article_id:article.id, text:"90 W"
         tag = create :tag, title:'TDP'
         create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
         visit tag_path tag.id

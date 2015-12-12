@@ -29,6 +29,8 @@ describe 'Show universe' do
         within('li.article'){ click_link "Kelsier" }
         expect(current_path).to eq article_path(article.id)
       ensure
+        tdelete :article_notes
+        delete :notes
         delete :articles
         tdelete :universes
       end

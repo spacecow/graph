@@ -8,7 +8,8 @@ describe 'Show note' do
       begin
         universe = create :universe
         article = create :article, universe_id:universe.id
-        note = create :note, article_id:article.id, text:'a note'
+        note = tcreate :note, article_id:article.id, text:'a note'
+        tcreate :article_note, article_id:article.id, note_id:note.id
         create :reference, referenceable_id:note.id, url:'www.example.com',
           referenceable_type:"Note"
         tag = create :tag, title:'TDP'
@@ -19,6 +20,7 @@ describe 'Show note' do
         expect(page).to have_content 'a note'
         expect(page).to have_content 'www.example.com'
       ensure
+        tdelete :article_notes
         delete :references
         delete :taggings
         delete :tags
@@ -36,13 +38,15 @@ describe 'Show note' do
       begin
         universe = create :universe
         article = create :article, universe_id:universe.id
-        note = create :note, article_id:article.id, text:'a note'
+        note = tcreate :note, article_id:article.id, text:'a note'
+        tcreate :article_note, article_id:article.id, note_id:note.id
         reference = create :reference, referenceable_id:note.id,
           url:'www.example.com', referenceable_type:"Note"
         visit note_path note.id
         click_link 'www.example.com'
         expect(current_path).to eq reference_path(reference.id)
       ensure
+        tdelete :article_notes
         delete :references
         delete :notes
         delete :articles

@@ -48,7 +48,7 @@ describe "Show event" do
         within('li.remark'){ click_link "Edit" }
         expect(current_path).to eq edit_remark_path(remark.id)
       ensure
-        tdelete :remark
+        delete :remarks
         tdelete :events
         tdelete :remarkables
         tdelete :universes

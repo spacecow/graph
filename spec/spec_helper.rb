@@ -38,6 +38,13 @@ end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+
+  config.before :all do
+  end
+
+  config.after :all do
+  end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -141,7 +148,7 @@ def delete mdls
   url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port
-  http.delete(uri).body
+  http.delete uri
 end
 
 def tdelete mdls
@@ -149,6 +156,17 @@ def tdelete mdls
   uri = URI url
   http = Net::HTTP.new uri.host, uri.port
   req = Net::HTTP::Delete.new(
+    uri.path, initheader = {'Content-Type' =>'application/json'})
+  req['Accept'] = 'application/vnd.example.t1'
+  #TODO include access_token=#{token}"
+  http.request req
+end
+
+def list mdls
+  url = "http://localhost:9292/api/#{mdls}?access_token=#{token}"
+  uri = URI url
+  http = Net::HTTP.new uri.host, uri.port
+  req = Net::HTTP::Get.new(
     uri.path, initheader = {'Content-Type' =>'application/json'})
   req['Accept'] = 'application/vnd.example.t1'
   #TODO include access_token=#{token}"

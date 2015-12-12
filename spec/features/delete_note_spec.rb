@@ -9,7 +9,8 @@ describe "Delete note" do
         universe = create :universe
         tag = create :tag, title:'TDP'
         article = create :article, universe_id:universe.id
-        note = create :note, article_id:article.id, text:"90 W"
+        note = tcreate :note, article_id:article.id, text:"90 W"
+        tcreate :article_note, article_id:article.id, note_id:note.id
         create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
         visit tag_path tag.id
         expect(page).to have_content '90 W'
@@ -17,6 +18,7 @@ describe "Delete note" do
         expect(current_path).to eq tag_path(tag.id) 
         expect(page).not_to have_content '90 W'
       ensure
+        tdelete :article_notes
         delete :taggings
         delete :tags
         delete :notes
@@ -33,13 +35,15 @@ describe "Delete note" do
         visit universes_path
         click_link "The Wheel of Time"
         article = create :article, universe_id:universe.id
-        create :note, article_id:article.id, text:"Square-faced"
+        note = tcreate :note, article_id:article.id, text:"Square-faced"
+        tcreate :article_note, article_id:article.id, note_id:note.id
         visit article_path article.id
         expect(page).to have_content "Square-faced"
         within('li.note'){ click_link "Delete" }
         expect(current_path).to eq article_path(article.id) 
         expect(page).not_to have_content "Square-faced"
       ensure
+        tdelete :article_notes
         delete :notes
         delete :articles
         tdelete :universes

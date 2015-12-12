@@ -16,9 +16,7 @@ class Article
 
   def notes= arr
     @notes = arr.map do |params|
-      Note.new(params).tap do |note|
-        note.article = self
-      end
+      Note.new(params)
     end
   end
   

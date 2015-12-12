@@ -12,9 +12,7 @@ module Repo
       Note.new body['note']
     end
 
-    def new_note params={}
-      Note.new params
-    end
+    def new_note params={}; Note.new params end
 
     def save_note note
       url = "http://localhost:9292/api/notes?access_token=#{token}"
