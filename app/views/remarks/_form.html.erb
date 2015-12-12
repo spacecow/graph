@@ -4,7 +4,7 @@
   <%= hidden_field_tag :event_id, event_id %>
   <div class="content">
     <%= f.label :content, "Remark" %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </div>
   <%= f.submit remark.id ? "Update" : "Add" %>
 <% end %>

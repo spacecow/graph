@@ -31,7 +31,7 @@ describe "remarks/_form.html.erb" do
     expect(bind).to receive(:hidden_field_tag).
       with(:event_id,:event_id){ "hidden_event_id" }
     expect(builder).to receive(:label).with(:content,"Remark"){ "label_content" }
-    expect(builder).to receive(:text_field).with(:content){ "text_content" }
+    expect(builder).to receive(:text_area).with(:content){ "text_content" }
   end
 
   subject(:page){ Capybara.string rendering }
