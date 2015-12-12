@@ -8,13 +8,12 @@ describe "Create tagging" do
         begin
           universe = create :universe
           article = create :article, universe_id:universe.id
-          note = tcreate :note, article_id:article.id
-          tcreate :article_note, article_id:article.id, note_id:note.id
+          noting = tcreate :article_note, article_id:article.id
           create :tag, title:'TDP'
-          visit note_path note.id
+          visit note_path noting.note_id
           select 'TDP', from:'Tags'
           click_on 'Create Tagging'
-          expect(current_path).to eq note_path(note.id)
+          expect(current_path).to eq note_path(noting.note_id)
           expect(page).to have_content 'TDP' 
         ensure
           tdelete :article_notes

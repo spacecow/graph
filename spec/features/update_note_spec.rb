@@ -10,7 +10,7 @@ describe "Update note" do
         visit universes_path
         click_link "The Wheel of Time"
         article = create :article, universe_id:universe.id
-        note = tcreate :note, article_id:article.id, text:"an old note"
+        note = tcreate :note, text:"an old note"
         tcreate :article_note, article_id:article.id, note_id:note.id
         visit edit_note_path note.id
         fill_in 'Note', with:"an updated note"

@@ -9,7 +9,7 @@ describe "Delete note" do
         universe = create :universe
         tag = create :tag, title:'TDP'
         article = create :article, universe_id:universe.id
-        note = tcreate :note, article_id:article.id, text:"90 W"
+        note = tcreate :note, text:"90 W"
         tcreate :article_note, article_id:article.id, note_id:note.id
         create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
         visit tag_path tag.id
@@ -35,7 +35,7 @@ describe "Delete note" do
         visit universes_path
         click_link "The Wheel of Time"
         article = create :article, universe_id:universe.id
-        note = tcreate :note, article_id:article.id, text:"Square-faced"
+        note = tcreate :note, text:"Square-faced"
         tcreate :article_note, article_id:article.id, note_id:note.id
         visit article_path article.id
         expect(page).to have_content "Square-faced"

@@ -18,7 +18,7 @@ describe 'Show article' do
         create :relation, origin_id:pistol.id, target_id:article.id, type:"Owner"
         create :reference, referenceable_id:relation.id,
           referenceable_type:"Relation", comment:"very sharp"
-        note = tcreate :note, article_id:article.id, text:'a note'
+        note = tcreate :note, text:'a note'
         tcreate :article_note, article_id:article.id, note_id:note.id
         tag = create :tag, title:'hero'
         event = create :event, universe_id:universe.id, title:"The Standoff"
@@ -94,7 +94,7 @@ describe 'Show article' do
         visit universes_path
         click_link "The Final Empire"
         article = create :article, universe_id:universe.id
-        note = tcreate :note, article_id:article.id
+        note = tcreate :note
         tcreate :article_note, article_id:article.id, note_id:note.id
         tag = create :tag, title:'hero'
         create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
@@ -120,7 +120,7 @@ describe 'Show article' do
         visit universes_path
         click_link "The Final Empire"
         article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
-        note = tcreate :note, article_id:article.id, text:'a note'
+        note = tcreate :note, text:'a note'
         tcreate :article_note, article_id:article.id, note_id:note.id
         visit article_path article.id
         click_link 'a note'
@@ -141,7 +141,7 @@ describe 'Show article' do
         visit universes_path
         click_link "The Final Empire"
         article = create :article, name:'Kelsier', universe_id:universe.id, type:'Character'
-        note = tcreate :note, article_id:article.id, text:'a note'
+        note = tcreate :note, text:'a note'
         tcreate :article_note, article_id:article.id, note_id:note.id
         visit article_path article.id
         within('li.note'){ click_link "Edit" }

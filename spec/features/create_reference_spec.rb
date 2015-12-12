@@ -29,7 +29,7 @@ describe "Create reference" do
       begin
         universe = create :universe
         article = create :article, universe_id:universe.id
-        note = tcreate :note, article_id:article.id
+        note = tcreate :note
         tcreate :article_note, article_id:article.id, note_id:note.id
         visit note_path note.id
         attach_file('Image', Rails.root + 'spec/pear.jpeg')

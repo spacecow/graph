@@ -26,7 +26,7 @@ class NotesController < ApplicationController
   def create
     run(NoteRunners::Create, note_params) do |on|
       on.success do |note|
-        redirect_to article_path note.article_id
+        redirect_to article_path(note.article_id)
       end
       on.failure do |note|
         @note = note

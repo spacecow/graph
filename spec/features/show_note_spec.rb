@@ -8,7 +8,7 @@ describe 'Show note' do
       begin
         universe = create :universe
         article = create :article, universe_id:universe.id
-        note = tcreate :note, article_id:article.id, text:'a note'
+        note = tcreate :note, text:'a note'
         tcreate :article_note, article_id:article.id, note_id:note.id
         create :reference, referenceable_id:note.id, url:'www.example.com',
           referenceable_type:"Note"
@@ -38,7 +38,7 @@ describe 'Show note' do
       begin
         universe = create :universe
         article = create :article, universe_id:universe.id
-        note = tcreate :note, article_id:article.id, text:'a note'
+        note = tcreate :note, text:'a note'
         tcreate :article_note, article_id:article.id, note_id:note.id
         reference = create :reference, referenceable_id:note.id,
           url:'www.example.com', referenceable_type:"Note"

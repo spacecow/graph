@@ -1,5 +1,6 @@
 class ArticleNote
   include ActiveModel::Model
 
-  attr_writer :article_id, :note_id, :id
+  attr_accessor :note_id
+  attr_writer :article_id, :id
 end
