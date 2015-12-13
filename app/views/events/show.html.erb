@@ -12,6 +12,11 @@
     <ul class="remarks"><%= render @remarks, event_id:@event.id %></ul>
   </div>
 
+  <div class="notes list">
+    <h2>Notes</h2>
+    <ul class='notes'><%= render @notes, article_id:nil, tag_id:nil %></ul>
+  </div>
+
   <div class="participants list">
     <h2>Participants</h2>
     <ul class="participants"><%= render @event.participants %></ul>

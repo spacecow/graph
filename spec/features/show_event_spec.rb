@@ -14,6 +14,8 @@ describe "Show event" do
         remark = tcreate :remark, remarkable_id:remarkable.id, content:"a remark"
         event = tcreate :event, universe_id:universe.id, title:"Red wedding",
           remarkable_id:remarkable.id
+        note = tcreate :note, text:'a note'
+        tcreate :event_note, event_id:event.id, note_id:note.id
         create :step, parent_id:parent.id, child_id:event.id
         article = create :article, universe_id:universe.id, name:"John Snow",
           gender:'m'
@@ -23,8 +25,11 @@ describe "Show event" do
         expect(page).to have_content "Green wedding"
         expect(page).to have_content "Red wedding"
         expect(page).to have_content "a remark"
+        expect(page).to have_content "a note"
         expect(page.find '.participants .male').to have_content "John Snow"
       ensure
+        tdelete :event_notes
+        delete :notes
         delete :remarks
         delete :steps
         delete :participations
