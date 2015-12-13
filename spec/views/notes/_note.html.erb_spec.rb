@@ -23,7 +23,7 @@ describe 'notes/_note.html.erb' do
     expect(presenter).to receive(:tags).with(no_args){ "TDP" }
     expect(presenter).to receive(:edit_link).with(no_args){ "edit_note_link" }
     expect(presenter).to receive(:delete_link).
-      with(article_id: :article_id, tag_id: :tag_id){ "delete_note_link" }
+      with(tag_id: :tag_id){ "delete_note_link" }
   end
 
   subject(:li){ Capybara.string(rendering).find 'li.note' }

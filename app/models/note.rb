@@ -6,7 +6,10 @@ class Note
   attr_writer :article_id
 
   def article= params; @article = Article.new params end
-  def article_id; @article_id || @article.id end
+  def article_id; @article_id || @article.try(:id) end
+
+  def event= params; @event = Event.new params end
+  def event_id; @event.try(:id) end
 
   def references; @references || [] end
 

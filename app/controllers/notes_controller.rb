@@ -63,14 +63,15 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    article_id = params[:article_id]
     tag_id = params[:tag_id]
     run(NoteRunners::Destroy, params[:id]) do |on|
-      on.success do
-        if article_id
-          redirect_to article_path(article_id)
-        elsif tag_id
+      on.success do |note|
+        if tag_id
           redirect_to tag_path(tag_id)
+        elsif note.article_id
+          redirect_to article_path(note.article_id)
+        elsif note.event_id 
+          redirect_to event_path(note.event_id)
         end
       end
     end

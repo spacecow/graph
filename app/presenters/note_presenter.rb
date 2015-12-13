@@ -9,8 +9,8 @@ class NotePresenter < BasePresenter
 
   def edit_link; h.link_to "Edit", h.edit_note_path(note.id) end
 
-  def delete_link article_id:, tag_id:
-    h.link_to "Delete", h.note_path(note.id, article_id:article_id, tag_id:tag_id),
+  def delete_link tag_id:
+    h.link_to "Delete", h.note_path(note.id, tag_id:tag_id),
       method: :delete, data:{confirm:"Are you sure?"}
   end
 end

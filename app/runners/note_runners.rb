@@ -51,8 +51,8 @@ module NoteRunners
 
   class Destroy < Runner
     def run id
-      repo.delete_note id
-      success
+      note = repo.delete_note id
+      success note
     end
   end
 

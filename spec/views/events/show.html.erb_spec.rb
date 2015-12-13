@@ -31,7 +31,7 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:render).
       with(:remarks, event_id: :event_id){ "render_remarks" }
     expect(bind).to receive(:render).
-      with(:notes, article_id:nil, tag_id:nil){ "render_notes" }
+      with(:notes, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:children){ "render_children" }
     expect(bind).to receive(:render).with(:participants){ :render_participants }
     expect(bind).to receive(:render).

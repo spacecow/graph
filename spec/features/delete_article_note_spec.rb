@@ -3,6 +3,7 @@ require 'rails_helper'
 
 describe "Delete article note" do
 
+  #TODO is this really woking? What happens with tagging?
   it "Successfully from tag" do
     VCR.use_cassette("delete_article_note_from_tag_successfully") do
       begin
