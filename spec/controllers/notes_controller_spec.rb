@@ -1,6 +1,7 @@
 describe "NotesController" do
 
   let(:controller){ NotesController.new }
+  let(:note){ double :note }
 
   before do
     class ApplicationController; end unless defined?(Rails)
@@ -11,6 +12,8 @@ describe "NotesController" do
     def controller.event_path id; raise NotImplementedError end
     def controller.tag_path id; raise NotImplementedError end
     def controller.redirect_to path; raise NotImplementedError end
+    def controller.session; raise NotImplementedError end
+    def controller.request; raise NotImplementedError end
     allow(controller).to receive(:params).with(no_args){ params }
   end
 
@@ -39,12 +42,12 @@ describe "NotesController" do
     let(:function){ :create }
     let(:note_runner){ double :note_runner }
     let(:article_runner){ double :article_runner }
-    let(:note){ double :note, article_id: :article_id }
     before do
       stub_const "NoteRunners::Create", Class.new
       stub_const "ArticleRunners::Show", Class.new
       def controller.render path; raise NotImplementedError end
       def controller.current_universe_id; raise NotImplementedError end
+      expect(note).to receive(:article_id).with(no_args).at_least(1){ :article_id }
       expect(controller).to receive(:run).
         with(NoteRunners::Create,:params).and_yield(note_runner)
       expect(controller).to receive(:run).
@@ -69,29 +72,33 @@ describe "NotesController" do
     let(:function){ :edit }
     let(:runner){ double :runner }
     let(:params){{ id: :id }}
-    let(:note){ double :note }
+    let(:session){ {} }
+    let(:request){ double :request }
     before do
       stub_const "NoteRunners::Edit", Class.new
+      expect(controller).to receive(:session).with(no_args){ session }
+      expect(controller).to receive(:request).with(no_args){ request }
       expect(controller).to receive(:run).
         with(NoteRunners::Edit,:id).and_yield(runner)
+      expect(request).to receive(:referer).with(no_args){ :path }
       expect(runner).to receive(:success).with(no_args).and_yield(note)
     end
-    it{ subject }
+    it{ subject; expect(session).to eq({redirect_to: :path}) }
   end
 
   describe "#update" do
     let(:function){ :update }
     let(:params){{ id: :id }}
     let(:runner){ double :runner }
-    let(:note){ double :note, article_id: :article_id }
+    let(:session){{ redirect_to: :path }}
     before do
       stub_const "NoteRunners::Update", Class.new
       expect(controller).to receive(:note_params).with(no_args){ :params }
       expect(controller).to receive(:run).
         with(NoteRunners::Update,:id,:params).and_yield(runner)
       expect(runner).to receive(:success).with(no_args).and_yield(note)
-      expect(controller).to receive(:article_path).with(:article_id){ :path }
       expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+      expect(controller).to receive(:session).with(no_args){ session }
     end
     it{ should be :redirect }
   end
@@ -99,7 +106,6 @@ describe "NotesController" do
   describe "#destroy" do
     let(:function){ :destroy }
     let(:runner){ double :runner }
-    let(:note){ double :note }
     before do
       stub_const "NoteRunners::Destroy", Class.new
       expect(controller).to receive(:run).with(NoteRunners::Destroy,:id).

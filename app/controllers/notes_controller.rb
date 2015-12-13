@@ -51,6 +51,7 @@ class NotesController < ApplicationController
   end
 
   def edit
+    session[:redirect_to] = request.referer || root_path
     run(NoteRunners::Edit, params[:id]) do |on|
       on.success do |note|
         @note = note
@@ -61,7 +62,7 @@ class NotesController < ApplicationController
   def update
     run(NoteRunners::Update, params[:id], note_params) do |on|
       on.success do |note|
-        redirect_to article_path(note.article_id)
+        redirect_to session.delete(:redirect_to)
       end
     end
   end
