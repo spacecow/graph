@@ -19,6 +19,7 @@ module EventRunners
       before do
         expect(repo).to receive(:event).with(:id){ event }
         expect(repo).to receive(:new_remark).with(no_args){ :remark }
+        expect(repo).to receive(:new_note).with(event_id: :event_id){ :note }
         expect(repo).to receive(:articles).
           with(universe_id: :universe_id){ [article] }
         expect(event).to receive(:participant_ids).

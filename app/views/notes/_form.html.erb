@@ -1,5 +1,6 @@
 <%= form_for note do |f| %>
   <%= f.hidden_field :article_id %>
+  <%= f.hidden_field :event_id %>
   <div class="text">
     <%= f.label :text, 'Note' %>
     <%= f.text_field :text %>

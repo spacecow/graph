@@ -18,7 +18,7 @@ describe "Delete event note" do
         expect(page).not_to have_content "High altitude"
       ensure
         tdelete :event_notes
-        delete :ntoes
+        delete :notes
         tdelete :events
         tdelete :universes
       end  

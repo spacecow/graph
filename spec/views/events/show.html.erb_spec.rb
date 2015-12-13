@@ -12,7 +12,7 @@ describe "events/show.html.erb" do
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event, participation: :participation, articles: :articles,
     parent_step: :parent_step, parents: :parents, remarks: :remarks,
-    remark: :remark, notes: :notes }}
+    remark: :remark, notes: :notes, note: :note }}
   let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
@@ -40,6 +40,9 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:render).
       with("remarks/form", remark: :remark, event_id: :event_id).
       and_return("remark_form")
+    expect(bind).to receive(:render).
+      with("notes/form", note: :note).
+      and_return("note_form")
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).
       and_return("participation_form")
@@ -110,6 +113,11 @@ describe "events/show.html.erb" do
   describe "Remark form" do
     subject{ page.find '.remark.new.form' }
     its(:text){ should include "remark_form" }
+  end
+
+  describe "Note form" do
+    subject{ page.find '.note.new.form' }
+    its(:text){ should include "note_form" }
   end
 
   describe "Step form" do

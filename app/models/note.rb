@@ -3,13 +3,13 @@ class Note
 
   attr_accessor :id, :text
   attr_reader :article, :book_id
-  attr_writer :article_id
+  attr_writer :article_id, :event_id
 
   def article= params; @article = Article.new params end
   def article_id; @article_id || @article.try(:id) end
 
   def event= params; @event = Event.new params end
-  def event_id; @event.try(:id) end
+  def event_id; @event_id || @event.try(:id) end
 
   def references; @references || [] end
 

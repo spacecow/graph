@@ -26,7 +26,11 @@ class NotesController < ApplicationController
   def create
     run(NoteRunners::Create, note_params) do |on|
       on.success do |note|
-        redirect_to article_path(note.article_id)
+        if note.article_id
+          redirect_to article_path(note.article_id)
+        elsif note.event_id 
+          redirect_to event_path(note.event_id)
+        end
       end
       on.failure do |note|
         @note = note
@@ -80,7 +84,7 @@ class NotesController < ApplicationController
   private
 
     def note_params
-      params.require(:note).permit(:article_id, :text)
+      params.require(:note).permit(:article_id, :event_id, :text)
     end
 
 end

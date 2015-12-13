@@ -15,7 +15,8 @@ module EventRunners
       remarks = event.remarks
       remark = repo.new_remark
       notes = event.notes
-      success event, articles, participation, parent_step, parents, remarks, remark, notes
+      note = repo.new_note event_id:event.id 
+      success event, articles, participation, parent_step, parents, remarks, remark, notes, note
     end
   end
 
