@@ -11,8 +11,7 @@ describe "events/show.html.erb" do
 
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event, participation: :participation, articles: :articles,
-    parent_step: :parent_step, parents: :parents, remarks: :remarks,
-    remark: :remark, notes: :notes, note: :note }}
+    parent_step: :parent_step, parents: :parents, notes: :notes, note: :note }}
   let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
@@ -29,17 +28,12 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:present).with(event).and_yield(presenter)
     expect(bind).to receive(:render).with(:parents){ "render_parents" }
     expect(bind).to receive(:render).
-      with(:remarks, event_id: :event_id){ "render_remarks" }
-    expect(bind).to receive(:render).
       with(:notes, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:children){ "render_children" }
     expect(bind).to receive(:render).with(:participants){ :render_participants }
     expect(bind).to receive(:render).
       with("steps/form", step: :parent_step, parents: :parents).
       and_return("step_form")
-    expect(bind).to receive(:render).
-      with("remarks/form", remark: :remark, event_id: :event_id).
-      and_return("remark_form")
     expect(bind).to receive(:render).
       with("notes/form", note: :note).
       and_return("note_form")
@@ -93,26 +87,9 @@ describe "events/show.html.erb" do
     end
   end
 
-  describe "Remarks section" do
-    subject(:div){ page.find '.event .remarks.list' }
-    describe "Header" do
-      subject{ div.find 'h2' }
-      its(:text){ should eq "Remarks" }
-    end
-    describe "List" do
-      subject{ div.find 'ul.remarks' }
-      its(:text){ should eq "render_remarks" }
-    end
-  end
-
   describe "Participation form" do
     subject{ page.find '.participation.new.form' }
     its(:text){ should include "participation_form" }
-  end
-
-  describe "Remark form" do
-    subject{ page.find '.remark.new.form' }
-    its(:text){ should include "remark_form" }
   end
 
   describe "Note form" do

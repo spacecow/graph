@@ -10,10 +10,7 @@ describe "Show event" do
         visit universes_path
         click_link "Game of Thrones"
         parent = create :event, universe_id:universe.id, title:"Green wedding"
-        remarkable = tcreate :remarkable
-        remark = tcreate :remark, remarkable_id:remarkable.id, content:"a remark"
-        event = tcreate :event, universe_id:universe.id, title:"Red wedding",
-          remarkable_id:remarkable.id
+        event = tcreate :event, universe_id:universe.id, title:"Red wedding"
         note = tcreate :note, text:'a note'
         tcreate :event_note, event_id:event.id, note_id:note.id
         create :step, parent_id:parent.id, child_id:event.id
@@ -24,38 +21,15 @@ describe "Show event" do
         visit event_path event.id
         expect(page).to have_content "Green wedding"
         expect(page).to have_content "Red wedding"
-        expect(page).to have_content "a remark"
         expect(page).to have_content "a note"
         expect(page.find '.participants .male').to have_content "John Snow"
       ensure
         tdelete :event_notes
         delete :notes
-        delete :remarks
         delete :steps
         delete :participations
         delete :articles
         tdelete :events
-        delete :remarkables
-        tdelete :universes
-      end
-    end
-  end
-
-  it "navigate to an edit remark page" do
-    VCR.use_cassette('navigate_to_an_edit_remark_page') do
-      begin
-        remarkable = tcreate :remarkable
-        event = tcreate :event, remarkable_id:remarkable.id
-        remark = tcreate :remark, remarkable_id:remarkable.id
-        visit universes_path
-        click_link event.universe_title 
-        visit event_path event.id
-        within('li.remark'){ click_link "Edit" }
-        expect(current_path).to eq edit_remark_path(remark.id)
-      ensure
-        delete :remarks
-        tdelete :events
-        tdelete :remarkables
         tdelete :universes
       end
     end

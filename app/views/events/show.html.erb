@@ -7,11 +7,6 @@
   <ul class="children"><%= render @event.children %></ul>
   <div class="clear"></div>
 
-  <div class="remarks list">
-    <h2>Remarks</h2>
-    <ul class="remarks"><%= render @remarks, event_id:@event.id %></ul>
-  </div>
-
   <div class="notes list">
     <h2>Notes</h2>
     <ul class='notes'><%= render @notes, tag_id:nil %></ul>
@@ -21,10 +16,6 @@
     <h2>Participants</h2>
     <ul class="participants"><%= render @event.participants %></ul>
   </div>
-</div>
-
-<div class="remark new form">
-  <%= render "remarks/form", remark:@remark, event_id:@event.id %>
 </div>
 
 <div class="note new form">

@@ -1,8 +1,7 @@
 class Event
   include ActiveModel::Model
 
-  attr_reader :participants, :children, :parents, :remarks, :universe, :notes
-  attr_writer :remarkable_id
+  attr_reader :participants, :children, :parents, :universe, :notes
   attr_accessor :id, :title, :universe_id, :parent_tokens, :child_tokens
 
   def children= arr
@@ -28,13 +27,6 @@ class Event
   def notes= arr
     @notes = arr.map do |params|
       Note.new params
-    end
-  end
-
-  #TODO remove
-  def remarks= arr
-    @remarks = arr.map do |params|
-      Remark.new params
     end
   end
 
