@@ -1,10 +1,10 @@
 require 'vcr_helper'
 require 'rails_helper'
 
-describe "Delete note" do
+describe "Delete article note" do
 
   it "Successfully from tag" do
-    VCR.use_cassette("delete_note_from_tag_successfully") do
+    VCR.use_cassette("delete_article_note_from_tag_successfully") do
       begin
         universe = create :universe
         tag = create :tag, title:'TDP'
@@ -29,7 +29,7 @@ describe "Delete note" do
   end
 
   it "Successfully from article" do
-    VCR.use_cassette("delete_note_from_article_successfully") do
+    VCR.use_cassette("delete_article_note_from_article_successfully") do
       begin
         universe = create :universe, title:"The Wheel of Time"
         visit universes_path
