@@ -1,11 +1,11 @@
 require 'rails_helper'
 require 'vcr_helper'
 
-describe "Create note" do
+describe "Create article note" do
 
-  describe "creation successful" do
+  describe "Successfully" do
     it "" do
-      VCR.use_cassette("create_note_successfully") do
+      VCR.use_cassette("create_article_note_successfully") do
         begin
           universe = create :universe, title:'The Malazan Empire'
           visit universes_path
@@ -26,9 +26,9 @@ describe "Create note" do
     end
   end
 
-  describe "creation failure" do
+  describe "Failingly" do
     it "text cannot be blank" do
-      VCR.use_cassette("create_note_with_blank_text_violation") do
+      VCR.use_cassette("create_article_note_with_blank_text_violation") do
         begin
           universe = create :universe, title:'The Malazan Empire'
           article = create :article, universe_id:universe.id
