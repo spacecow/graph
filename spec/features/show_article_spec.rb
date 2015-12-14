@@ -20,10 +20,9 @@ describe 'Show article' do
           referenceable_type:"Relation", comment:"very sharp"
         note = tcreate :note, text:'a note'
         tcreate :article_note, article_id:article.id, note_id:note.id
-        tag = create :tag, title:'hero'
         event = create :event, universe_id:universe.id, title:"The Standoff"
         create :participation, event_id:event.id, article_id:article.id
-        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
+        tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
         expect(page).to have_content "Kelsier"
@@ -37,8 +36,7 @@ describe 'Show article' do
         tdelete :article_notes
         delete :participations
         delete :relations
-        delete :taggings
-        delete :tags
+        tdelete :tags
         delete :notes
         tdelete :events
         delete :articles
@@ -96,16 +94,14 @@ describe 'Show article' do
         article = create :article, universe_id:universe.id
         note = tcreate :note
         tcreate :article_note, article_id:article.id, note_id:note.id
-        tag = create :tag, title:'hero'
-        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
+        tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
         visit article_path article.id
         expect(page).to have_content 'hero'
         click_link 'hero'
         expect(current_path).to eq tag_path(tag.id)
       ensure
         tdelete :article_notes
-        delete :taggings
-        delete :tags
+        tdelete :tags
         delete :notes
         delete :articles
         tdelete :universes

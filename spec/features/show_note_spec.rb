@@ -12,18 +12,16 @@ describe 'Show note' do
         tcreate :article_note, article_id:article.id, note_id:note.id
         create :reference, referenceable_id:note.id, url:'www.example.com',
           referenceable_type:"Note"
-        tag = create :tag, title:'TDP'
-        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
+        tcreate :tag, title:'TDP', tagable_id:note.id, tagable_type:'Note'
         visit note_path note.id
         expect(current_path).to eq note_path(note.id)
-        expect(page).to have_content 'TDP'
+        expect(page).to have_selector 'li.tag'
         expect(page).to have_content 'a note'
         expect(page).to have_content 'www.example.com'
       ensure
         tdelete :article_notes
         delete :references
-        delete :taggings
-        delete :tags
+        tdelete :tags
         delete :notes
         delete :articles
         tdelete :universes

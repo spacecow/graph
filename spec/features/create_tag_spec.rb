@@ -13,7 +13,7 @@ describe "Create note" do
           expect(current_path).to eq tags_path
           expect(page).to have_content 'TDP' 
         ensure
-          delete :tags
+          tdelete :tags
         end
       end
     end

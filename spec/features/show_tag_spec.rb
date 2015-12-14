@@ -9,14 +9,12 @@ describe "Show tag" do
         universe = create :universe
         article = create :article, universe_id:universe.id
         note = tcreate :note, text:"90 W"
-        tag = create :tag, title:'TDP'
-        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
+        tag = tcreate :tag, title:'TDP', tagable_id:note.id, tagable_type:'Note'
         visit tag_path tag.id
         expect(page).to have_content 'TDP'
         expect(page).to have_content '90 W'
       ensure
-        delete :taggings
-        delete :tags
+        tdelete :tags
         delete :notes
         delete :articles
         tdelete :universes

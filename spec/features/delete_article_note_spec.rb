@@ -3,25 +3,22 @@ require 'rails_helper'
 
 describe "Delete article note" do
 
-  #TODO is this really woking? What happens with tagging?
-  it "Successfully from tag" do
+  it "Failingly from tag" do
     VCR.use_cassette("delete_article_note_from_tag_successfully") do
       begin
         universe = create :universe
-        tag = create :tag, title:'TDP'
         article = create :article, universe_id:universe.id
         note = tcreate :note, text:"90 W"
         tcreate :article_note, article_id:article.id, note_id:note.id
-        create :tagging, tag_id:tag.id, tagable_id:note.id, tagable_type:'Note'
+        tag = tcreate :tag, tagable_id:note.id, tagable_type:'Note', title:"TDP"
         visit tag_path tag.id
         expect(page).to have_content '90 W'
         within('li.note'){ click_link "Delete" }
         expect(current_path).to eq tag_path(tag.id) 
-        expect(page).not_to have_content '90 W'
+        expect(page).to have_content '90 W'
       ensure
         tdelete :article_notes
-        delete :taggings
-        delete :tags
+        tdelete :tags
         delete :notes
         delete :articles
         tdelete :universes
