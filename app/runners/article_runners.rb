@@ -15,7 +15,8 @@ module ArticleRunners
       types = repo.relation_types
       relation_types = types.map{|e| e.gsub(/_/,' ')}.zip(types)
       relations = article.relations
-      success article, note, notes, relation, targets, events, relation_types, relations
+      tags = article.tags
+      success article, note, notes, relation, targets, events, relation_types, relations, tags
     end
   end
 

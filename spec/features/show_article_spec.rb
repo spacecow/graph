@@ -23,11 +23,13 @@ describe 'Show article' do
         event = create :event, universe_id:universe.id, title:"The Standoff"
         create :participation, event_id:event.id, article_id:article.id
         tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
+        tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
         expect(page).to have_content "Kelsier"
         expect(page).to have_content "a note"
         expect(page).to have_content "hero"
+        expect(page).to have_content "Allomancy"
         expect(page.find('.relations.list')).to have_content "Owns"
         expect(page.find('.relations.list')).to have_content "Sword"
         expect(page.find('.relations.list')).to have_content "very sharp"

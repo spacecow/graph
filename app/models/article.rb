@@ -31,6 +31,13 @@ class Article
     end
   end
 
+  def tags; @tags || [] end
+  def tags= arr
+    @tags = arr.map do |params|
+      Tag.new params
+    end
+  end
+
   def universe= params
     @universe = case params
     when Hash

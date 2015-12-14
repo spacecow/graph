@@ -35,7 +35,7 @@ class NotesController < ApplicationController
       on.failure do |note|
         @note = note
         run(ArticleRunners::Show, note.article_id, universe_id:current_universe_id) do |on|
-          on.success do |article, _, notes, relation, targets, events, relation_types, relations|
+          on.success do |article, _, notes, relation, targets, events, relation_types, relations, tags|
             @article        = article
             @notes          = notes
             @relation       = relation
@@ -43,6 +43,7 @@ class NotesController < ApplicationController
             @events         = events
             @relation_types = relation_types
             @relations      = relations
+            @tags           = tags
           end
         end
         render 'articles/show' 

@@ -19,7 +19,7 @@ describe "articles/show.html.erb" do
 
   let(:filepath){ "./app/views/articles/show.html.erb" }
   let(:locals){{ article:article, relation: :relation, targets: :targets,
-                 notes: :notes, note: :note, events:events,
+                 notes: :notes, note: :note, events:events, tags: :tags,
                  relation_types: :relation_types, relations: :relations }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
@@ -31,6 +31,7 @@ describe "articles/show.html.erb" do
     expect(bind).to receive(:present).with(article).and_yield(presenter)
     expect(article).to receive(:name).with(no_args){ "article_name" }
     expect(bind).to receive(:render).with(:relations){ "render_relations" }
+    expect(bind).to receive(:render).with(:tags){ "render_tags" }
     expect(bind).to receive(:render).
       with("relations/form", relation: :relation, targets: :targets,
             relation_types: :relation_types).and_return("render_relation_form")
@@ -52,6 +53,11 @@ describe "articles/show.html.erb" do
   describe "Note list" do
     subject{ page.find '.notes' }
     its(:text){ should include "render_notes" }
+  end
+
+  describe "Tag list" do
+    subject{ page.find '.tags' }
+    its(:text){ should include "render_tags" }
   end
 
   describe "Events section" do

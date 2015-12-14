@@ -7,6 +7,11 @@
     <%= render @notes, tag_id:nil %>
   </ul>
 
+  <ul class='tags'>
+    <%= render @tags %>
+  </ul>
+
+
   <% unless @events.empty? %>
     <div class="events list">
       <h2>Events</h2>
