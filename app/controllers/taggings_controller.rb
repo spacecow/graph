@@ -3,7 +3,7 @@ class TaggingsController < ApplicationController
   def create
     run(TaggingRunners::Create, tagging_params) do |on|
       on.success do |tagging|
-        redirect_to note_path(tagging.tagable_id)
+        redirect_to note_path(tagging.note_id)
       end
     end
   end

@@ -1,5 +1,5 @@
 class Tagging
   include ActiveModel::Model
 
-  attr_accessor :id, :tag_id, :tagable_type, :tagable_id
+  attr_accessor :id, :tag_id, :tagable_id, :tagable_type, :note_id
 end
