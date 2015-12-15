@@ -18,9 +18,10 @@ describe "articles/show.html.erb" do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/articles/show.html.erb" }
-  let(:locals){{ article:article, relation: :relation, targets: :targets,
-                 notes: :notes, note: :note, events:events, tags: :tags,
-                 relation_types: :relation_types, relations: :relations }}
+  let(:locals){{ article:article, relation: :relation, targets: :targets, 
+                 notes: :notes, note: :note, events:events, 
+                 article_tags: :article_tags, relation_types: :relation_types,
+                 relations: :relations, tagging: :tagging, tags: :tags }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
   let(:events){ :events }
@@ -31,7 +32,7 @@ describe "articles/show.html.erb" do
     expect(bind).to receive(:present).with(article).and_yield(presenter)
     expect(article).to receive(:name).with(no_args){ "article_name" }
     expect(bind).to receive(:render).with(:relations){ "render_relations" }
-    expect(bind).to receive(:render).with(:tags){ "render_tags" }
+    expect(bind).to receive(:render).with(:article_tags){ "render_article_tags" }
     expect(bind).to receive(:render).
       with("relations/form", relation: :relation, targets: :targets,
             relation_types: :relation_types).and_return("render_relation_form")
@@ -40,6 +41,9 @@ describe "articles/show.html.erb" do
     expect(bind).to receive(:render).with(:events){ "render_events" } unless events.empty?
     expect(bind).to receive(:render).
       with("notes/form", note: :note).and_return("render_note_form")
+    expect(bind).to receive(:render).
+      with("taggings/form", tagging: :tagging, tags: :tags).
+      and_return("render_tagging_form")
   end
 
   subject(:page){ Capybara.string(rendering).find '.article' }
@@ -57,7 +61,7 @@ describe "articles/show.html.erb" do
 
   describe "Tag list" do
     subject{ page.find '.tags' }
-    its(:text){ should include "render_tags" }
+    its(:text){ should include "render_article_tags" }
   end
 
   describe "Events section" do
@@ -100,5 +104,12 @@ describe "articles/show.html.erb" do
     subject{ page.find '.note.new.form' }
     its(:text){ should include "render_note_form" }
   end
+
+  #TODO tagging form header
+  describe "Tagging form" do
+    subject{ page.find '.tagging.new.form' }
+    its(:text){ should include "render_tagging_form" }
+  end
+
 
 end

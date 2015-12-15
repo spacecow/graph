@@ -1,0 +1,10 @@
+<%= form_for tagging do |f| %>
+  <%= f.hidden_field :tagable_id %>
+  <%= f.hidden_field :tagable_type %>
+  <div class="tag">
+    <%= f.label :tag_id, 'Tag' %>
+    <%= f.collection_select :tag_id, tags, :id, :title %>
+  </div>
+  <%= f.submit "Create Tagging" %>
+<% end %>
+

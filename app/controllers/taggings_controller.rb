@@ -1,9 +1,10 @@
 class TaggingsController < ApplicationController
 
   def create
+    session[:redirect_to] = request.referer || root_path
     run(TaggingRunners::Create, tagging_params) do |on|
       on.success do |tagging|
-        redirect_to note_path(tagging.note_id)
+        redirect_to session.delete(:redirect_to)
       end
     end
   end

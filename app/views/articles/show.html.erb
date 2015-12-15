@@ -8,9 +8,8 @@
   </ul>
 
   <ul class='tags'>
-    <%= render @tags %>
+    <%= render @article_tags %>
   </ul>
-
 
   <% unless @events.empty? %>
     <div class="events list">
@@ -30,6 +29,10 @@
   <div class="relation new form">
     <%= render "relations/form",
         relation:@relation, targets:@targets, relation_types:@relation_types %>
+  </div>
+
+  <div class="tagging new form">
+    <%= render "taggings/form", tagging:@tagging, tags:@tags %>
   </div>
 
   <div class="note new form">
