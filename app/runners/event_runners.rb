@@ -40,6 +40,20 @@ module EventRunners
     end
   end
 
+  class Edit < Runner
+    def run id
+      event = repo.event id
+      success event
+    end
+  end
+
+  class Update < Runner
+    def run id, params
+      event = repo.update_event id, params 
+      success event
+    end
+  end
+
   class Destroy < Runner
     def run id
       repo.delete_event id

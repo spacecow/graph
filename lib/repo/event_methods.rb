@@ -31,6 +31,19 @@ module Repo
       Event.new body
     end
 
+    def update_event id, params
+      url = "http://localhost:9292/api/events/#{id}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      req = Net::HTTP::Put.new(
+        uri.path, initheader = {'Content-Type' =>'application/json'})
+      req['Accept'] = 'application/vnd.example.v1'
+      req.body = {event:params}.merge(access_token:token).to_json
+      response = http.request(req)
+      body = JSON.parse(response.body)['event']
+      Event.new body
+    end
+
     def delete_event id
       url = "http://localhost:9292/api/events/#{id}?access_token=#{token}"
       uri = URI url

@@ -39,6 +39,24 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    return redirect_to universes_path if current_universe_id.nil?
+    run(EventRunners::Edit, params[:id]) do |on|
+      on.success do |event|
+        @event = event
+      end
+    end
+  end
+
+  def update
+    return redirect_to universes_path if current_universe_id.nil?
+    run(EventRunners::Update, params[:id], event_params) do |on|
+      on.success do |event|
+        redirect_to event_path(event.id)
+      end
+    end
+  end
+
   def destroy
     run(EventRunners::Destroy, params[:id]) do |on|
       on.success do

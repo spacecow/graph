@@ -8,7 +8,6 @@ describe "EventsController" do
       def params; raise NotImplementedError end
     end unless defined?(Rails)
     require './app/controllers/events_controller'
-
     allow(controller).to receive(:params){ params }
   end
 
@@ -93,6 +92,46 @@ describe "EventsController" do
       end
       it{ should eq :redirect }
     end
+  end
+
+  describe "#edit" do
+    let(:function){ :edit }
+    let(:params){{ id: :id }}
+    let(:builder){ double :builder }
+    let(:event){ double :event }
+    before do
+      stub_const "EventRunners::Edit", Class.new
+      def controller.current_universe_id; raise NotImplementedError end
+      expect(controller).to receive(:current_universe_id).
+        with(no_args){ :universe_id }
+      expect(controller).to receive(:run).with(EventRunners::Edit,:id).
+        and_yield(builder)
+      expect(builder).to receive(:success).with(no_args).and_yield(event)
+    end
+    it{ subject }
+  end
+
+  describe "#update" do
+    let(:function){ :update }
+    let(:params){{ id: :id }}
+    let(:builder){ double :builder }
+    let(:event){ double :event }
+    before do
+      stub_const "EventRunners::Update", Class.new
+      def controller.current_universe_id; raise NotImplementedError end
+      def controller.event_path id; raise NotImplementedError end
+      def controller.redirect_to path; raise NotImplementedError end
+      expect(controller).to receive(:current_universe_id).
+        with(no_args){ :universe_id }
+      expect(controller).to receive(:event_params).with(no_args){ :params }
+      expect(controller).to receive(:run).with(EventRunners::Update,:id,:params).
+        and_yield(builder)
+      expect(builder).to receive(:success).with(no_args).and_yield(event)
+      expect(event).to receive(:id).with(no_args){ :id }
+      expect(controller).to receive(:event_path).with(:id){ :path }
+      expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+    end
+    it{ subject }
   end
 
   describe "#destroy" do
