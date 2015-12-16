@@ -1,7 +1,7 @@
 class Event
   include ActiveModel::Model
 
-  attr_reader :participants, :children, :parents, :universe, :notes
+  attr_reader :children, :parents, :universe, :notes, :participations
   attr_accessor :id, :title, :universe_id, :parent_tokens, :child_tokens
 
   def children= arr
@@ -17,12 +17,19 @@ class Event
   end
   def parent_ids; parents.map(&:id) end
 
-  def participants= arr
-    @participants = arr.map do |params|
-      Article.new params
+  def participations= arr
+    @participations = arr.map do |params|
+      Participation.new params
     end
   end
-  def participant_ids; participants.map(&:id) end
+
+  def participants
+    participations.map(&:participant)
+  end
+
+  def participant_ids
+    participants.map(&:id)
+  end
 
   def notes= arr
     @notes = arr.map do |params|
