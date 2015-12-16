@@ -28,13 +28,13 @@ describe "events/_form.html.erb" do
     expect(bind).to receive(:form_for).with(event,url: :path,method:mode).and_yield builder
     expect(builder).to receive(:label).with(:title){ "label_title" }
     expect(builder).to receive(:text_field).with(:title){ "text_title" }
-    expect(builder).to receive(:label).
+    expect(builder).not_to receive(:label).
       with(:parent_tokens, "Parents"){ "label_parents" }
-    expect(builder).to receive(:text_field).
+    expect(builder).not_to receive(:text_field).
       with(:parent_tokens){ "text_parent_tokens" }
-    expect(builder).to receive(:label).
+    expect(builder).not_to receive(:label).
       with(:child_tokens, "Children"){ "label_children" }
-    expect(builder).to receive(:text_field).
+    expect(builder).not_to receive(:text_field).
       with(:child_tokens){ "text_child_tokens" }
   end
 
@@ -56,12 +56,12 @@ describe "events/_form.html.erb" do
 
     describe "Form parents" do
       subject{ page.find 'div.parents' }
-      its(:text){ should match /label_parents\s*text_parent_tokens/m }
+      its(:text){ should_not match /label_parents\s*text_parent_tokens/m }
     end
 
     describe "Form children" do
       subject{ page.find 'div.children' }
-      its(:text){ should match /label_children\s*text_child_tokens/m }
+      its(:text){ should_not match /label_children\s*text_child_tokens/m }
     end
 
     describe "Form button" do
