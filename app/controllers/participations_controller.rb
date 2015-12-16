@@ -21,7 +21,7 @@ class ParticipationsController < ApplicationController
   private
 
     def participation_params
-      params.require(:participation).permit(:event_id, :article_id)
+      params.require(:participation).permit(:event_id, :participant_id)
     end
 
 end

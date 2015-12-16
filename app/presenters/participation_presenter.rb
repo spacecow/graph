@@ -13,6 +13,6 @@ class ParticipationPresenter < BasePresenter
     'n' => "neutral"}[participation.gender]
   end
 
-  def name; participation.name end
+  def name; h.link_to participation.name, h.article_path(participation.participant_id) end
 
 end

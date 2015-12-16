@@ -21,7 +21,7 @@ describe 'Show article' do
         note = tcreate :note, text:'a note'
         tcreate :article_note, article_id:article.id, note_id:note.id
         event = create :event, universe_id:universe.id, title:"The Standoff"
-        create :participation, event_id:event.id, article_id:article.id
+        create :participation, event_id:event.id, participant_id:article.id
         tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
         tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
         visit article_path article.id

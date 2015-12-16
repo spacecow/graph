@@ -2,8 +2,8 @@
   <!-- TODO insert article_id in div? -->
   <%= f.hidden_field :event_id %>
   <div class="participant">
-    <%= f.label :article_id, "Participant" %>
-    <%= f.collection_select :article_id, articles, :id, :name, include_blank:true %>
+    <%= f.label :participant_id, "Participant" %>
+    <%= f.collection_select :participant_id, articles, :id, :name, include_blank:true %>
   </div>
   <%= f.submit "Add" %>
 <% end %>

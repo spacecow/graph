@@ -3,6 +3,26 @@ require 'vcr_helper'
 
 describe "Show event" do
 
+  it "navigate to a participant page" do
+    VCR.use_cassette('navigate_to_a_participant_page') do
+      begin
+        event = tcreate :event
+        article = create :article, name:"Ethenielle", universe_id:event.universe_id
+        visit universes_path
+        click_link event.universe_title
+        tcreate :participation, event_id:event.id, participant_id:article.id
+        visit event_path event.id
+        click_link "Ethenielle"
+        expect(current_path).to eq article_path(article.id)
+      ensure
+        tdelete :participations
+        delete :articles
+        tdelete :events
+        tdelete :universes 
+      end
+    end
+  end
+
   it "display event with parent and participants" do
     VCR.use_cassette("display_event") do
       begin
@@ -16,7 +36,7 @@ describe "Show event" do
         create :step, parent_id:parent.id, child_id:event.id
         article = create :article, universe_id:universe.id, name:"John Snow",
           gender:'m'
-        create :participation, article_id:article.id, event_id:event.id
+        create :participation, participant_id:article.id, event_id:event.id
         #TODO event and article should be in the same universe!
         visit event_path event.id
         expect(page).to have_content "Green wedding"

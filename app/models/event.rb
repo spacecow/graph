@@ -2,7 +2,8 @@ class Event
   include ActiveModel::Model
 
   attr_reader :children, :parents, :universe, :notes, :participations
-  attr_accessor :id, :title, :universe_id, :parent_tokens, :child_tokens
+  attr_accessor :id, :title, :parent_tokens, :child_tokens
+  attr_writer :universe_id
 
   def children= arr
     @children = arr.map do |params|
@@ -37,6 +38,7 @@ class Event
     end
   end
 
+  def universe_id; @universe_id || @universe.id end
   def universe_title; universe.title end
   def universe= params
     @universe = Universe.new params

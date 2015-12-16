@@ -25,9 +25,9 @@ describe "participations/_form.html.erb" do
     expect(bind).to receive(:form_for).with(:participation).and_yield(builder)
     expect(builder).to receive(:hidden_field).with(:event_id){ "hidden_event_id" }
     expect(builder).to receive(:label).
-      with(:article_id, "Participant"){ "label_article_id" }
+      with(:participant_id, "Participant"){ "label_article_id" }
     expect(builder).to receive(:collection_select).
-      with(:article_id, :articles, :id, :name, include_blank:true).
+      with(:participant_id, :articles, :id, :name, include_blank:true).
       and_return("select_article_id")
     expect(builder).to receive(:submit).with("Add"){ "submit_add" }
   end
