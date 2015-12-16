@@ -22,7 +22,7 @@ describe "Show event" do
         expect(page).to have_content "Green wedding"
         expect(page).to have_content "Red wedding"
         expect(page).to have_content "a note"
-        expect(page.find '.participants .male').to have_content "John Snow"
+        expect(page.find '.participations .male').to have_content "John Snow"
       ensure
         tdelete :event_notes
         delete :notes

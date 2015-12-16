@@ -16,7 +16,7 @@ describe "Add participation" do
         select "Ethenielle", from:"Participant"
         within(".participation form"){ click_button "Add" }
         expect(current_path).to eq event_path(event.id) 
-        expect(page.find "ul.participants").to have_content "Ethenielle"
+        expect(page.find "ul.participations").to have_content "Ethenielle"
         expect(all(".participant option").map(&:text)).
           not_to include "Ethenielle" 
       ensure

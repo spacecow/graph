@@ -1,0 +1,9 @@
+<% present participation do |presenter| %>
+
+<li class="participation">
+  <%= content_tag :span, class:["name", presenter.gender].join(" ") do %>
+    <%= presenter.name %>
+  <% end %>
+</li>
+
+<% end %>

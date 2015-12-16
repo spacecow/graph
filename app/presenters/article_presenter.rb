@@ -1,4 +1,5 @@
 class ArticlePresenter < BasePresenter
+
   presents :article
 
   def edit_link

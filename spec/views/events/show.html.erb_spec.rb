@@ -11,7 +11,8 @@ describe "events/show.html.erb" do
 
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event, participation: :participation, articles: :articles,
-    parent_step: :parent_step, parents: :parents, notes: :notes, note: :note }}
+    parent_step: :parent_step, parents: :parents, notes: :notes, note: :note,
+    participations: :participations }}
   let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
@@ -30,7 +31,7 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:render).
       with(:notes, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:children){ "render_children" }
-    expect(bind).to receive(:render).with(:participants){ :render_participants }
+    expect(bind).to receive(:render).with(:participations){ :render_participations }
     expect(bind).to receive(:render).
       with("steps/form", step: :parent_step, parents: :parents).
       and_return("step_form")
@@ -43,7 +44,6 @@ describe "events/show.html.erb" do
     expect(event).to receive(:title).with(no_args){ "header" }
     expect(event).to receive(:parents).with(no_args){ :parents }
     expect(event).to receive(:children).with(no_args){ :children }
-    expect(event).to receive(:participants).with(no_args){ :participants }
   end
 
   subject(:page){ Capybara.string(rendering) }
@@ -64,14 +64,14 @@ describe "events/show.html.erb" do
   end
 
   describe "Participant section" do
-    subject(:div){ page.find '.event .participants.list' }
+    subject(:div){ page.find '.event .participations.list' }
     describe "Participant header" do
       subject{ div.find 'h2' }
       its(:text){ should eq "Participants" }
     end
     describe "Participant list" do
-      subject{ div.find 'ul.participants' }
-      its(:text){ should eq "render_participants" }
+      subject{ div.find 'ul.participations' }
+      its(:text){ should eq "render_participations" }
     end
   end
 
