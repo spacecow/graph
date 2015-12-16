@@ -1,7 +1,7 @@
 require 'rspec/its'
 require 'capybara'
 
-describe 'articles/_article.html.erb' do
+describe "articles/_article.html.erb" do
   
   let(:bind){ ErbBinding.new locals }
   let(:local_bindings){ bind.instance_eval{binding} }

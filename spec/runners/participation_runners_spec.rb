@@ -23,5 +23,11 @@ module ParticipationRunners
       it{ subject }
     end
 
+    describe Destroy do
+      subject{ Destroy.new(context).run :id }
+      before{ expect(repo).to receive(:delete_participation).with(:id) }
+      it{ subject }
+    end
+
   end
 end

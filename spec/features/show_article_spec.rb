@@ -36,7 +36,7 @@ describe 'Show article' do
         expect(page.find('.events.list')).to have_content "The Standoff"
       ensure
         tdelete :article_notes
-        delete :participations
+        tdelete :participations
         delete :relations
         tdelete :tags
         delete :notes

@@ -27,7 +27,7 @@ describe "Show event" do
         tdelete :event_notes
         delete :notes
         delete :steps
-        delete :participations
+        tdelete :participations
         delete :articles
         tdelete :events
         tdelete :universes

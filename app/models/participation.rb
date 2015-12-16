@@ -2,8 +2,8 @@ class Participation
   include ActiveModel::Model
 
   attr_reader :participant
-  attr_writer :id, :event_id
-  attr_accessor :article_id
+  attr_writer :event_id
+  attr_accessor :article_id, :id
 
   def event= params; @event = Event.new params end
   def event_id; @event_id || @event.id end

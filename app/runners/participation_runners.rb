@@ -10,4 +10,11 @@ module ParticipationRunners
     end
   end
 
+  class Destroy < Runner
+    def run id
+      repo.delete_participation id
+      success
+    end
+  end
+
 end

@@ -17,5 +17,16 @@ module Repo
       Participation.new body
     end
 
+    def delete_participation id
+      url = "http://localhost:9292/api/participations/#{id}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port
+      req = Net::HTTP::Delete.new(
+        uri.path, initheader = {'Content-Type' =>'application/json'})
+      req['Accept'] = 'application/vnd.example.v1'
+      req.body = {access_token:token}.to_json
+      response = http.request(req)
+    end
+
   end
 end

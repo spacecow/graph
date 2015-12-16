@@ -20,7 +20,7 @@ describe "Add participation" do
         expect(all(".participant option").map(&:text)).
           not_to include "Ethenielle" 
       ensure
-        delete :participations
+        tdelete :participations
         delete :articles
         tdelete :events
         tdelete :universes

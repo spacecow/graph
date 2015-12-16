@@ -9,6 +9,15 @@ class ParticipationsController < ApplicationController
     #TODO if failure
   end
 
+  def destroy
+    session[:redirect_to] = request.referer || root_path
+    run(ParticipationRunners::Destroy, params[:id]) do |on|
+      on.success do
+        redirect_to session.delete(:redirect_to)
+      end
+    end
+  end
+
   private
 
     def participation_params
