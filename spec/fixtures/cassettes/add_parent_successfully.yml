@@ -29,28 +29,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f5acb5ce1622319c24b9f787e0857318"
+      - W/"96b99c987ef8e4c583482917c57009bf"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 977b3a00-fe8c-4287-a700-d2201e57f31b
+      - 1e341d9d-968d-4d60-aeff-766ed81eafa8
       X-Runtime:
-      - '0.004570'
+      - '0.004542'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:08 GMT
       Content-Length:
-      - '55'
+      - '54'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":19421,"title":"The Path of Daggers"}}'
+      string: '{"universe":{"id":2249,"title":"The Path of Daggers"}}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:08 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -80,29 +80,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b53eb3ceaefb0c524c428fa59ec844f3"
+      - W/"fb510559f768f3e180ab8b66ffde25f5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 167b3906-8bd7-42a3-bb89-14a9f0b61b5e
+      - 67641f6a-cf6f-4840-9e4b-557f5add65ac
       X-Runtime:
-      - '0.003253'
+      - '0.002305'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:08 GMT
       Content-Length:
-      - '58'
+      - '57'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":19421,"title":"The Path of Daggers"}]}'
+      string: '{"universes":[{"id":2249,"title":"The Path of Daggers"}]}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:08 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/19421?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/2249?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -129,32 +129,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9fc6ce228ebddb0c49618861320de84c"
+      - W/"d381ca867eced24237d5610f8f8fe8db"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 354eb2a2-1f1a-4a8e-82ba-cc15d142290b
+      - 9a9e0f04-2df7-4e9b-9ce2-f488bec151ea
       X-Runtime:
-      - '0.003719'
+      - '0.003402'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:08 GMT
       Content-Length:
-      - '69'
+      - '68'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":19421,"title":"The Path of Daggers","articles":[]}}'
+      string: '{"universe":{"id":2249,"title":"The Path of Daggers","articles":[]}}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:08 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: event%5Btitle%5D=The+Beginning&event%5Buniverse_id%5D=19421
+      string: event%5Btitle%5D=The+Beginning&event%5Buniverse_id%5D=2249
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -178,17 +178,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"6812828d85c9cc8f46c41e367f1991b5"
+      - W/"cd6a2a6eaf15db3e778a7d727807bac4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1ec8353f-033c-42e2-af10-79920f478e69
+      - c929431a-f605-4fb9-8e1d-98c792e50e73
       X-Runtime:
-      - '0.007365'
+      - '0.006676'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:08 GMT
       Content-Length:
       - '45'
       Connection:
@@ -197,15 +197,15 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":8130,"title":"The Beginning"}}'
+      string: '{"event":{"id":1431,"title":"The Beginning"}}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:08 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: event%5Btitle%5D=The+Middle&event%5Buniverse_id%5D=19421
+      string: event%5Btitle%5D=The+Middle&event%5Buniverse_id%5D=2249
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -229,17 +229,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"74f06cabad7e9339abf786d1914c173e"
+      - W/"3442e23488afb7c244dc98ef63ce22b6"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8806c3d7-da26-48e6-9e71-22862c8d8a48
+      - 27bdd83f-d86a-4113-a639-4425d0671026
       X-Runtime:
-      - '0.006329'
+      - '0.005897'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:08 GMT
       Content-Length:
       - '42'
       Connection:
@@ -248,12 +248,12 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":8131,"title":"The Middle"}}'
+      string: '{"event":{"id":1432,"title":"The Middle"}}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events/8131?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/events/1432?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -280,29 +280,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"7a11f726a5b49e5f6ac3ef51adeca62a"
+      - W/"f8341010f195872ad54921e999c16d74"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3e9174b8-bc25-4d15-a842-f538d07a27ef
+      - 87b94292-8af2-41fd-9b08-44a9eb453245
       X-Runtime:
-      - '0.008510'
+      - '0.006737'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
-      - '100'
+      - '114'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"event":{"id":8131,"title":"The Middle","parents":[],"children":[],"participations":[],"notes":[]}}'
+      string: '{"event":{"id":1432,"title":"The Middle","parents":[],"children":[],"participations":[],"mentions":[],"notes":[]}}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=19421
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=2249
     body:
       encoding: US-ASCII
       string: ''
@@ -333,13 +333,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ce000cc5-d7d4-48b2-9817-dd9a755ce475
+      - a249fb31-ecae-4f03-a38a-10dddf40f884
       X-Runtime:
-      - '0.004107'
+      - '0.002457'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
       - '15'
       Connection:
@@ -348,10 +348,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"articles":[]}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=19421
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=2249
     body:
       encoding: US-ASCII
       string: ''
@@ -378,33 +378,33 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"fcaa2a33d586f42224a9655a5abc9010"
+      - W/"e5b610a678732b608816e35482ab820b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - eea6cc4e-d626-46c8-ab75-2d6337d4a024
+      - cf0f50f4-8d96-4bd1-be2f-90725fcfcee1
       X-Runtime:
-      - '0.007570'
+      - '0.003970'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
       - '81'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"events":[{"id":8130,"title":"The Beginning"},{"id":8131,"title":"The
+      string: '{"events":[{"id":1431,"title":"The Beginning"},{"id":1432,"title":"The
         Middle"}]}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/steps?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: step%5Bchild_id%5D=8131&step%5Bparent_id%5D=8130
+      string: step%5Bchild_id%5D=1432&step%5Bparent_id%5D=1431
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -428,31 +428,31 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c3e314d7f26ca87d7213914904f0406c"
+      - W/"1f900e4647e221d90d15c8371582a9b6"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5377b24d-0efd-4d3a-a7bf-e00683977443
+      - 6b5e9757-097f-4cd5-a116-bfb277de0b9f
       X-Runtime:
-      - '0.006920'
+      - '0.005358'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
-      - '53'
+      - '52'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"step":{"id":1780,"parent_id":8130,"child_id":8131}}'
+      string: '{"step":{"id":347,"parent_id":1431,"child_id":1432}}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events/8131?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/events/1432?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -479,30 +479,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"179560e1ef72d1eea4141664f8e12b29"
+      - W/"668dda81e9c5faf032239ecf9c6fe595"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9cfc6bf1-25c3-42a8-9c63-192c62371d47
+      - 461439ca-29a9-4535-b2ce-929329d42f22
       X-Runtime:
-      - '0.006973'
+      - '0.006597'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
-      - '135'
+      - '149'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"event":{"id":8131,"title":"The Middle","parents":[{"id":8130,"title":"The
-        Beginning"}],"children":[],"participations":[],"notes":[]}}'
+      string: '{"event":{"id":1432,"title":"The Middle","parents":[{"id":1431,"title":"The
+        Beginning"}],"children":[],"participations":[],"mentions":[],"notes":[]}}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=19421
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=2249
     body:
       encoding: US-ASCII
       string: ''
@@ -533,13 +533,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a296929b-998e-4cfb-a02f-ff45b7e35f3a
+      - 966b51b4-6993-47cc-8753-87975ade3d5f
       X-Runtime:
-      - '0.002593'
+      - '0.003296'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
       - '15'
       Connection:
@@ -548,10 +548,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"articles":[]}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=19421
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=2249
     body:
       encoding: US-ASCII
       string: ''
@@ -578,27 +578,27 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"fcaa2a33d586f42224a9655a5abc9010"
+      - W/"e5b610a678732b608816e35482ab820b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0332e3f1-81ab-4a81-aab5-08db127cd5a0
+      - 57b4cbee-c720-4e30-aaee-89ce08a78de0
       X-Runtime:
-      - '0.003878'
+      - '0.003471'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
       - '81'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"events":[{"id":8130,"title":"The Beginning"},{"id":8131,"title":"The
+      string: '{"events":[{"id":1431,"title":"The Beginning"},{"id":1432,"title":"The
         Middle"}]}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/steps?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -630,28 +630,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d12ee13635c046574f471f01824204f4"
+      - W/"9d887a0ee8cbdeb6deb7d9cdbee69262"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e86bb431-c2be-4291-8bec-62bb9213cd9c
+      - 1b54afea-c7d4-4482-ab0e-890be5058b79
       X-Runtime:
-      - '0.004640'
+      - '0.003971'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
-      - '56'
+      - '55'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"steps":[{"id":1780,"parent_id":8130,"child_id":8131}]}'
+      string: '{"steps":[{"id":347,"parent_id":1431,"child_id":1432}]}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/events
@@ -685,13 +685,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fa3f719f-3239-443f-ae3f-dfce17642bf9
+      - 4e16a8fb-8c7d-4b3a-9e19-bfb83177ebdc
       X-Runtime:
-      - '0.003197'
+      - '0.003221'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
       - '12'
       Connection:
@@ -702,7 +702,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"events":2}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes
@@ -732,26 +732,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b53eb3ceaefb0c524c428fa59ec844f3"
+      - W/"fb510559f768f3e180ab8b66ffde25f5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b3770b97-4ce3-4315-956a-b2ccdf1f5da6
+      - 6d7b34e4-a8b9-4647-b0d3-ab9873d0d5ca
       X-Runtime:
-      - '0.005324'
+      - '0.003830'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 16 Dec 2015 03:45:49 GMT
+      - Thu, 17 Dec 2015 06:23:09 GMT
       Content-Length:
-      - '58'
+      - '57'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":19421,"title":"The Path of Daggers"}]}'
+      string: '{"universes":[{"id":2249,"title":"The Path of Daggers"}]}'
     http_version: 
-  recorded_at: Wed, 16 Dec 2015 03:45:49 GMT
+  recorded_at: Thu, 17 Dec 2015 06:23:09 GMT
 recorded_with: VCR 2.9.3

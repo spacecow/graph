@@ -1,13 +1,19 @@
 class Event
   include ActiveModel::Model
 
-  attr_reader :children, :parents, :universe, :notes, :participations
+  attr_reader :children, :parents, :universe, :notes, :participations, :mentions
   attr_accessor :id, :title, :parent_tokens, :child_tokens
   attr_writer :universe_id
 
   def children= arr
     @children = arr.map do |params|
       Event.new params
+    end
+  end
+
+  def mentions= arr
+    @mentions = arr.map do |params|
+      Mention.new params
     end
   end
 

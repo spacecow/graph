@@ -12,7 +12,7 @@ describe "events/show.html.erb" do
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event, participation: :participation, articles: :articles,
     parent_step: :parent_step, parents: :parents, notes: :notes, note: :note,
-    participations: :participations }}
+    participations: :participations, mentions: :mentions }}
   let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
@@ -28,6 +28,7 @@ describe "events/show.html.erb" do
     end
     expect(bind).to receive(:present).with(event).and_yield(presenter)
     expect(bind).to receive(:render).with(:parents){ "render_parents" }
+    expect(bind).to receive(:render).with(:mentions){ "render_mentions" }
     expect(bind).to receive(:render).
       with(:notes, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:children){ "render_children" }
@@ -61,6 +62,11 @@ describe "events/show.html.erb" do
   describe "Children list" do
     subject{ page.find 'ul.children' }
     its(:text){ should eq "render_children" }
+  end
+
+  describe "Mention list" do
+    subject{ page.find 'ul.mentions' }
+    its(:text){ should eq "render_mentions" }
   end
 
   describe "Participant section" do

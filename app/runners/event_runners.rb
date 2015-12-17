@@ -15,7 +15,8 @@ module EventRunners
         reject{|e| event.parent_ids.include?(e.id)}
       notes = event.notes
       note = repo.new_note event_id:event.id 
-      success event, articles, participation, participations, parent_step, parents, notes, note
+      mentions = event.mentions
+      success event, articles, participation, participations, parent_step, parents, notes, note, mentions
     end
   end
 
