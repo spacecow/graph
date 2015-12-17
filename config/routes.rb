@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :articles, only:[:show,:new,:create,:edit,:update]
   resources :events, only:[:show,:index,:new,:create,:edit,:update,:destroy]
+  resources :mentions, only:[:create]
   resources :notes, only:[:show,:new,:create,:edit,:update,:destroy]
   resources :participations, only:[:create,:destroy]
   resources :references, only:[:show,:create,:edit,:update]

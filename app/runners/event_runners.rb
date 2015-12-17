@@ -10,13 +10,15 @@ module EventRunners
       participation = repo.new_participation event_id:event.id 
       participations = event.participations
       parent_step = repo.new_step child_id:event.id
-      parents     = repo.events(universe_id:universe_id).
+      events = repo.events(universe_id:universe_id)
+      parents = events.
         reject{|e| e.id==event.id}.
         reject{|e| event.parent_ids.include?(e.id)}
       notes = event.notes
       note = repo.new_note event_id:event.id 
-      mentions = event.mentions
-      success event, articles, participation, participations, parent_step, parents, notes, note, mentions
+      mention = repo.new_mention origin_id:event.id
+      mentions = events 
+      success event, articles, participation, participations, parent_step, parents, notes, note, mention, mentions
     end
   end
 

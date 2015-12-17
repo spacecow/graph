@@ -19,12 +19,16 @@
 
   <div class="mentions list">
     <h2>Mentions</h2>
-    <ul class="mentions"><%= render @mentions %></ul>
+    <ul class="mentions"><%= render @event.mentions %></ul>
   </div>
 </div>
 
 <div class="note new form">
   <%= render "notes/form", note:@note %>
+</div>
+
+<div class="mention new form">
+  <%= render "mentions/form", mention:@mention, mentions:@mentions %>
 </div>
 
 <div class="parent step new form">

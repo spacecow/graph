@@ -4,6 +4,7 @@ class Repository
   include Repo::BookMethods
   include Repo::EventMethods
   include Repo::ReferenceMethods
+  include Repo::MentionMethods
   include Repo::NoteMethods
   include Repo::ParticipationMethods
   include Repo::RelationMethods

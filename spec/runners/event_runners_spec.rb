@@ -19,13 +19,13 @@ module EventRunners
       before do
         expect(repo).to receive(:event).with(:id){ event }
         expect(repo).to receive(:new_note).with(event_id: :event_id){ :note }
+        expect(repo).to receive(:new_mention).with(origin_id: :event_id){ :mention }
         expect(repo).to receive(:articles).
           with(universe_id: :universe_id){ [article] }
         expect(event).to receive(:participant_ids).
           with(no_args){ [:participant_id] }
         expect(event).to receive(:parent_ids).with(no_args){ [:parent_id] }
         expect(event).to receive(:notes).with(no_args){ :notes }
-        expect(event).to receive(:mentions).with(no_args){ :mentions }
         expect(event).to receive(:participations).with(no_args){ :participations }
         expect(repo).to receive(:new_participation).
           with(event_id: :event_id){ :participation }

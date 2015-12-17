@@ -12,7 +12,7 @@ describe "events/show.html.erb" do
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event, participation: :participation, articles: :articles,
     parent_step: :parent_step, parents: :parents, notes: :notes, note: :note,
-    participations: :participations, mentions: :mentions }}
+    participations: :participations, mentions: :mentions, mention: :mention }}
   let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
@@ -36,14 +36,17 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:render).
       with("steps/form", step: :parent_step, parents: :parents).
       and_return("step_form")
-    expect(bind).to receive(:render).
-      with("notes/form", note: :note).
+    expect(bind).to receive(:render).with("notes/form", note: :note).
       and_return("note_form")
+    expect(bind).to receive(:render).
+      with("mentions/form", mention: :mention, mentions: :mentions).
+      and_return("mention_form")
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).
       and_return("participation_form")
     expect(event).to receive(:title).with(no_args){ "header" }
     expect(event).to receive(:parents).with(no_args){ :parents }
+    expect(event).to receive(:mentions).with(no_args){ :mentions }
     expect(event).to receive(:children).with(no_args){ :children }
   end
 
@@ -101,6 +104,11 @@ describe "events/show.html.erb" do
   describe "Note form" do
     subject{ page.find '.note.new.form' }
     its(:text){ should include "note_form" }
+  end
+
+  describe "Mention form" do
+    subject{ page.find '.mention.new.form' }
+    its(:text){ should include "mention_form" }
   end
 
   describe "Step form" do
