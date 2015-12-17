@@ -46,7 +46,7 @@ describe "events/show.html.erb" do
       and_return("participation_form")
     expect(event).to receive(:title).with(no_args){ "header" }
     expect(event).to receive(:parents).with(no_args){ :parents }
-    expect(event).to receive(:mentions).with(no_args){ :mentions }
+    expect(event).to receive(:mentions).with(no_args).twice{ :mentions }
     expect(event).to receive(:children).with(no_args){ :children }
   end
 

@@ -1,7 +1,7 @@
 require 'rspec/its'
 require 'capybara'
 
-describe "participation/_participation.html.erb" do
+describe "participations/_participation.html.erb" do
 
   let(:bind){ ErbBinding.new locals }
   let(:local_bindings){ bind.instance_eval{binding} }

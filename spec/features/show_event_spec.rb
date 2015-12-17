@@ -39,6 +39,26 @@ describe "Show event" do
     end
   end
 
+  it "navigate to a mentioned event page" do
+    VCR.use_cassette('navigate_to_a_mentioned_event_page') do
+      begin
+        event = tcreate :event
+        blue = tcreate :event, title:"Blue wedding"
+        tcreate :mention, origin_id:event.id, target_id:blue.id
+        visit universes_path
+        click_link event.universe_title
+        visit event_path event.id
+        within('li.mention'){ click_link "Blue wedding" }
+        expect(current_path).to eq event_path(blue.id)
+      ensure
+        tdelete :mentions
+        tdelete :events
+        tdelete :universes 
+      end
+    end
+  end
+
+
   it "navigate to a participant page" do
     VCR.use_cassette('navigate_to_a_participant_page') do
       begin

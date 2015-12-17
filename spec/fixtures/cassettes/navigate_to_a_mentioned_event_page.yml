@@ -1,0 +1,866 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/api/events
+    body:
+      encoding: UTF-8
+      string: '{"event":{}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4feb75a80d1c2ae5f9a9b9a41c926280"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d520edfe-940a-4cd5-8023-f0d570931a23
+      X-Runtime:
+      - '0.011220'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '95'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2661,"title":"factory title","universe":{"id":3685,"title":"factory
+        title233"}}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/events
+    body:
+      encoding: UTF-8
+      string: '{"event":{"title":"Blue wedding"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"df0595a593a638844220694aab428c46"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3d8e2726-804e-42ad-9ab6-cc60271f38ee
+      X-Runtime:
+      - '0.009611'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '94'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2662,"title":"Blue wedding","universe":{"id":3686,"title":"factory
+        title234"}}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/mentions
+    body:
+      encoding: UTF-8
+      string: '{"mention":{"origin_id":2661,"target_id":2662}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a34bc8e111c35a76d4f734ad52fbe335"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4a233fe4-fcb0-4c3a-bf18-6204772742d7
+      X-Runtime:
+      - '0.008017'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '111'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"mention":{"id":600,"origin":{"id":2661,"title":"factory title"},"target":{"id":2662,"title":"Blue
+        wedding"}}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"042710a02e7715f82e6552e661ea729b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7fa001f9-5b71-44dc-adc9-381e35886482
+      X-Runtime:
+      - '0.014788'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '8662'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universes":[{"id":3463,"title":"factory title11"},{"id":3464,"title":"factory
+        title12"},{"id":3465,"title":"factory title13"},{"id":3466,"title":"factory
+        title14"},{"id":3467,"title":"factory title15"},{"id":3468,"title":"factory
+        title16"},{"id":3469,"title":"factory title17"},{"id":3470,"title":"factory
+        title18"},{"id":3471,"title":"factory title19"},{"id":3472,"title":"factory
+        title20"},{"id":3473,"title":"factory title21"},{"id":3474,"title":"factory
+        title22"},{"id":3475,"title":"factory title23"},{"id":3476,"title":"factory
+        title24"},{"id":3477,"title":"factory title25"},{"id":3478,"title":"factory
+        title26"},{"id":3479,"title":"factory title27"},{"id":3480,"title":"factory
+        title28"},{"id":3481,"title":"factory title29"},{"id":3482,"title":"factory
+        title30"},{"id":3483,"title":"factory title31"},{"id":3484,"title":"factory
+        title32"},{"id":3485,"title":"factory title33"},{"id":3486,"title":"factory
+        title34"},{"id":3487,"title":"factory title35"},{"id":3488,"title":"factory
+        title36"},{"id":3489,"title":"factory title37"},{"id":3490,"title":"factory
+        title38"},{"id":3491,"title":"factory title39"},{"id":3492,"title":"factory
+        title40"},{"id":3493,"title":"factory title41"},{"id":3494,"title":"factory
+        title42"},{"id":3495,"title":"factory title43"},{"id":3496,"title":"factory
+        title44"},{"id":3497,"title":"factory title45"},{"id":3498,"title":"factory
+        title46"},{"id":3499,"title":"factory title47"},{"id":3500,"title":"factory
+        title48"},{"id":3501,"title":"factory title49"},{"id":3502,"title":"factory
+        title50"},{"id":3503,"title":"factory title51"},{"id":3504,"title":"factory
+        title52"},{"id":3505,"title":"factory title53"},{"id":3506,"title":"factory
+        title54"},{"id":3507,"title":"factory title55"},{"id":3508,"title":"factory
+        title56"},{"id":3509,"title":"factory title57"},{"id":3510,"title":"factory
+        title58"},{"id":3511,"title":"factory title59"},{"id":3512,"title":"factory
+        title60"},{"id":3513,"title":"factory title61"},{"id":3514,"title":"factory
+        title62"},{"id":3515,"title":"factory title63"},{"id":3516,"title":"factory
+        title64"},{"id":3517,"title":"factory title65"},{"id":3518,"title":"factory
+        title66"},{"id":3519,"title":"factory title67"},{"id":3520,"title":"factory
+        title68"},{"id":3521,"title":"factory title69"},{"id":3522,"title":"factory
+        title70"},{"id":3523,"title":"factory title71"},{"id":3524,"title":"factory
+        title72"},{"id":3525,"title":"factory title73"},{"id":3526,"title":"factory
+        title74"},{"id":3527,"title":"factory title75"},{"id":3528,"title":"factory
+        title76"},{"id":3529,"title":"factory title77"},{"id":3530,"title":"factory
+        title78"},{"id":3531,"title":"factory title79"},{"id":3532,"title":"factory
+        title80"},{"id":3533,"title":"factory title81"},{"id":3534,"title":"factory
+        title82"},{"id":3535,"title":"factory title83"},{"id":3536,"title":"factory
+        title84"},{"id":3537,"title":"factory title85"},{"id":3538,"title":"factory
+        title86"},{"id":3539,"title":"factory title87"},{"id":3540,"title":"factory
+        title88"},{"id":3541,"title":"factory title89"},{"id":3542,"title":"factory
+        title90"},{"id":3543,"title":"factory title91"},{"id":3544,"title":"factory
+        title92"},{"id":3545,"title":"factory title93"},{"id":3546,"title":"factory
+        title94"},{"id":3547,"title":"factory title95"},{"id":3548,"title":"factory
+        title96"},{"id":3549,"title":"factory title97"},{"id":3550,"title":"factory
+        title98"},{"id":3551,"title":"factory title99"},{"id":3552,"title":"factory
+        title100"},{"id":3553,"title":"factory title101"},{"id":3554,"title":"factory
+        title102"},{"id":3555,"title":"factory title103"},{"id":3556,"title":"factory
+        title104"},{"id":3557,"title":"factory title105"},{"id":3558,"title":"factory
+        title106"},{"id":3559,"title":"factory title107"},{"id":3560,"title":"factory
+        title108"},{"id":3561,"title":"factory title109"},{"id":3562,"title":"factory
+        title110"},{"id":3563,"title":"factory title111"},{"id":3564,"title":"factory
+        title112"},{"id":3565,"title":"factory title113"},{"id":3566,"title":"factory
+        title114"},{"id":3567,"title":"factory title115"},{"id":3568,"title":"factory
+        title116"},{"id":3569,"title":"factory title117"},{"id":3570,"title":"factory
+        title118"},{"id":3571,"title":"factory title119"},{"id":3572,"title":"factory
+        title120"},{"id":3573,"title":"factory title121"},{"id":3574,"title":"factory
+        title122"},{"id":3575,"title":"factory title123"},{"id":3576,"title":"factory
+        title124"},{"id":3577,"title":"factory title125"},{"id":3578,"title":"factory
+        title126"},{"id":3579,"title":"factory title127"},{"id":3580,"title":"factory
+        title128"},{"id":3581,"title":"factory title129"},{"id":3582,"title":"factory
+        title130"},{"id":3583,"title":"factory title131"},{"id":3584,"title":"factory
+        title132"},{"id":3585,"title":"factory title133"},{"id":3586,"title":"factory
+        title134"},{"id":3587,"title":"factory title135"},{"id":3588,"title":"factory
+        title136"},{"id":3589,"title":"factory title137"},{"id":3590,"title":"factory
+        title138"},{"id":3591,"title":"factory title139"},{"id":3592,"title":"factory
+        title140"},{"id":3593,"title":"factory title141"},{"id":3594,"title":"factory
+        title142"},{"id":3595,"title":"factory title143"},{"id":3596,"title":"factory
+        title144"},{"id":3597,"title":"factory title145"},{"id":3598,"title":"factory
+        title146"},{"id":3599,"title":"factory title147"},{"id":3600,"title":"factory
+        title148"},{"id":3601,"title":"factory title149"},{"id":3602,"title":"factory
+        title150"},{"id":3603,"title":"factory title151"},{"id":3604,"title":"factory
+        title152"},{"id":3605,"title":"factory title153"},{"id":3606,"title":"factory
+        title154"},{"id":3607,"title":"factory title155"},{"id":3608,"title":"factory
+        title156"},{"id":3609,"title":"factory title157"},{"id":3610,"title":"factory
+        title158"},{"id":3611,"title":"factory title159"},{"id":3612,"title":"factory
+        title160"},{"id":3613,"title":"factory title161"},{"id":3614,"title":"factory
+        title162"},{"id":3615,"title":"factory title163"},{"id":3616,"title":"factory
+        title164"},{"id":3617,"title":"factory title165"},{"id":3618,"title":"factory
+        title166"},{"id":3619,"title":"factory title167"},{"id":3620,"title":"factory
+        title168"},{"id":3621,"title":"factory title169"},{"id":3622,"title":"factory
+        title170"},{"id":3623,"title":"factory title171"},{"id":3624,"title":"factory
+        title172"},{"id":3625,"title":"factory title173"},{"id":3626,"title":"factory
+        title174"},{"id":3627,"title":"factory title175"},{"id":3628,"title":"factory
+        title176"},{"id":3629,"title":"factory title177"},{"id":3630,"title":"factory
+        title178"},{"id":3631,"title":"factory title179"},{"id":3632,"title":"factory
+        title180"},{"id":3633,"title":"factory title181"},{"id":3634,"title":"factory
+        title182"},{"id":3635,"title":"factory title183"},{"id":3636,"title":"factory
+        title184"},{"id":3637,"title":"factory title185"},{"id":3638,"title":"factory
+        title186"},{"id":3639,"title":"factory title187"},{"id":3640,"title":"factory
+        title188"},{"id":3641,"title":"factory title189"},{"id":3642,"title":"factory
+        title190"},{"id":3643,"title":"factory title191"},{"id":3644,"title":"factory
+        title192"},{"id":3645,"title":"factory title193"},{"id":3646,"title":"factory
+        title194"},{"id":3647,"title":"factory title195"},{"id":3648,"title":"factory
+        title196"},{"id":3649,"title":"factory title197"},{"id":3650,"title":"factory
+        title198"},{"id":3651,"title":"factory title199"},{"id":3652,"title":"factory
+        title200"},{"id":3653,"title":"factory title201"},{"id":3654,"title":"factory
+        title202"},{"id":3655,"title":"factory title203"},{"id":3656,"title":"factory
+        title204"},{"id":3657,"title":"factory title205"},{"id":3658,"title":"factory
+        title206"},{"id":3659,"title":"factory title207"},{"id":3660,"title":"factory
+        title208"},{"id":3661,"title":"factory title209"},{"id":3662,"title":"factory
+        title210"},{"id":3663,"title":"factory title211"},{"id":3664,"title":"factory
+        title212"},{"id":3665,"title":"factory title213"},{"id":3666,"title":"factory
+        title214"},{"id":3667,"title":"factory title215"},{"id":3668,"title":"factory
+        title216"},{"id":3669,"title":"factory title217"},{"id":3670,"title":"factory
+        title218"},{"id":3671,"title":"factory title219"},{"id":3672,"title":"factory
+        title220"},{"id":3673,"title":"factory title221"},{"id":3674,"title":"factory
+        title222"},{"id":3675,"title":"factory title223"},{"id":3676,"title":"factory
+        title224"},{"id":3677,"title":"factory title225"},{"id":3678,"title":"factory
+        title226"},{"id":3679,"title":"factory title227"},{"id":3680,"title":"factory
+        title228"},{"id":3681,"title":"factory title229"},{"id":3682,"title":"factory
+        title230"},{"id":3683,"title":"factory title231"},{"id":3684,"title":"factory
+        title232"},{"id":3685,"title":"factory title233"},{"id":3686,"title":"factory
+        title234"}]}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/universes/3685?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9476f2b78959994019e3ffe583801718"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8daa6c01-b87b-4a57-93fe-327b96f390ea
+      X-Runtime:
+      - '0.003171'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '65'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universe":{"id":3685,"title":"factory title233","articles":[]}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events/2661?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a2d62d6ab0db3025085e07fe65c764e6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1bb5eed8-8e80-4a29-a693-988bcb9c1f80
+      X-Runtime:
+      - '0.007444'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '171'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2661,"title":"factory title","parents":[],"children":[],"participations":[],"mentions":[{"id":600,"target":{"id":2662,"title":"Blue
+        wedding"}}],"notes":[]}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=3685
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"73c795a6aa401e4c89232bf973a98514"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ef8b9a1c-64ec-48d1-8cac-a7d3c2f016c9
+      X-Runtime:
+      - '0.003352'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"articles":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=3685
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f4678424b17095d4ac7f8384c1c26bcc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9ba8410d-6be3-44a9-8788-634bec887bce
+      X-Runtime:
+      - '0.003551'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '48'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"events":[{"id":2661,"title":"factory title"}]}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events/2662?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c758a20aed057cb57dcfec04b95954a6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 21447b19-d33c-4ced-879f-614c1bbbeb37
+      X-Runtime:
+      - '0.007178'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '116'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2662,"title":"Blue wedding","parents":[],"children":[],"participations":[],"mentions":[],"notes":[]}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=3685
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"73c795a6aa401e4c89232bf973a98514"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 03edf786-a707-4f92-a5e1-e67c0111f19d
+      X-Runtime:
+      - '0.002464'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"articles":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=3685
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f4678424b17095d4ac7f8384c1c26bcc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c4ba19e9-329e-4e92-9703-89fa8a8307df
+      X-Runtime:
+      - '0.004869'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '48'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"events":[{"id":2661,"title":"factory title"}]}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/participations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"62a7d035e7a474fc5b9c5618821b38ea"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dfdcdd8b-df3a-4e89-a915-8db47fc964dd
+      X-Runtime:
+      - '0.002669'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '21'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"participations":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Depth:
+      - Infinity
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"73c795a6aa401e4c89232bf973a98514"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2f9f2c37-eb8b-42a3-8f0b-68ceb4b7b015
+      X-Runtime:
+      - '0.002364'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '15'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"articles":[]}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/events
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: 'Bad Request '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ce500a42-2745-4262-93d7-948ad0aea3db
+      X-Runtime:
+      - '0.004934'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"":{"":null}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/universes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: 'Bad Request '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f829e35b-35d5-4ab3-9454-1e270115c18d
+      X-Runtime:
+      - '0.007793'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 17 Dec 2015 09:14:44 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"":{"":null}}'
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 09:14:44 GMT
+recorded_with: VCR 2.9.3

@@ -17,10 +17,13 @@
     <ul class="participations"><%= render @participations %></ul>
   </div>
 
+  <% unless @event.mentions.empty? %>
   <div class="mentions list">
     <h2>Mentions</h2>
     <ul class="mentions"><%= render @event.mentions %></ul>
   </div>
+  <% end %>
+
 </div>
 
 <div class="note new form">
