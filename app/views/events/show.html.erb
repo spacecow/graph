@@ -3,26 +3,33 @@
 <div class="event">
   <h1><%= @event.title %></h1>
 
-  <ul class="parents"><%= render @event.parents %></ul>
-  <ul class="children"><%= render @event.children %></ul>
+  <ul class="parents left_arrow"><%= render @event.parents %></ul>
+  <ul class="children right_arrow"><%= render @event.children %></ul>
   <div class="clear"></div>
 
+  <% if @event.mentions.present? or @event.inverse_mentions.present? %>
+  <div class="mentions list">
+    <h2>Mentions</h2>
+    <ul class="mentions inverse left_arrow">
+      <%= render partial:"mentions/inverse_mention", collection:@event.inverse_mentions, as: :mention %>
+    </ul>
+    <ul class="mentions direct right_arrow"><%= render @event.mentions %></ul>
+    <div class="clear"></div>
+  </div>
+  <% end %>
+
+
+  <% if @notes.present? %>
   <div class="notes list">
     <h2>Notes</h2>
     <ul class='notes'><%= render @notes, tag_id:nil %></ul>
   </div>
+  <% end %>
 
   <div class="participations list">
     <h2>Participants</h2>
     <ul class="participations"><%= render @participations %></ul>
   </div>
-
-  <% unless @event.mentions.empty? %>
-  <div class="mentions list">
-    <h2>Mentions</h2>
-    <ul class="mentions"><%= render @event.mentions %></ul>
-  </div>
-  <% end %>
 
 </div>
 

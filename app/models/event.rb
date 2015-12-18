@@ -1,7 +1,8 @@
 class Event
   include ActiveModel::Model
 
-  attr_reader :children, :parents, :universe, :notes, :participations, :mentions
+  attr_reader :children, :parents, :universe, :notes, :participations, :mentions,
+    :inverse_mentions
   attr_accessor :id, :title, :parent_tokens, :child_tokens
   attr_writer :universe_id
 
@@ -12,7 +13,8 @@ class Event
   def available_events events; events.
     reject{|e| e.id==id}.
     reject{|e| parent_ids.include?(e.id)}.
-    reject{|e| mention_target_ids.include?(e.id)}
+    reject{|e| mention_ids.include?(e.id)}.
+    reject{|e| inverse_mention_ids.include?(e.id)}
   end
 
   def children= arr
@@ -21,12 +23,19 @@ class Event
     end
   end
 
+  def inverse_mentions= arr
+    @inverse_mentions = arr.map do |params|
+      Mention.new params
+    end
+  end
+
   def mentions= arr
     @mentions = arr.map do |params|
       Mention.new params
     end
   end
-  def mention_target_ids; mentions.map(&:target_id) end
+  def mention_ids; mentions.map(&:target_id) end
+  def inverse_mention_ids; inverse_mentions.map(&:origin_id) end
 
   def parents= arr
     @parents = arr.map do |params|

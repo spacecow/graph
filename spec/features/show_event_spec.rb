@@ -12,6 +12,7 @@ describe "Show event" do
         parent = tcreate :event, universe_id:universe.id, title:"Green wedding"
         event = tcreate :event, universe_id:universe.id, title:"Red wedding"
         blue = tcreate :event, universe_id:universe.id, title:"Blue wedding"
+        yellow = tcreate :event, universe_id:universe.id, title:"Yellow wedding"
         note = tcreate :note, text:'a note'
         tcreate :event_note, event_id:event.id, note_id:note.id
         create :step, parent_id:parent.id, child_id:event.id
@@ -19,12 +20,14 @@ describe "Show event" do
           gender:'m'
         create :participation, participant_id:article.id, event_id:event.id
         tcreate :mention, origin_id:event.id, target_id:blue.id
+        tcreate :mention, origin_id:yellow.id, target_id:event.id
         #TODO event and article should be in the same universe!
         visit event_path event.id
         expect(page.find 'ul.parents').to have_content "Green wedding"
         expect(page.find 'h1').to have_content "Red wedding"
         expect(page).to have_content "a note"
-        expect(page.find 'li.mention').to have_content "Blue wedding"
+        expect(page.find 'ul.mentions.direct').to have_content "Blue wedding"
+        expect(page.find 'ul.mentions.inverse').to have_content "Yellow wedding"
         expect(page.find '.participations .male').to have_content "John Snow"
         expect(all(".parent form option").map(&:text)).to eq [""]
         expect(all(".mention form option").map(&:text)).to eq [""]

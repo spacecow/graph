@@ -29,6 +29,8 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:present).with(event).and_yield(presenter)
     expect(bind).to receive(:render).with(:parents){ "render_parents" }
     expect(bind).to receive(:render).with(:mentions){ "render_mentions" }
+    expect(bind).to receive(:render).with(partial:"mentions/inverse_mention",
+      collection: :inverse_mentions, as: :mention){ "render_inverse_mentions" }
     expect(bind).to receive(:render).
       with(:notes, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:children){ "render_children" }
@@ -47,6 +49,8 @@ describe "events/show.html.erb" do
     expect(event).to receive(:title).with(no_args){ "header" }
     expect(event).to receive(:parents).with(no_args){ :parents }
     expect(event).to receive(:mentions).with(no_args).twice{ :mentions }
+    expect(event).to receive(:inverse_mentions).with(no_args).
+      and_return(:inverse_mentions)
     expect(event).to receive(:children).with(no_args){ :children }
   end
 
@@ -68,8 +72,13 @@ describe "events/show.html.erb" do
   end
 
   describe "Mention list" do
-    subject{ page.find 'ul.mentions' }
+    subject{ page.find 'ul.mentions.direct' }
     its(:text){ should eq "render_mentions" }
+  end
+
+  describe "Inverse mention list" do
+    subject{ page.find 'ul.mentions.inverse' }
+    its(:text){ should include "render_inverse_mentions" }
   end
 
   describe "Participant section" do
