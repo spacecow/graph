@@ -18,24 +18,23 @@ module EventRunners
       let(:parent_event){ double :parent_event, id: :parent_event_id }
       before do
         expect(repo).to receive(:event).with(:id){ event }
+        expect(repo).to receive(:events).with(universe_id: :universe_id).
+          and_return(:all_events)
+        expect(repo).to receive(:articles).with(universe_id: :universe_id).
+          and_return(:all_articles)
+        expect(event).to receive(:available_events).with(:all_events){ :events }
+        expect(event).to receive(:available_articles).with(:all_articles){ :articles }
+        expect(repo).to receive(:new_participation).with(event_id: :event_id).
+          and_return(:participation)
+        expect(event).to receive(:participations).with(no_args){ :participations }
+        expect(repo).to receive(:new_step).with(child_id: :event_id){ :parent_step }
+        expect(event).to receive(:notes).with(no_args){ :notes }
         expect(repo).to receive(:new_note).with(event_id: :event_id){ :note }
         expect(repo).to receive(:new_mention).with(origin_id: :event_id){ :mention }
-        expect(repo).to receive(:articles).
-          with(universe_id: :universe_id){ [article] }
-        expect(event).to receive(:participant_ids).
-          with(no_args){ [:participant_id] }
-        expect(event).to receive(:parent_ids).with(no_args){ [:parent_id] }
-        expect(event).to receive(:notes).with(no_args){ :notes }
-        expect(event).to receive(:participations).with(no_args){ :participations }
-        expect(repo).to receive(:new_participation).
-          with(event_id: :event_id){ :participation }
-        expect(repo).to receive(:new_step).
-          with(child_id: :event_id){ :parent_step }
-        expect(repo).to receive(:events).
-          with(universe_id: :universe_id){ [parent_event] }
       end
       subject{ Show.new(context).run :id, universe_id: :universe_id }
-      it{ subject }
+      it{ should eq([event, :events, :articles, :participation, :participations,
+        :parent_step, :notes, :note, :mention]) }
     end
 
     describe New do

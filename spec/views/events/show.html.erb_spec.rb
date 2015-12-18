@@ -11,8 +11,8 @@ describe "events/show.html.erb" do
 
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event, participation: :participation, articles: :articles,
-    parent_step: :parent_step, parents: :parents, notes: :notes, note: :note,
-    participations: :participations, mentions: :mentions, mention: :mention }}
+    parent_step: :parent_step, notes: :notes, note: :note, events: :events,
+    participations: :participations,  mention: :mention }}
   let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
@@ -34,12 +34,12 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:render).with(:children){ "render_children" }
     expect(bind).to receive(:render).with(:participations){ :render_participations }
     expect(bind).to receive(:render).
-      with("steps/form", step: :parent_step, parents: :parents).
+      with("steps/form", step: :parent_step, parents: :events).
       and_return("step_form")
     expect(bind).to receive(:render).with("notes/form", note: :note).
       and_return("note_form")
     expect(bind).to receive(:render).
-      with("mentions/form", mention: :mention, mentions: :mentions).
+      with("mentions/form", mention: :mention, mentions: :events).
       and_return("mention_form")
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).

@@ -5,20 +5,17 @@ module EventRunners
   class Show < Runner
     def run id, universe_id:
       event = repo.event id
-      articles = repo.articles(universe_id:universe_id).
-        reject{|e| event.participant_ids.include? e.id}
+      all_events = repo.events(universe_id:universe_id)
+      all_articles = repo.articles(universe_id:universe_id)
+      events = event.available_events(all_events)
+      articles = event.available_articles(all_articles)
       participation = repo.new_participation event_id:event.id 
       participations = event.participations
       parent_step = repo.new_step child_id:event.id
-      events = repo.events(universe_id:universe_id)
-      parents = events.
-        reject{|e| e.id==event.id}.
-        reject{|e| event.parent_ids.include?(e.id)}
       notes = event.notes
       note = repo.new_note event_id:event.id 
       mention = repo.new_mention origin_id:event.id
-      mentions = events 
-      success event, articles, participation, participations, parent_step, parents, notes, note, mention, mentions
+      success event, events, articles, participation, participations, parent_step, notes, note, mention
     end
   end
 

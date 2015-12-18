@@ -5,6 +5,16 @@ class Event
   attr_accessor :id, :title, :parent_tokens, :child_tokens
   attr_writer :universe_id
 
+  def available_articles articles; articles.
+    reject{|e| participant_ids.include? e.id}
+  end
+
+  def available_events events; events.
+    reject{|e| e.id==id}.
+    reject{|e| parent_ids.include?(e.id)}.
+    reject{|e| mention_target_ids.include?(e.id)}
+  end
+
   def children= arr
     @children = arr.map do |params|
       Event.new params
@@ -16,6 +26,7 @@ class Event
       Mention.new params
     end
   end
+  def mention_target_ids; mentions.map(&:target_id) end
 
   def parents= arr
     @parents = arr.map do |params|
