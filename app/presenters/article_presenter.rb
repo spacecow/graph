@@ -12,6 +12,8 @@ class ArticlePresenter < BasePresenter
 
   def name; h.link_to article.name, h.article_path(article.id) end
 
+  def type; "(#{article.type})" end
+
   def gender
   { 'm' => "male",
     'f' => "female",

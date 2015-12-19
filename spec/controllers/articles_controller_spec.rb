@@ -48,19 +48,21 @@ describe "ArticlesController" do
   describe "#create" do
     let(:function){ :create }
     let(:runner){ double :runner }
+    let(:article){ double :article }
     before do
       stub_const "ArticleRunners::Create", Class.new
-      def controller.universe_path id; raise NotImplementedError end
+      def controller.article_path id; raise NotImplementedError end
       def controller.render page; raise NotImplementedError end
       expect(controller).to receive(:article_params).with(no_args){ :params }
       expect(controller).to receive(:run).
         with(ArticleRunners::Create,:params).and_yield(runner)
-      expect(controller).to receive(:universe_path).with(:universe_id){ :path }
+      expect(controller).to receive(:article_path).with(:article_id){ :path }
       expect(controller).to receive(:redirect_to).with(:path){ :redirect }
       expect(controller).to receive(:render).with(:new){ :render }
-      expect(runner).to receive(:success).with(no_args).and_yield
+      expect(runner).to receive(:success).with(no_args).and_yield(article)
       expect(runner).to receive(:failure).
         with(no_args).and_yield(:article, :article_types)
+      expect(article).to receive(:id).with(no_args){ :article_id }
     end 
     it{ subject }
   end

@@ -13,6 +13,7 @@ describe 'Show universe' do
         expect(current_path).to eq universe_path(universe.id)
         expect(page).to have_content 'The Final Empire'
         expect(page.find '.male').to have_content 'Kelsier'
+        expect(page.find 'li.article .type').to have_content 'Character'
       ensure
         delete :articles
         tdelete :universes

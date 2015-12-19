@@ -21,7 +21,7 @@ describe "Create article" do
           fill_in 'Name', with:'Kelsier'
           select 'Character', from:'Type'
           click_on 'Create'
-          expect(current_path).to eq universe_path(universe.id)
+          expect(current_path).to match /articles\/\d+/
           expect(page).to have_content 'Kelsier' 
         ensure
           delete :articles

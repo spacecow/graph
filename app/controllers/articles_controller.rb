@@ -32,8 +32,8 @@ class ArticlesController < ApplicationController
   def create
     redirect_to universes_path and return if current_universe_id.nil?
     run(ArticleRunners::Create, article_params) do |on|
-      on.success do
-        redirect_to universe_path(current_universe_id)
+      on.success do |article|
+        redirect_to article_path(article.id)
       end
       on.failure do |article, article_types|
         @article = article 

@@ -4,6 +4,7 @@
   <%= content_tag :span, class:["name", presenter.gender].join(" ") do %>
     <%= presenter.name %>
   <% end %>
+  <span class="type"><%= presenter.type %></span>
   <span class="actions">
     <span class="edit"><%= presenter.edit_link %></span>
   </span>

@@ -28,6 +28,7 @@ describe "articles/_article.html.erb" do
       with(:span, class:%w(name male).join(" ")).and_yield
     expect(presenter).to receive(:gender).with(no_args){ "male" }
     expect(presenter).to receive(:name).with(no_args){ "name" }
+    expect(presenter).to receive(:type).with(no_args){ "type" }
     expect(presenter).to receive(:edit_link).with(no_args){ "edit_link" }
   end
 
@@ -35,6 +36,11 @@ describe "articles/_article.html.erb" do
 
   describe "Name" do
     its(:text){ is_expected.to include "name" } 
+  end
+
+  describe "Type" do
+    subject{ page.find '.type' }
+    its(:text){ is_expected.to eq "type" } 
   end
 
   describe "Edit link" do

@@ -35,7 +35,7 @@ module ArticleRunners
       article = repo.new_article article_params
       article = repo.save_article article
       if article.errors.empty?
-        success
+        success article
       else
         article_types = repo.article_types
         failure article, article_types
