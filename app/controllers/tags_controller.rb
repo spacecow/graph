@@ -21,7 +21,17 @@ class TagsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:redirect_to] = request.referer || root_path
+    run(TagRunners::Destroy, params[:id], delete_tag_params) 
+    redirect_to session.delete(:redirect_to)
+  end
+
   private
+
+    def delete_tag_params
+      params.require(:tag).permit(:tagable_type, :tagable_id)
+    end
 
     def tag_params
       params.require(:tag).permit(:tagable_id, :tagable_type, :title)

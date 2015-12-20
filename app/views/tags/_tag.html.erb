@@ -1,3 +1,10 @@
+<% present tag do |presenter| %>
+
 <li class="tag">
-  <span class="title"><%= tag.title %></span>
+  <span class="title"><%= presenter.title %></span>
+  <span class="actions">
+    <span class="delete"><%= presenter.delete_link %></span>
+  </span>
 </li>
+
+<% end %>

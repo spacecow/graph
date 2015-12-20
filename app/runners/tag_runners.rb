@@ -28,5 +28,10 @@ module TagRunners
     end
   end
 
+  class Destroy < Runner
+    def run id, params 
+      repo.delete_tag id, params 
+    end
+  end
 
 end

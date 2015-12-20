@@ -31,6 +31,17 @@ module Repo
       Tag.new body
     end
 
+    def delete_tag id, params
+      url = "http://localhost:9292/api/tags/#{id}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port
+      req = Net::HTTP::Delete.new(
+        uri.path, initheader = {'Content-Type' =>'application/json'})
+      req['Accept'] = 'application/vnd.example.v1'
+      req.body = {tag:params}.merge(access_token:token).to_json
+      http.request(req)
+    end
+
 
   end
 end

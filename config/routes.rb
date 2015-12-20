@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :references, only:[:show,:create,:edit,:update]
   resources :relations, only:[:show,:create]
   resources :steps, only:[:create]
-  resources :tags, only:[:show,:index,:new,:create]
+  resources :tags, only:[:show,:index,:new,:create,:destroy]
   resources :taggings, only:[:create]
   resources :universes, only:[:show,:index,:new,:create]
 

@@ -1,10 +1,13 @@
 class Tag
   include ActiveModel::Model
 
-  attr_accessor :tagable_id, :tagable_type, :title, :id
+  attr_writer :tagable_id, :tagable_type
+  attr_accessor :title, :id
   
-  def tagable= tagable
-  end
+  def tagable= tagable; @tagable = tagable end
+
+  def tagable_id; @tagable_id || @tagable.try(:id) end
+  def tagable_type; @tagable_type || @tagable.class.to_s end
 
   def notes; @notes || [] end
 
