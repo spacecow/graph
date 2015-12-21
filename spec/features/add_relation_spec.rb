@@ -15,9 +15,10 @@ describe "Add relation" do
           visit article_path(article.id)
           expect(all(".type option").map(&:text)).
             to eq ["","Acquaintance", "Advisor", "Aunt", "Betrothed", "Brother",
-                   "Counselor", "Courter", "Follower", "Guide", "Home", "Husband",
-                   "King", "Owner", "Player", "Practitioner", "Queen", "Right hand",
-                   "Sister", "Swordbearer", "Teacher", "Uncle", "Variant", "Warder"] 
+                   "Counselor", "Courter", "Follower", "Friend", "Guide", "Home",
+                   "Husband", "King", "Located in", "Near sister", "Owner",
+                   "Player", "Practitioner", "Queen", "Right hand", "Sister",
+                   "Swordbearer", "Teacher", "Uncle", "Variant", "Warder"] 
           expect(all(".target option").map(&:text)).to eq ["","Swordmaster"] 
           select "Owner", from:"Relation"
           select "Swordmaster", from:"Relative"
@@ -28,9 +29,10 @@ describe "Add relation" do
           expect(page.find "ul.relations").to have_content 'Swordmaster'
           expect(all(".type option").map(&:text)).
             to eq ["","Acquaintance", "Advisor", "Aunt", "Betrothed", "Brother",
-                   "Counselor", "Courter", "Follower", "Guide", "Home", "Husband",
-                   "King", "Owner", "Player", "Practitioner", "Queen", "Right hand",
-                   "Sister", "Swordbearer", "Teacher", "Uncle", "Variant", "Warder"] 
+                   "Counselor", "Courter", "Follower", "Friend", "Guide", "Home",
+                   "Husband", "King", "Located in", "Near sister", "Owner",
+                   "Player", "Practitioner", "Queen", "Right hand", "Sister",
+                   "Swordbearer", "Teacher", "Uncle", "Variant", "Warder"] 
           expect(all(".target option").map(&:text)).to eq [""] 
         ensure
           delete :relations
