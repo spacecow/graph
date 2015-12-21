@@ -11,8 +11,22 @@ describe TagPresenter do
 
   describe "#title" do
     let(:function){ :title }
-    before{ expect(mdl).to receive(:title).with(no_args){ :title }}
-    it{ should eq :title }
+    before do 
+      expect(mdl).to receive(:title).with(no_args){ :title }
+      expect(mdl).to receive(:article_id).with(no_args).at_least(1){ article_id }
+    end
+    context "there exists no article lookup" do
+      let(:article_id){ nil }
+      it{ should eq :title }
+    end
+    context "there exists ar article lookup" do
+      let(:article_id){ :article_id }
+      before do
+        expect(view).to receive(:article_path).with(:article_id){ :path }
+        expect(view).to receive(:link_to).with(:title,:path){ :link }
+      end
+      it{ should eq :link }
+    end
   end
   
   describe "#delete_link" do

@@ -2,7 +2,7 @@ class Tag
   include ActiveModel::Model
 
   attr_writer :tagable_id, :tagable_type
-  attr_accessor :title, :id
+  attr_accessor :title, :id, :article_id
   
   def tagable= tagable; @tagable = tagable end
 

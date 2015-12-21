@@ -7,6 +7,9 @@ class TagPresenter < BasePresenter
     h.link_to "Delete", h.tag_path(tag.id, params), method: :delete, data:{confirm:"Are you sure?"}
   end
 
-  def title; tag.title end
+  def title
+    return h.link_to tag.title, h.article_path(tag.article_id) if tag.article_id
+    tag.title
+  end
 
 end

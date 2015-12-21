@@ -48,6 +48,26 @@ describe 'Show article' do
   end
 
   it "navigate to a relative page" do
+    VCR.use_cassette('navigate_to_tag_represented_by_article') do
+      begin
+        universe = create :universe, title:'The Final Empire'
+        visit universes_path
+        click_link "The Final Empire"
+        article = create :article, universe_id:universe.id
+        tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
+        article2 = create :article, universe_id:universe.id, name:"Allomancy"
+        visit article_path article.id
+        within('li.tag'){ click_link "Allomancy" }
+        expect(current_path).to eq article_path(article2.id) 
+      ensure
+        tdelete :tags
+        delete :articles
+        tdelete :universes
+      end
+    end
+  end
+
+  it "navigate to a relative page" do
     VCR.use_cassette('navigate_to_a_relative_page') do
       begin
         universe = create :universe, title:'The Final Empire'
