@@ -18,10 +18,16 @@
     </div>
   <% end %>
 
-  <% unless @article.citations.empty? %>
+  <% if @article.citations.present? or @article.inverse_citations.present? %>
     <div class="citations list">
       <h2>Citations</h2>
-      <ul class="citations"><%= render @article.citations %></ul>
+      <ul class="citations inverse left_arrow">
+        <%= render partial:"citations/inverse_citation",
+            collection:@article.inverse_citations, as: :citation %>
+      </ul>
+      <ul class="citations direct right_arrow">
+        <%= render @article.citations %>
+      </ul>
     </div>
   <% end %>
 

@@ -25,6 +25,7 @@ describe 'Show article' do
         tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
         tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
         tcreate :citation, origin_id:article.id, content:"some citation"
+        tcreate :citation, target_id:article.id, content:"citerad"
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
         expect(page).to have_content "Kelsier"
@@ -32,6 +33,7 @@ describe 'Show article' do
         expect(page).to have_content "hero"
         expect(page).to have_content "Allomancy"
         expect(page).to have_content "some citation"
+        expect(page).to have_content "citerad"
         expect(page.find('.relations.list')).to have_content "Owns"
         expect(page.find('.relations.list')).to have_content "Sword"
         expect(page.find('.relations.list')).to have_content "very sharp"

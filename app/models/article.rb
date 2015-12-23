@@ -5,7 +5,6 @@ class Article
   attr_reader :universe
 
   def citations; @citations || [] end
-
   def citations= arr
     @citations = arr.map do |params|
       Citation.new(params)
@@ -17,6 +16,13 @@ class Article
   def events= arr
     @events = arr.map do |params|
       Event.new(params)
+    end
+  end
+
+  def inverse_citations; @inverse_citations || [] end
+  def inverse_citations= arr
+    @inverse_citations = arr.map do |params|
+      Citation.new(params)
     end
   end
 
