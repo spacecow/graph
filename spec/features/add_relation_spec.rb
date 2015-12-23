@@ -16,9 +16,10 @@ describe "Add relation" do
           expect(all(".type option").map(&:text)).
             to eq ["","Acquaintance", "Advisor", "Aunt", "Betrothed", "Brother",
                    "Counselor", "Courter", "Follower", "Friend", "Guide", "Home",
-                   "Husband", "King", "Located in", "Near sister", "Owner",
-                   "Player", "Practitioner", "Queen", "Right hand", "Sister",
-                   "Swordbearer", "Teacher", "Uncle", "Variant", "Warder"] 
+                   "Husband", "King", "Located in", "Maid", "Member",
+                   "Near sister", "Owner", "Player", "Practitioner", "Queen",
+                   "Right hand", "Sister", "Swordbearer", "Teacher", "Uncle",
+                   "Variant", "Warder", "Wielder"] 
           expect(all(".target option").map(&:text)).to eq ["","Swordmaster"] 
           select "Owner", from:"Relation"
           select "Swordmaster", from:"Relative"
@@ -30,9 +31,10 @@ describe "Add relation" do
           expect(all(".type option").map(&:text)).
             to eq ["","Acquaintance", "Advisor", "Aunt", "Betrothed", "Brother",
                    "Counselor", "Courter", "Follower", "Friend", "Guide", "Home",
-                   "Husband", "King", "Located in", "Near sister", "Owner",
-                   "Player", "Practitioner", "Queen", "Right hand", "Sister",
-                   "Swordbearer", "Teacher", "Uncle", "Variant", "Warder"] 
+                   "Husband", "King", "Located in", "Maid", "Member",
+                   "Near sister", "Owner", "Player", "Practitioner", "Queen",
+                   "Right hand", "Sister", "Swordbearer", "Teacher", "Uncle",
+                   "Variant", "Warder", "Wielder"] 
           expect(all(".target option").map(&:text)).to eq [""] 
         ensure
           delete :relations

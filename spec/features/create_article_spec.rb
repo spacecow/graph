@@ -16,9 +16,10 @@ describe "Create article" do
           visit new_article_path
           expect(page).not_to have_selector name_error_field 
           expect(page).not_to have_selector type_error_field 
-          expect(all(".type select option").map(&:text)).to eq(
-            ["", "Character", "Family", "Item", "Location", "Race", "Religion",
-             "Structure"])
+          expect(all(".type select option").map(&:text)).to eq([
+            "", "Character", "Family", "Group", "Item", "Location", "Magician",
+            "Profession", "Race", "Relic", "Religion", "Society", "Source",
+            "Structure"])
           fill_in 'Name', with:'Kelsier'
           select 'Character', from:'Type'
           click_on 'Create'
@@ -45,9 +46,10 @@ describe "Create article" do
           click_on 'Create'
           expect(current_path).to eq articles_path
           expect(page.find(name_error_field).text).to eq 'cannot be blank'
-          expect(all(".type select option").map(&:text)).to eq(
-            ["", "Character", "Family", "Item", "Location", "Race", "Religion",
-             "Structure"])
+          expect(all(".type select option").map(&:text)).to eq([
+            "", "Character", "Family", "Group", "Item", "Location", "Magician",
+            "Profession", "Race", "Relic", "Religion", "Society", "Source",
+            "Structure"])
         ensure
           tdelete :universes
         end
