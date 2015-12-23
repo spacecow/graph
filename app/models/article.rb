@@ -4,6 +4,14 @@ class Article
   attr_accessor :id, :name, :type, :universe_id, :gender
   attr_reader :universe
 
+  def citations; @citations || [] end
+
+  def citations= arr
+    @citations = arr.map do |params|
+      Citation.new(params)
+    end
+  end
+
   def events; @events || [] end
 
   def events= arr

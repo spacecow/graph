@@ -31,6 +31,7 @@ describe "articles/show.html.erb" do
     def bind.present obj; end
     expect(bind).to receive(:present).with(article).and_yield(presenter)
     expect(article).to receive(:name).with(no_args){ "article_name" }
+    expect(article).to receive(:citations).with(no_args).at_least(1){ :citations }
     expect(bind).to receive(:render).with(:relations){ "render_relations" }
     expect(bind).to receive(:render).with(:article_tags){ "render_article_tags" }
     expect(bind).to receive(:render).
@@ -39,6 +40,7 @@ describe "articles/show.html.erb" do
     expect(bind).to receive(:render).
       with(:notes, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:events){ "render_events" } unless events.empty?
+    expect(bind).to receive(:render).with(:citations){ "render_citations" }
     expect(bind).to receive(:render).
       with("notes/form", note: :note).and_return("render_note_form")
     expect(bind).to receive(:render).

@@ -24,17 +24,20 @@ describe 'Show article' do
         create :participation, event_id:event.id, participant_id:article.id
         tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
         tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
+        tcreate :citation, origin_id:article.id, content:"some citation"
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
         expect(page).to have_content "Kelsier"
         expect(page).to have_content "a note"
         expect(page).to have_content "hero"
         expect(page).to have_content "Allomancy"
+        expect(page).to have_content "some citation"
         expect(page.find('.relations.list')).to have_content "Owns"
         expect(page.find('.relations.list')).to have_content "Sword"
         expect(page.find('.relations.list')).to have_content "very sharp"
         expect(page.find('.events.list')).to have_content "The Standoff"
       ensure
+        tdelete :citations
         tdelete :article_notes
         tdelete :participations
         delete :relations

@@ -18,6 +18,13 @@
     </div>
   <% end %>
 
+  <% unless @article.citations.empty? %>
+    <div class="citations list">
+      <h2>Citations</h2>
+      <ul class="citations"><%= render @article.citations %></ul>
+    </div>
+  <% end %>
+
   <!-- dont show relations if there are no relations -->
   <div class="relations list">
     <h2>Relations</h2>
