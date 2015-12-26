@@ -23,7 +23,7 @@ describe "Add relation" do
           expect(all(".target option").map(&:text)).to eq ["","Swordmaster"] 
           select "Owner", from:"Relation"
           select "Swordmaster", from:"Relative"
-          click_button "Add"
+          within('.relation.new.form'){ click_button "Add" }
           expect(current_path).to eq article_path(article.id) 
           #TODO show relations
           expect(page.find "div.relations").to have_content 'Owner'

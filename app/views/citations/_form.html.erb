@@ -1,0 +1,8 @@
+<%= form_for citation do |f| %>
+  <%= f.hidden_field :origin_id %>
+  <div class="content">
+    <%= f.label :content, "Citation" %>
+    <%= f.text_field :content %>
+  </div>
+  <%= f.submit "Add" %>
+<% end %>

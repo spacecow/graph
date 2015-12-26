@@ -47,5 +47,4 @@ describe "participations/_form.html.erb" do
     its(:text){ should include "submit_add" }
   end
 
-
 end

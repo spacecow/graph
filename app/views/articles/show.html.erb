@@ -21,13 +21,14 @@
   <% if @article.citations.present? or @article.inverse_citations.present? %>
     <div class="citations list">
       <h2>Citations</h2>
-      <ul class="citations inverse left_arrow">
+      <ul class="citations inverse right_arrow">
         <%= render partial:"citations/inverse_citation",
             collection:@article.inverse_citations, as: :citation %>
       </ul>
-      <ul class="citations direct right_arrow">
+      <ul class="citations direct left_arrow">
         <%= render @article.citations %>
       </ul>
+      <div class="clear"></div>
     </div>
   <% end %>
 
@@ -42,6 +43,10 @@
   <div class="relation new form">
     <%= render "relations/form",
         relation:@relation, targets:@targets, relation_types:@relation_types %>
+  </div>
+
+  <div class="citation new form">
+    <%= render "citations/form", citation:@citation %>
   </div>
 
   <div class="tagging new form">

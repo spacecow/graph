@@ -2,6 +2,7 @@ class Repository
   include Repo::ArticleMethods
   include Repo::ArticleTypeMethods
   include Repo::BookMethods
+  include Repo::CitationMethods
   include Repo::EventMethods
   include Repo::ReferenceMethods
   include Repo::MentionMethods

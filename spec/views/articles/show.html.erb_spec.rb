@@ -22,7 +22,8 @@ describe "articles/show.html.erb" do
   let(:locals){{ article:article, relation: :relation, targets: :targets, 
                  notes: :notes, note: :note, events:events, 
                  article_tags: :article_tags, relation_types: :relation_types,
-                 relations: :relations, tagging: :tagging, tags: :tags }}
+                 relations: :relations, tagging: :tagging, tags: :tags,
+                 citation: :citation }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
   let(:events){ :events }
@@ -47,6 +48,8 @@ describe "articles/show.html.erb" do
     expect(bind).to receive(:render).with([:citation]){ "render_citations" }
     expect(bind).to receive(:render).
       with("notes/form", note: :note).and_return("render_note_form")
+    expect(bind).to receive(:render).
+      with("citations/form", citation: :citation).and_return("render_citation_form")
     expect(bind).to receive(:render).
       with("taggings/form", tagging: :tagging, tags: :tags).
       and_return("render_tagging_form")
@@ -104,6 +107,13 @@ describe "articles/show.html.erb" do
     subject{ page.find '.relation.new.form' }
     its(:text){ should include "render_relation_form" }
   end
+
+  #TODO relation form header
+  describe "Citation form" do
+    subject{ page.find '.citation.new.form' }
+    its(:text){ should include "render_citation_form" }
+  end
+
 
   #TODO note form header
   describe "Note form" do
