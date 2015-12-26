@@ -29,28 +29,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"6266a3d4e14bf0abc092aa5e7ee57d86"
+      - W/"fcf21442aad68146ddc6d587e571b03c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bb9f9c25-73d7-49b8-983f-a1b0129b1b52
+      - 93d0489a-87bc-46e9-85b5-8e8be5cb1cbd
       X-Runtime:
-      - '0.005005'
+      - '0.106607'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '52'
+      - '53'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":8663,"title":"The Wheel of Time"}}'
+      string: '{"universe":{"id":10917,"title":"The Wheel of Time"}}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -80,29 +80,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"a23fb6ed8b0e9801a2301bb5de20844e"
+      - W/"3dc18667c5ff48b947a726831ddc836f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d3b984ba-dba0-46d4-8ff1-de233ca3ebdc
+      - 6f82ac33-8e58-4097-950a-09f7a0281cd0
       X-Runtime:
-      - '0.002737'
+      - '0.003177'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '55'
+      - '56'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":8663,"title":"The Wheel of Time"}]}'
+      string: '{"universes":[{"id":10917,"title":"The Wheel of Time"}]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/8663?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/10917?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -129,32 +129,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"918e51d24ccbfd4896b548bcc6591989"
+      - W/"f715da3b0b5496d85c0f16e987a137ea"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1a7f3200-b935-4588-a5ec-4bb41c251281
+      - a193649d-2f22-4451-99e6-76f1d5a18607
       X-Runtime:
-      - '0.005096'
+      - '0.003725'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '66'
+      - '67'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":8663,"title":"The Wheel of Time","articles":[]}}'
+      string: '{"universe":{"id":10917,"title":"The Wheel of Time","articles":[]}}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: article%5Bgender%5D=n&article%5Bname%5D=Swordmaster&article%5Btype%5D=Character&article%5Buniverse_id%5D=8663
+      string: article%5Bgender%5D=n&article%5Bname%5D=Swordmaster&article%5Btype%5D=Character&article%5Buniverse_id%5D=10917
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -178,34 +178,34 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"16cf1584a2470007e29001d557a276c1"
+      - W/"bc9a8cdf6c4c3fb34fc05f37fdb44678"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - efd87492-0314-448a-8446-402e6680e14f
+      - 42104d8f-9831-476e-8d44-b8d3d1c8996c
       X-Runtime:
-      - '0.012275'
+      - '0.026636'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '143'
+      - '167'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"article":{"id":5234,"name":"Swordmaster","universe_id":8663,"type":"Character","gender":"n","tags":[],"citations":[],"notes":[],"events":[]}}'
+      string: '{"article":{"id":7191,"name":"Swordmaster","universe_id":10917,"type":"Character","gender":"n","tags":[],"citations":[],"inverse_citations":[],"notes":[],"events":[]}}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: article%5Bgender%5D=n&article%5Bname%5D=Sword&article%5Btype%5D=Character&article%5Buniverse_id%5D=8663
+      string: article%5Bgender%5D=n&article%5Bname%5D=Sword&article%5Btype%5D=Character&article%5Buniverse_id%5D=10917
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -229,31 +229,31 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"97fd70ebc78acdcdd8911e87c5817b6d"
+      - W/"ae53a49a9e2838f9dc0e6dd82ef65060"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b888c6e8-1c8e-4081-9500-7888698fd6ce
+      - 1d1d0944-dc94-4469-a568-3e8c0006c430
       X-Runtime:
-      - '0.011265'
+      - '0.010816'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '137'
+      - '161'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"article":{"id":5235,"name":"Sword","universe_id":8663,"type":"Character","gender":"n","tags":[],"citations":[],"notes":[],"events":[]}}'
+      string: '{"article":{"id":7192,"name":"Sword","universe_id":10917,"type":"Character","gender":"n","tags":[],"citations":[],"inverse_citations":[],"notes":[],"events":[]}}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles/5235?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/articles/7192?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -280,29 +280,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"97fd70ebc78acdcdd8911e87c5817b6d"
+      - W/"ae53a49a9e2838f9dc0e6dd82ef65060"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e7aef832-5c62-4b38-a271-cbca2d322707
+      - 4e18db86-0f31-4895-9eca-5b6accf34398
       X-Runtime:
-      - '0.009715'
+      - '0.009139'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '137'
+      - '161'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"article":{"id":5235,"name":"Sword","universe_id":8663,"type":"Character","gender":"n","tags":[],"citations":[],"notes":[],"events":[]}}'
+      string: '{"article":{"id":7192,"name":"Sword","universe_id":10917,"type":"Character","gender":"n","tags":[],"citations":[],"inverse_citations":[],"notes":[],"events":[]}}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=8663
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=10917
     body:
       encoding: US-ASCII
       string: ''
@@ -329,26 +329,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3eaeeaa6a57ae8dbf3e86f4c7d03df6a"
+      - W/"af7a2a157302e96bb9896150d6727730"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 64283af1-9a4b-41dd-8747-7aa9484c9d01
+      - e54326b6-42f9-4e5f-b452-cdfc9906bf3e
       X-Runtime:
-      - '0.002783'
+      - '0.002816'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
       - '138'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":5234,"name":"Swordmaster","type":"Character","gender":"n"},{"id":5235,"name":"Sword","type":"Character","gender":"n"}]}'
+      string: '{"articles":[{"id":7191,"name":"Swordmaster","type":"Character","gender":"n"},{"id":7192,"name":"Sword","type":"Character","gender":"n"}]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/relation_types?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -378,26 +378,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"be630f03b11e61df1fc3d8afc952d829"
+      - W/"27d8b1d42ad329fa00ff1455ceac876f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bcc05f35-7a09-4bf8-acdc-67cda4382393
+      - 55e5f243-f119-495f-ab96-0d30978de59c
       X-Runtime:
-      - '0.001998'
+      - '0.018604'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '314'
+      - '343'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"relation_types":["Acquaintance","Advisor","Aunt","Betrothed","Brother","Counselor","Courter","Follower","Friend","Guide","Home","Husband","King","Located_in","Maid","Member","Near_sister","Owner","Player","Practitioner","Queen","Right_hand","Sister","Swordbearer","Teacher","Uncle","Variant","Warder","Wielder"]}'
+      string: '{"relation_types":["Acquaintance","Advisor","Aunt","Betrothed","Brother","Counselor","Courter","Father","Follower","Friend","Guide","Home","Husband","King","Located_in","Maid","Member","Mother","Near_sister","Owner","Player","Practitioner","Queen","Resident","Right_hand","Sister","Swordbearer","Teacher","Uncle","Variant","Warder","Wielder"]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -431,13 +431,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 90cdd451-7a7f-41fe-a2bd-79d26b970eee
+      - 5e114726-26b9-44c9-9c4a-f8a49d672cc1
       X-Runtime:
-      - '0.002251'
+      - '0.002869'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
       - '11'
       Connection:
@@ -446,13 +446,13 @@ http_interactions:
       encoding: UTF-8
       string: '{"tags":[]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/relations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: relation%5Borigin_id%5D=5235&relation%5Btarget_id%5D=5234&relation%5Btype%5D=Owner
+      string: relation%5Borigin_id%5D=7192&relation%5Btarget_id%5D=7191&relation%5Btype%5D=Owner
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -476,17 +476,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f47ae7156acb7981320ef1a72b507158"
+      - W/"ec2393568595684b48fd1c6c6788b90b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f8c726db-c79a-415d-8338-46d3397901e1
+      - f523674f-1242-468e-ada8-a185119fe82b
       X-Runtime:
-      - '0.008163'
+      - '0.008173'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
       - '159'
       Connection:
@@ -495,12 +495,12 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"relation":{"id":1055,"type":"Owner","references":[],"origin":{"id":5235,"name":"Sword","gender":"n"},"target":{"id":5234,"name":"Swordmaster","gender":"n"}}}'
+      string: '{"relation":{"id":1655,"type":"Owner","references":[],"origin":{"id":7192,"name":"Sword","gender":"n"},"target":{"id":7191,"name":"Swordmaster","gender":"n"}}}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles/5235?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/articles/7192?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -527,29 +527,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"0530dfaaa9c83091950c05506b7c76a4"
+      - W/"26b22e38abea92efa727729faf2fc710"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d67a8177-5bc4-4ea8-8267-1782c84ad184
+      - b8a63046-29d2-41ed-bcfe-844a88060413
       X-Runtime:
-      - '0.011069'
+      - '0.011209'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '249'
+      - '273'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"article":{"id":5235,"name":"Sword","universe_id":8663,"type":"Character","gender":"n","tags":[],"citations":[],"notes":[],"events":[],"relatives":[{"id":1055,"type":"Owner","references":[],"target":{"id":5234,"name":"Swordmaster","gender":"n"}}]}}'
+      string: '{"article":{"id":7192,"name":"Sword","universe_id":10917,"type":"Character","gender":"n","tags":[],"citations":[],"inverse_citations":[],"notes":[],"events":[],"relatives":[{"id":1655,"type":"Owner","references":[],"target":{"id":7191,"name":"Swordmaster","gender":"n"}}]}}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=8663
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=10917
     body:
       encoding: US-ASCII
       string: ''
@@ -576,26 +576,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3eaeeaa6a57ae8dbf3e86f4c7d03df6a"
+      - W/"af7a2a157302e96bb9896150d6727730"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e5f4399e-aa3c-49da-8f5a-abbc907ba2c7
+      - 2522da06-7a3d-4902-b680-a277d1facac6
       X-Runtime:
-      - '0.002830'
+      - '0.002885'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
       - '138'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":5234,"name":"Swordmaster","type":"Character","gender":"n"},{"id":5235,"name":"Sword","type":"Character","gender":"n"}]}'
+      string: '{"articles":[{"id":7191,"name":"Swordmaster","type":"Character","gender":"n"},{"id":7192,"name":"Sword","type":"Character","gender":"n"}]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/relation_types?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -625,26 +625,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"be630f03b11e61df1fc3d8afc952d829"
+      - W/"27d8b1d42ad329fa00ff1455ceac876f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f68dece3-bbc0-463e-8f25-20345c16fa93
+      - 5e35b591-0e11-4c85-a978-eb4695ef06b9
       X-Runtime:
-      - '0.002014'
+      - '0.002095'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '314'
+      - '343'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"relation_types":["Acquaintance","Advisor","Aunt","Betrothed","Brother","Counselor","Courter","Follower","Friend","Guide","Home","Husband","King","Located_in","Maid","Member","Near_sister","Owner","Player","Practitioner","Queen","Right_hand","Sister","Swordbearer","Teacher","Uncle","Variant","Warder","Wielder"]}'
+      string: '{"relation_types":["Acquaintance","Advisor","Aunt","Betrothed","Brother","Counselor","Courter","Father","Follower","Friend","Guide","Home","Husband","King","Located_in","Maid","Member","Mother","Near_sister","Owner","Player","Practitioner","Queen","Resident","Right_hand","Sister","Swordbearer","Teacher","Uncle","Variant","Warder","Wielder"]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -678,13 +678,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b28b45a6-77af-4a7b-93e7-f9587eb78f3f
+      - d80f92f2-97d1-40da-ae93-5ece45b7e843
       X-Runtime:
-      - '0.002388'
+      - '0.002341'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
       - '11'
       Connection:
@@ -693,7 +693,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"tags":[]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/relations?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -725,17 +725,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"bacf32a04d895dc47e605c0d8f69bfe2"
+      - W/"17006b04c81bd4f54db103441ecd01f1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a6bdbdef-5776-4ceb-8d2a-ddac122523e7
+      - 185e9fad-047f-450a-a847-ff909e05d349
       X-Runtime:
-      - '0.007181'
+      - '0.006431'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
       - '162'
       Connection:
@@ -744,9 +744,9 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"relations":[{"id":1055,"type":"Owner","references":[],"origin":{"id":5235,"name":"Sword","gender":"n"},"target":{"id":5234,"name":"Swordmaster","gender":"n"}}]}'
+      string: '{"relations":[{"id":1655,"type":"Owner","references":[],"origin":{"id":7192,"name":"Sword","gender":"n"},"target":{"id":7191,"name":"Swordmaster","gender":"n"}}]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -778,28 +778,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f52dd38ab8bc7faa925902a7ec49b92c"
+      - W/"2ec8913d4c9dbba78184a88b5ea94440"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - aae3e4b5-b66c-45ee-9575-0b42627980f4
+      - e758476d-531b-4ebe-82ed-d7133794284a
       X-Runtime:
-      - '0.008913'
+      - '0.006977'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '150'
+      - '152'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":5234,"name":"Swordmaster","universe_id":8663,"type":"Character"},{"id":5235,"name":"Sword","universe_id":8663,"type":"Character"}]}'
+      string: '{"articles":[{"id":7191,"name":"Swordmaster","universe_id":10917,"type":"Character"},{"id":7192,"name":"Sword","universe_id":10917,"type":"Character"}]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes
@@ -829,26 +829,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"a23fb6ed8b0e9801a2301bb5de20844e"
+      - W/"3dc18667c5ff48b947a726831ddc836f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5f49a84b-08c6-4fe8-a3ef-bc2124e0f4dd
+      - e333ef25-2e83-438a-97ae-7445facb2903
       X-Runtime:
-      - '0.004348'
+      - '0.004101'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Wed, 23 Dec 2015 06:02:36 GMT
+      - Sat, 26 Dec 2015 10:47:58 GMT
       Content-Length:
-      - '55'
+      - '56'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":8663,"title":"The Wheel of Time"}]}'
+      string: '{"universes":[{"id":10917,"title":"The Wheel of Time"}]}'
     http_version: 
-  recorded_at: Wed, 23 Dec 2015 06:02:36 GMT
+  recorded_at: Sat, 26 Dec 2015 10:47:58 GMT
 recorded_with: VCR 2.9.3
