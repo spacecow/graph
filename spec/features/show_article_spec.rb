@@ -24,16 +24,24 @@ describe 'Show article' do
         create :participation, event_id:event.id, participant_id:article.id
         tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
         tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
-        tcreate :citation, origin_id:article.id, content:"some citation"
-        tcreate :citation, target_id:article.id, content:"citerad"
+        citation_target = create :article, name:"a citation target",
+          universe_id:universe.id
+        tcreate :citation, origin_id:article.id, content:"some citation",
+          target_id:citation_target.id
+        citation_origin = create :article, name:"a citation origin",
+          universe_id:universe.id
+        tcreate :citation, target_id:article.id, content:"citerad",
+          origin_id:citation_origin.id
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
         expect(page).to have_content "Kelsier"
         expect(page).to have_content "a note"
         expect(page).to have_content "hero"
         expect(page).to have_content "Allomancy"
-        expect(page).to have_content "some citation"
-        expect(page).to have_content "citerad"
+        expect(page.find('.citations.direct')).to have_content "some citation"
+        expect(page.find('.citations.direct')).to have_content "a citation target"
+        expect(page.find('.citations.inverse')).to have_content "citerad"
+        expect(page.find('.citations.inverse')).to have_content "a citation origin"
         expect(page.find('.relations.list')).to have_content "Owns"
         expect(page.find('.relations.list')).to have_content "Sword"
         expect(page.find('.relations.list')).to have_content "very sharp"

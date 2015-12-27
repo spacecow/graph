@@ -19,11 +19,10 @@ describe "articles/show.html.erb" do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/articles/show.html.erb" }
-  let(:locals){{ article:article, relation: :relation, targets: :targets, 
-                 notes: :notes, note: :note, events:events, 
-                 article_tags: :article_tags, relation_types: :relation_types,
-                 relations: :relations, tagging: :tagging, tags: :tags,
-                 citation: :citation }}
+  let(:locals){{ article:article, relation: :relation, article_tags: :article_tags,
+    relation_targets: :relation_targets, notes: :notes, note: :note, events:events, 
+    relation_types: :relation_types, relations: :relations, tagging: :tagging,
+    tags: :tags, citation: :citation }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
   let(:events){ :events }
@@ -40,7 +39,7 @@ describe "articles/show.html.erb" do
     expect(bind).to receive(:render).with(partial:"citations/inverse_citation",
       collection:[:inverse_citation], as: :citation){ "render_inverse_mentions" }
     expect(bind).to receive(:render).
-      with("relations/form", relation: :relation, targets: :targets,
+      with("relations/form", relation: :relation, targets: :relation_targets,
             relation_types: :relation_types).and_return("render_relation_form")
     expect(bind).to receive(:render).
       with(:notes, tag_id:nil){ "render_notes" }

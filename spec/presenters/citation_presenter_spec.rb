@@ -15,4 +15,23 @@ describe CitationPresenter do
     it{ should be :citation }
   end
 
+  describe "#target_name" do
+    let(:function){ :target_name }
+    before{ expect(citation).to receive(:target).with(no_args){ target }}
+    context "target is nil" do
+      let(:target){ nil }
+      it{ should be nil }
+    end
+    context "target exists" do
+      let(:target){ :target }
+      before do
+        expect(view).to receive(:link_to).with(:target_name,:path){ "link" }
+        expect(view).to receive(:article_path).with(:target_id){ :path }
+        expect(citation).to receive(:target_name).with(no_args){ :target_name }
+        expect(citation).to receive(:target_id).with(no_args){ :target_id }
+      end
+      it{ should eq "link: " }
+    end
+  end
+
 end

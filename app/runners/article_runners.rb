@@ -8,7 +8,7 @@ module ArticleRunners
       note = repo.new_note article_id:article.id 
       notes = article.notes
       relation = repo.new_relation origin_id:article.id
-      targets = repo.articles(universe_id:universe_id).
+      relation_targets = repo.articles(universe_id:universe_id).
         reject{|e| e.id==article.id}.
         reject{|e| article.target_ids.include?(e.id)}
       events = article.events
@@ -19,7 +19,7 @@ module ArticleRunners
       tagging = repo.new_tagging tagable_id:article.id, tagable_type:"Article"
       tags = repo.tags
       citation = repo.new_citation origin_id:article.id
-      success article, note, notes, relation, targets, events, relation_types, relations, article_tags, tagging, tags, citation
+      success article, note, notes, relation, relation_targets, events, relation_types, relations, article_tags, tagging, tags, citation
     end
   end
 

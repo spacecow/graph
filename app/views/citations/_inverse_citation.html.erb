@@ -2,6 +2,9 @@
 
 <li class="citation">
   <span class="content"><%= presenter.content %></span>
+  <%= content_tag :span, class:["origin name", presenter.origin_gender].join(" ") do %>
+    <%= presenter.origin_name %>
+  <% end %>
 </li>
 
 <% end %>

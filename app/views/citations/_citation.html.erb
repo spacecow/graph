@@ -1,6 +1,9 @@
 <% present citation do |presenter| %>
 
 <li class="citation">
+  <%= content_tag :span, class:["target name", presenter.target_gender].join(" ") do %>
+    <%= presenter.target_name %>
+  <% end %>
   <span class="content"><%= presenter.content %></span>
 </li>
 

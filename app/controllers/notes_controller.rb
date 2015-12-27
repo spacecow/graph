@@ -35,18 +35,18 @@ class NotesController < ApplicationController
       on.failure do |note|
         @note = note
         run(ArticleRunners::Show, note.article_id, universe_id:current_universe_id) do |on|
-          on.success do |article, _, notes, relation, targets, events, relation_types, relations, article_tags, tagging, tags, citation|
-            @article        = article
-            @notes          = notes
-            @relation       = relation
-            @targets        = targets
-            @events         = events
-            @relation_types = relation_types
-            @relations      = relations
-            @article_tags   = article_tags
-            @tagging = tagging
-            @tags = tags
-            @citation = citation
+          on.success do |article, _, notes, relation, relation_targets, events, relation_types, relations, article_tags, tagging, tags, citation|
+            @article          = article
+            @notes            = notes
+            @relation         = relation
+            @relation_targets = relation_targets
+            @events           = events
+            @relation_types   = relation_types
+            @relations        = relations
+            @article_tags     = article_tags
+            @tagging          = tagging
+            @tags             = tags
+            @citation         = citation
           end
         end
         render 'articles/show' 
