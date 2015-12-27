@@ -10,7 +10,7 @@ describe "citations/_form.html.erb" do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/citations/_form.html.erb" }
-  let(:locals){{ citation: :citation }}
+  let(:locals){{ citation: :citation, targets: :targets }}
   let(:builder){ double :builder }
 
   before do
@@ -26,6 +26,9 @@ describe "citations/_form.html.erb" do
     expect(builder).to receive(:hidden_field).with(:origin_id){ "hidden_origin_id" }
     expect(builder).to receive(:label).with(:content, "Citation"){ "label_content" }
     expect(builder).to receive(:text_field).with(:content){ "text_content" }
+    expect(builder).to receive(:label).with(:target_id, "About"){ "label_target" }
+    expect(builder).to receive(:collection_select).
+      with(:target_id, :targets, :id, :name, include_blank:true){ "select_target" }
     expect(builder).to receive(:submit).with("Add"){ "add_citation" }
   end
 
@@ -39,6 +42,12 @@ describe "citations/_form.html.erb" do
     subject{ page.find 'div.content' }
     its(:text){ should match /label_content\s*text_content/m }
   end
+
+  describe "Form target" do
+    subject{ page.find 'div.target' }
+    its(:text){ should match /label_target\s*select_target/m }
+  end
+
 
   describe "Form submit" do
     its(:text){ should include "add_citation" }

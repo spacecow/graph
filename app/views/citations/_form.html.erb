@@ -4,5 +4,9 @@
     <%= f.label :content, "Citation" %>
     <%= f.text_field :content %>
   </div>
+  <div class="target">
+    <%= f.label :target_id, "About" %>
+    <%= f.collection_select :target_id, targets, :id, :name, include_blank:true %>
+  </div>
   <%= f.submit "Add" %>
 <% end %>

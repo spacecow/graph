@@ -10,10 +10,13 @@ describe "Add citation" do
         visit universes_path
         click_link "The Long Earth"
         article = create :article, universe_id:universe.id
+        create :article, universe_id:universe.id, name:"Shadow World"
         visit article_path(article.id)
-        fill_in "Citation", with:"Shadow World"
+        fill_in "Citation", with:"It is dark"
+        select "Shadow World", from:"About"
         within('.citation.new.form'){ click_button "Add" }
         expect(current_path).to eq article_path(article.id) 
+        expect(page.find 'li.citation').to have_content "It is dark"
         expect(page.find 'li.citation').to have_content "Shadow World"
       ensure
         tdelete :citations

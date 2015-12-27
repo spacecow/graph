@@ -22,7 +22,7 @@ describe "articles/show.html.erb" do
   let(:locals){{ article:article, relation: :relation, article_tags: :article_tags,
     relation_targets: :relation_targets, notes: :notes, note: :note, events:events, 
     relation_types: :relation_types, relations: :relations, tagging: :tagging,
-    tags: :tags, citation: :citation }}
+    tags: :tags, citation: :citation, citation_targets: :citation_targets }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
   let(:events){ :events }
@@ -42,13 +42,14 @@ describe "articles/show.html.erb" do
       with("relations/form", relation: :relation, targets: :relation_targets,
             relation_types: :relation_types).and_return("render_relation_form")
     expect(bind).to receive(:render).
+      with("citations/form", citation: :citation, targets: :citation_targets).
+      and_return("render_citation_form")
+    expect(bind).to receive(:render).
       with(:notes, tag_id:nil){ "render_notes" }
     expect(bind).to receive(:render).with(:events){ "render_events" } unless events.empty?
     expect(bind).to receive(:render).with([:citation]){ "render_citations" }
     expect(bind).to receive(:render).
       with("notes/form", note: :note).and_return("render_note_form")
-    expect(bind).to receive(:render).
-      with("citations/form", citation: :citation).and_return("render_citation_form")
     expect(bind).to receive(:render).
       with("taggings/form", tagging: :tagging, tags: :tags).
       and_return("render_tagging_form")

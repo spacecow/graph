@@ -27,7 +27,8 @@ describe "ArticlesController" do
         with(ArticleRunners::Show,:id,universe_id: :universe_id).and_yield(runner)
       expect(runner).to receive(:success).with(no_args).
         and_yield(:article,:note,:notes,:relation,:targets, :events,
-          :relation_types, :relations, :article_tags, :tagging, :tags, :citation)
+          :relation_types, :relations, :article_tags, :tagging, :tags, :citation,
+          :citation_targets)
     end
     it{ subject }
   end

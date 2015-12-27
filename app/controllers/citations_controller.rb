@@ -12,7 +12,7 @@ class CitationsController < ApplicationController
   private
 
     def citation_params
-      params.require(:citation).permit(:content,:origin_id)
+      params.require(:citation).permit(:content,:origin_id,:target_id)
     end
 
 end

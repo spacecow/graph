@@ -21,7 +21,7 @@ describe "Add relation" do
                    "Practitioner", "Queen", "Resident", "Right hand", "Sister",
                    "Swordbearer", "Teacher", "Uncle", "Variant", "Warder",
                    "Wielder"] 
-          expect(all(".target option").map(&:text)).to eq ["","Swordmaster"] 
+          expect(all(".relation .target option").map(&:text)).to eq ["","Swordmaster"] 
           select "Owner", from:"Relation"
           select "Swordmaster", from:"Relative"
           within('.relation.new.form'){ click_button "Add" }
@@ -37,7 +37,7 @@ describe "Add relation" do
                    "Practitioner", "Queen", "Resident", "Right hand", "Sister",
                    "Swordbearer", "Teacher", "Uncle", "Variant", "Warder",
                    "Wielder"] 
-          expect(all(".target option").map(&:text)).to eq [""] 
+          expect(all(".relation .target option").map(&:text)).to eq [""] 
         ensure
           delete :relations
           delete :articles
