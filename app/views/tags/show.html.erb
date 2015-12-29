@@ -1,8 +1,12 @@
+<% present @tag do |presenter| %>
+
 <div class="tag">
-  <h1><%= @tag.title %></h1>
+  <h1><%= presenter.title %></h1>
 
   <ul class='notes'>
     <%= render @notes, article_id:nil, tag_id:@tag.id %>
   </ul>
 
 </div>
+
+<% end %>

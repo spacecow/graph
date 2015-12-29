@@ -2,9 +2,15 @@ class Event
   include ActiveModel::Model
 
   attr_reader :children, :parents, :universe, :notes, :participations, :mentions,
-    :inverse_mentions
+    :inverse_mentions, :article_mentions
   attr_accessor :id, :title, :parent_tokens, :child_tokens
   attr_writer :universe_id
+
+  def article_mentions= arr
+    @article_mentions = arr.map do |params|
+      ArticleMention.new params
+    end
+  end
 
   def available_articles articles; articles.
     reject{|e| participant_ids.include? e.id}

@@ -8,13 +8,22 @@
   <div class="clear"></div>
 
   <% if @event.mentions.present? or @event.inverse_mentions.present? %>
-  <div class="mentions list">
+  <div class="mentions events list">
     <h2>Mentions</h2>
-    <ul class="mentions inverse left_arrow">
+    <ul class="mentions events inverse left_arrow">
       <%= render partial:"mentions/inverse_mention", collection:@event.inverse_mentions, as: :mention %>
     </ul>
-    <ul class="mentions direct right_arrow"><%= render @event.mentions %></ul>
+    <ul class="mentions events direct right_arrow"><%= render @event.mentions %></ul>
     <div class="clear"></div>
+  </div>
+  <% end %>
+
+  <% if @event.article_mentions.present? %>
+  <div class="mentions articles list">
+    <h2>Article Mentions</h2>
+    <ul class="mentions articles direct">
+      <%= render @event.article_mentions %>
+    </ul>
   </div>
   <% end %>
 

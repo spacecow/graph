@@ -19,16 +19,18 @@ describe "tags/show.html.erb" do
 
   let(:filepath){ "./app/views/tags/show.html.erb" }
   let(:locals){{ tag:tag, notes: :notes }}
-
   let(:tag){ double :tag }
+  let(:presenter){ double :presenter } 
 
   subject(:page){ Capybara.string(rendering).find '.tag' }
 
   before do
-    def bind.render obj, *opts; end
+    def bind.render obj, *opts; raise NotImplementedError end
+    def bind.present obj; raise NotImplementedError end
     expect(bind).to receive(:render).
       with(:notes, article_id:nil, tag_id: :tag_id){ "list" }
-    expect(tag).to receive(:title).with(no_args){ "header" }
+    expect(bind).to receive(:present).with(tag).and_yield(presenter)
+    expect(presenter).to receive(:title).with(no_args){ "header" }
     expect(tag).to receive(:id).with(no_args){ :tag_id }
   end
 
