@@ -1,5 +1,6 @@
 class Repository
   include Repo::ArticleMethods
+  include Repo::ArticleMentionMethods
   include Repo::ArticleTypeMethods
   include Repo::BookMethods
   include Repo::CitationMethods

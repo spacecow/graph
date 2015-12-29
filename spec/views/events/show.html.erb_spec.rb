@@ -13,7 +13,8 @@ describe "events/show.html.erb" do
   let(:filepath){ "./app/views/events/show.html.erb" }
   let(:locals){{ event:event, participation: :participation, articles: :articles,
     parent_step: :parent_step, notes: :notes, note: :note, events: :events,
-    participations: :participations,  mention: :mention }}
+    participations: :participations,  mention: :mention,
+    article_mention: :article_mention }}
   let(:event){ double :event, id: :event_id }
   let(:presenter){ double :presenter }
 
@@ -46,6 +47,9 @@ describe "events/show.html.erb" do
     expect(bind).to receive(:render).
       with("mentions/form", mention: :mention, mentions: :events).
       and_return("mention_form")
+    expect(bind).to receive(:render).
+      with("article_mentions/form", mention: :article_mention, mentions: :articles).
+      and_return("article_mention_form")
     expect(bind).to receive(:render).
       with("participations/form", participation: :participation, articles: :articles).
       and_return("participation_form")
@@ -126,8 +130,13 @@ describe "events/show.html.erb" do
   end
 
   describe "Mention form" do
-    subject{ page.find '.mention.new.form' }
+    subject{ page.find '.mention.event.new.form' }
     its(:text){ should include "mention_form" }
+  end
+
+  describe "Article mention form" do
+    subject{ page.find '.mention.article.new.form' }
+    its(:text){ should include "article_mention_form" }
   end
 
   describe "Step form" do

@@ -11,7 +11,7 @@ describe "Create event note" do
         click_link event.universe_title
         visit event_path(event.id)
         fill_in 'Note', with:'a note'
-        click_on 'Create'
+        within('.note.new.form'){ click_on 'Create' }
         expect(current_path).to eq event_path(event.id)
         expect(page).to have_content 'a note' 
       ensure

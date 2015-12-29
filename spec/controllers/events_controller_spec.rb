@@ -24,7 +24,7 @@ describe "EventsController" do
         with(EventRunners::Show, :id, universe_id: :universe_id).and_yield(runner)
       expect(runner).to receive(:success).with(no_args).
         and_yield(:event,:events,:articles,:participation,:participations,
-          :parent_step,:notes,:note,:mention)
+          :parent_step,:notes,:note,:mention,:article_mention)
       expect(controller).to receive(:current_universe_id).
         with(no_args).at_least(1){ :universe_id }
     end

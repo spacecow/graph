@@ -31,10 +31,12 @@ module EventRunners
         expect(event).to receive(:notes).with(no_args){ :notes }
         expect(repo).to receive(:new_note).with(event_id: :event_id){ :note }
         expect(repo).to receive(:new_mention).with(origin_id: :event_id){ :mention }
+        expect(repo).to receive(:new_article_mention).
+          with(origin_id: :event_id){ :article_mention }
       end
       subject{ Show.new(context).run :id, universe_id: :universe_id }
       it{ should eq([event, :events, :articles, :participation, :participations,
-        :parent_step, :notes, :note, :mention]) }
+        :parent_step, :notes, :note, :mention, :article_mention]) }
     end
 
     describe New do

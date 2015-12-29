@@ -3,16 +3,17 @@ class EventsController < ApplicationController
   def show
     return redirect_to universes_path if current_universe_id.nil?
     run(EventRunners::Show, params[:id], universe_id:current_universe_id) do |on|
-      on.success do |event, events, articles, participation, participations, parent_step, notes, note, mention|
-        @event          = event
-        @events         = events
-        @articles       = articles
-        @participation  = participation
-        @participations = participations 
-        @parent_step    = parent_step
-        @notes          = notes
-        @note           = note
-        @mention        = mention
+      on.success do |event, events, articles, participation, participations, parent_step, notes, note, mention, article_mention|
+        @event           = event
+        @events          = events
+        @articles        = articles
+        @participation   = participation
+        @participations  = participations
+        @parent_step     = parent_step
+        @notes           = notes
+        @note            = note
+        @mention         = mention
+        @article_mention = article_mention
       end
     end
   end

@@ -15,7 +15,8 @@ module EventRunners
       notes = event.notes
       note = repo.new_note event_id:event.id 
       mention = repo.new_mention origin_id:event.id
-      success event, events, articles, participation, participations, parent_step, notes, note, mention
+      article_mention = repo.new_article_mention origin_id:event.id
+      success event, events, articles, participation, participations, parent_step, notes, note, mention, article_mention
     end
   end
 

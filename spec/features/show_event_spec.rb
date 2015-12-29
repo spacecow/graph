@@ -36,7 +36,7 @@ describe "Show event" do
           "Blue wife - all blue")
         expect(page.find '.participations .male').to have_content "John Snow"
         expect(all(".parent form option").map(&:text)).to eq [""]
-        expect(all(".mention form option").map(&:text)).to eq [""]
+        expect(all(".mention.event form option").map(&:text)).to eq [""]
       ensure
         tdelete :article_mentions
         tdelete :mentions

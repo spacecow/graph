@@ -1,0 +1,702 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/api/events
+    body:
+      encoding: UTF-8
+      string: '{"event":{}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"da1bbea799b3e4371079b3f6d5b11a31"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4faca116-1b8b-4af4-b8e2-e84b1e0e1ee9
+      X-Runtime:
+      - '0.012147'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '95'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2705,"title":"factory title","universe":{"id":4526,"title":"factory
+        title337"}}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0e7fe7e07efe9a0f51508141a0787928"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 757d9ec4-fd7b-4a16-aeaa-4d5cb6dbef47
+      X-Runtime:
+      - '0.004109'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '132'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universes":[{"id":4524,"title":"factory title335"},{"id":4525,"title":"factory
+        title336"},{"id":4526,"title":"factory title337"}]}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/universes/4526?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6bc71fb1e1c0bb2d58ab6d188a565dc7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 409edc10-f2d9-4ad0-9b13-abf55ec97cc5
+      X-Runtime:
+      - '0.003434'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '65'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universe":{"id":4526,"title":"factory title337","articles":[]}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: article%5Bgender%5D=n&article%5Bname%5D=Blue+wife&article%5Btype%5D=Character&article%5Buniverse_id%5D=4526
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"e619e630472f36b0ad0fdcccaa7ff592"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f3fe139a-430c-46f6-bfba-741669542ddc
+      X-Runtime:
+      - '0.013283'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '164'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":2582,"name":"Blue wife","universe_id":4526,"type":"Character","gender":"n","tags":[],"citations":[],"inverse_citations":[],"notes":[],"events":[]}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events/2705?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b520d86423d87bd927d540ef01ba93b6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a06a87b3-20c7-4e07-85a4-b10e600df873
+      X-Runtime:
+      - '0.008295'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '161'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2705,"title":"factory title","parents":[],"children":[],"participations":[],"mentions":[],"inverse_mentions":[],"article_mentions":[],"notes":[]}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=4526
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9086d1c28abb4c54d6a46efbd103b0e7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b5b8a062-1179-4c24-a48a-2a493895a390
+      X-Runtime:
+      - '0.003862'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '48'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"events":[{"id":2705,"title":"factory title"}]}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=4526
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1d8f3c6d063899abe5415765d26513b3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0a265fd3-daf8-4c07-837d-f5b88afc582d
+      X-Runtime:
+      - '0.003886'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '77'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"articles":[{"id":2582,"name":"Blue wife","type":"Character","gender":"n"}]}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/api/article_mentions
+    body:
+      encoding: UTF-8
+      string: '{"article_mention":{"origin_id":"2705","target_id":"2582","content":"an
+        article mention"},"access_token":"90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.v1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a3f6aae1bd7d52e1b115370233565b62"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2a8ceb7c-f905-4a07-a82b-e7472dedbcf4
+      X-Runtime:
+      - '0.013766'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '146'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"article_mention":{"id":389,"content":"an article mention","origin":{"id":2705,"title":"factory
+        title"},"target":{"id":2582,"name":"Blue wife"}}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events/2705?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"cce008df3b357a6c5d57f01e2ea10045"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 05bd4918-10ed-4323-8311-be021518e5ed
+      X-Runtime:
+      - '0.009347'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '242'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"event":{"id":2705,"title":"factory title","parents":[],"children":[],"participations":[],"mentions":[],"inverse_mentions":[],"article_mentions":[{"id":389,"content":"an
+        article mention","target":{"id":2582,"name":"Blue wife"}}],"notes":[]}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=4526
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9086d1c28abb4c54d6a46efbd103b0e7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 64f82c4f-a4e3-4332-acc2-059753da9aa2
+      X-Runtime:
+      - '0.004839'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '48'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"events":[{"id":2705,"title":"factory title"}]}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=4526
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1d8f3c6d063899abe5415765d26513b3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6ffa4d2e-c70d-454d-881e-0f4bb77fe5a0
+      X-Runtime:
+      - '0.003921'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '77'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"articles":[{"id":2582,"name":"Blue wife","type":"Character","gender":"n"}]}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/events
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: 'Bad Request '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - da77981f-6c72-46f1-a083-ed11a2850e72
+      X-Runtime:
+      - '0.004045'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"":{"":null}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Depth:
+      - Infinity
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 400
+      message: 'Bad Request '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 6bbe1e28-e20c-4735-95c3-600d16b91373
+      X-Runtime:
+      - '0.006933'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"":{"":null}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/universes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: 'Bad Request '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 56b9daa0-f3e1-45f9-86c9-6c0887a4bffc
+      X-Runtime:
+      - '0.004962'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Tue, 29 Dec 2015 12:57:44 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: UTF-8
+      string: '{"":{"":null}}'
+    http_version: 
+  recorded_at: Tue, 29 Dec 2015 12:57:44 GMT
+recorded_with: VCR 2.9.3
