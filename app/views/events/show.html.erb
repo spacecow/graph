@@ -7,6 +7,13 @@
   <ul class="children right_arrow"><%= render @event.children %></ul>
   <div class="clear"></div>
 
+  <% if @notes.present? %>
+  <div class="notes list">
+    <h2>Notes</h2>
+    <ul class='notes'><%= render @notes, tag_id:nil %></ul>
+  </div>
+  <% end %>
+
   <% if @event.mentions.present? or @event.inverse_mentions.present? %>
   <div class="mentions events list">
     <h2>Mentions</h2>
@@ -24,13 +31,6 @@
     <ul class="mentions articles direct">
       <%= render @event.article_mentions %>
     </ul>
-  </div>
-  <% end %>
-
-  <% if @notes.present? %>
-  <div class="notes list">
-    <h2>Notes</h2>
-    <ul class='notes'><%= render @notes, tag_id:nil %></ul>
   </div>
   <% end %>
 
