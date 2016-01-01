@@ -3,6 +3,7 @@ class ParticipationPresenter < BasePresenter
   presents :participation
 
   def content
+    content = participation.content
     content = "Edit" if content.blank?
     (" - " + h.link_to(content, h.edit_participation_path(participation.id))).
       html_safe

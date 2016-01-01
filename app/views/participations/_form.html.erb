@@ -1,6 +1,10 @@
 <%= form_for participation do |f| %>
   <!-- TODO insert article_id in div? -->
   <%= f.hidden_field :event_id %>
+  <div class="content">
+    <%= f.label :content, "Comment" %>
+    <%= f.text_field :content %>
+  </div>
   <div class="participant">
     <%= f.label :participant_id, "Participant" %>
     <%= f.collection_select :participant_id, articles, :id, :name, include_blank:true %>

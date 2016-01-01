@@ -11,11 +11,12 @@ describe "Create article mention" do
         click_link event.universe_title
         create :article, name:"Blue wife", universe_id:event.universe_id
         visit event_path event.id
-        fill_in "Comment", with:"an article mention"
+        within('.mention.article.new.form'){ fill_in "Comment", with:"an article mention" }
         within('.mention.article.new.form'){ select "Blue wife", from:"Mention" }
         within('.mention.article.new.form'){ click_button "Create" }
         expect(current_path).to eq event_path(event.id) 
         expect(page.find 'li.mention.article').to have_content "Blue wife"
+        expect(page.find 'li.mention.article').to have_content "an article mention"
       ensure
         tdelete :article_mentions
         tdelete :events

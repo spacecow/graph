@@ -24,6 +24,8 @@ describe "participations/_form.html.erb" do
     end
     expect(bind).to receive(:form_for).with(:participation).and_yield(builder)
     expect(builder).to receive(:hidden_field).with(:event_id){ "hidden_event_id" }
+    expect(builder).to receive(:label).with(:content,"Comment"){ "label_content" }
+    expect(builder).to receive(:text_field).with(:content){ "text_content" }
     expect(builder).to receive(:label).
       with(:participant_id, "Participant"){ "label_article_id" }
     expect(builder).to receive(:collection_select).
@@ -36,6 +38,11 @@ describe "participations/_form.html.erb" do
 
   describe "Form event_id" do
     its(:text){ should include "hidden_event_id" }
+  end
+
+  describe "Form content" do
+    subject{ page.find 'div.content' }
+    its(:text){ should match /label_content\s*text_content/m }
   end
 
   describe "Form participant" do
