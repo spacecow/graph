@@ -40,6 +40,10 @@
     </ul>
   </div>
 
+  <div class="note new form">
+    <%= render "notes/form", note:@note %>
+  </div>
+
   <div class="relation new form">
     <%= render "relations/form",
         relation:@relation, targets:@relation_targets, relation_types:@relation_types %>
@@ -51,10 +55,6 @@
 
   <div class="tagging new form">
     <%= render "taggings/form", tagging:@tagging, tags:@tags %>
-  </div>
-
-  <div class="note new form">
-    <%= render "notes/form", note:@note %>
   </div>
 
 </div>
