@@ -3,7 +3,7 @@ class Participation
 
   attr_reader :participant
   attr_writer :event_id, :participant_id
-  attr_accessor :id
+  attr_accessor :id, :content
 
   def event= params; @event = Event.new params end
   def event_id; @event_id || @event.id end

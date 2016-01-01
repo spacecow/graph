@@ -27,6 +27,7 @@ describe "participations/_participation.html.erb" do
     expect(bind).to receive(:content_tag).
       with(:span,class:%w(name male).join(' ')).and_yield
     expect(presenter).to receive(:name).with(no_args){ "name" }
+    expect(presenter).to receive(:content).with(no_args){ "content" }
     expect(presenter).to receive(:gender).with(no_args){ "male" }
     expect(presenter).to receive(:delete_link).with(no_args){ "delete_link" }
   end
@@ -35,6 +36,11 @@ describe "participations/_participation.html.erb" do
 
   describe "Name" do
     its(:text){ is_expected.to include "name" } 
+  end
+
+  describe "Edit link" do
+    subject{ page.find '.actions .edit' }
+    its(:text){ is_expected.to eq "content" } 
   end
 
   describe "Delete link" do
