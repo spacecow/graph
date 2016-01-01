@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :events, only:[:show,:index,:new,:create,:edit,:update,:destroy]
   resources :mentions, only:[:create]
   resources :notes, only:[:show,:new,:create,:edit,:update,:destroy]
-  resources :participations, only:[:create,:edit,:destroy]
+  resources :participations, only:[:create,:edit,:update,:destroy]
   resources :references, only:[:show,:create,:edit,:update]
   resources :relations, only:[:show,:create]
   resources :steps, only:[:create]

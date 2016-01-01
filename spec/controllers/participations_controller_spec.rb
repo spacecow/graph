@@ -19,7 +19,6 @@ describe "ParticipationsController" do
     before do
       def controller.run runner, *opts; raise NotImplementedError end
       def controller.redirect_to path; raise NotImplementedError end
-      expect(controller).to receive(:redirect_to).with(:path){ :redirect }
     end
 
     describe "#create" do
@@ -34,8 +33,56 @@ describe "ParticipationsController" do
         expect(runner).to receive(:success).with(no_args).and_yield(participation)
         expect(controller).to receive(:event_path).with(:event_id){ :path }
         expect(participation).to receive(:event_id).with(no_args){ :event_id }
+        expect(controller).to receive(:redirect_to).with(:path){ :redirect }
       end
       it{ should be :redirect }
+    end
+
+    describe "#edit" do
+      let(:function){ :edit }
+      let(:session){{}}
+      let(:params){{ id: :id }}
+      let(:request){ double :request }
+      before do
+        stub_const "ParticipationRunners::Edit", Class.new
+        def controller.session; raise NotImplementedError end 
+        def controller.request; raise NotImplementedError end 
+        def controller.params; raise NotImplementedError end 
+        def controller.current_universe_id; raise NotImplementedError end 
+        expect(controller).to receive(:session).with(no_args){ session }
+        expect(controller).to receive(:params).with(no_args){ params }
+        expect(controller).to receive(:request).with(no_args){ request }
+        expect(controller).to receive(:current_universe_id).
+          with(no_args){ :universe_id }
+        expect(request).to receive(:referer).with(no_args){ :path }
+        expect(controller).to receive(:run).
+          with(ParticipationRunners::Edit, :id, universe_id: :universe_id).
+          and_yield(runner)
+        expect(runner).to receive(:success).with(no_args).
+          and_yield(:participation,:articles)
+      end
+      it{ subject }
+    end
+
+    describe "#update" do
+      let(:function){ :update }
+      let(:params){{ id: :id }}
+      let(:session){{ redirect_to: :path }}
+      before do
+        stub_const "ParticipationRunners::Update", Class.new
+        def controller.params; raise NotImplementedError end 
+        def controller.session; raise NotImplementedError end 
+        expect(controller).to receive(:params).with(no_args){ params }
+        expect(controller).to receive(:session).with(no_args){ session }
+        expect(controller).to receive(:participation_params).
+          with(no_args){ :params }
+        expect(controller).to receive(:run).
+          with(ParticipationRunners::Update, :id, :params).and_yield(runner)
+        expect(runner).to receive(:success).with(no_args).and_yield
+        expect(controller).to receive(:redirect_to).with(:path){ :redirect }
+      end
+      it{ should be :redirect }
+      it{ subject; expect(session).to eq({}) }
     end
 
     describe "#destroy" do
@@ -56,6 +103,7 @@ describe "ParticipationsController" do
           with(ParticipationRunners::Destroy, :id).and_yield(runner)
         expect(request).to receive(:referer).with(no_args){ :path }
         expect(runner).to receive(:success).with(no_args).and_yield
+        expect(controller).to receive(:redirect_to).with(:path){ :redirect }
       end
       it{ should be :redirect }
       it{ subject; expect(session).to eq({}) }

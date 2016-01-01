@@ -10,8 +10,9 @@ describe "participations/_form.html.erb" do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ "./app/views/participations/_form.html.erb" }
-  let(:locals){{ participation: :participation, articles: :articles }}
+  let(:locals){{ participation:participation, articles: :articles }}
   let(:builder){ double :builder }
+  let(:participation){ double :participation }
 
   before do
     class ErbBinding
@@ -19,10 +20,14 @@ describe "participations/_form.html.erb" do
         hash.each do |key, value|
           singleton_class.send(:define_method,key){ value }
         end
-        def form_for obj; raise NotImplementedError end
+        def form_for obj, *opts; raise NotImplementedError end
       end
     end
-    expect(bind).to receive(:form_for).with(:participation).and_yield(builder)
+    def bind.participation_path id; raise NotImplementedError end
+    expect(participation).to receive(:id).with(no_args).at_least(1){ :id }
+    expect(bind).to receive(:form_for).
+      with(participation, url: :path, method: :put).and_yield(builder)
+    expect(bind).to receive(:participation_path).with(:id){ :path }
     expect(builder).to receive(:hidden_field).with(:event_id){ "hidden_event_id" }
     expect(builder).to receive(:label).with(:content,"Comment"){ "label_content" }
     expect(builder).to receive(:text_field).with(:content){ "text_content" }
@@ -31,7 +36,7 @@ describe "participations/_form.html.erb" do
     expect(builder).to receive(:collection_select).
       with(:participant_id, :articles, :id, :name, include_blank:true).
       and_return("select_article_id")
-    expect(builder).to receive(:submit).with("Add"){ "submit_add" }
+    expect(builder).to receive(:submit).with("Update"){ "submit_update" }
   end
 
   subject(:page){ Capybara.string rendering }
@@ -51,7 +56,7 @@ describe "participations/_form.html.erb" do
   end
 
   describe "Form submit" do
-    its(:text){ should include "submit_add" }
+    its(:text){ should include "submit_update" }
   end
 
 end

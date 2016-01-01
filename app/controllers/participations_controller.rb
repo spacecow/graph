@@ -9,6 +9,24 @@ class ParticipationsController < ApplicationController
     #TODO if failure
   end
 
+  def edit
+    session[:redirect_to] = request.referer || root_path
+    run(ParticipationRunners::Edit, params[:id], universe_id:current_universe_id) do |on|
+      on.success do |participation, articles|
+        @participation = participation
+        @articles = articles
+      end
+    end
+  end
+
+  def update
+    run(ParticipationRunners::Update, params[:id], participation_params) do |on|
+      on.success do
+        redirect_to session.delete(:redirect_to)
+      end
+    end
+  end
+
   def destroy
     session[:redirect_to] = request.referer || root_path
     run(ParticipationRunners::Destroy, params[:id]) do |on|
