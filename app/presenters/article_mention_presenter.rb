@@ -16,6 +16,12 @@ class ArticleMentionPresenter < BasePresenter
     'n' => "neutral" }[mention.gender]
   end
 
-  def target_name; h.link_to mention.target_name, h.article_path(mention.target_id) end
+  def origin_title
+    h.link_to mention.origin_title, h.event_path(mention.origin_id)
+  end
+
+  def target_name
+    h.link_to mention.target_name, h.article_path(mention.target_id)
+  end
 
 end

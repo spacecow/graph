@@ -32,6 +32,9 @@ describe 'Show article' do
           universe_id:universe.id
         tcreate :citation, target_id:article.id, content:"citerad",
           origin_id:citation_origin.id
+        mention_event = tcreate :event, title:"Blue wedding"
+        tcreate :article_mention, origin_id:mention_event.id,
+          target_id:article.id, content:"all blue"
         visit article_path article.id
         expect(current_path).to eq article_path(article.id)
         expect(page).to have_content "Kelsier"
@@ -45,8 +48,11 @@ describe 'Show article' do
         expect(page.find('.relations.list')).to have_content "Owns"
         expect(page.find('.relations.list')).to have_content "Sword"
         expect(page.find('.relations.list')).to have_content "very sharp"
-        expect(page.find('.events.list')).to have_content "The Standoff"
+        expect(page.all('.events.list').first).to have_content "The Standoff"
+        expect(page.find('.mentions.events.list')).to have_content "Blue wedding"
+        expect(page.find('.mentions.events.list')).to have_content "all blue"
       ensure
+        tdelete :article_mentions
         tdelete :citations
         tdelete :article_notes
         tdelete :participations

@@ -32,12 +32,17 @@ describe "articles/show.html.erb" do
     def bind.present obj; end
     expect(bind).to receive(:present).with(article).and_yield(presenter)
     expect(article).to receive(:name).with(no_args){ "article_name" }
-    expect(article).to receive(:citations).with(no_args).at_least(1){ [:citation] }
+    expect(article).to receive(:citations).with(no_args).
+      at_least(1){ [:citation] }
+    expect(article).to receive(:mentions).with(no_args).at_least(1){ :mentions }
     expect(article).to receive(:inverse_citations).with(no_args){ [:inverse_citation] }
     expect(bind).to receive(:render).with(:relations){ "render_relations" }
     expect(bind).to receive(:render).with(:article_tags){ "render_article_tags" }
     expect(bind).to receive(:render).with(partial:"citations/inverse_citation",
       collection:[:inverse_citation], as: :citation){ "render_inverse_mentions" }
+    expect(bind).to receive(:render).with(
+      partial:"article_mentions/inverse_article_mention",
+      collection: :mentions, as: :article_mention){ "render_mentions" }
     expect(bind).to receive(:render).
       with("relations/form", relation: :relation, targets: :relation_targets,
             relation_types: :relation_types).and_return("render_relation_form")
@@ -74,17 +79,24 @@ describe "articles/show.html.erb" do
   end
 
   describe "Events section" do
-    context "no events exist" do
-      let(:events){ [] }
-      it{ should_not have_selector '.events.list'  }
-    end
     describe "Events header" do
-      subject{ page.find '.events.list h2' }
+      subject{ page.all('.events.list h2').first }
       its(:text){ should eq "Events" }
     end
     describe "Events list" do
-      subject{ page.find '.events.list ul.events' }
+      subject{ page.all('.events.list ul.events').first }
       its(:text){ should eq "render_events" }
+    end
+  end
+
+  describe "Mention section" do
+    describe "Mention header" do
+      subject{ page.find '.mentions.events.list h2' }
+      its(:text){ should eq "Mentions" }
+    end
+    describe "Events list" do
+      subject{ page.find '.mentions.events.list ul.events' }
+      its(:text){ should include "render_mentions" }
     end
   end
 

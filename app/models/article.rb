@@ -2,7 +2,7 @@ class Article
   include ActiveModel::Model
 
   attr_accessor :id, :name, :type, :universe_id, :gender
-  attr_reader :universe
+  attr_reader :universe, :mentions
 
   def citations; @citations || [] end
   def citations= arr
@@ -26,8 +26,13 @@ class Article
     end
   end
 
-  def notes; @notes || [] end
+  def mentions= arr
+    @mentions = arr.map do |params|
+      ArticleMention.new params
+    end
+  end
 
+  def notes; @notes || [] end
   def notes= arr
     @notes = arr.map do |params|
       Note.new(params)

@@ -40,6 +40,16 @@
     </ul>
   </div>
 
+  <% if @article.mentions.present? %>
+  <div class="mentions events list">
+    <h2>Mentions</h2>
+    <ul class="mentions events inverse">
+      <%= render partial:"article_mentions/inverse_article_mention",
+        collection:@article.mentions, as: :article_mention %>
+    </ul>
+  </div>
+  <% end %>
+
   <div class="note new form">
     <%= render "notes/form", note:@note %>
   </div>
