@@ -1,5 +1,9 @@
 <%= form_for mention do |f| %>
   <%= f.hidden_field :origin_id %>
+  <div class="content">
+    <%= f.label :content, "Comment" %>
+    <%= f.text_field :content %>
+  </div>
   <div class="mention">
     <%= f.label :target_id, "Mention" %>
     <%= f.collection_select :target_id, mentions, :id, :title, include_blank:true %>

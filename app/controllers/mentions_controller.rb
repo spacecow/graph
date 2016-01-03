@@ -11,7 +11,7 @@ class MentionsController < ApplicationController
   private
 
     def mention_params
-      params.require(:mention).permit(:origin_id, :target_id)
+      params.require(:mention).permit(:origin_id, :target_id, :content)
     end
 
 end
