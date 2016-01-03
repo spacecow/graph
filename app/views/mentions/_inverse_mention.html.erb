@@ -1,7 +1,8 @@
 <% present mention do |presenter| %>
 
-<li class="mention">
-  <%= presenter.origin_title %>
+<li class="mention event">
+  <span class="origin title"><%= presenter.origin_title %></span>
+  <span class="content"><%= presenter.content %></span>
 </li>
 
 <% end %>

@@ -4,7 +4,6 @@ class ArticleMentionPresenter < BasePresenter
 
   def content
     content = mention.content
-    return if content.nil?
     content = "Edit" if content.blank?
     (" - " + h.link_to(content, h.edit_article_mention_path(mention.id))).
       html_safe

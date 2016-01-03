@@ -16,10 +16,6 @@ describe ArticleMentionPresenter do
     before do
       expect(mdl).to receive(:content).with(no_args){ content }
     end
-    context "Content is nil" do
-      let(:content){ nil }
-      it{ should be nil }
-    end
     context "Content has value" do
       before do
         expect(mdl).to receive(:id).with(no_args){ :id }
@@ -32,6 +28,11 @@ describe ArticleMentionPresenter do
       end
       context "Content is blank" do
         let(:content){ "" }
+        before{ expect(view).to receive(:link_to).with("Edit",:path){ "link" }}
+        it{ should eq " - link" }
+      end
+      context "Content is nil" do
+        let(:content){ nil }
         before{ expect(view).to receive(:link_to).with("Edit",:path){ "link" }}
         it{ should eq " - link" }
       end

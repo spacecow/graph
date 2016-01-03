@@ -45,13 +45,16 @@
   <%= render "notes/form", note:@note %>
 </div>
 
-<div class="mention event new form">
+<fieldset class="mention event new form">
+  <legend>Event Mentions</legend>
   <%= render "mentions/form", mention:@mention, mentions:@events %>
-</div>
+</fieldset>
 
-<div class="mention article new form">
+<fieldset class="mention article new form">
+  <legend>Article Mentions</legend>
   <%= render "article_mentions/form", mention:@article_mention, mentions:@articles %>
-</div>
+</fieldset>
+<div class="clear"></div>
 
 <div class="parent step new form">
   <%= render "steps/form", step:@parent_step, parents:@events %>

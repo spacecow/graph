@@ -19,8 +19,10 @@ describe "Show event" do
         article = create :article, universe_id:universe.id, name:"John Snow",
           gender:'m'
         create :participation, participant_id:article.id, event_id:event.id
-        tcreate :mention, origin_id:event.id, target_id:blue.id
-        tcreate :mention, origin_id:yellow.id, target_id:event.id
+        tcreate :mention, origin_id:event.id, target_id:blue.id,
+          content:"all blue"
+        kuk = tcreate :mention, origin_id:yellow.id, target_id:event.id,
+          content:"all yellow"
         blue_wife = create :article, universe_id:universe.id, name:"Blue wife",
           gender:'f'
         tcreate :article_mention, origin_id:event.id, target_id:blue_wife.id,
@@ -30,8 +32,8 @@ describe "Show event" do
         expect(page.find 'ul.parents').to have_content "Green wedding"
         expect(page.find 'h1').to have_content "Red wedding"
         expect(page).to have_content "a note"
-        expect(page.find 'ul.mentions.events.direct').to have_content "Blue wedding"
-        expect(page.find 'ul.mentions.events.inverse').to have_content "Yellow wedding"
+        expect(page.find 'ul.mentions.events.direct').to have_content "Blue wedding - all blue"
+        expect(page.find 'ul.mentions.events.inverse').to have_content "Yellow wedding - all yellow"
         expect(page.find 'ul.mentions.articles.direct').to have_content(
           "Blue wife - all blue")
         expect(page.find '.participations .male').to have_content "John Snow"

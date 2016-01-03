@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :article_mentions, only:[:create,:edit,:update]
   resources :citations, only:[:create]
   resources :events, only:[:show,:index,:new,:create,:edit,:update,:destroy]
-  resources :mentions, only:[:create]
+  resources :mentions, only:[:create,:edit]
   resources :notes, only:[:show,:new,:create,:edit,:update,:destroy]
   resources :participations, only:[:create,:edit,:update,:destroy]
   resources :references, only:[:show,:create,:edit,:update]

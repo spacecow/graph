@@ -24,12 +24,19 @@ describe "mentions/_mention.html.erb" do
     def bind.present obj; raise NotImplementedError end
     expect(bind).to receive(:present).with(:mention).and_yield(presenter)
     expect(presenter).to receive(:target_title).with(no_args){ "target_title" }
+    expect(presenter).to receive(:content).with(no_args){ "content" }
   end
 
   subject(:page){ Capybara.string(rendering).find 'li.mention' }
 
   describe "Target title" do
-    its(:text){ is_expected.to include "target_title" } 
+    subject{ page.find '.target.title' }
+    its(:text){ is_expected.to eq "target_title" } 
+  end
+
+  describe "Content" do
+    subject{ page.find '.content' }
+    its(:text){ is_expected.to eq "content" } 
   end
 
 end

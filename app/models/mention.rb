@@ -3,7 +3,7 @@ class Mention
 
   attr_reader :target, :origin
   attr_writer :origin_id
-  attr_accessor :id
+  attr_accessor :id, :content
 
   def origin= params; @origin = Event.new params end
   def origin_id; @origin_id || @origin.try(:id) end
