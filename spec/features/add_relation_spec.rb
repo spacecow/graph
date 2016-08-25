@@ -10,7 +10,7 @@ describe "Add relation" do
           universe = create :universe, title:"The Wheel of Time"
           visit universes_path
           click_link "The Wheel of Time"
-          create :article, universe_id:universe.id, name:"Swordmaster"
+          swordmaster = create :article, universe_id:universe.id, name:"Swordmaster"
           article = create :article, universe_id:universe.id, name:"Sword"
           visit article_path(article.id)
           expect(all(".type option").map(&:text)).to eq [
@@ -23,9 +23,8 @@ describe "Add relation" do
             "Resident", "Right hand", "Ruler", "Sister", "Swordbearer",
             "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
             "Worshiper"] 
-          expect(all(".relation .target option").map(&:text)).to eq ["","Swordmaster"] 
           select "Owner", from:"Relation"
-          select "Swordmaster", from:"Relative"
+          fill_in "Relative", with:swordmaster.id
           within('.relation.new.form'){ click_button "Add" }
           expect(current_path).to eq article_path(article.id) 
           #TODO show relations
@@ -41,7 +40,6 @@ describe "Add relation" do
             "Resident", "Right hand", "Ruler", "Sister", "Swordbearer",
             "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
             "Worshiper"] 
-          expect(all(".relation .target option").map(&:text)).to eq [""] 
         ensure
           delete :relations
           delete :articles

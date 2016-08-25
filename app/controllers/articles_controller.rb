@@ -21,6 +21,17 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def index
+    redirect_to universes_path and return if current_universe_id.nil?
+    run(ArticleRunners::Index, current_universe_id, article_id:params[:article_id], target_ids:params[:target_ids]) do |on|
+      on.success do |targets|
+        respond_to do |f|
+          f.json {render json:targets.select{|e| e[:name].downcase.include?(params[:q].downcase)}}
+        end
+      end
+    end
+  end
+
   def new
     redirect_to universes_path and return if current_universe_id.nil?
     run(ArticleRunners::New) do |on|

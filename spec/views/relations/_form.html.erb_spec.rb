@@ -11,8 +11,8 @@ describe 'relations/_form.html.erb' do
 
   let(:filepath){ './app/views/relations/_form.html.erb' }
   let(:targets){ double :targets } 
-  let(:locals){{ relation: :relation, targets: targets,
-                 relation_types: :relation_types }}
+  let(:locals){{ relation: :relation, article_id: :article_id,
+                 relation_types: :relation_types, target_ids:[666, 888] }}
   let(:builder){ double :builder }
 
   before do
@@ -24,7 +24,10 @@ describe 'relations/_form.html.erb' do
       end
     end
     def bind.form_for obj; raise NotImplementedError end
+    def bind.articles_path opt; raise NotImplementedError end
     expect(bind).to receive(:form_for).with(:relation).and_yield(builder)
+    expect(bind).to receive(:articles_path).
+      with(format: :json, article_id: :article_id, target_ids:"666_888"){ :articles_path }
     expect(builder).to receive(:hidden_field).with(:origin_id){ "hidden_origin" }
     expect(builder).to receive(:label).
       with(:type,"Relation"){ "label_type" }
@@ -32,9 +35,8 @@ describe 'relations/_form.html.erb' do
       with(:type,:relation_types,include_blank:true){ "select_type" }
     expect(builder).to receive(:label).
       with(:target_id,"Relative"){ "label_target" }
-    expect(targets).to receive(:reverse).with(no_args){ :targets }
-    expect(builder).to receive(:collection_select).
-      with(:target_id,:targets,:id,:name, include_blank:true){ "select_target" }
+    expect(builder).to receive(:text_field).
+      with(:target_id, data:{url: :articles_path}){ "select_target" }
     expect(builder).to receive(:submit).with("Add"){ "submit_add" }
   end
 

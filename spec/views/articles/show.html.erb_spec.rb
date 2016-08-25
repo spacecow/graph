@@ -32,6 +32,8 @@ describe "articles/show.html.erb" do
     def bind.present obj; end
     expect(bind).to receive(:present).with(article).and_yield(presenter)
     expect(article).to receive(:name).with(no_args){ "article_name" }
+    expect(article).to receive(:id).with(no_args){ :article_id }
+    expect(article).to receive(:target_ids).with(no_args){ :target_ids }
     expect(article).to receive(:citations).with(no_args).
       at_least(1){ [:citation] }
     expect(article).to receive(:mentions).with(no_args).at_least(1){ :mentions }
@@ -45,7 +47,8 @@ describe "articles/show.html.erb" do
       collection: :mentions, as: :article_mention){ "render_mentions" }
     expect(bind).to receive(:render).
       with("relations/form", relation: :relation, targets: :relation_targets,
-            relation_types: :relation_types).and_return("render_relation_form")
+            relation_types: :relation_types, article_id: :article_id,
+            target_ids: :target_ids).and_return("render_relation_form")
     expect(bind).to receive(:render).
       with("citations/form", citation: :citation, targets: :citation_targets).
       and_return("render_citation_form")

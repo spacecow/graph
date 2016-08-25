@@ -56,7 +56,8 @@
 
   <div class="relation new form">
     <%= render "relations/form",
-        relation:@relation, targets:@relation_targets, relation_types:@relation_types %>
+        relation:@relation, targets:@relation_targets, relation_types:@relation_types,
+        article_id:@article.id, target_ids:@article.target_ids %>
   </div>
 
   <div class="citation new form">

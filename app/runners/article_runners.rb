@@ -24,6 +24,16 @@ module ArticleRunners
     end
   end
 
+  class Index < Runner
+    def run universe_id, article_id:, target_ids:
+      targets = repo.articles(universe_id:universe_id).
+        reject{|e| e.id==article_id.to_i}.
+        reject{|e| target_ids.split('_').map(&:to_i).include?(e.id)}.
+        map{|e| {id:e.id, name:e.name}}
+      success targets
+    end
+  end
+
   class New < Runner
     def run
       article = repo.new_article

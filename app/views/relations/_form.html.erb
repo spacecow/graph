@@ -9,7 +9,11 @@
 <!-- target/origin class, not only target -->
   <div class="target">
     <%= f.label :target_id, "Relative" %>
-    <%= f.collection_select :target_id, targets.reverse, :id, :name, include_blank:true %>
+    <%= f.text_field :target_id, data:{
+      url:articles_path(
+        format: :json,
+        article_id:article_id,
+        target_ids:target_ids.join('_'))} %>
   </div>
   <%= f.submit "Add" %>
 <% end %>
