@@ -10,7 +10,8 @@ describe 'relations/_form.html.erb' do
   let(:rendering){ erb.result local_bindings }
 
   let(:filepath){ './app/views/relations/_form.html.erb' }
-  let(:locals){{ relation: :relation, targets: :targets,
+  let(:targets){ double :targets } 
+  let(:locals){{ relation: :relation, targets: targets,
                  relation_types: :relation_types }}
   let(:builder){ double :builder }
 
@@ -31,6 +32,7 @@ describe 'relations/_form.html.erb' do
       with(:type,:relation_types,include_blank:true){ "select_type" }
     expect(builder).to receive(:label).
       with(:target_id,"Relative"){ "label_target" }
+    expect(targets).to receive(:reverse).with(no_args){ :targets }
     expect(builder).to receive(:collection_select).
       with(:target_id,:targets,:id,:name, include_blank:true){ "select_target" }
     expect(builder).to receive(:submit).with("Add"){ "submit_add" }
@@ -55,7 +57,5 @@ describe 'relations/_form.html.erb' do
   describe "Form submit" do
     its(:text){ should include "submit_add" }
   end
-
-
 
 end

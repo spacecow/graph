@@ -52,12 +52,16 @@ describe "universes/show.html.erb" do
   end
 
   describe 'actions section' do
-    subject(:ul){ div.find 'ul.actions' }
-    before{ expect(erb_bindings).to receive(:new_article_path){ "path" }}
-    describe 'new action' do
-      subject{ ul.find('li.action.new a') }
-      its(:text){ is_expected.to eq 'New Article' }
-      its([:href]){ should eq 'path' }
+    subject{ div.all('ul.actions') } 
+    its(:count){ should be 2 }
+    describe 'one of them' do
+      subject(:ul){ div.all('ul.actions').first }
+      before{ expect(erb_bindings).to receive(:new_article_path).twice{ "path" }}
+      describe 'new action' do
+        subject{ ul.find('li.action.new a') }
+        its(:text){ is_expected.to eq 'New Article' }
+        its([:href]){ should eq 'path' }
+      end
     end
   end
 

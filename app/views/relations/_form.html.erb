@@ -9,7 +9,7 @@
 <!-- target/origin class, not only target -->
   <div class="target">
     <%= f.label :target_id, "Relative" %>
-    <%= f.collection_select :target_id, targets, :id, :name, include_blank:true %>
+    <%= f.collection_select :target_id, targets.reverse, :id, :name, include_blank:true %>
   </div>
   <%= f.submit "Add" %>
 <% end %>

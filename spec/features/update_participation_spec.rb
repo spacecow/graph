@@ -1,9 +1,9 @@
 require 'rails_helper'
 require 'vcr_helper'
 
-describe "Update article note" do
+describe "Update participation" do
 
-  it "Successfully" do
+  xit "Successfully" do
     VCR.use_cassette('update_participation_successfully') do
       begin
         event = tcreate :event

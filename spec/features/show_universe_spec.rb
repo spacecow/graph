@@ -58,7 +58,7 @@ describe 'Show universe' do
       begin
         universe = create :universe
         visit universe_path(universe.id)
-        click_link 'New Article'
+        within(first('ul.actions')){ click_link 'New Article' }
         expect(current_path).to eq new_article_path
       ensure
         tdelete :universes

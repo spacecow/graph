@@ -14,12 +14,15 @@ describe "Add relation" do
           article = create :article, universe_id:universe.id, name:"Sword"
           visit article_path(article.id)
           expect(all(".type option").map(&:text)).to eq [
-            "","Acquaintance", "Advisor", "Aunt", "Betrothed", "Brother",
-            "Co worker", "Counselor", "Courter", "Employee", "Father", "Follower",
-            "Friend", "Guide", "Home", "Husband", "King", "Located in", "Maid",
-            "Member", "Mother", "Near sister", "Owner", "Player", "Practitioner", 
-            "Queen", "Resident", "Right hand", "Sister", "Student", "Swordbearer",
-            "Uncle", "Variant", "Warder", "Wielder"] 
+            "","Acquaintance", "Advisor", "Ancestor", "Aunt", "Betrothed", 
+            "Boyfriend", "Brother", "Companion", "Counselor", "Courter",
+            "Cousin", "Creator", "Employee", "Enemy", "Father", "Follower",
+            "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
+            "Killer", "King", "Located in", "Maid", "Member", "Mother",
+            "Near sister", "Owner", "Player", "Practitioner", "Queen",
+            "Resident", "Right hand", "Ruler", "Sister", "Swordbearer",
+            "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
+            "Worshiper"] 
           expect(all(".relation .target option").map(&:text)).to eq ["","Swordmaster"] 
           select "Owner", from:"Relation"
           select "Swordmaster", from:"Relative"
@@ -29,12 +32,15 @@ describe "Add relation" do
           expect(page.find "div.relations").to have_content 'Owner'
           expect(page.find "ul.relations").to have_content 'Swordmaster'
           expect(all(".type option").map(&:text)).to eq [
-            "","Acquaintance", "Advisor", "Aunt", "Betrothed", "Brother",
-            "Co worker", "Counselor", "Courter", "Employee", "Father", "Follower",
-            "Friend", "Guide", "Home", "Husband", "King", "Located in", "Maid",
-            "Member", "Mother", "Near sister", "Owner", "Player", "Practitioner", 
-            "Queen", "Resident", "Right hand", "Sister", "Student", "Swordbearer",
-            "Uncle", "Variant", "Warder", "Wielder"] 
+            "","Acquaintance", "Advisor", "Ancestor", "Aunt", "Betrothed", 
+            "Boyfriend", "Brother", "Companion", "Counselor", "Courter",
+            "Cousin", "Creator", "Employee", "Enemy", "Father", "Follower",
+            "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
+            "Killer", "King", "Located in", "Maid", "Member", "Mother",
+            "Near sister", "Owner", "Player", "Practitioner", "Queen",
+            "Resident", "Right hand", "Ruler", "Sister", "Swordbearer",
+            "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
+            "Worshiper"] 
           expect(all(".relation .target option").map(&:text)).to eq [""] 
         ensure
           delete :relations

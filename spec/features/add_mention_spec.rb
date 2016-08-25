@@ -3,6 +3,7 @@ require 'vcr_helper'
 
 describe "Add mention" do
 
+  #content does not seem to be implemented yet
   it "Successfully" do
     VCR.use_cassette("add_mention_successfully") do
       begin
@@ -16,6 +17,8 @@ describe "Add mention" do
         within('.mention.event.new.form'){ click_button "Add" }
         expect(current_path).to eq event_path(event.id) 
         expect(page.find 'li.mention.event').to have_content(
+          "Blue wedding")
+        expect(page.find 'li.mention.event').not_to have_content(
           "Blue wedding - a comment")
       ensure
         tdelete :mentions

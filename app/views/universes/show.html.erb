@@ -1,9 +1,13 @@
 <div class="universe">
   <h2><%= @universe.title %></h2>
 
+  <ul class='actions'>
+    <li class='action new'><%= link_to 'New Article', new_article_path %></li>
+  </ul>
+
 <!-- list in categories, i.e. characters, items... -->
   <ul class='articles'>
-    <% @articles.each do |article| %>
+    <% @articles.reverse.each do |article| %>
       <%= render article %>
     <% end %>
   </ul>

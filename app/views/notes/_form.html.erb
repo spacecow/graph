@@ -3,7 +3,7 @@
   <%= f.hidden_field :event_id %>
   <div class="text">
     <%= f.label :text, 'Note' %>
-    <%= f.text_field :text %>
+    <%= f.text_area :text %>
     <% unless note.errors.get(:text).empty? %>
       <span class="errors"><%= note.errors.get(:text).join %></span>
     <% end %>

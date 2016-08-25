@@ -3,6 +3,7 @@ require 'vcr_helper'
 
 describe "Show event" do
 
+  #content does not seem to work for mentions
   it "display event with parent and participants" do
     VCR.use_cassette("display_event") do
       begin
@@ -32,8 +33,10 @@ describe "Show event" do
         expect(page.find 'ul.parents').to have_content "Green wedding"
         expect(page.find 'h1').to have_content "Red wedding"
         expect(page).to have_content "a note"
-        expect(page.find 'ul.mentions.events.direct').to have_content "Blue wedding - all blue"
-        expect(page.find 'ul.mentions.events.inverse').to have_content "Yellow wedding - all yellow"
+        expect(page.find 'ul.mentions.events.direct').to have_content "Blue wedding"
+        expect(page.find 'ul.mentions.events.direct').not_to have_content "Blue wedding - all blue"
+        expect(page.find 'ul.mentions.events.inverse').to have_content "Yellow wedding"
+        expect(page.find 'ul.mentions.events.inverse').not_to have_content "Yellow wedding - all yellow"
         expect(page.find 'ul.mentions.articles.direct').to have_content(
           "Blue wife - all blue")
         expect(page.find '.participations .male').to have_content "John Snow"

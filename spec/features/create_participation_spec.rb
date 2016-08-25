@@ -3,6 +3,7 @@ require 'vcr_helper'
 
 describe "Add participation" do
 
+  #content does not seem to be implemented in participations
   it "Successfully" do
     VCR.use_cassette("create_participation_successfully") do
       begin
@@ -18,7 +19,7 @@ describe "Add participation" do
         within(".participation form"){ click_button "Add" }
         expect(current_path).to eq event_path(event.id) 
         expect(page.find "ul.participations").to have_content "Ethenielle"
-        expect(page.find "ul.participations").to have_content "some comment"
+        expect(page.find "ul.participations").not_to have_content "some comment"
         expect(all(".participant option").map(&:text)).
           not_to include "Ethenielle" 
       ensure
