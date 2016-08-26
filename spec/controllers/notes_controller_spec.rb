@@ -62,7 +62,7 @@ describe "NotesController" do
       expect(note_runner).to receive(:success).with(no_args).and_yield(note)
       expect(note_runner).to receive(:failure).with(no_args).and_yield(note)
       expect(article_runner).to receive(:success).with(no_args).
-        and_yield(:article,:_,:notes,:relation,:targets,:events,
+        and_yield(:article,:_,:notes,:relation,:events,
           :relation_types, :relations, :article_tags, :tagging, :tags, :citation,
           :citation_targets)
     end

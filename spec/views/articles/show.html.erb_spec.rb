@@ -20,7 +20,7 @@ describe "articles/show.html.erb" do
 
   let(:filepath){ "./app/views/articles/show.html.erb" }
   let(:locals){{ article:article, relation: :relation, article_tags: :article_tags,
-    relation_targets: :relation_targets, notes: :notes, note: :note, events:events, 
+    notes: :notes, note: :note, events:events, 
     relation_types: :relation_types, relations: :relations, tagging: :tagging,
     tags: :tags, citation: :citation, citation_targets: :citation_targets }}
   let(:article){ double :article }
@@ -46,7 +46,7 @@ describe "articles/show.html.erb" do
       partial:"article_mentions/inverse_article_mention",
       collection: :mentions, as: :article_mention){ "render_mentions" }
     expect(bind).to receive(:render).
-      with("relations/form", relation: :relation, targets: :relation_targets,
+      with("relations/form", relation: :relation,
             relation_types: :relation_types, article_id: :article_id,
             target_ids: :target_ids).and_return("render_relation_form")
     expect(bind).to receive(:render).

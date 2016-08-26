@@ -27,7 +27,6 @@ module ArticleRunners
           with(origin_id: :article_id){ :relation }
         expect(repo).to receive(:articles).
           with(universe_id: :universe_id){ [target] }
-        expect(article).to receive(:target_ids).with(no_args){ [:target_id] }
         expect(article).to receive(:notes).with(no_args){ :notes }
         expect(article).to receive(:events).with(no_args){ :events }
         expect(article).to receive(:tags).with(no_args){ :tags }

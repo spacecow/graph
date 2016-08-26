@@ -3,12 +3,11 @@ class ArticlesController < ApplicationController
   def show
     redirect_to universes_path and return if current_universe_id.nil?
     run(ArticleRunners::Show, params[:id], universe_id:current_universe_id) do |on|
-      on.success do |article, note, notes, relation, relation_targets, events, relation_types, relations, article_tags, tagging, tags, citation, citation_targets|
+      on.success do |article, note, notes, relation, events, relation_types, relations, article_tags, tagging, tags, citation, citation_targets|
         @article = article
         @note = note
         @notes = notes
         @relation = relation
-        @relation_targets = relation_targets
         @events = events
         @relation_types = relation_types 
         @relations = relations
