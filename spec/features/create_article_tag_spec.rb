@@ -10,9 +10,9 @@ describe "Create article tag" do
         visit universes_path
         click_link "The Wheel of Time"
         article = create :article, universe_id:universe.id
-        tcreate :tag, title:"Aes Sedai"
+        tag = tcreate :tag, title:"Aes Sedai"
         visit article_path(article.id)
-        select 'Aes Sedai', from:"Tag"
+        fill_in "Tag", with: tag.id
         click_on 'Create Tagging'
         expect(current_path).to eq article_path(article.id)
         expect(page.find('li.tag')).to have_content "Aes Sedai" 

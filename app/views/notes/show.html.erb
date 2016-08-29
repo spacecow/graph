@@ -28,13 +28,9 @@
     <%= f.submit "Create Reference" %>
   <% end %>
 
-  <%= form_for @tagging do |f| %>
-    <%= f.hidden_field :tagable_id %>
-    <%= f.hidden_field :tagable_type %>
-    <%= f.label :tag_id, 'Tags' %>
-    <%= f.collection_select :tag_id, @tags, :id, :title %>
-    <%= f.submit "Create Tagging" %>
-  <% end %>
+  <div class="tagging new form">
+    <%= render "taggings/form", tagging:@tagging %>
+  </div>
 
 <% if false %>
   <%= form_for @tag do |f| %>

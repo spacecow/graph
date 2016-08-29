@@ -9,9 +9,9 @@ describe "Create note tag" do
         universe = create :universe
         article = create :article, universe_id:universe.id
         noting = tcreate :article_note, article_id:article.id
-        tcreate :tag, title:'TDP'
+        tag = tcreate :tag, title:'TDP'
         visit note_path noting.note_id
-        select 'TDP', from:'Tags'
+        fill_in 'Tag', with:tag.id
         click_on 'Create Tagging'
         expect(current_path).to eq note_path(noting.note_id)
         expect(page.find('li.tag')).to have_content "TDP" 

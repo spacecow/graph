@@ -1,9 +1,21 @@
+<script>
+$(function(){
+  var glossary_id = "#tagging_tag_id";
+  $(glossary_id).tokenInput($(glossary_id).data('url'), {
+    propertyToSearch: 'title',
+    tokenLimit: 1
+  });
+});
+</script>
+
 <%= form_for tagging do |f| %>
   <%= f.hidden_field :tagable_id %>
   <%= f.hidden_field :tagable_type %>
   <div class="tag">
     <%= f.label :tag_id, 'Tag' %>
-    <%= f.collection_select :tag_id, tags, :id, :title %>
+    <%= f.text_field :tag_id, data:{
+      url:tags_path(
+        format: :json)} %>
   </div>
   <%= f.submit "Create Tagging" %>
 <% end %>

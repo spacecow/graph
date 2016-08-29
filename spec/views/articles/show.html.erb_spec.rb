@@ -22,7 +22,7 @@ describe "articles/show.html.erb" do
   let(:locals){{ article:article, relation: :relation, article_tags: :article_tags,
     notes: :notes, note: :note, events:events, 
     relation_types: :relation_types, relations: :relations, tagging: :tagging,
-    tags: :tags, citation: :citation, citation_targets: :citation_targets }}
+    citation: :citation, citation_targets: :citation_targets }}
   let(:article){ double :article }
   let(:presenter){ double :presenter }
   let(:events){ :events }
@@ -59,7 +59,7 @@ describe "articles/show.html.erb" do
     expect(bind).to receive(:render).
       with("notes/form", note: :note).and_return("render_note_form")
     expect(bind).to receive(:render).
-      with("taggings/form", tagging: :tagging, tags: :tags).
+      with("taggings/form", tagging: :tagging).
       and_return("render_tagging_form")
   end
 

@@ -7,6 +7,13 @@ class TagsController < ApplicationController
 
   def index
     @tags = run(TagRunners::Index)
+    respond_to do |f|
+      f.html
+      f.json{
+        render json:@tags.
+          map{|e| {id:e.id, title:e.title}}.
+          select{|e| e[:title].downcase.include?(params[:q].downcase)}}
+    end
   end
 
   def new
