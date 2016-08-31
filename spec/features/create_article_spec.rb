@@ -55,9 +55,7 @@ describe "Create article" do
         end
       end
     end
-  end
 
-  context "creation failure" do
     it "type cannot be blank" do
       VCR.use_cassette('create_article_with_blank_type_violation') do
         begin 
@@ -71,6 +69,26 @@ describe "Create article" do
           expect(current_path).to eq articles_path
           expect(page.find(type_error_field).text).to eq 'cannot be blank'
         ensure
+          tdelete :universes
+        end
+      end
+    end
+
+    it "name cannot be duplicated within the same universe" do
+      VCR.use_cassette('create_article_with_duplicated_name') do
+        begin 
+          universe = create :universe, title:'The Malazan Empire'
+          create :article, name:'Kelsier', universe_id:universe.id
+          visit universes_path
+          click_link 'The Malazan Empire'
+          visit new_article_path
+          fill_in 'Name', with:'Kelsier'
+          select 'Character', from:'Type'
+          click_on 'Create'
+          expect(current_path).to eq articles_path
+          expect(page.find(name_error_field).text).to eq 'is already taken'
+        ensure
+          delete :articles
           tdelete :universes
         end
       end

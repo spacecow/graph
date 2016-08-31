@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :article do
-    name 'factory name'
+    sequence :name do |n| "factory name #{n}" end
     type 'Character'
     gender 'n'
   end
