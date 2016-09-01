@@ -1,0 +1,206 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/api/tags
+    body:
+      encoding: UTF-8
+      string: '{"tag":{"title":"neuronnät"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"43190a39a29aa79af8a8ad395db27901"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7b256c9c-424c-4c20-a2e1-640eb5f33322
+      X-Runtime:
+      - '0.004383'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 01 Sep 2016 14:40:29 GMT
+      Content-Length:
+      - '39'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=POST; path=/
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0YWciOnsiaWQiOjEwNCwidGl0bGUiOiJuZXVyb25uw6R0In19
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 14:40:29 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c0dac75deeb855066981c7d00d01c8d3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e009f4a5-50dc-450b-bb06-8d98bec2d04d
+      X-Runtime:
+      - '0.002422'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 01 Sep 2016 14:40:29 GMT
+      Content-Length:
+      - '16'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"universes":[]}'
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 14:40:29 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"64b9a43f79c58324fa2ee7f3aaee4386"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ab34a162-19b6-4b2a-9cdf-fffab669c5f8
+      X-Runtime:
+      - '0.002233'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 01 Sep 2016 14:40:29 GMT
+      Content-Length:
+      - '42'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0YWdzIjpbeyJpZCI6MTA0LCJ0aXRsZSI6Im5ldXJvbm7DpHQifV19
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 14:40:29 GMT
+- request:
+    method: delete
+    uri: http://localhost:9292/api/tags
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/vnd.example.t1
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"64b9a43f79c58324fa2ee7f3aaee4386"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 06a00eb6-843c-4d8b-b63a-22bec46003e1
+      X-Runtime:
+      - '0.007490'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Thu, 01 Sep 2016 14:40:29 GMT
+      Content-Length:
+      - '42'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - request_method=DELETE; path=/
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0YWdzIjpbeyJpZCI6MTA0LCJ0aXRsZSI6Im5ldXJvbm7DpHQifV19
+    http_version: 
+  recorded_at: Thu, 01 Sep 2016 14:40:29 GMT
+recorded_with: VCR 2.9.3

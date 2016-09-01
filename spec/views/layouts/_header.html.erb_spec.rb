@@ -28,6 +28,7 @@ describe 'layouts/_layouts.html.erb' do
       def universe_path id; raise NotImplementedError end
       def events_path; raise NotImplementedError end
       def article_path id; raise NotImplementedError end
+      def tags_path; raise NotImplementedError end
       def note_path id; raise NotImplementedError end
       def link_to link, path; "<a href='#{path}'>#{link}</a>" end
     end
@@ -35,8 +36,8 @@ describe 'layouts/_layouts.html.erb' do
     expect(bind).to receive(:universes_path).with(no_args){ "universe_path" }
     expect(bind).to receive(:universe_path).with(:universe_id){ "articles_path" }
     expect(bind).to receive(:events_path).with(no_args){ "events_path" }
-    expect(bind).to receive(:current_universe_id).
-      with(no_args).at_least(1){ :universe_id }
+    expect(bind).to receive(:tags_path).with(no_args){ "tags_path" }
+    expect(bind).to receive(:current_universe_id).with(no_args).at_least(1){ :universe_id }
   end
 
   describe "Universes link" do
@@ -75,6 +76,12 @@ describe 'layouts/_layouts.html.erb' do
     subject{ div.all('a')[3] }
     its(:text){ is_expected.to eq "References" }
     its([:href]){ is_expected.to eq "references_path" }
+  end
+
+  describe "Tags link" do
+    subject{ div.all('a')[3] }
+    its(:text){ is_expected.to eq "Tags" }
+    its([:href]){ is_expected.to eq "tags_path" }
   end
 
 end 

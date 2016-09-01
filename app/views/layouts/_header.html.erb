@@ -4,4 +4,5 @@
   <%= link_to "Events", events_path if current_universe_id %>
   <%= link_to "Notes", article_path(@note.article_id) if @note.try(:article_id) %>
   <%= link_to "References", note_path(@reference.referenceable_id) if @reference.try(:id) %>
+  <%= link_to "Tags", tags_path %>
 </div>
