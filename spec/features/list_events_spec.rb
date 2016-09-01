@@ -12,7 +12,7 @@ describe "List events" do
         click_link "The Wheel of Time"
         create :event, title:'The horse ride', universe_id:universe.id
         create :event, title:'Red wedding'
-        visit events_path
+        click_link "Events"
         expect(page).to have_content 'The horse ride'
         expect(page).not_to have_content 'Red wedding'
       ensure
@@ -29,7 +29,7 @@ describe "List events" do
         visit universes_path
         click_link "The Malazan Empire"
         event = create :event, universe_id:universe.id, title:"The Mage War"
-        visit events_path
+        click_link "Events"
         click_link "The Mage War"
         expect(current_path).to eq event_path(event.id) 
       ensure
