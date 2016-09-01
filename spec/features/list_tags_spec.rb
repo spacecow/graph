@@ -16,4 +16,13 @@ describe "List tags" do
     end
   end
 
+  it "Navigate to the new tag page" do
+    VCR.use_cassette('navigate_to_the_new_tag_page') do
+      visit universes_path
+      click_link "Tags"
+      click_link "New Tag"
+      expect(current_path).to eq new_tag_path
+    end
+  end
+
 end

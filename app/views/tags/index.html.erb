@@ -1,6 +1,9 @@
-<ul class='tags'>
-  <% @tags.each do |tag| %>
-    <%= render tag %>
-  <% end %>
-</ul>
+<div class="tags list">
 
+  <ul class='actions'>
+    <li class='action new tag'><%= link_to 'New Tag', new_tag_path %></li>
+  </ul>
+
+  <ul class='tags'><%= render @tags %></ul>
+
+</div>
