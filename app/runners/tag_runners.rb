@@ -9,8 +9,8 @@ module TagRunners
   end
 
   class Index < Runner
-    def run
-      repo.tags
+    def run universe_id
+      repo.tags universe_id
     end
   end
 

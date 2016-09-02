@@ -3,13 +3,13 @@ require_dependency './app/runners/runner'
 module NoteRunners
 
   class Show < Runner
-    def run id
+    def run id, universe_id
       note = repo.note id
       references = note.references
       note_tags = note.tags
       reference = repo.new_reference referenceable_id:note.id, referenceable_type:"Note"
       tagging = repo.new_tagging tagable_id:note.id, tagable_type:"Note"
-      tags = repo.tags
+      tags = repo.tags universe_id
       success note, references, note_tags, reference, tagging, tags
     end
   end

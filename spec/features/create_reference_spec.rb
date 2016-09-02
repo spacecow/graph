@@ -27,7 +27,9 @@ describe "Create reference" do
   it "Successfully to note" do
     VCR.use_cassette("create_reference_to_note_successfully") do
       begin
-        universe = create :universe
+        universe = create :universe, title:"The Wheel of Time"
+        visit universes_path
+        click_link "The Wheel of Time"
         article = create :article, universe_id:universe.id
         note = tcreate :note
         tcreate :article_note, article_id:article.id, note_id:note.id

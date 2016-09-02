@@ -1,7 +1,8 @@
 class NotesController < ApplicationController
 
   def show
-    run(NoteRunners::Show, params[:id]) do |on|
+    return redirect_to universes_path if current_universe_id.nil?
+    run(NoteRunners::Show, params[:id], current_universe_id) do |on|
       on.success do |note, references, note_tags, reference, tagging, tags|
         @note = note
         @references = references

@@ -9,7 +9,7 @@ describe "Delete article tag" do
         visit universes_path
         click_link "The Wheel of Time"
         article = create :article, universe_id:universe.id
-        tcreate :tag, tagable_id:article.id, tagable_type:'Article'
+        tcreate :tag, tagable_id:article.id, tagable_type:'Article', universe_id:universe.id
         visit article_path article.id
         within('li.tag'){ click_link "Delete" }
         expect(current_path).to eq article_path(article.id)

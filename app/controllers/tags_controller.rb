@@ -6,7 +6,8 @@ class TagsController < ApplicationController
   end
 
   def index
-    @tags = run(TagRunners::Index)
+    return redirect_to universes_path if current_universe_id.nil?
+    @tags = run(TagRunners::Index, current_universe_id)
     respond_to do |f|
       f.html
       f.json{
@@ -17,10 +18,12 @@ class TagsController < ApplicationController
   end
 
   def new
+    return redirect_to universes_path if current_universe_id.nil?
     @tag = run(TagRunners::New)
   end
 
   def create
+    return redirect_to universes_path if current_universe_id.nil?
     run(TagRunners::Create, tag_params) do |on|
       on.success do
         redirect_to tags_path
@@ -41,7 +44,8 @@ class TagsController < ApplicationController
     end
 
     def tag_params
-      params.require(:tag).permit(:tagable_id, :tagable_type, :title)
+      params.require(:tag).permit(:tagable_id, :tagable_type, :title).
+        merge({universe_id:current_universe_id})
     end
 
 end

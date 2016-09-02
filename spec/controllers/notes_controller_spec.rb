@@ -25,8 +25,10 @@ describe "NotesController" do
     let(:runner){ double :runner }
     before do
       stub_const "NoteRunners::Show", Class.new
+      def controller.current_universe_id; raise NotImplementedError end
+      expect(controller).to receive(:current_universe_id).with(no_args).at_least(1){ :universe_id }
       expect(controller).to receive(:run).
-        with(NoteRunners::Show,:id).and_yield(runner)
+        with(NoteRunners::Show, :id, :universe_id).and_yield(runner)
       expect(runner).to receive(:success).with(no_args).
         and_yield(:note, :references, :note_tags, :reference, :tagging, :tags)
     end

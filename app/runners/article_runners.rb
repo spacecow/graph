@@ -16,7 +16,7 @@ module ArticleRunners
       relations = article.relations
       article_tags = article.tags
       tagging = repo.new_tagging tagable_id:article.id, tagable_type:"Article"
-      tags = repo.tags
+      tags = repo.tags universe_id
       citation = repo.new_citation origin_id:article.id
       success article, note, notes, relation, events, relation_types, relations, article_tags, tagging, tags, citation, citation_targets
     end

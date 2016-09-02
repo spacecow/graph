@@ -56,11 +56,12 @@ describe "TagsController" do
     describe "#tag_params" do
       let(:function){ :tag_params }
       let(:params){ ActionController::Parameters.new(params_hash) }
+      before{ expect(controller).to receive(:current_universe_id).with(no_args){ :universe_id }}
       context "with params" do
         let(:params_hash){{ tag:{ tagable_id: :tagable_id,
           tagable_type: :tagable_type, title: :title, xxx: :xxx }}} 
-        it{ should eq({ "tagable_id" => :tagable_id,
-          "tagable_type" => :tagable_type, "title" => :title }) }
+        it{ should eq({ "tagable_id" => :tagable_id, "tagable_type" => :tagable_type,
+                        "title" => :title, "universe_id" => :universe_id }) }
       end
     end
     describe "#delete_tag_params" do

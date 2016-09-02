@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"1fb053d4f96f2815dcb6dd24ea71a42f"
+      - W/"708e38368595246bf0dd283bd41b338c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b4b3571e-a761-4e68-b87b-7e7f65586d0d
+      - 5744674e-a125-46b3-b3e8-49694479bea2
       X-Runtime:
-      - '0.083150'
+      - '0.006692'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
       - '94'
       Connection:
@@ -48,16 +48,16 @@ http_interactions:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"event":{"id":1426,"title":"factory title","universe":{"id":2244,"title":"factory
-        title83"}}}'
+      string: '{"event":{"id":2465,"title":"factory title","universe":{"id":6717,"title":"factory
+        title51"}}}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
-      string: article%5Bgender%5D=n&article%5Bname%5D=Ethenielle&article%5Btype%5D=Character&article%5Buniverse_id%5D=2244
+      string: article%5Bgender%5D=n&article%5Bname%5D=Ethenielle&article%5Btype%5D=Character&article%5Buniverse_id%5D=6717
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -81,28 +81,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"6b62c34b00391941bc1b97947d24af27"
+      - W/"2a57e9dd1e72c882c70886e88fc04df2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 99cb4f0b-be44-40a7-9d63-49dde1498db8
+      - 32e3e0eb-d8e2-4353-9287-da5b790e175f
       X-Runtime:
-      - '0.010209'
+      - '0.009249'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '126'
+      - '165'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"article":{"id":890,"name":"Ethenielle","universe_id":2244,"type":"Character","gender":"n","tags":[],"notes":[],"events":[]}}'
+      string: '{"article":{"id":3352,"name":"Ethenielle","universe_id":6717,"type":"Character","gender":"n","tags":[],"citations":[],"inverse_citations":[],"notes":[],"events":[]}}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/universes?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -132,29 +132,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"333770400367097d7ad13d01f89b871c"
+      - W/"017b994c1d7b759060019c11c8fe79cb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cfddd5a2-d7cb-4dab-a809-f6552f0dd49e
+      - 690c36a7-2df3-4f55-9f82-3bb2205a91f4
       X-Runtime:
-      - '0.003669'
+      - '0.002999'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
       - '53'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":2244,"title":"factory title83"}]}'
+      string: '{"universes":[{"id":6717,"title":"factory title51"}]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/universes/2244?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/universes/6717?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -181,32 +181,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d7f041549a68c1bc0da50728399f1348"
+      - W/"842ef26356565df817a9b22eb0f0bd17"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 421feb41-e2dc-4b26-9e8d-4bb3c085e08d
+      - 1311a299-07f9-49b4-8707-773c7b9d84ec
       X-Runtime:
-      - '0.003655'
+      - '0.002741'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '126'
+      - '127'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"universe":{"id":2244,"title":"factory title83","articles":[{"id":890,"name":"Ethenielle","type":"Character","gender":"n"}]}}'
+      string: '{"universe":{"id":6717,"title":"factory title51","articles":[{"id":3352,"name":"Ethenielle","type":"Character","gender":"n"}]}}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: post
     uri: http://localhost:9292/api/participations
     body:
       encoding: UTF-8
-      string: '{"participation":{"event_id":1426,"participant_id":890}}'
+      string: '{"participation":{"event_id":2465,"participant_id":3352}}'
     headers:
       Content-Type:
       - application/json
@@ -230,31 +230,31 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"5a747cff049e6b2c5d97b82cfcd63782"
+      - W/"dbc71cc5fa89b53ebd95c8e5d89287f6"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b7a3eb77-6d90-4ca9-864f-c2f81029fa97
+      - b19ea1ee-f88c-4aeb-963e-527e43ee8b40
       X-Runtime:
-      - '0.007077'
+      - '0.006822'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '117'
+      - '118'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"participation":{"id":307,"event":{"id":1426,"title":"factory title"},"participant":{"id":890,"name":"Ethenielle"}}}'
+      string: '{"participation":{"id":448,"event":{"id":2465,"title":"factory title"},"participant":{"id":3352,"name":"Ethenielle"}}}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/events/1426?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/events/2465?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
     body:
       encoding: US-ASCII
       string: ''
@@ -281,29 +281,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"8de33ddccf18263c10f8991bc983ea65"
+      - W/"e91283e089cf37c0565ca2313fdbd27a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6eb0254c-bbd8-473b-838b-3e11f1e169fc
+      - b1d1bb9e-b95b-4852-ab54-66d6d6eaa490
       X-Runtime:
-      - '0.007943'
+      - '0.012732'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '185'
+      - '230'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"event":{"id":1426,"title":"factory title","parents":[],"children":[],"participations":[{"id":307,"participant":{"id":890,"name":"Ethenielle","gender":"n"}}],"mentions":[],"notes":[]}}'
+      string: '{"event":{"id":2465,"title":"factory title","parents":[],"children":[],"participations":[{"id":448,"participant":{"id":3352,"name":"Ethenielle","gender":"n"}}],"mentions":[],"inverse_mentions":[],"article_mentions":[],"notes":[]}}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=2244
+    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=6717
     body:
       encoding: US-ASCII
       string: ''
@@ -330,78 +330,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"97603fb21de12d26145c5aa2cdc52cd0"
+      - W/"21397574194f0ed62569a136359b9f95"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5bfd234f-77b7-4099-a99f-6fa202226197
+      - 17dd1513-3abb-43ff-973d-3d3a1c37bf37
       X-Runtime:
-      - '0.002810'
+      - '0.002902'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
-      Content-Length:
-      - '77'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"articles":[{"id":890,"name":"Ethenielle","type":"Character","gender":"n"}]}'
-    http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
-- request:
-    method: get
-    uri: http://localhost:9292/api/events?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=2244
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - localhost:9292
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"5872c3da439a361c79e89531b8a2e292"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 38c32876-3689-4601-9ac0-7736cf4bb6f4
-      X-Runtime:
-      - '0.004113'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
-      Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
       - '48'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"events":[{"id":1426,"title":"factory title"}]}'
+      string: '{"events":[{"id":2465,"title":"factory title"}]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles/890?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=6717
     body:
       encoding: US-ASCII
       string: ''
@@ -428,30 +379,79 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"16f817471e1fd5f494cba881bad3dc3b"
+      - W/"b0d7665d1db281e851e3f10a661592c8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6e68de70-0868-42ad-9f3d-6c512c26d0f6
+      - b0768380-84f9-4f0c-b8a0-79c9e0265547
       X-Runtime:
-      - '0.008057'
+      - '0.002436'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '161'
+      - '78'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"article":{"id":890,"name":"Ethenielle","universe_id":2244,"type":"Character","gender":"n","tags":[],"notes":[],"events":[{"id":1426,"title":"factory
+      string: '{"articles":[{"id":3352,"name":"Ethenielle","type":"Character","gender":"n"}]}'
+    http_version: 
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/api/articles/3352?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - localhost:9292
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6be1be967cfc1e3fb75f9ddfebee25bf"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1d6bf9dd-1fdf-42b4-b12e-77146530cc79
+      X-Runtime:
+      - '0.007160'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
+      Date:
+      - Mon, 05 Sep 2016 09:50:34 GMT
+      Content-Length:
+      - '200'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"article":{"id":3352,"name":"Ethenielle","universe_id":6717,"type":"Character","gender":"n","tags":[],"citations":[],"inverse_citations":[],"notes":[],"events":[{"id":2465,"title":"factory
         title"}]}}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=2244
+    uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=6717
     body:
       encoding: US-ASCII
       string: ''
@@ -478,26 +478,26 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"97603fb21de12d26145c5aa2cdc52cd0"
+      - W/"b0d7665d1db281e851e3f10a661592c8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 65dab42c-a3a4-4e04-b677-51079b1a648c
+      - 39a93d0e-be5c-4ec2-add3-c4151fc3f55e
       X-Runtime:
-      - '0.002599'
+      - '0.002246'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '77'
+      - '78'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":890,"name":"Ethenielle","type":"Character","gender":"n"}]}'
+      string: '{"articles":[{"id":3352,"name":"Ethenielle","type":"Character","gender":"n"}]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
     uri: http://localhost:9292/api/relation_types?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -527,29 +527,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"ccf06a19063f3602122e87662871cb41"
+      - W/"60baba749f16ed1393bfaaf6ff04795a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b01089fa-3a73-47f8-a222-c28553063f1d
+      - 2ebbd6c5-8eae-4e47-a35e-133fb5c38c82
       X-Runtime:
-      - '0.017146'
+      - '0.001773'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '175'
+      - '503'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"relation_types":["Acquaintance","Advisor","Aunt","Brother","Counselor","Courter","Follower","Guide","Husband","King","Owner","Queen","Right_hand","Sister","Uncle","Warder"]}'
+      string: '{"relation_types":["Acquaintance","Advisor","Ancestor","Aunt","Betrothed","Boyfriend","Brother","Companion","Contract_on","Counselor","Courter","Cousin","Creator","Customer","Employee","Enemy","Father","Follower","Friend","Girlfriend","Guide","Hearsay","Home","Husband","Killer","King","Located_in","Maid","Member","Mother","Near_sister","Owner","Player","Practitioner","Queen","Resident","Right_hand","Ruler","Sister","Swordbearer","Teacher","Uncle","Variant","Visitor","Warder","Wielder","Worshiper"]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: get
-    uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
+    uri: http://localhost:9292/api/tags?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395&universe_id=6717
     body:
       encoding: US-ASCII
       string: ''
@@ -580,13 +580,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 669638cf-606f-4951-9903-92074bbf30c8
+      - 9bf7abe7-93bc-42a1-8a96-da581dc2b486
       X-Runtime:
-      - '0.002796'
+      - '0.002503'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
       - '11'
       Connection:
@@ -595,7 +595,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"tags":[]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/participations
@@ -625,28 +625,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"e19a5dcc2452b732b1ccd80e759cabf5"
+      - W/"a85fbbc84ac911e8ddc1e845f3aae1e2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2b44e035-7142-4b6a-9f6e-a643d2ae63b6
+      - 096f9189-d5db-472d-9a33-482ed6f1ab64
       X-Runtime:
-      - '0.006095'
+      - '0.006055'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '120'
+      - '121'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"participations":[{"id":307,"event":{"id":1426,"title":"factory title"},"participant":{"id":890,"name":"Ethenielle"}}]}'
+      string: '{"participations":[{"id":448,"event":{"id":2465,"title":"factory title"},"participant":{"id":3352,"name":"Ethenielle"}}]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/articles?access_token=90bc68f143f6b5fea3c0b6cedd5784e6ac61248ca39aa87372922d99eb4f8395
@@ -678,28 +678,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"176e41c6132d0f5985a1c9d4ee30c4db"
+      - W/"48bddc77f21ae80ffa26b4ace760781a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 900bd1ed-c1dc-4465-a4a2-ca130bf8f5d0
+      - f13f54ed-f575-4133-849e-fabc801cdb69
       X-Runtime:
-      - '0.004729'
+      - '0.003468'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
-      - '83'
+      - '84'
       Connection:
       - Keep-Alive
       Set-Cookie:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"articles":[{"id":890,"name":"Ethenielle","universe_id":2244,"type":"Character"}]}'
+      string: '{"articles":[{"id":3352,"name":"Ethenielle","universe_id":6717,"type":"Character"}]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/events
@@ -733,13 +733,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a4f0edb8-1913-4a3f-a3d3-dc65dc58f360
+      - 712a2211-fb6b-4232-82f6-021414b0c16f
       X-Runtime:
-      - '0.002804'
+      - '0.002440'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
       - '12'
       Connection:
@@ -750,7 +750,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"events":1}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 - request:
     method: delete
     uri: http://localhost:9292/api/universes
@@ -780,17 +780,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"333770400367097d7ad13d01f89b871c"
+      - W/"017b994c1d7b759060019c11c8fe79cb"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2ccf7b9f-dcee-4479-aaca-26870006fd96
+      - 0f443a29-f205-42f0-bf90-2bd8bdb2c038
       X-Runtime:
-      - '0.004986'
+      - '0.003213'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.1/2015-02-26)
       Date:
-      - Thu, 17 Dec 2015 06:20:50 GMT
+      - Mon, 05 Sep 2016 09:50:34 GMT
       Content-Length:
       - '53'
       Connection:
@@ -799,7 +799,7 @@ http_interactions:
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
-      string: '{"universes":[{"id":2244,"title":"factory title83"}]}'
+      string: '{"universes":[{"id":6717,"title":"factory title51"}]}'
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 06:20:50 GMT
+  recorded_at: Mon, 05 Sep 2016 09:50:34 GMT
 recorded_with: VCR 2.9.3

@@ -10,7 +10,7 @@ describe "Create article tag" do
         visit universes_path
         click_link "The Wheel of Time"
         article = create :article, universe_id:universe.id
-        tag = tcreate :tag, title:"Aes Sedai"
+        tag = tcreate :tag, title:"Aes Sedai", universe_id:universe.id
         visit article_path(article.id)
         fill_in "Tag", with: tag.id
         click_on 'Create Tagging'

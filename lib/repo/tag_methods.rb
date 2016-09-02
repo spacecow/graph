@@ -12,8 +12,8 @@ module Repo
       Tag.new body['tag']
     end
 
-    def tags 
-      url = URI "http://localhost:9292/api/tags?access_token=#{token}"
+    def tags universe_id 
+      url = URI "http://localhost:9292/api/tags?access_token=#{token}&universe_id=#{universe_id}"
       response = Net::HTTP.get_response url
       body = JSON.parse response.body
       body['tags'].map{|tag| Tag.new tag}

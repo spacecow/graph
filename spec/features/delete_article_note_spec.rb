@@ -10,7 +10,8 @@ describe "Delete article note" do
         article = create :article, universe_id:universe.id
         note = tcreate :note, text:"90 W"
         tcreate :article_note, article_id:article.id, note_id:note.id
-        tag = tcreate :tag, tagable_id:note.id, tagable_type:'Note', title:"TDP"
+        tag = tcreate :tag,
+          tagable_id:note.id, tagable_type:'Note', title:"TDP", universe_id:universe.id
         visit tag_path tag.id
         expect(page).to have_content '90 W'
         within('li.note'){ click_link "Delete" }

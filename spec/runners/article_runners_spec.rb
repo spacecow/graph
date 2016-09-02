@@ -20,7 +20,7 @@ module ArticleRunners
         expect(repo).to receive(:article).with(:id){ article }
         expect(repo).to receive(:new_note).with(article_id: :article_id){ :note }
         expect(repo).to receive(:new_citation).with(origin_id: :article_id){ :citation }
-        expect(repo).to receive(:tags).with(no_args){ :tags }
+        expect(repo).to receive(:tags).with(:universe_id){ :tags }
         expect(repo).to receive(:new_tagging).
           with(tagable_id: :article_id, tagable_type:"Article"){ :tagging }
         expect(repo).to receive(:new_relation).

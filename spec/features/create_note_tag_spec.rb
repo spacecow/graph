@@ -6,10 +6,12 @@ describe "Create note tag" do
   it "Successfully" do
     VCR.use_cassette("create_note_tag_successfully") do
       begin
-        universe = create :universe
+        universe = create :universe, title:"Computer World"
         article = create :article, universe_id:universe.id
         noting = tcreate :article_note, article_id:article.id
-        tag = tcreate :tag, title:'TDP'
+        tag = tcreate :tag, title:'TDP', universe_id:universe.id
+        visit universes_path
+        click_link "Computer World"
         visit note_path noting.note_id
         fill_in 'Tag', with:tag.id
         click_on 'Create Tagging'

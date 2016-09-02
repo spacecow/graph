@@ -23,8 +23,11 @@ describe 'Show article' do
         tcreate :article_note, article_id:article.id, note_id:note.id
         event = create :event, universe_id:universe.id, title:"The Standoff"
         create :participation, event_id:event.id, participant_id:article.id
-        tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
-        tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
+        tag = tcreate :tag,
+          title:'hero', tagable_id:note.id, tagable_type:'Note', universe_id:universe.id
+        tcreate :tag,
+          title:'Allomancy', universe_id:universe.id,
+          tagable_id:article.id, tagable_type:'Article'
         citation_target = create :article, name:"a citation target",
           universe_id:universe.id
         tcreate :citation, origin_id:article.id, content:"some citation",
@@ -74,7 +77,9 @@ describe 'Show article' do
         visit universes_path
         click_link "The Final Empire"
         article = create :article, universe_id:universe.id
-        tcreate :tag, title:'Allomancy', tagable_id:article.id, tagable_type:'Article'
+        tcreate :tag,
+          title:'Allomancy', universe_id:universe.id,
+          tagable_id:article.id, tagable_type:'Article'
         article2 = create :article, universe_id:universe.id, name:"Allomancy"
         visit article_path article.id
         within('li.tag'){ click_link "Allomancy" }
@@ -136,7 +141,8 @@ describe 'Show article' do
         article = create :article, universe_id:universe.id
         note = tcreate :note
         tcreate :article_note, article_id:article.id, note_id:note.id
-        tag = tcreate :tag, title:'hero', tagable_id:note.id, tagable_type:'Note'
+        tag = tcreate :tag,
+          title:'hero', tagable_id:note.id, tagable_type:'Note', universe_id:universe.id
         visit article_path article.id
         expect(page).to have_content 'hero'
         click_link 'hero'
