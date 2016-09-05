@@ -15,8 +15,8 @@ describe "Add relation" do
           visit article_path(article.id)
           expect(all(".type option").map(&:text)).to eq [
             "","Acquaintance", "Advisor", "Ancestor", "Aunt", "Betrothed", 
-            "Boyfriend", "Brother", "Companion", "Counselor", "Courter",
-            "Cousin", "Creator", "Employee", "Enemy", "Father", "Follower",
+            "Boyfriend", "Brother", "Companion", "Contract on", "Counselor", "Courter",
+            "Cousin", "Creator", "Customer", "Employee", "Enemy", "Father", "Follower",
             "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
             "Killer", "King", "Located in", "Maid", "Member", "Mother",
             "Near sister", "Owner", "Player", "Practitioner", "Queen",
@@ -32,8 +32,8 @@ describe "Add relation" do
           expect(page.find "ul.relations").to have_content 'Swordmaster'
           expect(all(".type option").map(&:text)).to eq [
             "","Acquaintance", "Advisor", "Ancestor", "Aunt", "Betrothed", 
-            "Boyfriend", "Brother", "Companion", "Counselor", "Courter",
-            "Cousin", "Creator", "Employee", "Enemy", "Father", "Follower",
+            "Boyfriend", "Brother", "Companion", "Contract on", "Counselor", "Courter",
+            "Cousin", "Creator", "Customer", "Employee", "Enemy", "Father", "Follower",
             "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
             "Killer", "King", "Located in", "Maid", "Member", "Mother",
             "Near sister", "Owner", "Player", "Practitioner", "Queen",
