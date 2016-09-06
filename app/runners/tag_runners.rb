@@ -24,7 +24,11 @@ module TagRunners
     def run params 
       tag = repo.new_tag params
       tag = repo.save_tag tag
-      success tag
+      if tag.errors.empty?
+        success
+      else
+        failure tag
+      end
     end
   end
 

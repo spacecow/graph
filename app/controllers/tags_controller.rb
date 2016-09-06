@@ -28,6 +28,10 @@ class TagsController < ApplicationController
       on.success do
         redirect_to tags_path
       end
+      on.failure do |tag| 
+        @tag = tag
+        render :new
+      end
     end
   end
 

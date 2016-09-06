@@ -5,8 +5,15 @@
   <%= form_for @tag do |f| %>
     <%= f.hidden_field :tagable_id %>
     <%= f.hidden_field :tagable_type %>
+
+  <div class="title">
     <%= f.label :title %>
     <%= f.text_field :title %>
+    <% unless @tag.errors.get(:title).empty? %>
+      <span class="errors"><%= @tag.errors.get(:title).join %></span>
+    <% end %>
+  </div>
+
     <%= f.submit "Create Tag" %>
   <% end %>
 

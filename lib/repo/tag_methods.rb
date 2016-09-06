@@ -28,7 +28,15 @@ module Repo
       params = tag.instance_values 
       response = http.post uri, {tag:params}.to_query
       body = JSON.parse(response.body)['tag']
-      Tag.new body
+      if response.code == "200"
+        Tag.new body
+      else
+        Tag.new(params).tap do |tag|
+          body.each do |key, val|
+            tag.errors.add(key, val) 
+          end
+        end
+      end
     end
 
     def delete_tag id, params
@@ -41,7 +49,6 @@ module Repo
       req.body = {tag:params}.merge(access_token:token).to_json
       http.request(req)
     end
-
 
   end
 end
