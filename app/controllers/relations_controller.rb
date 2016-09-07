@@ -18,6 +18,11 @@ class RelationsController < ApplicationController
     end
   end
 
+  def invert
+    relation = run(RelationRunners::Invert, params[:id])
+    redirect_to relation_path(relation.id)
+  end
+
   private
 
     def relation_params

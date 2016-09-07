@@ -38,6 +38,7 @@ describe 'notes/edit.html.erb' do
     expect(presenter).to receive(:target).with(no_args){ "Target" }
     expect(presenter).to receive(:origin_gender).with(no_args){ "male" }
     expect(presenter).to receive(:target_gender).with(no_args){ "female" }
+    expect(presenter).to receive(:invert_link).with(no_args){ "invert_link" }
   end
 
   subject(:page){ Capybara.string(rendering).find('div.relation') }
@@ -53,6 +54,11 @@ describe 'notes/edit.html.erb' do
 
   describe "Relation target" do
     its(:text){ should include "Target" }
+  end
+
+  describe "Invert link" do
+    subject{ page.find '.actions .invert' }
+    its(:text){ should eq "invert_link" }
   end
 
   describe "Reference form" do

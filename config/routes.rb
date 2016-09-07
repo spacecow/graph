@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   resources :notes, only:[:show,:new,:create,:edit,:update,:destroy]
   resources :participations, only:[:create,:edit,:update,:destroy]
   resources :references, only:[:show,:create,:edit,:update]
-  resources :relations, only:[:show,:create]
+  resources :relations, only:[:show,:create] do
+    member do
+      put :invert
+    end
+  end
   resources :steps, only:[:create]
   resources :tags, only:[:show,:index,:new,:create,:destroy]
   resources :taggings, only:[:create]

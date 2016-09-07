@@ -25,6 +25,29 @@ describe "Show relation" do
     end
   end
 
+  it "invert the relation" do
+    VCR.use_cassette("invert_relation") do
+      begin
+        universe = create :universe, title:"The Wheel of Time"
+        origin = create :article, name:'Origin', universe_id:universe.id 
+        target = create :article, name:'Target', universe_id:universe.id 
+        relation = create :relation, origin_id:origin.id, target_id:target.id
+        visit universes_path
+        click_link "The Wheel of Time"
+        visit relation_path relation.id
+        expect(find('.origin').text).to have_content "Origin"
+        expect(find('.target').text).to have_content "Target"
+        click_link 'Invert'
+        expect(find('.target').text).to have_content "Origin"
+        expect(find('.origin').text).to have_content "Target"
+      ensure
+        delete :relations
+        delete :articles
+        tdelete :universes
+      end
+    end
+  end
+
   it "navigate to the origin article" do
     VCR.use_cassette("navigate_to_origin_article") do
       begin

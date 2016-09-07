@@ -23,5 +23,18 @@ module Repo
       Relation.new body
     end
 
+    def invert_relation id
+      url = "http://localhost:9292/api/relations/#{id}/invert"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      req = Net::HTTP::Put.new(
+        uri.path, initheader = {'Content-Type' =>'application/json'})
+      req['Accept'] = 'application/vnd.example.v1'
+      req.body = {access_token:token}.to_json
+      response = http.request req
+      body = JSON.parse(response.body)['relation']
+      Relation.new body
+    end
+
   end
 end

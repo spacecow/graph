@@ -23,4 +23,8 @@ class RelationPresenter < BasePresenter
     'n' => "neutral"}[relation.target_gender]
   end
 
+  def invert_link
+    h.link_to "Invert", h.invert_relation_path(relation.id), method: :put
+  end
+
 end

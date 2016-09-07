@@ -19,4 +19,10 @@ module RelationRunners
     end
   end
 
+  class Invert < Runner
+    def run id
+      repo.invert_relation id
+    end
+  end
+
 end
