@@ -17,7 +17,7 @@ describe 'relations/_form.html.erb' do
 
   before do
     class ErbBinding
-      def initialize(hash)
+      def initialize hash
         hash.each do |key, value|
           singleton_class.send(:define_method,key){ value }
         end

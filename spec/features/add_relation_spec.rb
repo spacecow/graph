@@ -15,12 +15,12 @@ describe "Add relation" do
           visit article_path(article.id)
           expect(all(".type option").map(&:text)).to eq [
             "","Acquaintance", "Advisor", "Ancestor", "Aunt", "Betrothed", 
-            "Boyfriend", "Brother", "Companion", "Contract on", "Counselor", "Courter",
+            "Boyfriend", "Brother", "Companion", "ContractOn", "Counselor", "Courter",
             "Cousin", "Creator", "Customer", "Employee", "Enemy", "Father", "Follower",
             "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
-            "Killer", "King", "Located in", "Maid", "Member", "Mother",
-            "Near sister", "Owner", "Player", "Practitioner", "Queen",
-            "Resident", "Right hand", "Ruler", "Sister", "Swordbearer",
+            "Killer", "King", "LocatedIn", "Maid", "Member", "Mother",
+            "NearSister", "Owner", "Player", "Practitioner", "Queen",
+            "Resident", "RightHand", "Ruler", "Sister", "Swordbearer",
             "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
             "Worshiper"] 
           select "Owner", from:"Relation"
@@ -32,12 +32,12 @@ describe "Add relation" do
           expect(page.find "ul.relations").to have_content 'Swordmaster'
           expect(all(".type option").map(&:text)).to eq [
             "","Acquaintance", "Advisor", "Ancestor", "Aunt", "Betrothed", 
-            "Boyfriend", "Brother", "Companion", "Contract on", "Counselor", "Courter",
+            "Boyfriend", "Brother", "Companion", "ContractOn", "Counselor", "Courter",
             "Cousin", "Creator", "Customer", "Employee", "Enemy", "Father", "Follower",
             "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
-            "Killer", "King", "Located in", "Maid", "Member", "Mother",
-            "Near sister", "Owner", "Player", "Practitioner", "Queen",
-            "Resident", "Right hand", "Ruler", "Sister", "Swordbearer",
+            "Killer", "King", "LocatedIn", "Maid", "Member", "Mother",
+            "NearSister", "Owner", "Player", "Practitioner", "Queen",
+            "Resident", "RightHand", "Ruler", "Sister", "Swordbearer",
             "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
             "Worshiper"] 
         ensure

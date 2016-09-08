@@ -1,0 +1,9 @@
+<div class="relation edit form">
+  <%= form_for @relation, url:relation_path(@relation.id), method: :put do |f| %>
+    <div class="type">
+      <%= f.label :type, "Relation" %>
+      <%= f.select :type, @relation_types, include_blank:true %>
+    </div>
+    <%= f.submit "Update" %>
+  <% end %>
+</div>

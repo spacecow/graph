@@ -18,6 +18,21 @@ class RelationsController < ApplicationController
     end
   end
 
+  def edit
+    run(RelationRunners::Edit, params[:id]) do |on|
+      on.success do |relation, relation_types|
+        @relation = relation
+        @relation_types = relation_types
+      end
+    end
+  end
+
+  def update
+    redirect_to = request.referer || root_path
+    run(RelationRunners::Update, params[:id], relation_params)
+    redirect_to redirect_to 
+  end
+
   def invert
     redirect_to = request.referer || root_path
     relation = run(RelationRunners::Invert, params[:id])

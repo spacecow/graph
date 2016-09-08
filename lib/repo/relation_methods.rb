@@ -36,5 +36,16 @@ module Repo
       Relation.new body
     end
 
+    def update_relation id, params
+      url = "http://localhost:9292/api/relations/#{id}"
+      uri = URI url
+      http = Net::HTTP.new uri.host, uri.port 
+      req = Net::HTTP::Put.new(
+        uri.path, initheader = {'Content-Type' =>'application/json'})
+      req['Accept'] = 'application/vnd.example.v1'
+      req.body = {relation:params}.merge(access_token:token).to_json
+      response = http.request(req)
+    end
+
   end
 end

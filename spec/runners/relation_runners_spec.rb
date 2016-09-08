@@ -32,6 +32,23 @@ module RelationRunners
       it{ should eq [:relation] }
     end
 
+    describe Edit do
+      before do
+        expect(repo).to receive(:relation).with(:id){ :relation }
+        expect(repo).to receive(:relation_types).with(no_args){ ["Owner"] }
+      end
+      subject{ Edit.new(context).run :id }
+      it{ should eq [:relation, [["Owner", "Owner"]]] }
+    end
+
+    describe Update do
+      before do
+        expect(repo).to receive(:update_relation).with(:id, :params){ :mdl }
+      end
+      subject{ Update.new(context).run :id, :params }
+      it{ should be :mdl } 
+    end
+
     describe Invert do
       before do
         expect(repo).to receive(:invert_relation).with(:id){ :relation }

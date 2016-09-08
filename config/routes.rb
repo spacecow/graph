@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :notes, only:[:show,:new,:create,:edit,:update,:destroy]
   resources :participations, only:[:create,:edit,:update,:destroy]
   resources :references, only:[:show,:create,:edit,:update]
-  resources :relations, only:[:show,:create] do
+  resources :relations, only:[:show,:create,:edit,:update] do
     member do
       put :invert
     end
