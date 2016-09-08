@@ -199,4 +199,25 @@ describe 'Show article' do
     end
   end
 
+  it "invert a relation" do
+    VCR.use_cassette("invert_a_relation") do
+      begin
+        universe = create :universe, title:'The Final Empire'
+        article = create :article, universe_id:universe.id
+        target = create :article, universe_id:universe.id
+        create :relation, origin_id:article.id, target_id:target.id, type:'Owner'
+        visit universes_path
+        click_link "The Final Empire"
+        visit article_path article.id
+        expect(page).to have_content 'Owner Invert'
+        click_link 'Invert'
+        expect(page).to have_content 'Owns Invert'
+      ensure
+        delete :relations
+        delete :articles
+        tdelete :universes
+      end
+    end
+  end
+
 end

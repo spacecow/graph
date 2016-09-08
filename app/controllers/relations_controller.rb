@@ -19,8 +19,9 @@ class RelationsController < ApplicationController
   end
 
   def invert
+    redirect_to = request.referer || root_path
     relation = run(RelationRunners::Invert, params[:id])
-    redirect_to relation_path(relation.id)
+    redirect_to redirect_to 
   end
 
   private
