@@ -28,16 +28,30 @@ describe 'relations/edit.html.erb' do
     expect(bind).to receive(:relation_path).with(:id){ :path }
     expect(bind).to receive(:form_for).with(mdl, url: :path, method: :put).and_yield(builder)
     expect(mdl).to receive(:id).with(no_args){ :id }
+    expect(builder).to receive(:label).with(:origin_id, "Origin"){ "label_origin" }
     expect(builder).to receive(:label).with(:type, "Relation"){ "label_type" }
+    expect(builder).to receive(:label).with(:target_id, "Target"){ "label_target" }
+    expect(builder).to receive(:text_field).with(:origin_id){ "text_origin" }
     expect(builder).to receive(:select).with(:type, :types, include_blank:true){ "select_type" }
+    expect(builder).to receive(:text_field).with(:target_id){ "text_target" }
     expect(builder).to receive(:submit).with("Update"){ "submit_update" }
   end
 
   subject(:page){ Capybara.string rendering }
 
+  describe "Form origin_id" do
+    subject{ page.find 'div.origin' }
+    its(:text){ should match /label_origin\s*text_origin/m }
+  end
+
   describe "Form type" do
     subject{ page.find 'div.type' }
     its(:text){ should match /label_type\s*select_type/m }
+  end
+
+  describe "Form target_id" do
+    subject{ page.find 'div.target' }
+    its(:text){ should match /label_target\s*text_target/m }
   end
 
   describe "Form submit" do

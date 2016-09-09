@@ -19,6 +19,7 @@ class RelationsController < ApplicationController
   end
 
   def edit
+    session[:redirect_to] = request.referer
     run(RelationRunners::Edit, params[:id]) do |on|
       on.success do |relation, relation_types|
         @relation = relation
@@ -28,9 +29,8 @@ class RelationsController < ApplicationController
   end
 
   def update
-    redirect_to = request.referer || root_path
-    run(RelationRunners::Update, params[:id], relation_params)
-    redirect_to redirect_to 
+    relation = run(RelationRunners::Update, params[:id], relation_params)
+    redirect_to session[:redirect_to] || relation_path(relation.id)
   end
 
   def invert

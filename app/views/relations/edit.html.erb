@@ -1,8 +1,16 @@
 <div class="relation edit form">
   <%= form_for @relation, url:relation_path(@relation.id), method: :put do |f| %>
+    <div class="origin">
+      <%= f.label :origin_id, "Origin" %>
+      <%= f.text_field :origin_id %>
+    </div>
     <div class="type">
       <%= f.label :type, "Relation" %>
       <%= f.select :type, @relation_types, include_blank:true %>
+    </div>
+    <div class="target">
+      <%= f.label :target_id, "Target" %>
+      <%= f.text_field :target_id %>
     </div>
     <%= f.submit "Update" %>
   <% end %>

@@ -35,12 +35,19 @@ describe "RelationsController" do
 
   describe "#edit" do
     let(:function){ :edit }
+    let(:request){ double :request }
+    let(:session){{ redirect_to: :path }}
     let(:params){{ id: :id }}
     let(:runner){ double :runner }
     before do
       stub_const "RelationRunners::Edit", Class.new
+      def controller.session; raise NotImplementedError end
+      def controller.request; raise NotImplementedError end
       def controller.params; raise NotImplementedError end
       def controller.run runner, id; raise NotImplementedError end
+      expect(controller).to receive(:session).with(no_args){ session }
+      expect(controller).to receive(:request).with(no_args){ request }
+      expect(request).to receive(:referer).with(no_args)
       expect(controller).to receive(:params).with(no_args){ params }
       expect(controller).to receive(:run).
         with(RelationRunners::Edit,:id).and_yield(runner)
@@ -55,19 +62,30 @@ describe "RelationsController" do
     let(:params){{ id: :id }}
     before do
       stub_const "RelationRunners::Update", Class.new
-      def controller.request; raise NotImplementedError end
       def controller.params; raise NotImplementedError end
       def controller.run runner, id, params; raise NotImplementedError end
+      def controller.session; raise NotImplementedError end
       def controller.redirect_to path; raise NotImplementedError end
-      expect(controller).to receive(:request).with(no_args){ request }
       expect(controller).to receive(:params).with(no_args){ params }
       expect(controller).to receive(:relation_params).with(no_args){ :params } 
       expect(controller).to receive(:run).
-        with(RelationRunners::Update, :id, :params)
+        with(RelationRunners::Update, :id, :params){ mdl }
+      expect(controller).to receive(:session).with(no_args){ session }
       expect(controller).to receive(:redirect_to).with(:path){ :redirect }
-      expect(request).to receive(:referer).with(no_args){ :path }
     end
-    it{ should eq :redirect } 
+    context "Session contains a redirect" do
+      let(:session){{ redirect_to: :path }}
+      it{ should eq :redirect } 
+    end
+    context "Session contains no redirect" do
+      let(:session){ {} }
+      before do
+        def controller.relation_path path; raise NotImplementedError end
+        expect(controller).to receive(:relation_path).with(:id){ :path }
+        expect(mdl).to receive(:id).with(no_args){ :id }
+      end
+      it{ should eq :redirect } 
+    end
   end
 
   describe "#invert" do

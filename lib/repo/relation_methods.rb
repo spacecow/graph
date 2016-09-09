@@ -45,6 +45,8 @@ module Repo
       req['Accept'] = 'application/vnd.example.v1'
       req.body = {relation:params}.merge(access_token:token).to_json
       response = http.request(req)
+      body = JSON.parse(response.body)['relation']
+      Relation.new body
     end
 
   end
