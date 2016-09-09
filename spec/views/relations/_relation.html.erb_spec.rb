@@ -29,6 +29,7 @@ describe 'relations/_relation.html.erb' do
     expect(presenter).to receive(:target_gender).with(no_args){ "male" }
     expect(presenter).to receive(:target).with(no_args){ "target" }
     expect(presenter).to receive(:type).with(no_args){ "type" }
+    expect(presenter).to receive(:edit_link).with(no_args){ "edit_link" }
     expect(presenter).to receive(:invert_link).with(no_args){ "invert_link" }
     expect(presenter).to receive(:references_comments).with(no_args){ "comments" }
   end
@@ -51,8 +52,12 @@ describe 'relations/_relation.html.erb' do
 
   describe "Actions" do
     subject(:span){ page.find('span.actions') }
+    describe "edit link" do
+      subject{ span.find '.edit' }
+      its(:text){ should eq "edit_link" }
+    end
     describe "Invert link" do
-      subject{ page.find '.actions .invert' }
+      subject{ span.find '.invert' }
       its(:text){ should eq "invert_link" }
     end
   end

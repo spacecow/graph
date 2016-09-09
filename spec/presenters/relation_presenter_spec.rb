@@ -71,6 +71,16 @@ describe RelationPresenter do
     it{ should eq "neutral" }
   end
 
+  describe "#edit_link" do
+    let(:function){ :edit_link }
+    before do
+      expect(view).to receive(:link_to).with("Edit", :path){ :link }
+      expect(view).to receive(:edit_relation_path).with(:id){ :path }
+      expect(mdl).to receive(:id).with(no_args){ :id }
+    end
+    it{ should be :link }
+  end
+
   describe "#invert_link" do
     let(:function){ :invert_link }
     before do

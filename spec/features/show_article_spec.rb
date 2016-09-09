@@ -209,9 +209,29 @@ describe 'Show article' do
         visit universes_path
         click_link "The Final Empire"
         visit article_path article.id
-        expect(page).to have_content 'Owner Invert'
+        expect(page.find '.relations.list').to have_content 'Owner'
         click_link 'Invert'
-        expect(page).to have_content 'Owns Invert'
+        expect(page.find '.relations.list').to have_content 'Owns'
+      ensure
+        delete :relations
+        delete :articles
+        tdelete :universes
+      end
+    end
+  end
+
+  it "navigate to an edit relation page" do
+    VCR.use_cassette('navigate_to_an_edit_relation_page') do
+      begin
+        universe = create :universe, title:'The Drowned World'
+        article = create :article, universe_id:universe.id
+        target = create :article, universe_id:universe.id
+        relation = create :relation, origin_id:article.id, target_id:target.id
+        visit universes_path
+        click_link "The Drowned World"
+        visit article_path article.id
+        within('.relations.list'){ click_link 'Edit' }
+        expect(current_path).to eq edit_relation_path(relation.id)
       ensure
         delete :relations
         delete :articles
