@@ -25,15 +25,21 @@ describe 'relations/edit.html.erb' do
     end
     def bind.relation_path id; raise NotImplementedError end
     def bind.form_for obj, opts; raise NotImplementedError end
+    def bind.articles_path id; raise NotImplementedError end
     expect(bind).to receive(:relation_path).with(:id){ :path }
     expect(bind).to receive(:form_for).with(mdl, url: :path, method: :put).and_yield(builder)
+    expect(bind).to receive(:articles_path).with(format: :json).twice{ :articles_path }
     expect(mdl).to receive(:id).with(no_args){ :id }
+    expect(mdl).to receive(:origin).with(no_args){ :origin }
+    expect(mdl).to receive(:target).with(no_args){ :target }
     expect(builder).to receive(:label).with(:origin_id, "Origin"){ "label_origin" }
     expect(builder).to receive(:label).with(:type, "Relation"){ "label_type" }
     expect(builder).to receive(:label).with(:target_id, "Target"){ "label_target" }
-    expect(builder).to receive(:text_field).with(:origin_id){ "text_origin" }
+    expect(builder).to receive(:text_field).
+      with(:origin_id, data:{url: :articles_path, pre:[:origin]}){ "text_origin" }
     expect(builder).to receive(:select).with(:type, :types, include_blank:true){ "select_type" }
-    expect(builder).to receive(:text_field).with(:target_id){ "text_target" }
+    expect(builder).to receive(:text_field).
+      with(:target_id, data:{url: :articles_path, pre:[:target]}){ "text_target" }
     expect(builder).to receive(:submit).with("Update"){ "submit_update" }
   end
 

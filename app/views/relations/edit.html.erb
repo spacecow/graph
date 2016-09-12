@@ -1,8 +1,24 @@
+<script>
+$(function(){
+  var origin_id = "#relation_origin_id";
+  var target_id = "#relation_target_id";
+  $(origin_id).tokenInput($(origin_id).data('url'), {
+    propertyToSearch: 'name',
+    tokenLimit: 1
+  });
+  $(target_id).tokenInput($(target_id).data('url'), {
+    propertyToSearch: 'name',
+    tokenLimit: 1
+  });
+});
+</script>
 <div class="relation edit form">
   <%= form_for @relation, url:relation_path(@relation.id), method: :put do |f| %>
     <div class="origin">
       <%= f.label :origin_id, "Origin" %>
-      <%= f.text_field :origin_id %>
+      <%= f.text_field :origin_id, data:{
+        url:articles_path(format: :json),
+        pre:[@relation.origin]} %>
     </div>
     <div class="type">
       <%= f.label :type, "Relation" %>
@@ -10,7 +26,9 @@
     </div>
     <div class="target">
       <%= f.label :target_id, "Target" %>
-      <%= f.text_field :target_id %>
+      <%= f.text_field :target_id, data:{
+        url:articles_path(format: :json),
+        pre:[@relation.target]} %>
     </div>
     <%= f.submit "Update" %>
   <% end %>
