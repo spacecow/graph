@@ -19,7 +19,7 @@ describe "Add relation" do
             "Cousin", "Creator", "Customer", "Employee", "Enemy", "Father", "Follower",
             "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
             "Killer", "King", "LocatedIn", "Maid", "Member", "Mother",
-            "NearSister", "Owner", "Player", "Practitioner", "Queen",
+            "NearSister", "Owner", "Participant", "Player", "Practitioner", "Queen",
             "Resident", "RightHand", "Ruler", "Sister", "Swordbearer",
             "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
             "Worshiper"] 
@@ -36,7 +36,7 @@ describe "Add relation" do
             "Cousin", "Creator", "Customer", "Employee", "Enemy", "Father", "Follower",
             "Friend", "Girlfriend", "Guide", "Hearsay", "Home", "Husband",
             "Killer", "King", "LocatedIn", "Maid", "Member", "Mother",
-            "NearSister", "Owner", "Player", "Practitioner", "Queen",
+            "NearSister", "Owner", "Participant", "Player", "Practitioner", "Queen",
             "Resident", "RightHand", "Ruler", "Sister", "Swordbearer",
             "Teacher", "Uncle", "Variant", "Visitor", "Warder", "Wielder",
             "Worshiper"] 
